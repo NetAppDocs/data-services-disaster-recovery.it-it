@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: get-started/dr-prerequisites.html 
 keywords: what are disaster recovery requirements, disaster recovery prerequisites, bluexp, disaster recovery 
-summary: 'Prima di utilizzare NetApp Disaster Recovery, è necessario assicurarsi che l"ambiente soddisfi i requisiti di storage ONTAP , cluster VMware vCenter e NetApp Console.' 
+summary: 'Prima di utilizzare NetApp Disaster Recovery, è necessario assicurarsi che l"ambiente soddisfi i requisiti di storage ONTAP , cluster VMware vCenter e NetApp Console .' 
 ---
 = Prerequisiti NetApp Disaster Recovery
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: 'Prima di utilizzare NetApp Disaster Recovery, è necessario assicurars
 
 
 [role="lead"]
-Prima di utilizzare NetApp Disaster Recovery, è necessario assicurarsi che l'ambiente soddisfi i requisiti di storage ONTAP , cluster VMware vCenter e NetApp Console.
+Prima di utilizzare NetApp Disaster Recovery, è necessario assicurarsi che l'ambiente soddisfi i requisiti di storage ONTAP , cluster VMware vCenter e NetApp Console .
 
 
 
@@ -83,11 +83,11 @@ Questi prerequisiti si applicano sia ai cluster vCenter on-premise sia al data c
 
 
 
-== Prerequisiti della console NetApp
+== Prerequisiti NetApp Console
 
 
 
-=== Inizia con la console NetApp
+=== Inizia con la NetApp Console
 
 Se non l'hai ancora fatto, https://docs.netapp.com/us-en/bluexp-setup-admin/task-sign-up-saas.html["iscriviti alla NetApp Console e crea un'organizzazione"^] .
 
@@ -108,9 +108,9 @@ Per un elenco dei privilegi vCenter necessari, fare riferimento alink:../referen
 
 L'agente Console è un componente software che consente alla Console di comunicare con lo storage ONTAP e i cluster VMware vCenter.  È necessario affinché Disaster Recovery funzioni correttamente.  L'agente risiede nella tua rete privata (in un data center locale o in un VPC cloud) e comunica con le tue istanze di archiviazione ONTAP e con qualsiasi componente aggiuntivo di server e applicazioni.  Per il Disaster Recovery, si tratta dell'accesso ai cluster vCenter gestiti.
 
-È necessario configurare un agente Console nella console NetApp .  Quando si utilizza l'agente, questo includerà le funzionalità appropriate per il servizio Disaster Recovery.
+È necessario configurare un agente Console nella NetApp Console.  Quando si utilizza l'agente, questo includerà le funzionalità appropriate per il servizio Disaster Recovery.
 
-* NetApp Disaster Recovery funziona solo con la distribuzione dell'agente in modalità standard. Vedere https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-standard-mode.html["Introduzione alla console NetApp in modalità standard"^] .
+* NetApp Disaster Recovery funziona solo con la distribuzione dell'agente in modalità standard. Vedere https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-standard-mode.html["Introduzione alla NetApp Console in modalità standard"^] .
 * Assicurarsi che sia il vCenter di origine che quello di destinazione utilizzino lo stesso agente Console.
 * Tipo di agente console necessario:
 +

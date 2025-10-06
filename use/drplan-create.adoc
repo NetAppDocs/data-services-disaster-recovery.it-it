@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/drplan-create.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
-summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su cloud che automatizza i flussi di lavoro di disaster recovery.  Dopo aver aggiunto i siti vCenter, sei pronto per creare un piano di disaster recovery o di replicazione. 
+summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su cloud che automatizza i flussi di lavoro di disaster recovery.  Dopo aver aggiunto i siti vCenter, sei pronto per creare un piano di disaster recovery o di replica. 
 ---
 = Creare un piano di replica in NetApp Disaster Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su 
 [role="lead"]
 Dopo aver aggiunto i siti vCenter, sei pronto per creare un disaster recovery o un _piano di replica_.  I piani di replica gestiscono la protezione dei dati dell'infrastruttura VMware.  Selezionare i vCenter di origine e di destinazione, scegliere i gruppi di risorse e raggruppare le modalità di ripristino e accensione delle applicazioni.  Ad esempio, è possibile raggruppare le macchine virtuali (VM) associate a un'applicazione oppure le applicazioni che hanno livelli simili.  Tali piani sono talvolta chiamati _blueprint_.
 
-*Ruolo obbligatorio della console NetApp * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
+*Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
 
-link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 *Informazioni su questo compito*
 
@@ -83,9 +83,9 @@ Quando si crea il piano, è necessario seguire queste linee guida:
 Per prima cosa, seleziona il vCenter di origine e poi quello di destinazione.
 
 .Passi
-. Accedi al https://console.netapp.com/["Console NetApp"^] .
-. Dal menu di navigazione a sinistra della console NetApp , selezionare *Protezione* > *Disaster recovery*.
-. Dal menu NetApp Disaster Recovery, selezionare *Piani di replica* e quindi *Aggiungi*.  In alternativa, se hai appena iniziato a utilizzare il servizio, seleziona *Aggiungi piano di replicazione* dalla Dashboard.
+. Accedi al https://console.netapp.com/["NetApp Console"^] .
+. Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
+. Dal menu NetApp Disaster Recovery , selezionare *Piani di replica* e quindi *Aggiungi*.  In alternativa, se hai appena iniziato a utilizzare il servizio, seleziona *Aggiungi piano di replicazione* dalla Dashboard.
 +
 image:dr-plan-create-name2.png["Screenshot che mostra la pagina Aggiungi piano di replicazione > Aggiungi piano"]
 
@@ -107,7 +107,7 @@ TIP: Ogni gruppo di risorse può includere una o più VM o datastore.
 
 Quando si creano gruppi di risorse, tenere presente i seguenti aspetti:
 
-* Prima di aggiungere datastore ai gruppi di risorse, avviare prima un'individuazione manuale o un'individuazione pianificata delle VM.  Ciò garantisce che le VM vengano rilevate ed elencate nel gruppo di risorse.  Se non si attiva un rilevamento manuale, le VM potrebbero non essere elencate nel gruppo di risorse.
+* Prima di aggiungere datastore ai gruppi di risorse, avviare prima un'individuazione manuale o un'individuazione pianificata delle VM.  Ciò garantisce che le VM vengano rilevate ed elencate nel gruppo di risorse.  Se non si attiva un'individuazione manuale, le VM potrebbero non essere elencate nel gruppo di risorse.
 * Assicurarsi che nel datastore sia presente almeno una VM.  Se non sono presenti VM nel datastore, il datastore non verrà rilevato.
 * Un singolo datastore non dovrebbe ospitare VM protette da più di un piano di replica.
 * Non ospitare VM protette e non protette sullo stesso datastore.  Se le VM protette e non protette sono ospitate sullo stesso datastore, potrebbero verificarsi i seguenti problemi:
@@ -240,7 +240,7 @@ Questa sezione potrebbe visualizzare campi diversi a seconda della selezione eff
 
 È possibile aumentare o diminuire il numero di CPU virtuali assegnate a ciascuna VM sottoposta a failover.  Tuttavia, ogni VM richiede almeno una CPU virtuale.  È possibile modificare il numero di CPU virtuali e di DRAM virtuale assegnate a ciascuna VM.  Il motivo più comune per cui potresti voler modificare le impostazioni predefinite della CPU virtuale e della DRAM virtuale è se i nodi del cluster vCenter di destinazione non dispongono di tante risorse disponibili quanto il cluster vCenter di origine.
 
-*Impostazioni di rete* Disaster Recovery supporta un'ampia gamma di opzioni di configurazione per le reti VM.  Potrebbe essere necessario modificarli se il sito di destinazione dispone di reti virtuali che utilizzano impostazioni TCP/IP diverse rispetto alle reti virtuali di produzione sul sito di origine.
+*Impostazioni di rete* Disaster Recovery supporta un ampio set di opzioni di configurazione per le reti VM.  Potrebbe essere necessario modificarli se il sito di destinazione dispone di reti virtuali che utilizzano impostazioni TCP/IP diverse rispetto alle reti virtuali di produzione sul sito di origine.
 
 Al livello più basilare (e predefinito), le impostazioni utilizzano semplicemente le stesse impostazioni di rete TCP/IP per ogni VM sul sito di destinazione utilizzate sul sito di origine.  Ciò richiede la configurazione delle stesse impostazioni TCP/IP sulle reti virtuali di origine e di destinazione.
 
@@ -319,7 +319,7 @@ Molte VM ospitano server di database come Oracle o Microsoft SQL Server.  Questi
 
 Gli snapshot coerenti con l'applicazione garantiscono che il database si trovi in uno stato coerente quando viene eseguito lo snapshot.  Questo è importante perché garantisce che il database possa essere ripristinato a uno stato coerente dopo un'operazione di failover o failback.
 
-I dati gestiti dal server del database potrebbero essere ospitati sullo stesso datastore della VM che ospita il server del database oppure su un datastore diverso.  Nella tabella seguente sono illustrate le configurazioni supportate per snapshot coerenti con l'applicazione in Disaster Recovery:
+I dati gestiti dal server del database potrebbero essere ospitati sullo stesso datastore della macchina virtuale che ospita il server del database oppure su un datastore diverso.  Nella tabella seguente sono illustrate le configurazioni supportate per gli snapshot coerenti con l'applicazione in Disaster Recovery:
 
 [cols="20,20,40a"]
 |===
@@ -378,7 +378,7 @@ Dopo aver configurato questa funzionalità, il servizio non esegue snapshot prog
 
 TIP: Il numero di snapshot conservati, insieme alla frequenza di modifica dei dati tra ogni snapshot, determina la quantità di spazio di archiviazione consumato sia sull'origine che sulla destinazione.  Più snapshot si conservano, più spazio di archiviazione viene consumato.
 
-* *Datastore di origine e di destinazione*: se esistono più relazioni SnapMirror (fan-out), è possibile selezionare la destinazione da utilizzare.  Se per un volume è già stata stabilita una relazione SnapMirror , vengono visualizzati i datastore di origine e di destinazione corrispondenti.  Se si tratta di un volume che non ha una relazione SnapMirror , è possibile crearne uno ora selezionando un cluster di destinazione, selezionando una SVM di destinazione e specificando un nome per il volume.  Il servizio creerà il volume e la relazione SnapMirror .
+* *Datastore di origine e di destinazione*: se esistono più relazioni SnapMirror (fan-out), è possibile selezionare la destinazione da utilizzare.  Se per un volume è già stata stabilita una relazione SnapMirror , vengono visualizzati i datastore di origine e di destinazione corrispondenti.  Se si tratta di un volume che non ha una relazione SnapMirror , è possibile crearne una ora selezionando un cluster di destinazione, selezionando una SVM di destinazione e specificando un nome per il volume.  Il servizio creerà il volume e la relazione SnapMirror .
 +
 
 NOTE: Se si desidera creare una relazione SnapMirror in questo servizio, il cluster e il relativo peering SVM devono essere già stati configurati al di fuori di NetApp Disaster Recovery.
@@ -450,7 +450,7 @@ Un failover di test crea un volume FlexClone , monta il datastore e sposta il ca
 In base alla pianificazione, viene eseguito il test di failover, che garantisce che i carichi di lavoro vengano spostati verso la destinazione specificata dal piano di replica.
 
 .Passi
-. Dal menu NetApp Disaster Recovery, selezionare *Piani di replica*.
+. Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
 +
 image:dr-plan-list.png["Screenshot che mostra l'elenco dei piani di replicazione"]
 
@@ -465,7 +465,7 @@ image:dr-plan-schedule-edit2.png["Screenshot che mostra dove puoi modificare le 
 
 
 
-. *Utilizza snapshot su richiesta per il failover del test pianificato*: per acquisire un nuovo snapshot prima di avviare il failover del test automatico, seleziona questa casella.
+. *Utilizza snapshot su richiesta per il failover di test pianificato*: per acquisire un nuovo snapshot prima di avviare il failover di test automatico, selezionare questa casella.
 . Per ripulire l'ambiente di test al termine del test di failover, selezionare *Pulizia automatica dopo il failover del test* e immettere il numero di minuti che si desidera attendere prima che venga avviata la pulizia.
 +
 

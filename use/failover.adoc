@@ -14,9 +14,9 @@ summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su 
 [role="lead"]
 In caso di disastro, esegui il failover del tuo sito VMware locale principale su un altro sito VMware locale o su VMware Cloud su AWS.  È possibile testare il processo di failover per garantirne il successo quando necessario.
 
-*Ruolo obbligatorio della console NetApp * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza o amministratore del failover del ripristino di emergenza.
+*Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza o amministratore del failover del ripristino di emergenza.
 
-link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 *Informazioni su questo compito*
 
@@ -58,9 +58,9 @@ Per un failover di prova, Disaster Recovery esegue le seguenti operazioni:
 
 
 .Passi
-. Accedi al https://console.netapp.com/["Console NetApp"^] .
-. Dal menu di navigazione a sinistra della console NetApp , selezionare *Protezione* > *Disaster recovery*.
-. Dal menu NetApp Disaster Recovery, selezionare *Piani di replica*.
+. Accedi al https://console.netapp.com/["NetApp Console"^] .
+. Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
+. Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
 . Selezionare il piano di replicazione.
 . Sulla destra, seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] e seleziona *Test failover*.
 . Nella pagina Test failover, immettere "Test failover" e selezionare *Test failover*.
@@ -74,7 +74,7 @@ Per un failover di prova, Disaster Recovery esegue le seguenti operazioni:
 Una volta terminato il test di failover, è necessario ripulire l'ambiente di test.  Questo processo rimuove le VM temporanee dalla posizione di test, i FlexClone e i datastore temporanei.
 
 .Passi
-. Dal menu NetApp Disaster Recovery, selezionare *Piani di replica*.
+. Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
 . Selezionare il piano di replicazione.
 . Sulla destra, seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] e seleziona *Pulisci test di failover*.
 . Nella pagina Test failover, immettere "Pulisci failover" e selezionare *Pulisci test failover*.
@@ -105,7 +105,7 @@ Il processo di failover prevede le seguenti operazioni:
 TIP: Dopo l'avvio del failover, è possibile visualizzare le VM ripristinate nel vCenter del sito di disaster recovery (macchine virtuali, reti e datastore).  Per impostazione predefinita, le macchine virtuali vengono ripristinate nella cartella Workload.
 
 .Passi
-. Dal menu NetApp Disaster Recovery, selezionare *Piani di replica*.
+. Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
 . Selezionare il piano di replicazione.
 . Sulla destra, seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] e seleziona *Fail over*.
 +
@@ -115,7 +115,7 @@ image:dr-plan-failover3.png["Failover pagina"]
 +
 Verrà eseguita un'istantanea della sorgente corrente e replicata sulla destinazione corrente prima che si verifichi il failover.
 
-. Facoltativamente, selezionare *Forza failover* se si desidera che il failover venga eseguito anche se viene rilevato un errore che normalmente ne impedirebbe il verificarsi.
+. Facoltativamente, selezionare *Forza failover* se si desidera che il failover si verifichi anche se viene rilevato un errore che normalmente ne impedirebbe il verificarsi.
 . Facoltativamente, selezionare *Ignora protezione* se si desidera che il servizio non crei automaticamente una relazione di protezione SnapMirror inversa dopo un failover del piano di replica.  Questa opzione è utile se si desidera eseguire operazioni aggiuntive sul sito ripristinato prima di riportarlo online in NetApp Disaster Recovery.
 +
 

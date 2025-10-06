@@ -4,7 +4,7 @@ permalink: use/dashboard-view.html
 keywords: disaster recovery remediate, disaster recovery, failover, failback, replication, bluexp, netapp 
 summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su cloud che automatizza i flussi di lavoro di disaster recovery. 
 ---
-= Visualizza lo stato dei tuoi piani di Disaster Recovery NetApp sulla Dashboard
+= Visualizza lo stato dei tuoi piani NetApp Disaster Recovery sulla Dashboard
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,18 +12,18 @@ summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su 
 
 
 [role="lead"]
-Utilizzando la dashboard di NetApp Disaster Recovery, puoi determinare lo stato di salute dei tuoi siti di disaster recovery e dei piani di replica.  È possibile verificare rapidamente quali siti e piani sono integri, disconnessi o degradati.
+Utilizzando la dashboard di NetApp Disaster Recovery , puoi determinare lo stato di salute dei tuoi siti di disaster recovery e dei piani di replica.  È possibile verificare rapidamente quali siti e piani sono integri, disconnessi o degradati.
 
-*Ruolo di console NetApp obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore dell'applicazione di ripristino di emergenza o visualizzatore del ripristino di emergenza.
+*Ruolo di NetApp Console obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore dell'applicazione di ripristino di emergenza o visualizzatore del ripristino di emergenza.
 
-link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Accedi al https://console.netapp.com/["Console NetApp"^] .
-. Dal menu di navigazione a sinistra della console NetApp , selezionare *Protezione* > *Disaster recovery*.
-. Dal menu NetApp Disaster Recovery, selezionare *Dashboard*.
+. Accedi al https://console.netapp.com/["NetApp Console"^] .
+. Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
+. Dal menu NetApp Disaster Recovery , selezionare *Dashboard*.
 +
-image:dr-dashboard.png["Dashboard di ripristino di emergenza NetApp"]
+image:dr-dashboard.png["Dashboard NetApp Disaster Recovery"]
 
 . Esaminare le seguenti informazioni sulla Dashboard:
 +
@@ -33,7 +33,7 @@ image:dr-dashboard.png["Dashboard di ripristino di emergenza NetApp"]
 *** *Giù*: vCenter non è raggiungibile o presenta problemi di connettività.
 *** *Problema*: vCenter non è raggiungibile o presenta problemi di connettività.
 +
-Per visualizzare i dettagli del sito, seleziona *Visualizza tutto* per uno stato oppure *Visualizza siti* per vederli tutti.
+Per visualizzare i dettagli del sito, seleziona *Visualizza tutto* per uno stato oppure *Visualizza siti* per visualizzarli tutti.
 
 
 

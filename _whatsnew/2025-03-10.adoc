@@ -14,11 +14,11 @@ L'implementazione del proxy NetApp Disaster Recovery richiede la comunicazione s
 
 Per ulteriori informazioni sul proxy intelligente per NetApp Disaster Recovery, vedere https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-setup.html["Configura la tua infrastruttura per NetApp Disaster Recovery"] .
 
-Per ulteriori informazioni sulla configurazione generale del proxy nella console NetApp , vedere https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurare l'agente della console per utilizzare un server proxy"^] .
+Per ulteriori informazioni sulla configurazione generale del proxy nella NetApp Console, vedere https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurare l'agente della console per utilizzare un server proxy"^] .
 
 
 
-=== Puoi terminare la prova gratuita in qualsiasi momento
+=== Interrompi la prova gratuita in qualsiasi momento
 
 Puoi interrompere la prova gratuita in qualsiasi momento oppure attendere la sua scadenza.
 

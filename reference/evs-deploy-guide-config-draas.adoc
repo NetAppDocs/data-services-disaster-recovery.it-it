@@ -2,14 +2,14 @@
 sidebar: sidebar 
 permalink: reference/evs-deploy-guide-config-draas.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: 'Dopo aver installato l"agente NetApp Console, è necessario integrare tutte le risorse di storage ONTAP e VMware vCenter che parteciperanno al processo di ripristino di emergenza.' 
+summary: 'Dopo aver installato l"agente NetApp Console , è necessario integrare tutte le risorse di storage ONTAP e VMware vCenter che parteciperanno al processo di ripristino di emergenza.' 
 ---
-= Panoramica sulla configurazione di NetApp Disaster Recovery per Amazon EVS
+= Panoramica sulla configurazione NetApp Disaster Recovery per Amazon EVS
 :allow-uri-read: 
 
 
 [role="lead"]
-Dopo aver installato l'agente NetApp Console, è necessario integrare tutte le risorse di storage ONTAP e VMware vCenter che parteciperanno al processo di disaster recovery con NetApp Disaster Recovery.
+Dopo aver installato l'agente NetApp Console , è necessario integrare tutte le risorse di storage ONTAP e VMware vCenter che parteciperanno al processo di disaster recovery con NetApp Disaster Recovery.
 
 * link:evs-deploy-guide-config-prereqs.html["Prerequisiti per Amazon EVS con NetApp Disaster Recovery"]
 * link:evs-deploy-guide-config-add-arrays.html["Aggiungere array di storage ONTAP a NetApp Disaster Recovery"]

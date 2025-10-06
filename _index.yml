@@ -43,13 +43,13 @@ indexpage:
       url: "/use/failback.html"
   - title: Blog e comunità
     links:
-    - title: Console NetApp
+    - title: NetApp Console
       url: https://www.netapp.com/console
-    - title: Servizi dati NetApp
+    - title: NetApp Data Services
       url: https://www.netapp.com/data-services/
     - title: Comunità NetApp
       url: https://community.netapp.com
-    - title: Blog sul ripristino di emergenza NetApp
+    - title: Blog NetApp Disaster Recovery
       url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-disaster-recovery-service-for-BC-with-VMware-Cloud-on-AWS-and-FSx-for/ba-p/447066
     - title: Introduzione al laboratorio NetApp Disaster Recovery as a Service su
         richiesta

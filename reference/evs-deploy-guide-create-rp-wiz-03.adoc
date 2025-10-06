@@ -64,7 +64,7 @@ Ogni VM può avere una o più schede di rete virtuali connesse a reti virtuali a
 
 .Seleziona la rete virtuale di destinazione su cui mappare ciascuna rete virtuale di origine
 . Selezionare il segmento Target dall'elenco a discesa.
-. Ripetere il passaggio precedente per ciascuna rete virtuale di origine elencata.
+. Ripetere il passaggio precedente per ogni rete virtuale di origine elencata.
 +
 image:evs-create-rp-wiz-c-network-resources-1-2.png["Creare un piano di replicazione, risorse di rete"]
 
@@ -108,7 +108,7 @@ image:evs-create-rp-wiz-c-vm-resources-network-1-2.png["Creare un piano di repli
 Sono disponibili diverse opzioni per riconfigurare le risorse di elaborazione della VM.  NetApp Disaster Recovery supporta la modifica del numero di CPU virtuali, della quantità di DRAM virtuale e del nome della VM.
 
 .Specificare eventuali modifiche alla configurazione della VM
-. (Facoltativo) Modificare il numero di CPU virtuali che ogni VM deve utilizzare.  Questa operazione potrebbe essere necessaria se gli host del cluster DR vCenter non dispongono di tanti core CPU quanti ne ha il cluster vCenter di origine.
+. (Facoltativo) Modificare il numero di CPU virtuali che ogni VM deve utilizzare.  Questa operazione potrebbe essere necessaria se gli host del cluster vCenter DR non dispongono di tanti core CPU quanti ne ha il cluster vCenter di origine.
 . (Facoltativo) Modificare la quantità di DRAM virtuale che ogni VM deve utilizzare.  Questa operazione potrebbe essere necessaria se gli host del cluster vCenter DR non dispongono della stessa quantità di DRAM fisica degli host del cluster vCenter di origine.
 +
 image:evs-create-rp-wiz-c-vm-resources-cpu-mem-1-2.png["Crea un piano di replicazione, risorse VM"]

@@ -12,19 +12,19 @@ summary: 'NetApp Disaster Recovery è un servizio di disaster recovery basato su
 
 
 [role="lead"]
-È possibile monitorare tutti i processi di NetApp Disaster Recovery e determinarne l'avanzamento.
+È possibile monitorare tutti i processi NetApp Disaster Recovery e determinarne l'avanzamento.
 
 
 
 == Visualizza i lavori
 
-*Ruolo di console NetApp obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore dell'applicazione di ripristino di emergenza o visualizzatore del ripristino di emergenza.
+*Ruolo di NetApp Console obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore dell'applicazione di ripristino di emergenza o visualizzatore del ripristino di emergenza.
 
-link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Accedi al https://console.netapp.com/["Console NetApp"^] .
-. Dal menu di navigazione a sinistra della console NetApp , selezionare *Protezione* > *Disaster recovery*.
+. Accedi al https://console.netapp.com/["NetApp Console"^] .
+. Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
 . Dal menu, seleziona *Monitoraggio lavori*.
 . Esplora tutti i lavori correlati alle operazioni e controlla i relativi timestamp e stato.
 . Per visualizzare i dettagli di un lavoro specifico, seleziona la riga corrispondente.
@@ -37,12 +37,12 @@ link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sul
 
 Se un lavoro è in corso o in coda e non si desidera che continui, è possibile annullarlo.  Potresti voler annullare un lavoro se è bloccato nello stesso stato e vuoi liberare l'operazione successiva nella coda.  Potresti voler annullare un lavoro prima che scada.
 
-*Ruolo obbligatorio della console NetApp * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
+*Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
 
-link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dalla barra di navigazione sinistra della console NetApp , selezionare *Protezione* > *Disaster recovery*.
+. Dalla barra di navigazione sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
 . Dal menu, seleziona *Monitoraggio lavori*.
 . Nella pagina Monitoraggio lavori, annota l'ID del lavoro che desideri annullare.
 +

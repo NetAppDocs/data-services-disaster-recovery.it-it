@@ -12,16 +12,16 @@ summary: 'Esaminare i report sul disaster recovery può aiutarti ad analizzare l
 
 
 [role="lead"]
-Esaminare i report di NetApp Disaster Recovery può aiutarti ad analizzare la tua preparazione al disaster recovery.  I report predefiniti includono un riepilogo dei failover dei test, dettagli del piano di replica e dettagli dei lavori su tutti i siti all'interno di un account per gli ultimi sette giorni.
+Esaminare i report di NetApp Disaster Recovery può aiutarti ad analizzare la tua preparazione al disaster recovery.  I report predefiniti includono un riepilogo dei failover dei test, dettagli del piano di replica e dettagli dei lavori su tutti i siti all'interno di un account negli ultimi sette giorni.
 
 È possibile scaricare i report in formato PDF, HTML o JSON.
 
 Il link per il download è valido per sei ore.
 
 .Passi
-. Accedi al https://console.netapp.com/["Console NetApp"^] .
-. Dal menu di navigazione a sinistra della console NetApp , selezionare *Protezione* > *Disaster recovery*.
-. Dalla barra di navigazione sinistra della console NetApp , selezionare *Piani di replica*.
+. Accedi al https://console.netapp.com/["NetApp Console"^] .
+. Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
+. Dalla barra di navigazione sinistra NetApp Console , selezionare *Piani di replica*.
 . Seleziona *Crea report*.
 . Selezionare il tipo di formato del file e il periodo di tempo compreso negli ultimi 7 giorni.
 . Seleziona *Crea*.

@@ -20,8 +20,8 @@ L'operazione principale che potresti dover eseguire è quella che speri non acca
 Il failover è un processo avviato manualmente.
 
 .Passaggi per accedere all'operazione di failover
-. Dalla barra di navigazione sinistra della console NetApp , selezionare *Protezione* > *Disaster Recovery*.
-. Dal menu NetApp Disaster Recovery, selezionare *Piani di replica*.
+. Dalla barra di navigazione sinistra NetApp Console , selezionare *Protezione* > *Disaster Recovery*.
+. Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
 
 
 .Passaggi per eseguire un failover
@@ -63,7 +63,7 @@ image:evs-rp-menu-test-failover.png["Opzione di menu di failover di prova"]
 
 . Decidi se vuoi ottenere lo stato più recente dell'ambiente di produzione (Esegui snapshot ora) o utilizzare un backup del piano di replica creato in precedenza (Seleziona)
 . Se hai scelto un backup creato in precedenza, seleziona il backup da utilizzare per il ripristino.
-. Digita la parola "Test failover" per confermare che desideri procedere.
+. Digitare la parola "Test failover" per confermare che si desidera procedere.
 . Selezionare *Test failover*.
 +
 image:evs-test-failover-dialog.png["Finestra di dialogo di failover di prova"]
@@ -78,7 +78,7 @@ Per impostazione predefinita, i controlli di conformità vengono eseguiti ogni t
 
 .Passi
 . Seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] accanto al piano di replicazione.
-. Selezionare l'opzione *Esegui controllo di conformità* dal menu Azioni del piano di replica:
+. Selezionare l'opzione *Esegui controllo di conformità* dal menu Azioni del piano di replicazione:
 +
 image:evs-rp-menu-compliance-check.png["Opzione di menu Esegui controllo conformità"]
 
@@ -89,7 +89,7 @@ image:evs-rp-menu-compliance-check.png["Opzione di menu Esegui controllo conform
 
 == Aggiorna le risorse
 
-Ogni volta che si apportano modifiche all'infrastruttura virtuale, ad esempio aggiungendo o eliminando VM, aggiungendo o eliminando datastore o spostando VM tra datastore, è necessario eseguire un aggiornamento dei cluster vCenter interessati nel servizio NetApp Disaster Recovery.  Per impostazione predefinita, il servizio esegue questa operazione automaticamente una volta ogni 24 ore, ma un aggiornamento manuale garantisce che le informazioni più recenti sull'infrastruttura virtuale siano disponibili e prese in considerazione per la protezione DR.
+Ogni volta che si apportano modifiche all'infrastruttura virtuale, ad esempio aggiungendo o eliminando VM, aggiungendo o eliminando datastore o spostando VM tra datastore, è necessario eseguire un aggiornamento dei cluster vCenter interessati nel servizio NetApp Disaster Recovery .  Per impostazione predefinita, il servizio esegue questa operazione automaticamente una volta ogni 24 ore, ma un aggiornamento manuale garantisce che le informazioni più recenti sull'infrastruttura virtuale siano disponibili e prese in considerazione per la protezione DR.
 
 Ci sono due casi in cui è necessario un aggiornamento:
 
@@ -117,7 +117,7 @@ image::evs-rp-menu-migrate.png[Opzione di menu Migra]
 
 == Scatta un'istantanea ora
 
-In qualsiasi momento è possibile acquisire un'istantanea immediata del piano di replicazione.  Questo snapshot è incluso nelle considerazioni di NetApp Disaster Recovery impostate dal conteggio di conservazione degli snapshot del piano di replica.
+In qualsiasi momento è possibile acquisire un'istantanea immediata del piano di replicazione.  Questo snapshot è incluso nelle considerazioni NetApp Disaster Recovery impostate dal conteggio di conservazione degli snapshot del piano di replica.
 
 . Seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] accanto al piano di replicazione.
 . Per acquisire immediatamente uno snapshot delle risorse del piano di replica, selezionare *Esegui snapshot ora* nel menu Azioni del piano di replica:

@@ -9,7 +9,7 @@ summary: Introduzione di NetApp Disaster Recovery tramite Amazon EVS e Amazon FS
 
 
 [role="lead"]
-Una volta creati i siti, puoi aggiungere i cluster vCenter a ciascun sito in NetApp Disaster Recovery.  Quando abbiamo creato ogni sito, abbiamo indicato ogni tipologia di sito.  In questo modo viene indicato a NetApp Disaster Recovery quale tipo di accesso è richiesto per i vCenter ospitati in ciascun tipo di sito.  Uno dei vantaggi di Amazon EVS è che non esiste una vera e propria distinzione tra un vCenter Amazon EVS e un vCenter locale.  Entrambi richiedono le stesse informazioni di connessione e autenticazione.
+Dopo aver creato i siti, puoi aggiungere i cluster vCenter a ciascun sito in NetApp Disaster Recovery.  Quando abbiamo creato ogni sito, abbiamo indicato ogni tipologia di sito.  In questo modo viene indicato a NetApp Disaster Recovery quale tipo di accesso è richiesto per i vCenter ospitati in ciascun tipo di sito.  Uno dei vantaggi di Amazon EVS è che non esiste una vera e propria distinzione tra un vCenter Amazon EVS e un vCenter locale.  Entrambi richiedono le stesse informazioni di connessione e autenticazione.
 
 .Passaggi per aggiungere un vCenter a ciascun sito
 . Dall'opzione *Siti*, seleziona *Aggiungi vCenter* per il sito desiderato.
@@ -18,7 +18,7 @@ image:evs-add-vcenter-1.png["Aggiungi l'opzione vCenter"]
 
 . Nella finestra di dialogo Aggiungi server vCenter, seleziona o fornisci le seguenti informazioni:
 +
-.. L'agente della console NetApp ospitato nel tuo AWS VPC.
+.. L'agente NetApp Console ospitato nel tuo AWS VPC.
 .. L'indirizzo IP o FQDN per il vCenter da aggiungere.
 .. Se diverso, modificare il valore della porta impostandolo sulla porta TCP utilizzata dal gestore cluster vCenter.
 .. Il nome utente vCenter per l'account creato in precedenza che verrà utilizzato da NetApp Disaster Recovery per gestire vCenter.

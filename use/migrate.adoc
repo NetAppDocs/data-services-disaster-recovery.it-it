@@ -21,8 +21,8 @@ TIP: Dopo aver creato il piano di replica, identificato la ricorrenza nella proc
 Prima di avviare la migrazione, è necessario creare un piano di replicazione e scegliere di migrare le app.  Quindi, nel menu Azioni viene visualizzata l'opzione *Migra*.
 
 .Passi
-. Accedi al https://console.netapp.com/["Console NetApp"^] .
-. Dal menu di navigazione a sinistra della console NetApp , selezionare *Protezione* > *Disaster recovery*.
+. Accedi al https://console.netapp.com/["NetApp Console"^] .
+. Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
 . Dal menu, seleziona *Piani di replicazione*.
 . Selezionare il piano di replicazione.
 . Sulla destra, seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] e seleziona *Migra*.

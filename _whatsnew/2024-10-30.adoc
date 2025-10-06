@@ -44,7 +44,7 @@ Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster
 
 === Dettagli della VM disponibili per failover, failback e failover di prova
 
-Quando si verifica un errore e si avvia un failover, si esegue un failback o si testa il failover, è ora possibile visualizzare i dettagli delle VM e identificare quali VM non sono state riavviate.
+Quando si verifica un errore e si avvia un failover, si esegue un failback o si testa il failover, ora è possibile visualizzare i dettagli delle VM e identificare quali VM non sono state riavviate.
 
 Fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Eseguire il failover delle applicazioni su un sito remoto"] .
 

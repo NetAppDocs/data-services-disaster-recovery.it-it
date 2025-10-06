@@ -1,10 +1,10 @@
-= Aggiornamenti di NetApp Disaster Recovery
+= Aggiornamenti NetApp Disaster Recovery
 :allow-uri-read: 
 
 
 
 
-=== Aggiornamenti di NetApp Disaster Recovery
+=== Aggiornamenti NetApp Disaster Recovery
 
 Questa versione include i seguenti aggiornamenti:
 

@@ -16,8 +16,7 @@ entries:
     url: "/reference/evs-deploy-guide-install-connector.html"
   - title: Configurare NetApp Disaster Recovery per Amazon EVS
     entries:
-    - title: Panoramica sulla configurazione di NetApp Disaster Recovery per Amazon
-        EVS
+    - title: Panoramica sulla configurazione NetApp Disaster Recovery per Amazon EVS
       url: "/reference/evs-deploy-guide-config-draas.html"
     - title: Prerequisiti per Amazon EVS
       url: "/reference/evs-deploy-guide-config-prereqs.html"

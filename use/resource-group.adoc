@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/resource-group.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
-summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su cloud che automatizza i flussi di lavoro di disaster recovery.  Dopo aver aggiunto i siti vCenter, sei pronto per creare un piano di disaster recovery o di replicazione. 
+summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su cloud che automatizza i flussi di lavoro di disaster recovery.  Dopo aver aggiunto i siti vCenter, sei pronto per creare un piano di disaster recovery o di replica. 
 ---
 = Crea un gruppo di risorse per organizzare insieme le VM in NetApp Disaster Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su 
 [role="lead"]
 Dopo aver aggiunto i siti vCenter, è possibile creare gruppi di risorse per proteggere le VM per VM o datastore come un'unica unità.  I gruppi di risorse consentono di organizzare un set di VM dipendenti in gruppi logici che soddisfano i requisiti.  Ad esempio, è possibile raggruppare le VM associate a un'applicazione oppure le applicazioni che hanno livelli simili.  Come altro esempio, i gruppi potrebbero contenere ordini di avvio ritardati che possono essere eseguiti al momento del ripristino.
 
-*Ruolo obbligatorio della console NetApp * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
+*Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
 
-link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 *Informazioni su questo compito*
 
@@ -25,7 +25,7 @@ link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sul
 È possibile creare gruppi di risorse utilizzando i seguenti metodi:
 
 * Dall'opzione Gruppi di risorse
-* Mentre si crea un disaster recovery o un _piano di replica_.  Se si dispone di numerose VM ospitate da un cluster vCenter di origine, potrebbe essere più semplice creare i gruppi di risorse durante la creazione del piano di replica.  Per istruzioni sulla creazione di gruppi di risorse durante la creazione di un piano di replica, vederelink:drplan-create.html["Creare un piano di replicazione"] .
+* Mentre si crea un piano di disaster recovery o di replicazione.  Se si dispone di numerose VM ospitate da un cluster vCenter di origine, potrebbe essere più semplice creare i gruppi di risorse durante la creazione del piano di replica.  Per istruzioni sulla creazione di gruppi di risorse durante la creazione di un piano di replica, vederelink:drplan-create.html["Creare un piano di replicazione"] .
 
 
 
@@ -77,9 +77,9 @@ Quando si creano gruppi di risorse, tenere presente i seguenti aspetti:
 *MIGLIOR PRATICITÀ*: Organizzare le VM prima di implementare NetApp Disaster Recovery per ridurre al minimo la "proliferazione degli archivi dati".  Posizionare le VM che necessitano di protezione su un sottoinsieme di datastore e posizionare le VM che non saranno protette su un sottoinsieme diverso di datastore.  Assicurarsi che le VM su un determinato datastore non siano protette da piani di replica diversi.
 
 .Passi
-. Accedi al https://console.netapp.com/["Console NetApp"^] .
-. Dal menu di navigazione a sinistra della console NetApp , selezionare *Protezione* > *Disaster recovery*.
-. Dal menu NetApp Disaster Recovery, selezionare *Gruppi di risorse*.
+. Accedi al https://console.netapp.com/["NetApp Console"^] .
+. Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
+. Dal menu NetApp Disaster Recovery , selezionare *Gruppi di risorse*.
 . Selezionare *Aggiungi*.
 . Immettere un nome per il gruppo di risorse.
 . Selezionare il cluster vCenter di origine in cui si trovano le VM.

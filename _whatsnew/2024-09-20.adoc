@@ -6,7 +6,7 @@
 
 === Supporto per datastore VMware VMFS da locale a locale
 
-Questa versione include il supporto per le VM montate su datastore VMware vSphere Virtual Machine File System (VMFS) per iSCSI e FC protetti su storage locale.  In precedenza, il servizio forniva un'anteprima tecnologica che supportava i datastore VMFS per iSCSI e FC.
+Questa versione include il supporto per le VM montate su datastore VMware vSphere Virtual Machine File System (VMFS) per iSCSI e FC protetti su storage locale.  In precedenza, il servizio forniva un'anteprima tecnologica che supportava gli archivi dati VMFS per iSCSI e FC.
 
 Ecco alcune considerazioni aggiuntive riguardanti i protocolli iSCSI e FC:
 

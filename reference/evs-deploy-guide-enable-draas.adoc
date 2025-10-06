@@ -11,7 +11,7 @@ summary: Introduzione di NetApp Disaster Recovery tramite Amazon EVS e Amazon FS
 [role="lead"]
 NetApp Disaster Recovery è un prodotto con licenza che deve essere acquistato prima di poter essere utilizzato.  Esistono diversi tipi di licenze e diversi modi per acquistarle.  Una licenza ti dà il diritto di proteggere una quantità specifica di dati per un determinato periodo di tempo.
 
-Per ulteriori informazioni sulle licenze NetApp Disaster Recovery, vederelink:../get-started/dr-licensing.html["Impostare la licenza per NetApp Disaster Recovery"] .
+Per ulteriori informazioni sulle licenze NetApp Disaster Recovery , vederelink:../get-started/dr-licensing.html["Impostare la licenza per NetApp Disaster Recovery"] .
 
 
 
@@ -53,5 +53,5 @@ Total Used                          459.4MB         8%
 Total Physical Used                 166.4MB         3%
 
 ----
-. Annotare il valore *Totale fisico utilizzato* per ciascun volume.  Questa è la quantità di dati che NetApp Disaster Recovery deve proteggere ed è il valore che utilizzerai per determinare quanta capacità devi concedere in licenza.
+. Notare il valore *Totale fisico utilizzato* per ciascun volume.  Questa è la quantità di dati che NetApp Disaster Recovery deve proteggere ed è il valore che utilizzerai per determinare quanta capacità devi concedere in licenza.
 
