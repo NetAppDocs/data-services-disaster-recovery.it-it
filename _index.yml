@@ -1,0 +1,58 @@
+---
+indexpage:
+  title: Documentazione NetApp Disaster Recovery
+  summary: Con NetApp Disaster Recovery per VMware, puoi replicare i carichi di lavoro
+    VMware on-premise che eseguono lo storage ONTAP su un data center software-defined
+    VMware in un cloud pubblico come sito di disaster recovery utilizzando lo storage
+    cloud NetApp .
+  keywords: disaster, disaster recovery, bluexp, replicate, replication, cloud storage
+  lead: Il disaster recovery nel cloud è un modo resiliente ed economico per proteggere
+    i carichi di lavoro da interruzioni del sito ed eventi di danneggiamento dei dati
+    (ad esempio, ransomware).  Con NetApp Disaster Recovery per VMware, puoi replicare
+    i carichi di lavoro VMware on-premise che eseguono lo storage ONTAP su un data
+    center software-defined VMware in un cloud pubblico o su un altro sito on-premise
+    come sito di disaster recovery.
+  tiles:
+  - title: Iniziare
+    links:
+    - title: Scopri di più su NetApp Disaster Recovery
+      url: "/get-started/dr-intro.html"
+    - title: Novità di NetApp Disaster Recovery
+      url: "/release-notes/dr-whats-new.html"
+    - title: Avvio rapido
+      url: "/get-started/dr-quick-start.html"
+    - title: Prerequisiti
+      url: "/get-started/dr-prerequisites.html"
+    - title: Accedi a NetApp Disaster Recovery
+      url: "/get-started/dr-login.html"
+    - title: Domande frequenti
+      url: "/get-started/dr-faq.html"
+  - title: Utilizzare NetApp Disaster Recovery
+    links:
+    - title: Aggiungere vCenter a un sito
+      url: "/use/sites-add.html"
+    - title: Creare un piano di ripristino in caso di disastro
+      url: "/use/drplan-create.html"
+    - title: Replicare le app su un altro sito
+      url: "/use/replicate.html"
+    - title: Migrare le app su un altro sito
+      url: "/use/migrate.html"
+    - title: Eseguire il failover delle app su un sito remoto
+      url: "/use/failover.html"
+    - title: Ripristina le app sul sito di origine originale
+      url: "/use/failback.html"
+  - title: Blog e comunità
+    links:
+    - title: Console NetApp
+      url: https://www.netapp.com/console
+    - title: Servizi dati NetApp
+      url: https://www.netapp.com/data-services/
+    - title: Comunità NetApp
+      url: https://community.netapp.com
+    - title: Blog sul ripristino di emergenza NetApp
+      url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-disaster-recovery-service-for-BC-with-VMware-Cloud-on-AWS-and-FSx-for/ba-p/447066
+    - title: Introduzione al laboratorio NetApp Disaster Recovery as a Service su
+        richiesta
+      url: https://labondemand.netapp.com/lab/draas
+    - title: Video
+      url: https://www.youtube.com/@netapp/videos

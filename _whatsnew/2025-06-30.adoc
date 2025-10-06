@@ -1,0 +1,9 @@
+= Miglioramenti della scoperta
+:allow-uri-read: 
+
+
+
+
+=== Miglioramenti della scoperta
+
+Questo aggiornamento migliora il processo di individuazione, riducendone il tempo necessario.

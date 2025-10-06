@@ -1,0 +1,8 @@
+---
+section: release-notes
+title: Note di rilascio
+entries:
+- title: Cosa c'è di nuovo
+  url: "/release-notes/dr-whats-new.html"
+- title: Limitazioni
+  url: "/release-notes/dr-limitations.html"

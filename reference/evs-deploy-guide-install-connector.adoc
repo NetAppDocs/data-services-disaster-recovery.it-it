@@ -1,0 +1,20 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-install-connector.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: 'Introduzione di NetApp Disaster Recovery tramite Amazon EVS e Amazon FSx for NetApp ONTAP.  Sebbene il connettore possa essere installato in qualsiasi posizione di rete, per NetApp Disaster Recovery consigliamo di installarlo nel sito DR.  Ciò garantisce che, in caso di guasto del sito primario, l"interfaccia utente della console NetApp continui a contattare l"agente della console e possa orchestrare il processo di ripristino all"interno di quel sito DR.' 
+---
+= Installa l'agente NetApp Console per NetApp Disaster Recovery
+:allow-uri-read: 
+
+
+[role="lead"]
+Un agente NetApp Console è un software NetApp in esecuzione nel cloud o nella rete locale.  Esegue le azioni che la console NetApp deve eseguire per gestire l'infrastruttura dati.  L'agente della console interroga costantemente il software NetApp Disaster Recovery come livello di servizio per individuare le azioni da intraprendere.
+
+Per NetApp Disaster Recovery, le azioni eseguite orchestrano i cluster VMware vCenter e le istanze di storage ONTAP utilizzando API native per ciascun servizio rispettivo per fornire protezione alle VM di produzione in esecuzione in una posizione locale.  Sebbene l'agente Console possa essere installato in qualsiasi posizione di rete, per NetApp Disaster Recovery consigliamo di installare l'agente Console nel sito DR.  Ciò garantisce che, in caso di guasto del sito primario, l'interfaccia utente della console basata su cloud NetApp continui a contattare l'agente della console e possa orchestrare il processo di ripristino all'interno di quel sito DR.
+
+Per utilizzare il servizio, installare l'agente Console in modalità standard.  Per saperne di più sui tipi di installazioni degli agenti della console, visitare https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["Scopri di più sulle modalità di distribuzione della console NetApp | Documentazione NetApp"^] .
+
+Sebbene l'agente Console sia fondamentale per l'utilizzo del servizio, i passaggi di installazione per installare l'agente Console dipendono dalle esigenze e dalla configurazione di rete.  Fornire istruzioni specifiche per l'installazione va oltre lo scopo di queste informazioni.
+
+Il metodo più semplice per installare l'agente Console con Amazon AWS è utilizzare AWS Marketplace.  Per i dettagli sull'installazione dell'agente della console tramite AWS Marketplace, vedere https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-marketplace.html["Creare un agente console da AWS Marketplace | Documentazione NetApp"^] .

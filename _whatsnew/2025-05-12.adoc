@@ -1,0 +1,53 @@
+= Mappatura della sottorete
+:allow-uri-read: 
+
+
+
+
+=== Mappatura della sottorete
+
+Con questa versione, è possibile gestire gli indirizzi IP in caso di failover in un modo nuovo, utilizzando la mappatura delle subnet, che consente di aggiungere subnet per ogni vCenter.  In questo modo si definiscono il CIDR IPv4, il gateway predefinito e il DNS per ogni rete virtuale.
+
+In caso di failover, NetApp Disaster Recovery determina l'indirizzo IP appropriato di ogni vNIC esaminando il CIDR fornito per la rete virtuale mappata e lo utilizza per ricavare il nuovo indirizzo IP.
+
+Per esempio:
+
+* ReteA = 10.1.1.0/24
+* ReteB = 192.168.1.0/24
+
+
+VM1 ha una vNIC (10.1.1.50) connessa alla ReteA.  Nelle impostazioni del piano di replica, la rete A è mappata sulla rete B.
+
+In caso di failover, NetApp Disaster Recovery sostituisce la parte di rete dell'indirizzo IP originale (10.1.1) e mantiene l'indirizzo host (.50) dell'indirizzo IP originale (10.1.1.50).  Per VM1, NetApp Disaster Recovery esamina le impostazioni CIDR per NetworkB e utilizza la porzione di rete NetworkB 192.168.1, mantenendo la porzione host (.50) per creare il nuovo indirizzo IP per VM1.  Il nuovo IP diventa 192.168.1.50.
+
+In sintesi, l'indirizzo host rimane lo stesso, mentre l'indirizzo di rete viene sostituito con quello configurato nella mappatura della subnet del sito.  Ciò consente di gestire più facilmente la riassegnazione degli indirizzi IP in caso di failover, soprattutto se si hanno centinaia di reti e migliaia di VM da gestire.
+
+Per i dettagli sull'inclusione della mappatura delle subnet nei tuoi siti, fai riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["Aggiungi siti server vCenter"] .
+
+
+
+=== Protezione contro gli ostacoli
+
+Ora è possibile ignorare la protezione in modo che il servizio non crei automaticamente una relazione di protezione inversa dopo un failover del piano di replica.  Questa opzione è utile se si desidera eseguire operazioni aggiuntive sul sito ripristinato prima di riportarlo online in NetApp Disaster Recovery.
+
+Quando si avvia un failover, per impostazione predefinita il servizio crea automaticamente una relazione di protezione inversa per ogni volume nel piano di replica, se il sito di origine originale è online.  Ciò significa che il servizio crea una relazione SnapMirror dal sito di destinazione al sito di origine.  Il servizio inverte automaticamente anche la relazione SnapMirror quando si avvia un failback.
+
+Quando si avvia un failover, ora è possibile scegliere l'opzione *Salta protezione*.  In questo modo il servizio non inverte automaticamente la relazione SnapMirror .  Invece, lascia il volume scrivibile su entrambi i lati del piano di replicazione.
+
+Dopo che il sito di origine originale è di nuovo online, è possibile stabilire la protezione inversa selezionando *Proteggi risorse* dal menu Azioni del piano di replica.  In questo modo si tenta di creare una relazione di replicazione inversa per ogni volume nel piano.  È possibile eseguire questo processo più volte finché la protezione non viene ripristinata.  Una volta ripristinata la protezione, è possibile avviare un failback nel modo consueto.
+
+Per i dettagli sulla protezione da salto, fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Eseguire il failover delle applicazioni su un sito remoto"] .
+
+
+
+=== Aggiornamenti della pianificazione SnapMirror nel piano di replica
+
+NetApp Disaster Recovery supporta ora l'uso di soluzioni di gestione degli snapshot esterni, come lo scheduler di policy nativo ONTAP SnapMirror o integrazioni di terze parti con ONTAP.  Se ogni datastore (volume) nel piano di replicazione ha già una relazione SnapMirror gestita altrove, è possibile utilizzare tali snapshot come punti di ripristino in NetApp Disaster Recovery.
+
+Per configurare, nella sezione Piano di replica > Mapping delle risorse, selezionare la casella di controllo *Usa backup e pianificazioni di conservazione gestiti dalla piattaforma* durante la configurazione del mapping dei datastore.
+
+Quando l'opzione è selezionata, NetApp Disaster Recovery non configura una pianificazione di backup.  Tuttavia, è comunque necessario configurare una pianificazione di conservazione perché potrebbero essere comunque acquisiti snapshot per operazioni di test, failover e failback.
+
+Dopo aver configurato questa funzionalità, il servizio non esegue snapshot programmati regolarmente, ma si affida all'entità esterna per l'esecuzione e l'aggiornamento di tali snapshot.
+
+Per i dettagli sull'utilizzo di soluzioni snapshot esterne nel piano di replica, fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"] .

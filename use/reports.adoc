@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: use/reports.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp, protection, reports 
+summary: 'Esaminare i report sul disaster recovery può aiutarti ad analizzare la tua preparazione al disaster recovery.  I report predefiniti includono un riepilogo dei failover e dei failback, dettagli sulla replica su tutti i siti e dettagli sui lavori dell"anno precedente.' 
+---
+= Creare report NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Esaminare i report di NetApp Disaster Recovery può aiutarti ad analizzare la tua preparazione al disaster recovery.  I report predefiniti includono un riepilogo dei failover dei test, dettagli del piano di replica e dettagli dei lavori su tutti i siti all'interno di un account per gli ultimi sette giorni.
+
+È possibile scaricare i report in formato PDF, HTML o JSON.
+
+Il link per il download è valido per sei ore.
+
+.Passi
+. Accedi al https://console.netapp.com/["Console NetApp"^] .
+. Dal menu di navigazione a sinistra della console NetApp , selezionare *Protezione* > *Disaster recovery*.
+. Dalla barra di navigazione sinistra della console NetApp , selezionare *Piani di replica*.
+. Seleziona *Crea report*.
+. Selezionare il tipo di formato del file e il periodo di tempo compreso negli ultimi 7 giorni.
+. Seleziona *Crea*.
++
+
+NOTE: La visualizzazione del report potrebbe richiedere alcuni minuti.
+
+. Per scaricare un report, seleziona *Scarica report* e selezionalo nella cartella Download dell'amministratore.
+

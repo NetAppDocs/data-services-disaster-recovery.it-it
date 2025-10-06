@@ -1,0 +1,89 @@
+= Segnalazione
+:allow-uri-read: 
+
+
+
+
+=== Segnalazione
+
+Ora puoi generare e scaricare report che ti aiuteranno ad analizzare il tuo panorama.  I report predefiniti riepilogano i failover e i failback, mostrano i dettagli della replica su tutti i siti e mostrano i dettagli dei processi degli ultimi sette giorni.
+
+Fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/reports.html["Creare report di ripristino di emergenza"] .
+
+
+
+=== Prova gratuita di 30 giorni
+
+Ora puoi registrarti per una prova gratuita di 30 giorni di NetApp Disaster Recovery.  In precedenza, le prove gratuite duravano 90 giorni.
+
+Fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Impostare la licenza"] .
+
+
+
+=== Disabilitare e abilitare i piani di replicazione
+
+Una versione precedente includeva aggiornamenti alla struttura della pianificazione dei test di failover, necessari per supportare le pianificazioni giornaliere e settimanali.  Questo aggiornamento richiedeva di disabilitare e riabilitare tutti i piani di replica esistenti, in modo da poter utilizzare le nuove pianificazioni dei test di failover giornalieri e settimanali.  Si tratta di un requisito una tantum.
+
+Ecco come fare:
+
+. Dal menu, seleziona *Piani di replicazione*.
+. Selezionare un piano e fare clic sull'icona Azioni per visualizzare il menu a discesa.
+. Selezionare *Disabilita*.
+. Dopo qualche minuto, seleziona *Abilita*.
+
+
+
+
+=== Mappatura delle cartelle
+
+Quando si crea un piano di replica e si mappano le risorse di elaborazione, è ora possibile mappare le cartelle in modo che le VM vengano ripristinate in una cartella specificata per data center, cluster e host.
+
+Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"] .
+
+
+
+=== Dettagli della VM disponibili per failover, failback e failover di prova
+
+Quando si verifica un errore e si avvia un failover, si esegue un failback o si testa il failover, è ora possibile visualizzare i dettagli delle VM e identificare quali VM non sono state riavviate.
+
+Fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Eseguire il failover delle applicazioni su un sito remoto"] .
+
+
+
+=== Ritardo di avvio della VM con sequenza di avvio ordinata
+
+Quando si crea un piano di replica, è ora possibile impostare un ritardo di avvio per ogni macchina virtuale nel piano.  Ciò consente di impostare una sequenza di avvio delle VM per garantire che tutte le VM con priorità uno siano in esecuzione prima dell'avvio delle VM con priorità successiva.
+
+Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"] .
+
+
+
+=== Informazioni sul sistema operativo della VM
+
+Quando si crea un piano di replicazione, è ora possibile visualizzare il sistema operativo per ogni macchina virtuale nel piano.  Ciò è utile per decidere come raggruppare le VM in un gruppo di risorse.
+
+Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"] .
+
+
+
+=== Aliasing del nome della VM
+
+Quando si crea un piano di replica, è ora possibile aggiungere un prefisso e un suffisso ai nomi delle VM sul sito di disaster recovery.  Ciò consente di utilizzare un nome più descrittivo per le VM nel piano.
+
+Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"] .
+
+
+
+=== Pulisci i vecchi snapshot
+
+È possibile eliminare tutti gli snapshot che non sono più necessari oltre il numero di conservazione specificato.  Gli snapshot potrebbero accumularsi nel tempo quando si riduce il numero di snapshot conservati; ora è possibile rimuoverli per liberare spazio.  Puoi farlo in qualsiasi momento su richiesta o quando elimini un piano di replicazione.
+
+Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gestisci siti, gruppi di risorse, piani di replica, datastore e informazioni sulle macchine virtuali"] .
+
+
+
+=== Riconciliare gli snapshot
+
+Ora puoi riconciliare gli snapshot non sincronizzati tra l'origine e la destinazione.  Ciò potrebbe verificarsi se gli snapshot vengono eliminati su una destinazione esterna a NetApp Disaster Recovery.  Il servizio elimina automaticamente lo snapshot sulla sorgente ogni 24 ore.  Tuttavia, è possibile eseguire questa operazione su richiesta.  Questa funzionalità consente di garantire che gli snapshot siano coerenti in tutti i siti.
+
+Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gestire i piani di replicazione"] .

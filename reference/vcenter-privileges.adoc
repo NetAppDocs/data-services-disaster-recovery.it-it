@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: reference/vcenter-privileges.html 
+keywords: disaster recovery, bluexp, vcenter, 
+summary: 'L"account vCenter deve disporre di un set minimo di privilegi vCenter per consentire a NetApp Disaster Recovery di eseguire i propri servizi, come la registrazione e l"annullamento della registrazione degli archivi dati, l"avvio e l"arresto delle VM e la riconfigurazione delle macchine virtuali (VM).  Nella tabella seguente sono elencati tutti i privilegi richiesti affinché NetApp Disaster Recovery possa interagire con un cluster vCenter.' 
+---
+= Privilegi vCenter necessari per NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+L'account vCenter deve disporre di un set minimo di privilegi vCenter per consentire a NetApp Disaster Recovery di eseguire i propri servizi, come la registrazione e l'annullamento della registrazione degli archivi dati, l'avvio e l'arresto delle VM e la riconfigurazione delle macchine virtuali (VM).  Nella tabella seguente sono elencati tutti i privilegi richiesti affinché NetApp Disaster Recovery possa interagire con un cluster vCenter.
+
+[cols="25,35a,40a"]
+|===
+| Tipo | Nome del privilegio | Descrizione 
+
+
+| *Archivio dati*  a| 
+Datastore.Configura datastore
+ a| 
+Utilizzare per configurare un datastore.
+
+
+
+|   a| 
+Datastore.Rimuovi datastore
+ a| 
+Utilizzare per rimuovere un datastore.
+
+
+
+| *Macchina virtuale*  a| 
+Macchina virtuale.Configurazione.Modifica impostazioni
+ a| 
+Utilizzare per modificare le impostazioni generali della VM.
+
+
+
+|   a| 
+Macchina virtuale.Configurazione.Modifica le impostazioni del dispositivo
+ a| 
+Utilizzare per modificare le proprietà di un dispositivo esistente.
+
+
+
+|   a| 
+Macchina virtuale.Configurazione.Ricarica dal percorso
+ a| 
+Da utilizzare per modificare una patch di configurazione della VM preservandone l'identità.  Soluzioni come VMware vCenter Site Recovery Manager utilizzano questa operazione per mantenere l'identità della VM durante il failover e il failback.
+
+
+
+|   a| 
+Macchina virtuale.Configurazione.Rinomina
+ a| 
+Utilizzare per rinominare una VM o modificare i nodi associati a una VM.
+
+
+
+|   a| 
+Macchina virtuale.Configurazione.Reimposta le informazioni dell'ospite
+ a| 
+Utilizzare per modificare le informazioni del sistema operativo guest per una VM.
+
+
+
+|   a| 
+Macchina virtuale.Configurazione.Modifica memoria
+ a| 
+Utilizzare per modificare la quantità di memoria allocata alla VM.
+
+
+
+|   a| 
+Macchina virtuale.Configurazione.Modifica conteggio CPU
+ a| 
+Utilizzare per modificare il numero di CPU virtuali.
+
+
+
+| *Ospite della macchina virtuale*  a| 
+Macchina virtuale.Operazioni guest.Modifiche alle operazioni guest
+ a| 
+Consente operazioni guest VM che comportano modifiche al sistema operativo guest in una VM, ad esempio il trasferimento di un file alla VM.
+
+
+
+| *Interazione con la macchina virtuale*  a| 
+Macchina virtuale.Interazione.Spegnimento
+ a| 
+Utilizzare per spegnere una VM accesa.  Questa operazione spegne il sistema operativo guest.
+
+
+
+|   a| 
+Macchina virtuale.Interazione.Accensione
+ a| 
+Utilizzare per accendere una VM spenta e riprendere una VM sospesa.
+
+
+
+|   a| 
+Macchina virtuale.Interazione.Installazione di VMware Tools
+ a| 
+Utilizzare per montare e smontare il CD di installazione di VMware Tools come CD-ROM per il sistema operativo guest.
+
+
+
+| *Inventario delle macchine virtuali*  a| 
+Macchina virtuale.Inventario.Crea nuovo
+ a| 
+Utilizzato per creare una VM e allocare risorse per la sua esecuzione.
+
+
+
+|   a| 
+Macchina virtuale.Inventario.Registro
+ a| 
+Utilizzare per aggiungere una VM esistente a un vCenter Server o a un inventario host.
+
+
+
+|   a| 
+Macchina virtuale.Inventario.Annulla registrazione
+ a| 
+Utilizzare per annullare la registrazione di una VM da un vCenter Server o dall'inventario host.
+
+
+
+| *Stato della macchina virtuale*  a| 
+Macchina virtuale. Gestione snapshot. Crea snapshot
+ a| 
+Utilizzare per creare uno snapshot dello stato attuale della VM.
+
+
+
+|   a| 
+Macchina virtuale.Gestione snapshot.Rimuovi snapshot
+ a| 
+Utilizzare per rimuovere uno snapshot dalla cronologia degli snapshot.
+
+
+
+|   a| 
+Macchina virtuale. Gestione snapshot. Ripristina snapshot
+ a| 
+Utilizzare per impostare la VM sullo stato in cui si trovava in un dato snapshot.
+
+|===

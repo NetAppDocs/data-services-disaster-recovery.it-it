@@ -1,0 +1,232 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-rp-operations.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap,amazon elastic vmware service 
+summary: Introduzione di NetApp Disaster Recovery tramite Amazon EVS e Amazon FSx for NetApp ONTAP.  Utilizzare NetApp Disaster Recovery con Amazon EVS e Amazon FSx for NetApp ONTAP per eseguire il failover, il failover di prova, aggiornare le risorse, migrare, acquisire uno snapshot ora, disabilitare o abilitare i piani di replica, pulire i vecchi snapshot, riconciliare gli snapshot, eliminare il piano di replica e modificare le pianificazioni. 
+---
+= Eseguire operazioni di piano di replica con NetApp Disaster Recovery
+:allow-uri-read: 
+
+
+[role="lead"]
+Utilizzare NetApp Disaster Recovery con Amazon EVS e Amazon FSx for NetApp ONTAP per eseguire le seguenti operazioni: failover, failover di prova, aggiornamento delle risorse, migrazione, acquisizione immediata di uno snapshot, disabilitazione/abilitazione del piano di replica, pulizia dei vecchi snapshot, riconciliazione degli snapshot, eliminazione del piano di replica e modifica delle pianificazioni.
+
+
+
+== Failover
+
+L'operazione principale che potresti dover eseguire è quella che speri non accada mai: il failover sul data center DR (di destinazione) in caso di un guasto catastrofico nel sito di produzione locale.
+
+Il failover è un processo avviato manualmente.
+
+.Passaggi per accedere all'operazione di failover
+. Dalla barra di navigazione sinistra della console NetApp , selezionare *Protezione* > *Disaster Recovery*.
+. Dal menu NetApp Disaster Recovery, selezionare *Piani di replica*.
+
+
+.Passaggi per eseguire un failover
+. Dalla pagina Piani di replica, seleziona l'opzione Azioni del piano di replicaimage:icon-horizontal-dots.png["Punti orizzontali per il menu Azioni"] .
+. Selezionare *Fail over*.
++
+image:evs-rp-menu-failover.png["Opzione di menu Failover"]
+
+. Se il sito di produzione (protetto) non è accessibile, selezionare uno snapshot creato in precedenza come immagine di ripristino.  Per farlo, seleziona *Seleziona*.
+. Selezionare il backup da utilizzare per il ripristino.
+. (Facoltativo) Selezionare se si desidera che NetApp Disaster Recovery forzi il processo di failover indipendentemente dallo stato del piano di replica.  Questa soluzione dovrebbe essere adottata solo come ultima risorsa.
+. (Facoltativo) Selezionare se si desidera che NetApp Disaster Recovery crei automaticamente una relazione di protezione inversa dopo il ripristino del sito di produzione.
+. Digita la parola "Failover" per confermare che desideri procedere.
+. Selezionare *Failover*.
++
+image:evs-rp-failover-dialog.png["Finestra di dialogo Failover"]
+
+
+
+
+
+== Failover di prova
+
+Un failover di test è simile a un failover, ma con due differenze.
+
+* Il sito di produzione è ancora attivo e tutte le VM funzionano ancora come previsto.
+* La protezione NetApp Disaster Recovery delle VM di produzione continua.
+
+
+Ciò viene realizzato utilizzando volumi ONTAP FlexClone nativi nel sito di destinazione.  Per saperne di più sul failover di test, vederelink:../use/failover.html["Eseguire il failover delle applicazioni su un sito remoto | Documentazione NetApp"] .
+
+I passaggi per eseguire un failover di prova sono identici a quelli utilizzati per eseguire un failover reale, con la differenza che si utilizza l'operazione Failover di prova nel menu contestuale del piano di replica.
+
+.Passi
+. Selezionare l'opzione Azioni del piano di replicazioneimage:icon-horizontal-dots.png["Punti orizzontali per il menu Azioni"] .
+. Selezionare *Test failover* dal menu.
++
+image:evs-rp-menu-test-failover.png["Opzione di menu di failover di prova"]
+
+. Decidi se vuoi ottenere lo stato più recente dell'ambiente di produzione (Esegui snapshot ora) o utilizzare un backup del piano di replica creato in precedenza (Seleziona)
+. Se hai scelto un backup creato in precedenza, seleziona il backup da utilizzare per il ripristino.
+. Digita la parola "Test failover" per confermare che desideri procedere.
+. Selezionare *Test failover*.
++
+image:evs-test-failover-dialog.png["Finestra di dialogo di failover di prova"]
+
+
+
+
+
+== Eseguire un controllo di conformità
+
+Per impostazione predefinita, i controlli di conformità vengono eseguiti ogni tre ore.  In qualsiasi momento potresti voler eseguire manualmente un controllo di conformità.
+
+.Passi
+. Seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] accanto al piano di replicazione.
+. Selezionare l'opzione *Esegui controllo di conformità* dal menu Azioni del piano di replica:
++
+image:evs-rp-menu-compliance-check.png["Opzione di menu Esegui controllo conformità"]
+
+. Per modificare la frequenza con cui NetApp Disaster Recovery esegue automaticamente i controlli di conformità, selezionare l'opzione *Modifica pianificazioni* dal menu Azioni del piano di replica.
+
+
+
+
+== Aggiorna le risorse
+
+Ogni volta che si apportano modifiche all'infrastruttura virtuale, ad esempio aggiungendo o eliminando VM, aggiungendo o eliminando datastore o spostando VM tra datastore, è necessario eseguire un aggiornamento dei cluster vCenter interessati nel servizio NetApp Disaster Recovery.  Per impostazione predefinita, il servizio esegue questa operazione automaticamente una volta ogni 24 ore, ma un aggiornamento manuale garantisce che le informazioni più recenti sull'infrastruttura virtuale siano disponibili e prese in considerazione per la protezione DR.
+
+Ci sono due casi in cui è necessario un aggiornamento:
+
+* Aggiornamento vCenter: esegui un aggiornamento vCenter ogni volta che le VM vengono aggiunte, eliminate o spostate da un cluster vCenter:
+* Aggiornamento del piano di replica: esegui un aggiornamento del piano di replica ogni volta che una VM viene spostata tra datastore nello stesso cluster vCenter di origine.
+
+
+image::evs-rp-menu-refresh-resources.png[Opzione di menu Aggiorna risorse]
+
+
+
+== Migrare
+
+Sebbene NetApp Disaster Recovery venga utilizzato principalmente per casi di disaster recovery, può anche consentire spostamenti una tantum di un set di VM dal sito di origine al sito di destinazione.  Potrebbe essere utilizzato per un progetto di migrazione concertata verso il cloud oppure per evitare disastri, come maltempo, conflitti politici o altri potenziali eventi catastrofici temporanei.
+
+. Seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] accanto al piano di replicazione.
+. Per spostare le VM in un piano di replicazione nel cluster Amazon EVS di destinazione, selezionare *Migra* dal menu Azioni del piano di replicazione:
++
+image::evs-rp-menu-migrate.png[Opzione di menu Migra]
+
+. Immettere le informazioni nella finestra di dialogo Migra.
+
+
+
+
+== Scatta un'istantanea ora
+
+In qualsiasi momento è possibile acquisire un'istantanea immediata del piano di replicazione.  Questo snapshot è incluso nelle considerazioni di NetApp Disaster Recovery impostate dal conteggio di conservazione degli snapshot del piano di replica.
+
+. Seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] accanto al piano di replicazione.
+. Per acquisire immediatamente uno snapshot delle risorse del piano di replica, selezionare *Esegui snapshot ora* nel menu Azioni del piano di replica:
++
+image::evs-rp-menu-take-snapshot-now.png[Opzione di menu "Scatta istantanea ora"]
+
+
+
+
+
+== Disabilita o abilita il piano di replicazione
+
+Potrebbe essere necessario interrompere temporaneamente il piano di replicazione per eseguire alcune operazioni o operazioni di manutenzione che potrebbero avere un impatto sul processo di replicazione.  Il servizio fornisce un metodo per arrestare e avviare la replica.
+
+. Per interrompere temporaneamente la replica, selezionare *Disabilita* nel menu Azioni del piano di replica.
+. Per riavviare la replica, selezionare *Abilita* nel menu Azioni del piano di replica.
++
+Quando il piano di replica è attivo, il comando *Abilita* è disattivato.  Quando il piano di replica è disabilitato, il comando *Disabilita* è disattivato.
+
++
+image::evs-rp-menu-disable-enable.png[Opzione di menu Disabilita/Abilita]
+
+
+
+
+
+== Pulisci i vecchi snapshot
+
+Potrebbe essere opportuno ripulire gli snapshot più vecchi conservati nei siti di origine e di destinazione.  Ciò può accadere se il conteggio di conservazione degli snapshot del piano di replica viene modificato.
+
+. Seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] accanto al piano di replicazione.
+. Per rimuovere manualmente questi snapshot più vecchi, selezionare *Pulisci snapshot vecchi* dal menu Azioni del piano di replica.
++
+image::evs-rp-menu-cleanup-old-snapshots.png[Opzione di menu Pulisci vecchi snapshot]
+
+
+
+
+
+== Riconciliare gli snapshot
+
+Poiché il servizio orchestra gli snapshot del volume ONTAP , è possibile per un amministratore di storage ONTAP eliminare direttamente gli snapshot utilizzando ONTAP System Manager, ONTAP CLI o le API REST ONTAP senza che il servizio ne sia a conoscenza.  Il servizio elimina automaticamente ogni 24 ore tutti gli snapshot presenti sul cluster di origine che non si trovano sul cluster di destinazione.  Tuttavia, è possibile eseguire questa operazione su richiesta.  Questa funzionalità consente di garantire che gli snapshot siano coerenti in tutti i siti.
+
+. Seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] accanto al piano di replicazione.
+. Per eliminare gli snapshot dal cluster di origine che non esistono nel cluster di destinazione, selezionare *Riconcilia snapshot* dal menu Azioni del piano di replica.
++
+image::evs-rp-menu-reconcile-snapshots.png[Opzione di menu Riconcilia snapshot]
+
+
+
+
+
+== Elimina piano di replicazione
+
+Se il piano di replicazione non è più necessario, è possibile eliminarlo.
+
+. Seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] accanto al piano di replicazione.
+. Per eliminare il piano di replicazione, selezionare *Elimina* dal menu contestuale del piano di replicazione.
++
+image::evs-rp-menu-delete.png[Elimina l'opzione del menu]
+
+
+
+
+
+== Modificare gli orari
+
+Due operazioni vengono eseguite automaticamente con cadenza regolare: i failover dei test e i controlli di conformità.
+
+. Seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] accanto al piano di replicazione.
+. Per modificare queste pianificazioni per una di queste due operazioni, selezionare *Modifica pianificazioni* per il piano di replica.
++
+image::evs-rp-menu-edit-schedules.png[Opzione di menu Modifica pianificazioni]
+
+
+
+
+
+=== Modifica l'intervallo di controllo della conformità
+
+Per impostazione predefinita, i controlli di conformità vengono eseguiti ogni tre ore.  È possibile modificare l'intervallo tra 30 minuti e 24 ore.
+
+Per modificare questo intervallo, modificare il campo Frequenza nella finestra di dialogo Modifica pianificazioni:
+
+image::evs-rp-edit-compliance-check-schedule.png[Programma di controllo della conformità]
+
+
+
+=== Pianificare failover di test automatizzati
+
+Per impostazione predefinita, i failover dei test vengono eseguiti manualmente.  È possibile pianificare failover di test automatici, che contribuiscono a garantire che i piani di replica funzionino come previsto.  Per saperne di più sul processo di failover di test, vederelink:../use/failover.html["Testare il processo di failover"] .
+
+.Passaggi per pianificare i failover dei test
+. Seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] accanto al piano di replicazione.
+. Selezionare *Esegui failover*.
+. Selezionare la casella di controllo *Esegui failover di test in base a una pianificazione*.
+. (Facoltativo) Selezionare *Usa snapshot su richiesta per failover di test pianificato*.
+. Selezionare un tipo di intervallo nel menu a discesa Ripeti.
+. Selezionare quando eseguire il failover di prova
++
+.. Settimanale: seleziona il giorno della settimana
+.. Mensile: seleziona il giorno del mese
+
+
+. Scegli l'ora del giorno in cui eseguire il failover di prova
+. Scegli la data di inizio.
+. Decidi se desideri che il servizio pulisca automaticamente l'ambiente di test e per quanto tempo desideri che l'ambiente di test venga eseguito prima che venga avviato il processo di pulizia.
+. Seleziona *Salva*.
++
+image::evs-rp-edit-schedule-test-failover.png[Modifica la pianificazione del failover del test]
+
+

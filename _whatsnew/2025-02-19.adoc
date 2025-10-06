@@ -1,0 +1,19 @@
+= Supporto ASA r2 per VM e datastore su storage VMFS
+:allow-uri-read: 
+
+
+
+
+=== Supporto ASA r2 per VM e datastore su storage VMFS
+
+Questa versione di NetApp Disaster Recovery fornisce supporto per ASA r2 per VM e datastore su storage VMFS.  Su un sistema ASA r2, il software ONTAP supporta le funzionalità SAN essenziali, rimuovendo al contempo le funzionalità non supportate negli ambienti SAN.
+
+Questa versione supporta le seguenti funzionalità per ASA r2:
+
+* Provisioning del gruppo di coerenza per l'archiviazione primaria (solo gruppo di coerenza flat, ovvero un solo livello senza una struttura gerarchica)
+* Operazioni di backup (gruppo di coerenza) inclusa l'automazione SnapMirror
+
+
+Il supporto per ASA r2 in NetApp Disaster Recovery utilizza ONTAP 9.16.1.
+
+Sebbene i datastore possano essere montati su un volume ONTAP o su un'unità di storage ASA r2, un gruppo di risorse in NetApp Disaster Recovery non può includere sia un datastore da ONTAP che uno da ASA r2.  È possibile selezionare un datastore da ONTAP o un datastore da ASA r2 in un gruppo di risorse.

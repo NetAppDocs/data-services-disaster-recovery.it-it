@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-add-sites.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
+summary: 'Prima di poter proteggere l"infrastruttura delle VM, il servizio NetApp Disaster Recovery deve sapere quali cluster VMware vCenter ospitano le VM da proteggere e dove si trovano tali vCenter.  Il primo passo è creare un sito che rappresenti i data center di origine e di destinazione.  Un sito è un dominio di errore o un dominio di ripristino.' 
+---
+= Aggiungere siti in NetApp Disaster Recovery per Amazon EVS
+:allow-uri-read: 
+
+
+[role="lead"]
+Prima di poter proteggere l'infrastruttura delle VM, è necessario identificare quali cluster VMware vCenter ospitano le VM da proteggere e dove si trovano tali vCenter.  Il primo passo è creare un sito che rappresenti i data center di origine e di destinazione.  Un sito è un dominio di errore o un dominio di ripristino.
+
+Devi creare quanto segue:
+
+* Un sito che rappresenta ogni data center di produzione in cui risiedono i cluster vCenter di produzione
+* Un sito per il tuo data center cloud Amazon EVS/ Amazon FSx for NetApp ONTAP
+
+
+
+
+== Crea siti on-premise
+
+Creare un sito vCenter di produzione.
+
+.Passi
+. Dalla barra di navigazione sinistra della console NetApp , selezionare *Protezione* > *Disaster Recovery*.
+. Da qualsiasi pagina di NetApp Disaster Recovery, seleziona l'opzione *Siti*.
++
+image:evs-create-site-op-1.png["Opzione siti"]
+
+. Dall'opzione Siti, seleziona *Aggiungi*.
++
+image:evs-create-site-op-2.png["Aggiungi opzione nell'opzione Siti"]
+
+. Nella finestra di dialogo Aggiungi sito, immettere un nome per il sito.
+. Selezionare "In sede" come posizione.
+. Selezionare *Aggiungi*.
++
+image:evs-create-site-op-3-5.png["Finestra di dialogo Crea sito"]
+
+
+
+Se disponi di altri siti di produzione vCenter, puoi aggiungerli seguendo gli stessi passaggi.
+
+
+
+== Crea siti cloud Amazon
+
+Creare un sito DR per Amazon EVS utilizzando Amazon FSx for NetApp ONTAP .
+
+. Da qualsiasi pagina di NetApp Disaster Recovery, seleziona l'opzione *Siti*.
++
+image:evs-create-site-op-1.png["Opzione siti"]
+
+. Dall'opzione Siti, seleziona *Aggiungi*.
++
+image:evs-create-site-aws-2.png["Aggiungi opzione nella pagina Siti"]
+
+. Nella finestra di dialogo Aggiungi sito, immettere un nome per il sito.
+. Selezionare "AWS-EVS" come posizione.
+. Selezionare *Aggiungi*.
++
+image:evs-create-site-aws-3-5.png["Aggiungi finestra di dialogo"]
+
+
+
+.Risultato
+Ora hai creato un sito di produzione (sorgente) e un sito DR (destinazione).

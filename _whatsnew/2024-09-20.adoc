@@ -1,0 +1,16 @@
+= Supporto per datastore VMware VMFS da locale a locale
+:allow-uri-read: 
+
+
+
+
+=== Supporto per datastore VMware VMFS da locale a locale
+
+Questa versione include il supporto per le VM montate su datastore VMware vSphere Virtual Machine File System (VMFS) per iSCSI e FC protetti su storage locale.  In precedenza, il servizio forniva un'anteprima tecnologica che supportava i datastore VMFS per iSCSI e FC.
+
+Ecco alcune considerazioni aggiuntive riguardanti i protocolli iSCSI e FC:
+
+* Il supporto FC è per i protocolli front-end client, non per la replica.
+* NetApp Disaster Recovery supporta solo una singola LUN per volume ONTAP .  Il volume non deve avere più LUN.
+* Per qualsiasi piano di replica, il volume ONTAP di destinazione deve utilizzare gli stessi protocolli del volume ONTAP di origine che ospita le VM protette.  Ad esempio, se la sorgente utilizza un protocollo FC, anche la destinazione dovrebbe utilizzare FC.
+

@@ -1,0 +1,77 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-config-add-arrays.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
+summary: Prima di utilizzare NetApp Disaster Recovery, è necessario aggiungere istanze di storage locali e ospitate sul cloud al sistema NetApp Console. 
+---
+= Aggiungi array locali al sistema NetApp Console per Amazon EVS con NetApp Disaster Recovery
+:allow-uri-read: 
+
+
+[role="lead"]
+Prima di utilizzare NetApp Disaster Recovery, è necessario aggiungere istanze di storage locali e ospitate sul cloud al sistema NetApp Console.
+
+Devi fare quanto segue:
+
+* Aggiungi array locali al tuo sistema NetApp Console.
+* Aggiungi istanze Amazon FSx for NetApp ONTAP (FSx for ONTAP) al tuo sistema NetApp Console.
+
+
+
+
+== Aggiungere array di storage locali al sistema NetApp Console
+
+Aggiungi risorse di storage ONTAP on-premise al tuo sistema NetApp Console.
+
+. Dalla pagina Sistemi della console NetApp , selezionare *Aggiungi sistema*.
++
+image:evs-canvas-add-working-env-1.png["Aggiungi sistema"]
+
+. Nella pagina Aggiungi sistema, seleziona la scheda *On-Premises*.
++
+image:evs-canvas-add-working-env-2.png["Aggiungi immagine di sistema"]
+
+. Selezionare *Scopri* sulla scheda ONTAP On-Premises.
++
+image:evs-canvas-add-working-env-3.png["Aggiungi immagine di sistema"]
+
+. Nella pagina Scopri cluster, inserisci le seguenti informazioni:
++
+.. L'indirizzo IP della porta di gestione del cluster array ONTAP
+.. Il nome utente dell'amministratore
+.. La password dell'amministratore
+
+
+. Seleziona *Scopri* in fondo alla pagina.
++
+image:evs-canvas-add-working-env-4-5.png["Aggiungi immagine di sistema"]
+
+. Ripetere i passaggi da 1 a 5 per ogni array ONTAP che ospiterà i datastore vCenter.
+
+
+
+
+== Aggiungere istanze di storage Amazon FSx for NetApp ONTAP al sistema NetApp Console
+
+Successivamente, aggiungi risorse di storage Amazon FSx for NetApp ONTAP al tuo sistema NetApp Console.
+
+. Dalla pagina Sistemi della console NetApp , selezionare *Aggiungi sistema*.
++
+image:evs-canvas-add-working-env-1.png["Aggiungi immagine di sistema"]
+
+. Nella pagina Aggiungi sistema, seleziona la scheda *Amazon Web Services*.
++
+image:evs-canvas-add-working-evs-2.png["Aggiungi immagine di sistema"]
+
+. Selezionare il collegamento *Scopri esistente* sulla scheda Amazon FSx per ONTAP .
++
+image:evs-canvas-add-working-evs-3.png["Aggiungi immagine di sistema"]
+
+. Selezionare le credenziali e la regione AWS che ospita l'istanza FSx for ONTAP .
+. Selezionare uno o più file system FSx for ONTAP da aggiungere.
+. Seleziona *Scopri* in fondo alla pagina.
++
+image:evs-needs-updates-canvas-add-working-evs-4-5.png["Aggiungi immagine di sistema"]
+
+. Ripetere i passaggi da 1 a 6 per ogni istanza di FSx for ONTAP che ospiterà i datastore vCenter.
+

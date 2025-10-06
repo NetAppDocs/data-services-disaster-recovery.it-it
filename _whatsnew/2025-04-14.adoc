@@ -1,0 +1,39 @@
+= Individuazione pianificata per le VM
+:allow-uri-read: 
+
+
+
+
+=== Individuazione pianificata per le VM
+
+NetApp Disaster Recovery esegue la rilevazione una volta ogni 24 ore.  Con questa versione, ora puoi personalizzare la pianificazione dell'individuazione in base alle tue esigenze e ridurre l'impatto sulle prestazioni quando necessario.  Ad esempio, se si dispone di un numero elevato di VM, è possibile impostare la pianificazione dell'individuazione in modo che venga eseguita ogni 48 ore.  Se si dispone di un numero limitato di VM, è possibile impostare la pianificazione dell'individuazione in modo che venga eseguita ogni 12 ore.
+
+Se non si desidera pianificare l'individuazione, è possibile disattivare l'opzione di individuazione pianificata e aggiornare manualmente l'individuazione in qualsiasi momento.
+
+Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["Aggiungi siti server vCenter"] .
+
+
+
+=== Supporto del datastore del gruppo di risorse
+
+In precedenza, era possibile creare gruppi di risorse solo tramite VM.  Con questa versione è possibile creare un gruppo di risorse in base ai datastore.  Quando si crea un piano di replicazione e si crea un gruppo di risorse per tale piano, verranno elencate tutte le VM in un datastore.  Questa funzionalità è utile se si dispone di un numero elevato di VM e si desidera raggrupparle in base al datastore.
+
+È possibile creare un gruppo di risorse con un datastore nei seguenti modi:
+
+* Quando si aggiunge un gruppo di risorse tramite datastore, è possibile visualizzare un elenco di datastore.  È possibile selezionare uno o più datastore per creare un gruppo di risorse.
+* Quando si crea un piano di replicazione e si crea un gruppo di risorse all'interno del piano, è possibile visualizzare le VM negli archivi dati.
+
+
+Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"] .
+
+
+
+=== Notifiche di prova gratuita o scadenza della licenza
+
+Questa versione fornisce notifiche che la prova gratuita scadrà tra 60 giorni per garantire che tu abbia il tempo di ottenere una licenza.  Questa versione fornisce anche notifiche il giorno in cui scade la licenza.
+
+
+
+=== Notifica degli aggiornamenti del servizio
+
+Con questa versione, nella parte superiore viene visualizzato un banner per indicare che i servizi vengono aggiornati e che il servizio è in modalità di manutenzione.  Il banner appare quando il servizio è in fase di aggiornamento e scompare al termine dell'aggiornamento.  Mentre l'aggiornamento è in corso, puoi continuare a lavorare nell'interfaccia utente, ma non puoi inviare nuovi lavori.  I lavori pianificati verranno eseguiti una volta completato l'aggiornamento e il servizio tornerà in modalità di produzione.

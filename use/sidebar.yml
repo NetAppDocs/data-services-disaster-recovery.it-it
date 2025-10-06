@@ -1,0 +1,29 @@
+---
+section: use
+title: Utilizzare NetApp Disaster Recovery
+entries:
+- title: Panoramica di NetApp Disaster Recovery
+  url: "/use/use-overview.html"
+- title: Visualizza lo stato di salute dei tuoi piani di disaster recovery nella Dashboard
+  url: "/use/dashboard-view.html"
+- title: Aggiungere vCenter a un sito
+  url: "/use/sites-add.html"
+- title: Crea un gruppo di risorse
+  url: "/use/resource-group.html"
+- title: Creare un piano di replicazione
+  url: "/use/drplan-create.html"
+- title: Replica su un altro sito
+  url: "/use/replicate.html"
+- title: Migrare su un altro sito
+  url: "/use/migrate.html"
+- title: Failover su un sito remoto
+  url: "/use/failover.html"
+- title: Eseguire il failback delle applicazioni sul sito di origine originale
+  url: "/use/failback.html"
+- title: Gestisci le informazioni sui siti, sui piani, sugli archivi dati e sulle
+    macchine virtuali
+  url: "/use/manage.html"
+- title: Monitorare i lavori di ripristino di emergenza
+  url: "/use/monitor-jobs.html"
+- title: Creare report di ripristino di emergenza
+  url: "/use/reports.html"

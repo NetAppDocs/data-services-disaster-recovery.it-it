@@ -1,0 +1,9 @@
+= Miglioramenti nella mappatura delle subnet
+:allow-uri-read: 
+
+
+
+
+=== Miglioramenti nella mappatura delle subnet
+
+Questo aggiornamento migliora la finestra di dialogo Aggiungi e modifica mappatura subnet con una nuova funzionalità di ricerca.  Ora puoi trovare rapidamente subnet specifiche inserendo termini di ricerca, semplificando la gestione delle mappature delle subnet.

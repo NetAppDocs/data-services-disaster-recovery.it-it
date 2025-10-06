@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: use/failback.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su cloud che automatizza i flussi di lavoro di disaster recovery. 
+---
+= Ripristina le applicazioni alla fonte originale con NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Dopo aver risolto un disastro, eseguire il failback dal sito di disaster recovery al sito di origine per ripristinare le normali operazioni.  È possibile selezionare lo snapshot da cui effettuare il ripristino.
+
+*Ruolo obbligatorio della console NetApp * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza o amministratore del failover del ripristino di emergenza.
+
+link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+*Informazioni su questo compito*
+
+In questo flusso di lavoro, NetApp Disaster Recovery replica (risincronizza) tutte le modifiche sulla macchina virtuale di origine prima di invertire la direzione della replica. Questo processo inizia da una relazione che ha completato il failover verso una destinazione e prevede i seguenti passaggi:
+
+* Eseguire un controllo di conformità sul sito recuperato.
+* Aggiornare le informazioni vCenter per ogni cluster vCenter identificato come situato nel sito ripristinato.
+* Nel sito di destinazione, spegnere e annullare la registrazione delle macchine virtuali e smontare i volumi.
+* Interrompere la relazione SnapMirror sulla sorgente originale per renderla di lettura/scrittura.
+* Risincronizzare la relazione SnapMirror per invertire la replica.
+* Accendere e registrare le macchine virtuali di origine, quindi montare i volumi sull'origine.
+
+
+.Passi
+. Accedi al https://console.netapp.com/["Console NetApp"^] .
+. Dal menu di navigazione a sinistra della console NetApp , selezionare *Protezione* > *Disaster recovery*.
+. Dal menu NetApp Disaster Recovery, selezionare *Piani di replica*.
+. Selezionare il piano di replicazione.
+. Sulla destra, seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] e seleziona *Fail back*.
+. Immettere il nome del piano di replica per confermare e avviare il failback.
+. Selezionare lo snapshot per il datastore da cui effettuare il ripristino.  L'impostazione predefinita è l'ultima.
+. Per controllare l'avanzamento, nel menu selezionare *Monitoraggio lavori*.
+

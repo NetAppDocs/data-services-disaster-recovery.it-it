@@ -1,0 +1,50 @@
+= Ruoli utente in NetApp Disaster Recovery
+:allow-uri-read: 
+
+
+
+
+=== Ruoli utente in NetApp Disaster Recovery
+
+NetApp Disaster Recovery ora utilizza ruoli per gestire l'accesso di ciascun utente a funzionalità e azioni specifiche.
+
+Il servizio utilizza i seguenti ruoli specifici di NetApp Disaster Recovery.
+
+* *Amministratore del ripristino di emergenza*: esegue qualsiasi azione in NetApp Disaster Recovery.
+* *Amministratore failover di disaster recovery*: esegue azioni di failover e migrazione in NetApp Disaster Recovery.
+* *Amministratore dell'applicazione di disaster recovery*: crea e modifica piani di replica e avvia failover di prova.
+* *Visualizzatore di disaster recovery*: visualizza le informazioni in NetApp Disaster Recovery, ma non può eseguire alcuna azione.
+
+
+Se si fa clic sul servizio NetApp Disaster Recovery e lo si configura per la prima volta, è necessario disporre dell'autorizzazione *SnapCenterAdmin* o del ruolo *Organization Admin*.
+
+Per maggiori dettagli, vedere  https://docs.netapp.com/us-en/bluexp-disaster-recovery/reference/dr-reference-roles.html["Ruoli utente e autorizzazioni in NetApp Disaster Recovery"] .
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso per tutti i servizi"^] .
+
+
+
+=== Altri aggiornamenti in NetApp Disaster Recovery
+
+* Rilevamento di rete migliorato
+* Miglioramenti della scalabilità:
++
+** Filtraggio per i metadati richiesti anziché per tutti i dettagli
+** Miglioramenti della scoperta per recuperare e aggiornare più velocemente le risorse della VM
+** Ottimizzazione della memoria e delle prestazioni per il recupero e l'aggiornamento dei dati
+** Miglioramenti nella creazione del client vCenter SDK e nella gestione del pool
+
+
+* Gestione dei dati obsoleti alla prossima individuazione programmata o manuale:
++
+** Quando una VM viene eliminata in vCenter, NetApp Disaster Recovery ora la rimuove automaticamente dal piano di replica.
+** Quando un datastore o una rete vengono eliminati in vCenter, NetApp Disaster Recovery li elimina ora dal piano di replica e dal gruppo di risorse.
+** Quando un cluster, un host o un data center viene eliminato in vCenter, NetApp Disaster Recovery ora lo elimina dal piano di replica e dal gruppo di risorse.
+
+
+* Ora puoi accedere alla documentazione di Swagger nella modalità di navigazione in incognito del tuo browser.  È possibile accedervi da NetApp Disaster Recovery tramite l'opzione Impostazioni > Documentazione API oppure direttamente al seguente URL nella modalità di navigazione in incognito del browser: https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas["Documentazione Swagger"^] .
+* In alcune situazioni, dopo un'operazione di failback, l'iGroup veniva lasciato indietro al termine dell'operazione.  Questo aggiornamento rimuove iGroup se è obsoleto.
+* Se nel piano di replica è stato utilizzato l'FQDN NFS, NetApp Disaster Recovery ora lo risolve in un indirizzo IP.  Questo aggiornamento è utile se il nome di dominio completo (FQDN) non è risolvibile nel sito di ripristino di emergenza.
+* Miglioramenti dell'allineamento dell'interfaccia utente
+* Miglioramenti del registro per acquisire i dettagli delle dimensioni di vCenter dopo la corretta individuazione
+

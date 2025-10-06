@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-create-rp-wiz-02.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap,amazon elastic vmware service 
+summary: Introduzione di NetApp Disaster Recovery tramite Amazon EVS e Amazon FSx for NetApp ONTAP.  Selezionare le macchine virtuali da proteggere tramite NetApp Disaster Recovery. 
+---
+= Creare un piano di replica: Passaggio 2: selezionare le risorse VM in NetApp Disaster Recovery
+:allow-uri-read: 
+
+
+[role="lead"]
+Selezionare le macchine virtuali da proteggere tramite NetApp Disaster Recovery.
+
+Esistono diversi modi per selezionare le VM da proteggere:
+
+* *Seleziona singole VM*: facendo clic sul pulsante *Macchine virtuali* è possibile selezionare le singole VM da proteggere.  Quando selezioni ogni VM, il servizio la aggiunge a un gruppo di risorse predefinito situato sul lato destro dello schermo.
+* *Seleziona gruppi di risorse creati in precedenza*: puoi creare gruppi di risorse personalizzati in anticipo utilizzando l'opzione Gruppo di risorse dal menu NetApp Disaster Recovery.  Questo non è un requisito, poiché è possibile utilizzare gli altri due metodi per creare un gruppo di risorse come parte del processo del piano di replica. Per maggiori dettagli, vedere link:../use/drplan-create.html["Creare un piano di replicazione"] .
+* *Seleziona interi datastore vCenter*: se hai molte VM da proteggere con questo piano di replica, potrebbe non essere altrettanto efficiente selezionare singole VM.  Poiché NetApp Disaster Recovery utilizza la replica SnapMirror basata sul volume per proteggere le VM, tutte le VM residenti in un datastore verranno replicate come parte del volume.  Nella maggior parte dei casi, è necessario che NetApp Disaster Recovery protegga e riavvii tutte le VM presenti nel datastore.  Utilizzare questa opzione per indicare al servizio di aggiungere all'elenco delle VM protette tutte le VM ospitate su un datastore selezionato.
+
+
+Per questa istruzione guidata, selezioniamo l'intero datastore vCenter.
+
+.Passaggi per accedere a questa pagina
+. Dalla pagina *Piano di replicazione*, passare alla sezione *Applicazioni*.
+. Esaminare le informazioni nella pagina *Applicazioni* che si apre.
++
+image:evs-create-rp-wiz-b-1-4.png["Piano di replicazione, pagina Applicazioni"]
+
+
+
+.Passaggi per selezionare il/i datastore/i:
+. Selezionare *Datastore*.
+. Seleziona le caselle di controllo accanto a ciascun datastore che desideri proteggere.
+. (Facoltativamente) Rinominare il gruppo di risorse con un nome appropriato selezionando l'icona della matita accanto al nome del gruppo di risorse.
+. Selezionare *Avanti*.
+
+
+Continua conlink:evs-deploy-guide-create-rp-wiz-03.html["Creazione guidata piano di replicazione Passaggio 3"] .
