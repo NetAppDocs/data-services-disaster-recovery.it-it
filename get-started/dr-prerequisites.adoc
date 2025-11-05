@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: get-started/dr-prerequisites.html 
 keywords: what are disaster recovery requirements, disaster recovery prerequisites, bluexp, disaster recovery 
-summary: 'Prima di utilizzare NetApp Disaster Recovery, è necessario assicurarsi che l"ambiente soddisfi i requisiti di storage ONTAP , cluster VMware vCenter e NetApp Console .' 
+summary: Prima di utilizzare NetApp Disaster Recovery, assicurati che il tuo ambiente soddisfi i requisiti di storage ONTAP , cluster VMware vCenter e NetApp Console . 
 ---
 = Prerequisiti NetApp Disaster Recovery
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: 'Prima di utilizzare NetApp Disaster Recovery, è necessario assicurars
 
 
 [role="lead"]
-Prima di utilizzare NetApp Disaster Recovery, è necessario assicurarsi che l'ambiente soddisfi i requisiti di storage ONTAP , cluster VMware vCenter e NetApp Console .
+Prima di utilizzare NetApp Disaster Recovery, assicurati che il tuo ambiente soddisfi i requisiti di storage ONTAP , cluster VMware vCenter e NetApp Console .
 
 
 
@@ -49,11 +49,11 @@ Ultima versione disponibile
 Questi prerequisiti si applicano sia a ONTAP che ad Amazon FSX per le istanze NetApp ONTAP .
 
 * I cluster di origine e di destinazione devono avere una relazione peer.
-* L'SVM che ospiterà i volumi di disaster recovery deve essere presente nel cluster di destinazione.
+* L'SVM che ospita i volumi di disaster recovery deve essere presente nel cluster di destinazione.
 * L'SVM di origine e l'SVM di destinazione devono avere una relazione peer.
 * Se si esegue la distribuzione con Amazon FSx for NetApp ONTAP, si applica il seguente prerequisito:
 +
-** Nella tua VPC deve essere presente un'istanza Amazon FSx for NetApp ONTAP per ospitare i datastore VMware DR.  Fare riferimento ad Amazon FSx per la documentazione ONTAP su https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-step1.html["come iniziare"^] .
+** Nella tua VPC deve essere presente un'istanza Amazon FSx for NetApp ONTAP per ospitare i datastore VMware DR. Per iniziare, vederelink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-step1.html["la documentazione Amazon FSx per ONTAP"^] .
 
 
 
@@ -95,7 +95,7 @@ Se non l'hai ancora fatto, https://docs.netapp.com/us-en/bluexp-setup-admin/task
 
 === Raccogli le credenziali per ONTAP e VMware
 
-* Le credenziali Amazon FSx for ONTAP e AWS devono essere aggiunte al sistema all'interno del progetto NetApp Console che verrà utilizzato per gestire NetApp Disaster Recovery.
+* Le credenziali Amazon FSx for ONTAP e AWS devono essere aggiunte al sistema all'interno del progetto NetApp Console che gestisce NetApp Disaster Recovery.
 * NetApp Disaster Recovery richiede le credenziali vCenter.  Quando si aggiunge un sito in NetApp Disaster Recovery, è necessario immettere le credenziali vCenter.
 +
 Per un elenco dei privilegi vCenter necessari, fare riferimento alink:../reference/vcenter-privileges.html["Privilegi vCenter necessari per NetApp Disaster Recovery"] .  Per istruzioni su come aggiungere un sito, fare riferimento alink:../use/sites-add.html["Aggiungi un sito"] .
@@ -106,7 +106,7 @@ Per un elenco dei privilegi vCenter necessari, fare riferimento alink:../referen
 
 === Creare l'agente NetApp Console
 
-L'agente Console è un componente software che consente alla Console di comunicare con lo storage ONTAP e i cluster VMware vCenter.  È necessario affinché Disaster Recovery funzioni correttamente.  L'agente risiede nella tua rete privata (in un data center locale o in un VPC cloud) e comunica con le tue istanze di archiviazione ONTAP e con qualsiasi componente aggiuntivo di server e applicazioni.  Per il Disaster Recovery, si tratta dell'accesso ai cluster vCenter gestiti.
+L'agente Console è un componente software che consente alla Console di comunicare con lo storage ONTAP e i cluster VMware vCenter. È necessario affinché Disaster Recovery funzioni correttamente. L'agente risiede nella tua rete privata (un data center locale o un VPC cloud) e comunica con le tue istanze di archiviazione ONTAP e con qualsiasi componente aggiuntivo di server e applicazioni. Per il Disaster Recovery, si tratta dell'accesso ai cluster vCenter gestiti.
 
 È necessario configurare un agente Console nella NetApp Console.  Quando si utilizza l'agente, questo includerà le funzionalità appropriate per il servizio Disaster Recovery.
 
@@ -120,7 +120,7 @@ L'agente Console è un componente software che consente alla Console di comunica
 
 TIP: Per le connessioni da locale a locale, utilizzare l'agente Console locale.  Per gli ambienti on-premise su AWS, utilizzare l'agente AWS Console, che ha accesso al vCenter on-premise di origine e al vCenter on-premise di destinazione.
 
-** L'agente Console installato deve essere in grado di accedere a qualsiasi cluster VMware che NetApp Disaster Recovery gestirà.
+** L'agente Console installato deve essere in grado di accedere a tutte le istanze del cluster VMware vCenter e agli host ESXi gestiti dai cluster vCenter che Disaster Recovery gestirà.
 
 
 * Tutti gli array ONTAP da gestire tramite NetApp Disaster Recovery devono essere aggiunti a qualsiasi sistema all'interno del progetto NetApp Console che verrà utilizzato per gestire NetApp Disaster Recovery.
@@ -137,6 +137,6 @@ Vedere https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.
 Per garantire il successo dei processi di coerenza delle applicazioni, applicare i seguenti prerequisiti:
 
 * Assicurarsi che gli strumenti VMware (o gli strumenti Open VM) siano in esecuzione sulle VM che verranno protette.
-* Per le VM Windows che eseguono Microsoft SQL Server o Oracle Database o entrambi, i database devono avere i propri VSS Writer abilitati.
-* Nei database Oracle in esecuzione su un sistema operativo Linux, l'autenticazione utente del sistema operativo deve essere abilitata per il ruolo SYSDBA del database Oracle.
+* Per le VM Windows che eseguono Microsoft SQL Server, Oracle Database o entrambi, i database devono avere i relativi VSS Writer abilitati.
+* I database Oracle in esecuzione su un sistema operativo Linux devono avere l'autenticazione utente del sistema operativo abilitata per il ruolo SYSDBA del database Oracle.
 

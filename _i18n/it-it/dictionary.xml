@@ -275,7 +275,6 @@
   <block id="caf89067dc5383afa96e1ac3e7c34bb7" category="paragraph">*Opzioni di licenza* È possibile utilizzare le seguenti opzioni di licenza:</block>
   <block id="7f2210756be2a83d832be1ebb9b06adf" category="list-text">Acquista un abbonamento pay-as-you-go (PAYGO) ad Amazon Web Services (AWS) Marketplace o a Microsoft Azure Marketplace.</block>
   <block id="4e33b7dde110d702aea770ac0e58ff70" category="inline-link-macro">Scopri di più sugli abbonamenti</block>
-  <block id="a9a7b012bab63c64c9eef57c3d5a98c5" category="paragraph"><block ref="538594e0e314e6f72a64aef360b9c966" category="inline-link-macro-rx"></block> .</block>
   <block id="e23539b066371b4dcfdd50b7d80417d8" category="paragraph">Una volta terminato il periodo di prova gratuito o scaduta la licenza, potrai comunque effettuare le seguenti operazioni nel servizio:</block>
   <block id="9a0514da0283645471837a7dd9cdd00a" category="list-text">Visualizza qualsiasi risorsa, ad esempio un carico di lavoro o un piano di replicazione.</block>
   <block id="1868701c43ed8ccfa46dc8fe93f4252f" category="list-text">Eliminare qualsiasi risorsa, ad esempio un carico di lavoro o un piano di replica.</block>
@@ -347,7 +346,6 @@
   <block id="e2066cd1f4f96874fad4da9c48f8715b" category="list-text">Se stai già utilizzando il servizio, quando selezioni "Disaster recovery" viene visualizzata la Dashboard.</block>
   <block id="41fc27202bd95bf86c36faca5aa2292a" category="inline-image-macro">Dashboard NetApp Disaster Recovery</block>
   <block id="9b4e9ca1e2c8ff4e1232f26bb61224ee" category="paragraph"><block ref="9b4e9ca1e2c8ff4e1232f26bb61224ee" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7caf4ca80ac9c8fa8523ec38a393bbae" category="summary">Prima di utilizzare NetApp Disaster Recovery, è necessario assicurarsi che l'ambiente soddisfi i requisiti di storage ONTAP , cluster VMware vCenter e NetApp Console .</block>
   <block id="4e692aafecf38a7bf746c7d87b8ca190" category="doc">Prerequisiti NetApp Disaster Recovery</block>
   <block id="6d29d2542a6a2e3e81746082b1d99b07" category="section-title">Versioni del software</block>
   <block id="2cb05e4bb7830be982f0922fed86b4cd" category="cell">Componente</block>
@@ -362,11 +360,8 @@
   <block id="d28c14a0fc5b1bfa37eb72dd0ac54a13" category="section-title">Prerequisiti di archiviazione ONTAP</block>
   <block id="911d68300fa1a1a181b338683eb2e1b9" category="paragraph">Questi prerequisiti si applicano sia a ONTAP che ad Amazon FSX per le istanze NetApp ONTAP .</block>
   <block id="07a02bd33ebc759fa2827fd098fe4d5b" category="list-text">I cluster di origine e di destinazione devono avere una relazione peer.</block>
-  <block id="4a240de94d3b8b2cf85c70ef705ec1ad" category="list-text">L'SVM che ospiterà i volumi di disaster recovery deve essere presente nel cluster di destinazione.</block>
   <block id="49a62cf19d5f5549f15f53e7cc0931a4" category="list-text">L'SVM di origine e l'SVM di destinazione devono avere una relazione peer.</block>
   <block id="3c6fc169e2cb30ab2f19198ee948214f" category="list-text">Se si esegue la distribuzione con Amazon FSx for NetApp ONTAP, si applica il seguente prerequisito:</block>
-  <block id="9ff73081ad3af348b09105664054c18f" category="inline-link">come iniziare</block>
-  <block id="416e7e2f04e50d9ce77de6997e876b89" category="list-text">Nella tua VPC deve essere presente un'istanza Amazon FSx for NetApp ONTAP per ospitare i datastore VMware DR.  Fare riferimento ad Amazon FSx per la documentazione ONTAP su<block ref="db982a545763422931a00c332a8601c2" category="inline-link-rx"></block> .</block>
   <block id="78ac16e6d697b73a4da8c7145ce2ebf3" category="section-title">Prerequisiti dei cluster VMware vCenter</block>
   <block id="e43184d3dcdfbef8d9c719533929f538" category="paragraph">Questi prerequisiti si applicano sia ai cluster vCenter on-premise sia al data center software-defined (SDDC) VMware Cloud for AWS.</block>
   <block id="4fb2c1490deb1111ddde75358c461f13" category="inline-link-macro">privilegi vCenter</block>
@@ -386,13 +381,11 @@
   <block id="924c58a8fd83feffaf2992bcfe6747f1" category="inline-link">iscriviti alla NetApp Console e crea un'organizzazione</block>
   <block id="a365735407987353fb0d409038d3fcd5" category="paragraph">Se non l'hai ancora fatto,<block ref="d976bcdfe98c8a7f3f75b182d4034c67" category="inline-link-rx"></block> .</block>
   <block id="2111321b91f7f03ee0c9d795126e728d" category="section-title">Raccogli le credenziali per ONTAP e VMware</block>
-  <block id="83ea42b6775e389ed5d6686bca745cb5" category="list-text">Le credenziali Amazon FSx for ONTAP e AWS devono essere aggiunte al sistema all'interno del progetto NetApp Console che verrà utilizzato per gestire NetApp Disaster Recovery.</block>
   <block id="d70a6a4283fe47d23c6adff45d1620fb" category="list-text">NetApp Disaster Recovery richiede le credenziali vCenter.  Quando si aggiunge un sito in NetApp Disaster Recovery, è necessario immettere le credenziali vCenter.</block>
   <block id="0f0ee2397f9657d6f4e252d0c2f19706" category="inline-link-macro">Privilegi vCenter necessari per NetApp Disaster Recovery</block>
   <block id="663ac415354a0662169e04ba51a80ee1" category="inline-link-macro">Aggiungi un sito</block>
   <block id="7fda46228a14f2f55a79cab0163e29e8" category="paragraph">Per un elenco dei privilegi vCenter necessari, fare riferimento a<block ref="86bed0402ce0dbd7b91cef3021301e67" category="inline-link-macro-rx"></block> .  Per istruzioni su come aggiungere un sito, fare riferimento a<block ref="4e15c40290645aa1bfcc516405624ad3" category="inline-link-macro-rx"></block> .</block>
   <block id="04611b209933eb29e1f8fdaec6553eaa" category="section-title">Creare l'agente NetApp Console</block>
-  <block id="5a47b3f0e8d6c5af989186785df791a5" category="paragraph">L'agente Console è un componente software che consente alla Console di comunicare con lo storage ONTAP e i cluster VMware vCenter.  È necessario affinché Disaster Recovery funzioni correttamente.  L'agente risiede nella tua rete privata (in un data center locale o in un VPC cloud) e comunica con le tue istanze di archiviazione ONTAP e con qualsiasi componente aggiuntivo di server e applicazioni.  Per il Disaster Recovery, si tratta dell'accesso ai cluster vCenter gestiti.</block>
   <block id="9703473550a81b3fd3679dafa7c81b5c" category="paragraph">È necessario configurare un agente Console nella NetApp Console.  Quando si utilizza l'agente, questo includerà le funzionalità appropriate per il servizio Disaster Recovery.</block>
   <block id="c8838dcf38d330918fef4cc55c1d8bda" category="inline-link">Introduzione alla NetApp Console in modalità standard</block>
   <block id="51dd3d7e28a72cf0fdec6a253e1d1518" category="list-text">NetApp Disaster Recovery funziona solo con la distribuzione dell'agente in modalità standard. Vedere<block ref="5a1f12b31848038fb05bcfabb59a655f" category="inline-link-rx"></block> .</block>
@@ -403,7 +396,6 @@
   <block id="7ff9f8e2467774df163161a38d2d5040" category="inline-link">Opzioni di installazione dell'agente console in AWS</block>
   <block id="14fe150f182f90b42cc29c3f50abaade" category="list-text">*Da locale ad AWS*: installa l'agente della console per AWS nella tua VPC AWS. Fare riferimento a<block ref="70bdc3086a31c8e9f05388b39311f274" category="inline-link-rx"></block> .</block>
   <block id="24b5be8f6df5fb021eca578769b77774" category="admonition">Per le connessioni da locale a locale, utilizzare l'agente Console locale.  Per gli ambienti on-premise su AWS, utilizzare l'agente AWS Console, che ha accesso al vCenter on-premise di origine e al vCenter on-premise di destinazione.</block>
-  <block id="ec934991ff9576c778e97bd0dd49e11e" category="list-text">L'agente Console installato deve essere in grado di accedere a qualsiasi cluster VMware che NetApp Disaster Recovery gestirà.</block>
   <block id="ab3c83e3945cd7f2df0456e2d8f83bb0" category="list-text">Tutti gli array ONTAP da gestire tramite NetApp Disaster Recovery devono essere aggiunti a qualsiasi sistema all'interno del progetto NetApp Console che verrà utilizzato per gestire NetApp Disaster Recovery.</block>
   <block id="c5fbee6586294d81141f8dd158707985" category="inline-link">Scopri i cluster ONTAP on-premise</block>
   <block id="c99bafeb844cf906e2f562103d12d623" category="paragraph">Vedere<block ref="8cab2f9c49f209aeaa6ba3d7ce4342f6" category="inline-link-rx"></block> .</block>
@@ -411,8 +403,6 @@
   <block id="9d5cd03b2fcfbe5b4558a93d2fd07ca2" category="section-title">Prerequisiti del carico di lavoro</block>
   <block id="6a84d76f499de61c5fe29550fe09a932" category="paragraph">Per garantire il successo dei processi di coerenza delle applicazioni, applicare i seguenti prerequisiti:</block>
   <block id="7033a5d3e074f0c7401499ee4e48f38a" category="list-text">Assicurarsi che gli strumenti VMware (o gli strumenti Open VM) siano in esecuzione sulle VM che verranno protette.</block>
-  <block id="53967495fd407c118c305a84866ca152" category="list-text">Per le VM Windows che eseguono Microsoft SQL Server o Oracle Database o entrambi, i database devono avere i propri VSS Writer abilitati.</block>
-  <block id="af77ac64a97a80925dee7dc916344004" category="list-text">Nei database Oracle in esecuzione su un sistema operativo Linux, l'autenticazione utente del sistema operativo deve essere abilitata per il ruolo SYSDBA del database Oracle.</block>
   <block id="e769451afb614edbefc73e1f7dcacb52" category="summary">Inizia a utilizzare il servizio NetApp Disaster Recovery in pochi passaggi.</block>
   <block id="ab07b3034b07b0c33cf08953e5962ee2" category="doc">Avvio rapido per NetApp Disaster Recovery</block>
   <block id="7964f4bbcfaebbe74a50dd88c021268a" category="paragraph">Ecco una panoramica dei passaggi necessari per iniziare a utilizzare NetApp Disaster Recovery. I link presenti in ogni passaggio ti conducono a una pagina che fornisce maggiori dettagli.</block>
@@ -606,14 +596,8 @@
   <block id="090ccdeb67b025c4f8b7081fde3f9701" category="list-text">Se la tua azienda utilizza un'autorità di certificazione (CA) esterna o vCenter Endpoint Certificate Store per accedere ai tuoi vCenter, deseleziona la casella di controllo *Usa certificati autofirmati*.  Altrimenti, lasciare la casella selezionata.</block>
   <block id="b3a5c8845f853fe3c75c53b6ba4b310a" category="inline-image-macro">Finestra di dialogo Aggiungi vCenter</block>
   <block id="34fdfb7ad906ce66a12a8da2c109d447" category="paragraph"><block ref="34fdfb7ad906ce66a12a8da2c109d447" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="d173e60098a46beb09260bd420a159bc" category="summary">Introduzione di NetApp Disaster Recovery tramite Amazon EVS e Amazon FSxN.</block>
-  <block id="6f8b794f3246b0c1e1780bb4d4d5dc53" category="doc">Conclusione</block>
-  <block id="4d99324fc48065f11e63fb209ec337aa" category="paragraph">NetApp Disaster Recovery fornisce una soluzione DR ibrida e conveniente per l'infrastruttura VMware on-premise, se configurata per utilizzare Amazon EVS e Amazon FSx for NetApp ONTAP come destinazione DR.  Ciò fornisce un obiettivo DR affidabile per infrastrutture mission critical.  NetApp Disaster Recovery sfrutta le funzionalità native di protezione dei dati ONTAP , supportate da decenni di esperienza nella protezione dei dati e ampiamente testate per garantire la completa protezione dei dati.</block>
-  <block id="55707b4848b3a26a39057e3af6948b43" category="paragraph">Per maggiori informazioni:</block>
   <block id="0f5cc47067a5c4b536ab91f1a843de82" category="inline-link">Introduzione ad Amazon FSx for NetApp ONTAP</block>
-  <block id="6c289628dee43319166eea9002566c44" category="list-text"><block ref="6c289628dee43319166eea9002566c44" category="inline-link-rx"></block></block>
   <block id="ca098fd032be41af7e2c6add5e270ac2" category="inline-link">Documentazione NetApp Disaster Recovery</block>
-  <block id="483fd2990c168581254c61b55b471e93" category="list-text"><block ref="483fd2990c168581254c61b55b471e93" category="inline-link-rx"></block></block>
   <block id="7f28f59c47464c242d6442ba13026efb" category="summary">Prima di utilizzare NetApp Disaster Recovery, è necessario aggiungere istanze di storage locali e ospitate sul cloud al sistema NetApp Console .</block>
   <block id="db931cab7409f85dc1d9775949614f0a" category="doc">Aggiungi array locali al sistema NetApp Console per Amazon EVS con NetApp Disaster Recovery</block>
   <block id="110cf9f49141b2330ac27d9a9baedd2f" category="paragraph">Devi fare quanto segue:</block>
@@ -1042,7 +1026,6 @@
   <block id="97f038e2f4284e7bd85ce8986351f37a" category="paragraph">In questo modo si riscopre l'archivio dati, le sue macchine virtuali e la sua relazione di destinazione.</block>
   <block id="6b2c385261ff0cb6c8365e9b2627a238" category="summary">NetApp Disaster Recovery è un servizio di disaster recovery basato su cloud che automatizza i flussi di lavoro di disaster recovery.  Con NetApp Disaster Recovery per VMware, puoi replicare i carichi di lavoro VMware on-premise che eseguono lo storage ONTAP su un data center software-defined VMware nei cloud pubblici come sito di disaster recovery utilizzando lo storage cloud NetApp .</block>
   <block id="c11b69e74ac28288df478284e9a69a9e" category="doc">Novità di NetApp Disaster Recovery</block>
-  <block id="20c2a4ce829c1bfe59988843f4146d8a" category="paragraph">Scopri le novità di NetApp Disaster Recovery.</block>
   <block id="a41dd7aa7d921f9f0881a705d3679e6c" category="section-title">06 ottobre 2025</block>
   <block id="3488d38349240c72f75d081c2a79fa3b" category="section-title">04 agosto 2025</block>
   <block id="4a32789f771ba902fef02cd0f2a544e6" category="paragraph">Versione 4.2.5P2</block>
@@ -1070,11 +1053,7 @@
   <block id="e1229c7ad0ab8ec8028a9d0383ad8106" category="paragraph">Questa versione include aggiornamenti alla struttura della pianificazione dei test di failover, necessari per supportare le pianificazioni giornaliere e settimanali.  Questo aggiornamento richiede di disabilitare e riabilitare tutti i piani di replica esistenti, in modo da poter utilizzare le nuove pianificazioni dei test di failover giornalieri e settimanali.  Si tratta di un requisito una tantum.</block>
   <block id="acd962f8090b530f4e4c526ecbf56b61" category="section-title">Aggiornamenti del piano di replicazione</block>
   <block id="7df13e1b4ece3e3deb4fbe809d05ea7c" category="paragraph">Questa versione include aggiornamenti ai dati del piano di replica, che risolvono il problema "snapshot non trovato".  Per fare ciò, è necessario modificare il conteggio di conservazione in tutti i piani di replica su 1 e avviare uno snapshot su richiesta.  Questo processo crea un nuovo backup e rimuove tutti i backup precedenti.</block>
-  <block id="3d3e2652059a9417e7a9b8801e83b99d" category="list-text">Selezionare il piano di replica, fare clic sulla scheda *Failover mapping* e fare clic sull'icona della matita *Modifica*.</block>
-  <block id="f05351f8a712da4ff1e724d342c4670b" category="list-text">Fare clic sulla freccia *Datastore* per espanderla.</block>
-  <block id="0d59b78804ed5feec9399254629a60f1" category="list-text">Prendere nota del valore del conteggio di conservazione nel piano di replica.  Una volta completati questi passaggi, sarà necessario ripristinare il valore originale.</block>
   <block id="e9c686cd7f0fc0f9a24375142cf2639b" category="list-text">Ridurre il conteggio a 1.</block>
-  <block id="94eec0eecc897e0613b4dca05f1db3b5" category="list-text">Avvia uno snapshot su richiesta.  Per farlo, nella pagina Piano di replica, seleziona il piano, fai clic sull'icona Azioni e seleziona *Esegui snapshot ora*.</block>
   <block id="4be920e5d3a5c6a1a13e6a9ed1ea0d96" category="list-text">Dopo aver completato correttamente il processo di snapshot, riportare il conteggio nel piano di replica al valore originale annotato nel primo passaggio.</block>
   <block id="fcf0bc475de9e6576c18ef6dcf5d7506" category="list-text">Ripetere questi passaggi per tutti i piani di replicazione esistenti.</block>
   <block id="60f72027f1d6cd2e0c4f75d06deeb162" category="section-title">05 luglio 2024</block>
@@ -1145,7 +1124,6 @@
   <block id="8fb7b8d770a994170f1c007a9255f124" category="admonition">Con questa offerta di anteprima, NetApp si riserva il diritto di modificare i dettagli, i contenuti e la tempistica dell'offerta prima della disponibilità generale.</block>
   <block id="0d2ad64b559232943585fd7b1d8a6a97" category="section-title">27 settembre 2023</block>
   <block id="de9bf2b4fc18ad740d18dc573f01d00d" category="section-title">Aggiornamenti della dashboard</block>
-  <block id="a50d40a404b06d36129623086efe89e7" category="paragraph">Ora puoi cliccare sulle opzioni nella Dashboard, così potrai rivedere le informazioni più facilmente e rapidamente. Inoltre, la Dashboard ora mostra lo stato dei failover e delle migrazioni.</block>
   <block id="be74a2f8b73ed15a46d21c202566b3bb" category="inline-link">Visualizza lo stato di salute dei tuoi piani di disaster recovery nella Dashboard</block>
   <block id="d1181cbae4acc0d9feb9f608b3ee586f" category="paragraph">Fare riferimento a<block ref="cdc1638a4873b7c2cfc1c5962a5d03ab" category="inline-link-rx"></block> .</block>
   <block id="056f6fba19f65e991a1c38d676e1c20d" category="list-text">*RPO*: ora è possibile immettere l'RPO (Recovery Point Objective) e il conteggio della conservazione nella sezione Datastore del piano di replica. Indica la quantità di dati che devono esistere e che non siano più vecchi del tempo impostato. Ad esempio, se lo si imposta su 5 minuti, in caso di disastro il sistema può perdere fino a 5 minuti di dati senza compromettere le esigenze aziendali critiche.</block>
@@ -1631,7 +1609,6 @@
   <block id="544bb990c26b075198ab3593eb235cab" category="list-text">Digitare "failover" nella casella.</block>
   <block id="d84be8f4bd42528d316284b904e45288" category="summary">Puoi dare una rapida occhiata a tutte le tue risorse NetApp Disaster Recovery e gestire i siti vCenter, i gruppi di risorse e i piani di replica.</block>
   <block id="06804fd9ef3d874a22951c7ab07ff304" category="doc">Gestisci siti, gruppi di risorse, piani di replica, datastore e informazioni sulle macchine virtuali con NetApp Disaster Recovery</block>
-  <block id="681e043e8c759b6b80b2223a79b56a0e" category="paragraph">Puoi dare una rapida occhiata a tutte le tue risorse NetApp Disaster Recovery oppure esaminarle singolarmente in dettaglio:</block>
   <block id="3faa64303d5f5bcd043bb88f6768e603" category="list-text">Siti</block>
   <block id="769b718779fbe38c65b122b69e0271a3" category="list-text">Gruppi di risorse</block>
   <block id="a8fc43ecd23ee9eb5e9efa5c60cb20b9" category="list-text">Piani di replicazione</block>
@@ -1643,9 +1620,7 @@
   <block id="b2209ab446f654c29ab1bfca5d8d2693" category="list-text">Seleziona l'opzione *Azioni*<block ref="b571b46a13691830124ae7cdd5a7ca96" category="inline-image-macro-rx" type="image"></block> a destra del nome vCenter e seleziona *Modifica*.</block>
   <block id="c4b621211240f640df1e2cfcc6cc5bec" category="list-text">Modificare il nome e la posizione del sito vCenter.</block>
   <block id="ec972bce7640d5d440d3549702031815" category="section-title">Gestire gruppi di risorse</block>
-  <block id="df5bd7f92bf7a899cafe7f5f4cede250" category="paragraph">Sebbene sia possibile aggiungere un gruppo di risorse come parte della creazione di un piano di replicazione, potrebbe essere più comodo aggiungere i gruppi separatamente e utilizzarli in seguito nel piano.  È possibile creare gruppi di risorse tramite VM o datastore.</block>
   <block id="f14421e984d67b669d82e97c5f322ee1" category="paragraph">È possibile creare un gruppo di risorse tramite datastore nei seguenti modi:</block>
-  <block id="c13f805e54076a6b9272f554c6665394" category="paragraph">Con i gruppi di risorse è possibile svolgere le seguenti attività:</block>
   <block id="7dc3653a56cf32cd6556cb35e316d496" category="list-text">Cambia il nome del gruppo di risorse.</block>
   <block id="28bc604f06695c0dd7fafde0ac528672" category="list-text">Aggiungere VM al gruppo di risorse.</block>
   <block id="105e582ff5868a70b8749c89dc720eea" category="list-text">Rimuovere le VM dal gruppo di risorse.</block>
@@ -1654,7 +1629,6 @@
   <block id="15f78fe59a1cd46fa3451eee4d4abd68" category="paragraph">Per i dettagli sulla creazione di un gruppo di risorse, fare riferimento a<block ref="2b3c741429e386b5764de1b41e09f2a5" category="inline-link-macro-rx"></block> .</block>
   <block id="dcf89107be2e3e74879158c2197da867" category="list-text">Dal menu, seleziona *Gruppi di risorse*.</block>
   <block id="fb64cb9f2eb5e660830a8f202d12f794" category="list-text">Per aggiungere un gruppo di risorse, seleziona *Aggiungi gruppo*.</block>
-  <block id="5f322b75b37e06720216711ec831f49c" category="list-text">Per eseguire azioni con il gruppo di risorse, selezionare l'opzione *Azioni*<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block> sulla destra e seleziona una delle opzioni, ad esempio *Modifica gruppo di risorse* o *Elimina gruppo di risorse*.</block>
   <block id="88947748ef8b3b00cf2cf0c3999a702e" category="paragraph">È possibile disattivare, attivare ed eliminare i piani di replica.  È possibile modificare gli orari.</block>
   <block id="3058d1612836b55d5c4e71a540ba0c44" category="list-text">Se si desidera sospendere temporaneamente un piano di replica, è possibile disattivarlo e riattivarlo in seguito.</block>
   <block id="98a6ed9560bddac4a68acf12bb7ce31c" category="list-text">Se non hai più bisogno del piano, puoi eliminarlo.</block>
@@ -1672,23 +1646,16 @@
   <block id="919f04c7393ca337da4d5ecf62b924fc" category="list-text">Selezionare *Esegui failover di test in base a una pianificazione*.</block>
   <block id="87446024d70eefcd64c28443544975b4" category="list-text">Nell'opzione Ripeti, seleziona la pianificazione giornaliera, settimanale o mensile.</block>
   <block id="ed5712a5338a0cddb9b90afe427576e5" category="section-title">Riconcilia gli snapshot su richiesta</block>
-  <block id="6c2bc725654231e0111d8b4adcd666d0" category="paragraph">È possibile riconciliare gli snapshot non sincronizzati tra l'origine e la destinazione.  Ciò potrebbe verificarsi se gli snapshot vengono eliminati su una destinazione esterna a NetApp Disaster Recovery.  Il servizio elimina automaticamente lo snapshot sulla sorgente ogni 24 ore.  Tuttavia, è possibile eseguire questa operazione su richiesta.  Questa funzionalità consente di garantire che gli snapshot siano coerenti in tutti i siti.</block>
-  <block id="34ec48d6af2f98f1956cfc75d32b92fe" category="list-text">Dall'elenco dei piani di replica, seleziona l'opzione *Azioni*<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block> a destra del piano e seleziona *Riconcilia snapshot*.</block>
   <block id="08bb8fbd3da836cf3622737c948a4ede" category="list-text">Esaminare le informazioni sulla riconciliazione.</block>
   <block id="571a21bebeed1a6e73b024d56871482d" category="list-text">Selezionare *Riconcilia*.</block>
   <block id="2dcc77d52e005461a9eab86fef63c3f9" category="section-title">Elimina un piano di replicazione</block>
-  <block id="0f6c94cfa5509a16442ca505884acf3e" category="paragraph">È possibile eliminare un piano di replicazione se non ne hai più bisogno.  Se si elimina un piano di replica, è possibile eliminare anche gli snapshot primari e secondari creati dal piano.</block>
   <block id="3b107f5143841ab861176b3715f11587" category="list-text">Seleziona l'opzione *Azioni*<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block> a destra del piano e seleziona *Elimina*.</block>
-  <block id="e28e746e68d02b24d2750571a0776bd0" category="list-text">Selezionare se si desidera eliminare gli snapshot primari, quelli secondari o solo i metadati creati dal piano.</block>
-  <block id="90486e8ee3ac6fe6a17dab32429bf3ee" category="list-text">Digitare "delete" per confermare l'eliminazione.</block>
   <block id="0f024621e0673f1f4e657983682d6e72" category="list-text">Seleziona *Elimina*.</block>
   <block id="f51ae48fcef0eb66752ca677561d408c" category="section-title">Modifica il conteggio di conservazione per le pianificazioni di failover</block>
-  <block id="b138bbcc2a9cc6e505caed49815b326b" category="paragraph">È possibile modificare il numero di datastore da conservare.</block>
   <block id="03d6e40e14e15773309e166be782dc5b" category="list-text">Selezionare il piano di replicazione, selezionare la scheda *Failover mapping* e selezionare l'icona della matita *Modifica*.</block>
   <block id="72b0b6c8ac453b14a3dc76bb9323c7e5" category="list-text">Selezionare la freccia *Datastore* per espanderla.</block>
   <block id="ee9e0fb0a09a468f33fa6f2dabc4ff49" category="inline-image-macro">Modifica pagina mapping failover</block>
   <block id="2aef38b97efb9369d3e496e8d062d8fd" category="paragraph"><block ref="2aef38b97efb9369d3e496e8d062d8fd" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="51c600bec26d8fec2fcc4cb42728fd01" category="list-text">Modificare il valore del conteggio di conservazione nel piano di replica.</block>
   <block id="e3a15d734e1eafd89e04f5eb526ec5cc" category="list-text">Dopo aver selezionato il piano di replica, seleziona il menu Azioni, quindi seleziona *Pulisci vecchi snapshot* per rimuovere i vecchi snapshot sulla destinazione in modo che corrispondano al nuovo conteggio di conservazione.</block>
   <block id="a6dcfee4cd10f2ad60c3d81bc2a3b8ad" category="section-title">Visualizza le informazioni sui datastore</block>
   <block id="432624070ae1b8a0b19fd42c048a224c" category="paragraph">È possibile visualizzare informazioni sul numero di datastore presenti nell'origine e nella destinazione.</block>
@@ -1784,22 +1751,16 @@
   <block id="de18d8f949f454da2ede489b3979469b" category="paragraph">Un cluster vCenter può risiedere in un solo sito.  Per aggiungere un cluster vCenter a un sito, sono necessarie le seguenti informazioni:</block>
   <block id="eecc1c046815522892ed1b8255f3f967" category="list-text">L'indirizzo IP di gestione vCenter o FQDN</block>
   <block id="a0b1f7f83e512f18531427c30dfda111" category="inline-link-macro">privilegi vCenter richiesti</block>
-  <block id="4080221450b759d2b8450afa1ac3e345" category="list-text">Credenziali per un account vCenter con i privilegi richiesti per eseguire le operazioni. Vedere <block ref="9e7079c4a4f90ca76a9a02909aa5bf5b" category="inline-link-macro-rx"></block> per maggiori informazioni.</block>
   <block id="1f490ffa54a278cbe959d7caaf6de272" category="list-text">Per i siti VMware ospitati nel cloud, le chiavi di accesso al cloud richieste</block>
   <block id="03d24609520a8800132bd62fa4280091" category="list-text">Un certificato di sicurezza per accedere al tuo vCenter.</block>
   <block id="06cb80959b7e29d23b7c09355933539d" category="admonition">Il servizio supporta certificati di sicurezza autofirmati o certificati provenienti da un'autorità di certificazione (CA) centrale.</block>
-  <block id="ecc7b363bd82d14e4f4308e65d23d1e3" category="paragraph">Verrai indirizzato alla pagina della dashboard di NetApp Disaster Recovery .  Quando si avvia il servizio per la prima volta, è necessario aggiungere le informazioni di vCenter.  Successivamente, la Dashboard visualizza i dati sui tuoi siti e sui piani di replicazione.</block>
   <block id="1a575de6e97bed53905ae3b55c22dd29" category="admonition">A seconda del tipo di sito che stai aggiungendo, vengono visualizzati campi diversi.</block>
   <block id="db5ad0ead9eeceb394e92d65f79adbfe" category="list-text">Se esistono già alcuni siti vCenter e si desidera aggiungerne altri, selezionare *Siti* dal menu, quindi selezionare *Aggiungi*.</block>
   <block id="4a5eb18788b768b36f708c9617ffef9e" category="list-text">Nella pagina Siti, seleziona il sito e seleziona *Aggiungi vCenter*.</block>
   <block id="901540dd7e45eaf2226327527c8d78b4" category="list-text">*Origine*: selezionare *Scopri server vCenter* per immettere informazioni sul sito vCenter di origine.</block>
-  <block id="6b3b905a38750ec7a08fa2e97d6315bf" category="admonition">Se alcuni siti vCenter esistono già e si desidera aggiungerne altri, dal menu in alto selezionare *Siti* e quindi *Aggiungi*.</block>
   <block id="5a05572673bc07b0b94f07c482a67d13" category="inline-image-macro">Aggiungi screenshot del server vCenter</block>
   <block id="c65c0c2ea94db5e745008fb8af0f7f2e" category="paragraph"><block ref="c65c0c2ea94db5e745008fb8af0f7f2e" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="a883c3f7a5af569be1488bf115fe2127" category="list-text">Selezionare un sito, selezionare l'agente NetApp Console e fornire le credenziali vCenter.</block>
-  <block id="7dbf01d6d33098287eb82c71ea10ea1e" category="list-text">(Si applica solo ai siti locali) Per accettare certificati autofirmati per il vCenter di origine, selezionare la casella.</block>
   <block id="1909b7ffbea69e2cc7b387ed9d255c18" category="admonition">I certificati autofirmati non sono sicuri quanto gli altri certificati.  Se il tuo vCenter *NON* è configurato con certificati dell'autorità di certificazione (CA), dovresti selezionare questa casella; in caso contrario, la connessione al vCenter non funzionerà.</block>
-  <block id="a0fa7543e8627767b57d6c2797fbbda9" category="paragraph">Successivamente, aggiungeremo un vCenter di destinazione.</block>
   <block id="ecc10bfc44edd7abd754949b1bda0e4b" category="list-text">Aggiungere nuovamente un sito per il vCenter di destinazione.</block>
   <block id="0409428076b2c81e1f1d6d6bd331b296" category="list-text">Di nuovo, seleziona *Aggiungi vCenter* e aggiungi le informazioni sul vCenter di destinazione.</block>
   <block id="bc7f3cb185f48d451eb5ef976e8ad82d" category="list-text">*Bersaglio*:</block>
@@ -1921,4 +1882,37 @@
   <block id="a900cb57c651ef75881dfa4543e4701d" category="sidebar">Replica su un altro sito</block>
   <block id="ad80d6168dc288f4361413eeca80dc5f" category="sidebar">Migrare su un altro sito</block>
   <block id="b7cd69eed80f723036ef0a99b8bb375e" category="sidebar">Gestisci le informazioni sui siti, sui piani, sugli archivi dati e sulle macchine virtuali</block>
+  <block id="dd64baea4cd51b54ff1827028e4db4f6" category="paragraph"><block ref="b0f53b92ba6c515b65cd9cce152b9651" category="inline-link-macro-rx"></block>.</block>
+  <block id="867215f2d24d8d500f9d6d76b166230b" category="summary">Prima di utilizzare NetApp Disaster Recovery, assicurati che il tuo ambiente soddisfi i requisiti di storage ONTAP , cluster VMware vCenter e NetApp Console .</block>
+  <block id="43f2bccff85f631b4171a654387bbcc5" category="list-text">L'SVM che ospita i volumi di disaster recovery deve essere presente nel cluster di destinazione.</block>
+  <block id="ad534f647119b6dc497ed6df26304325" category="inline-link-macro">la documentazione Amazon FSx per ONTAP</block>
+  <block id="6a9f393c771a2d23fdd73d7dcb38852e" category="list-text">Nella tua VPC deve essere presente un'istanza Amazon FSx for NetApp ONTAP per ospitare i datastore VMware DR. Per iniziare, vedere<block ref="6ae09d1010480d9e1a6425b1f33dfdd2" category="inline-link-macro-rx"></block> .</block>
+  <block id="6a5f3f109fcda550019219a08b2f9c00" category="list-text">Le credenziali Amazon FSx for ONTAP e AWS devono essere aggiunte al sistema all'interno del progetto NetApp Console che gestisce NetApp Disaster Recovery.</block>
+  <block id="3e2058a360b0af2c32f423f3aaaeed52" category="paragraph">L'agente Console è un componente software che consente alla Console di comunicare con lo storage ONTAP e i cluster VMware vCenter. È necessario affinché Disaster Recovery funzioni correttamente. L'agente risiede nella tua rete privata (un data center locale o un VPC cloud) e comunica con le tue istanze di archiviazione ONTAP e con qualsiasi componente aggiuntivo di server e applicazioni. Per il Disaster Recovery, si tratta dell'accesso ai cluster vCenter gestiti.</block>
+  <block id="7ef83357fc923bb1138846ec262ec0cd" category="list-text">L'agente Console installato deve essere in grado di accedere a tutte le istanze del cluster VMware vCenter e agli host ESXi gestiti dai cluster vCenter che Disaster Recovery gestirà.</block>
+  <block id="298b6679b4a5fedf91682cb4609690c5" category="list-text">Per le VM Windows che eseguono Microsoft SQL Server, Oracle Database o entrambi, i database devono avere i relativi VSS Writer abilitati.</block>
+  <block id="876b8d27a8711ccaad8551b08b7a888a" category="list-text">I database Oracle in esecuzione su un sistema operativo Linux devono avere l'autenticazione utente del sistema operativo abilitata per il ruolo SYSDBA del database Oracle.</block>
+  <block id="ac9d9cedbd075fff9bfcb2776127474a" category="paragraph">Scopri le novità di NetApp Disaster Recovery.</block>
+  <block id="c4b657898484a4fc73adb716b67d3ad7" category="list-text">Prendere nota del valore del conteggio di conservazione nel piano di replica. Una volta completati questi passaggi, è necessario ripristinare il valore originale.</block>
+  <block id="3298d659fab0af52765e43822c472d69" category="list-text">Avvia uno snapshot su richiesta. Per farlo, nella pagina Piano di replica, seleziona il piano, seleziona l'icona Azioni e seleziona *Esegui snapshot ora*.</block>
+  <block id="f68c6089f559d4079e24537b4018d2a5" category="paragraph">Ora puoi selezionare le opzioni nella Dashboard, rendendo più semplice e veloce la consultazione delle informazioni. Inoltre, la Dashboard ora mostra lo stato dei failover e delle migrazioni.</block>
+  <block id="291fd08745b243b885d5ad0cf9556e2d" category="paragraph">NetApp Disaster Recovery fornisce panoramiche e prospettive più dettagliate su tutte le tue risorse:</block>
+  <block id="4807e9e42b4283aaf7b590eb1b7a8aa6" category="paragraph">È possibile creare gruppi di risorse tramite VM o datastore.  Possono essere aggiunti quando si crea il piano di replicazione o in seguito.</block>
+  <block id="cf0031dda1508b365e62eb97d90152a0" category="paragraph">Con i gruppi di risorse è possibile eseguire le seguenti attività:</block>
+  <block id="6c1d71ea8876ab07fa54b29a3f65f754" category="list-text">È possibile modificare o eliminare il gruppo di risorse selezionando l'opzione *Azioni*<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block> .</block>
+  <block id="281ea97852952087969b1df80742ba38" category="paragraph">Disaster Recovery elimina automaticamente gli snapshot sulla sorgente ogni 24 ore.  Se si scopre che gli snapshot non sono sincronizzati tra l'origine e la destinazione, è necessario risolvere la discrepanza tra gli snapshot per garantire la coerenza tra i siti.</block>
+  <block id="5a713acc18bc1c1fa687ddbad7c445aa" category="list-text">Dall'elenco dei piani di replica, seleziona l'opzione *Azioni*<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block> quindi *Riconcilia gli snapshot*.</block>
+  <block id="3c843649a94855e3901bd423ac9ca414" category="paragraph">Se si elimina un piano di replica, è possibile eliminare anche gli snapshot primari e secondari creati dal piano.</block>
+  <block id="75c34b3422e5baaae429a2d21a62a9d8" category="list-text">Selezionare se si desidera eliminare gli snapshot primari, quelli secondari o solo i metadati creati dal piano.</block>
+  <block id="8e15489db6e2853bdefe4e39cf285c3d" category="list-text">Digitare "elimina" per confermare l'eliminazione.</block>
+  <block id="c1ba23522836b9d395a79f30f4da96b4" category="paragraph">La modifica del conteggio di conservazione consente di aumentare o diminuire il numero di datastore salvati.</block>
+  <block id="506d82cb3cd3b9175af419eb19bc5740" category="list-text">Selezionare il piano di replicazione, quindi la scheda *Failover mapping*. Selezionare l'icona a forma di matita *Modifica*.</block>
+  <block id="58777a5460ab56ac04a8fc9d5cb1b259" category="list-text">Selezionare la freccia rivolta verso il basso nella riga *Datastore* per espanderla.</block>
+  <block id="2d3c0c55028659ea4dd39b2fd1ee9a30" category="list-text">Modificare il valore del **Conteggio di conservazione per tutti gli archivi dati**.</block>
+  <block id="7a988fd1e6beb5a163334993a7364fab" category="list-text">Credenziali per un account vCenter con i privilegi richiesti per eseguire le operazioni. Vedere<block ref="0a23d475349d8b59d7b1d04d622e5f7f" category="inline-link-macro-rx"></block> per maggiori informazioni.</block>
+  <block id="09f1f22ef0473a64fe418a7bca316d95" category="paragraph">Se è la prima volta che utilizzi NetApp Disaster Recovery, devi aggiungere le informazioni di vCenter.  Se hai già aggiunto informazioni vCenter, vedrai la dashboard.</block>
+  <block id="a280f67014fa91a16b7bf85e07d4eb9f" category="admonition">Per aggiungere altri siti vCenter, selezionare *Siti*, quindi *Aggiungi*.</block>
+  <block id="c17db388b1bce3930a27ba26379fd97f" category="list-text">Selezionare un sito, quindi l'agente NetApp Console e fornire le credenziali vCenter.</block>
+  <block id="51f46f78f8aed3edc5be5baa188edfc3" category="list-text">**Solo per siti on-premise:** Per accettare certificati autofirmati per il vCenter di origine, selezionare la casella.</block>
+  <block id="3197d20854469510f60e5d3f44b0db4d" category="paragraph">Quindi aggiungere un vCenter di destinazione.</block>
 </blocks>

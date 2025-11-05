@@ -12,7 +12,7 @@ summary: Puoi dare una rapida occhiata a tutte le tue risorse NetApp Disaster Re
 
 
 [role="lead"]
-Puoi dare una rapida occhiata a tutte le tue risorse NetApp Disaster Recovery oppure esaminarle singolarmente in dettaglio:
+NetApp Disaster Recovery fornisce panoramiche e prospettive più dettagliate su tutte le tue risorse:
 
 * Siti
 * Gruppi di risorse
@@ -43,7 +43,7 @@ link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sul
 
 == Gestire gruppi di risorse
 
-Sebbene sia possibile aggiungere un gruppo di risorse come parte della creazione di un piano di replicazione, potrebbe essere più comodo aggiungere i gruppi separatamente e utilizzarli in seguito nel piano.  È possibile creare gruppi di risorse tramite VM o datastore.
+È possibile creare gruppi di risorse tramite VM o datastore.  Possono essere aggiunti quando si crea il piano di replicazione o in seguito.
 
 *Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
 
@@ -53,7 +53,7 @@ Sebbene sia possibile aggiungere un gruppo di risorse come parte della creazione
 * Quando si crea un piano di replicazione e si crea un gruppo di risorse all'interno del piano, è possibile visualizzare le VM nei datastore.
 
 
-Con i gruppi di risorse è possibile svolgere le seguenti attività:
+Con i gruppi di risorse è possibile eseguire le seguenti attività:
 
 * Cambia il nome del gruppo di risorse.
 * Aggiungere VM al gruppo di risorse.
@@ -66,7 +66,7 @@ Per i dettagli sulla creazione di un gruppo di risorse, fare riferimento alink:r
 .Passi
 . Dal menu, seleziona *Gruppi di risorse*.
 . Per aggiungere un gruppo di risorse, seleziona *Aggiungi gruppo*.
-. Per eseguire azioni con il gruppo di risorse, selezionare l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] sulla destra e seleziona una delle opzioni, ad esempio *Modifica gruppo di risorse* o *Elimina gruppo di risorse*.
+. È possibile modificare o eliminare il gruppo di risorse selezionando l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] .
 
 
 
@@ -110,7 +110,7 @@ image:../use/dr-plan-list.png["Elenco dei piani di replicazione"]
 
 === Riconcilia gli snapshot su richiesta
 
-È possibile riconciliare gli snapshot non sincronizzati tra l'origine e la destinazione.  Ciò potrebbe verificarsi se gli snapshot vengono eliminati su una destinazione esterna a NetApp Disaster Recovery.  Il servizio elimina automaticamente lo snapshot sulla sorgente ogni 24 ore.  Tuttavia, è possibile eseguire questa operazione su richiesta.  Questa funzionalità consente di garantire che gli snapshot siano coerenti in tutti i siti.
+Disaster Recovery elimina automaticamente gli snapshot sulla sorgente ogni 24 ore.  Se si scopre che gli snapshot non sono sincronizzati tra l'origine e la destinazione, è necessario risolvere la discrepanza tra gli snapshot per garantire la coerenza tra i siti.
 
 *Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
 
@@ -119,7 +119,7 @@ image:../use/dr-plan-list.png["Elenco dei piani di replicazione"]
 +
 image:../use/dr-plan-list.png["Elenco dei piani di replicazione"]
 
-. Dall'elenco dei piani di replica, seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] a destra del piano e seleziona *Riconcilia snapshot*.
+. Dall'elenco dei piani di replica, seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] quindi *Riconcilia gli snapshot*.
 . Esaminare le informazioni sulla riconciliazione.
 . Selezionare *Riconcilia*.
 
@@ -128,7 +128,7 @@ image:../use/dr-plan-list.png["Elenco dei piani di replicazione"]
 
 === Elimina un piano di replicazione
 
-È possibile eliminare un piano di replicazione se non ne hai più bisogno.  Se si elimina un piano di replica, è possibile eliminare anche gli snapshot primari e secondari creati dal piano.
+Se si elimina un piano di replica, è possibile eliminare anche gli snapshot primari e secondari creati dal piano.
 
 *Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
 
@@ -136,7 +136,7 @@ image:../use/dr-plan-list.png["Elenco dei piani di replicazione"]
 . Dal menu, seleziona *Piani di replicazione*.
 . Seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] a destra del piano e seleziona *Elimina*.
 . Selezionare se si desidera eliminare gli snapshot primari, quelli secondari o solo i metadati creati dal piano.
-. Digitare "delete" per confermare l'eliminazione.
+. Digitare "elimina" per confermare l'eliminazione.
 . Seleziona *Elimina*.
 
 
@@ -144,18 +144,18 @@ image:../use/dr-plan-list.png["Elenco dei piani di replicazione"]
 
 === Modifica il conteggio di conservazione per le pianificazioni di failover
 
-È possibile modificare il numero di datastore da conservare.
+La modifica del conteggio di conservazione consente di aumentare o diminuire il numero di datastore salvati.
 
 *Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
 
 .Passi
 . Dal menu, seleziona *Piani di replicazione*.
-. Selezionare il piano di replicazione, selezionare la scheda *Failover mapping* e selezionare l'icona della matita *Modifica*.
-. Selezionare la freccia *Datastore* per espanderla.
+. Selezionare il piano di replicazione, quindi la scheda *Failover mapping*. Selezionare l'icona a forma di matita *Modifica*.
+. Selezionare la freccia rivolta verso il basso nella riga *Datastore* per espanderla.
 +
 image:../use/dr-plan-failover-edit.png["Modifica pagina mapping failover"]
 
-. Modificare il valore del conteggio di conservazione nel piano di replica.
+. Modificare il valore del **Conteggio di conservazione per tutti gli archivi dati**.
 . Dopo aver selezionato il piano di replica, seleziona il menu Azioni, quindi seleziona *Pulisci vecchi snapshot* per rimuovere i vecchi snapshot sulla destinazione in modo che corrispondano al nuovo conteggio di conservazione.
 
 

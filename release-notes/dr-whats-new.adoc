@@ -461,11 +461,11 @@ Questa versione include aggiornamenti ai dati del piano di replica, che risolvon
 Ecco come fare:
 
 . Dal menu, seleziona *Piani di replicazione*.
-. Selezionare il piano di replica, fare clic sulla scheda *Failover mapping* e fare clic sull'icona della matita *Modifica*.
-. Fare clic sulla freccia *Datastore* per espanderla.
-. Prendere nota del valore del conteggio di conservazione nel piano di replica.  Una volta completati questi passaggi, sarà necessario ripristinare il valore originale.
+. Selezionare il piano di replicazione, selezionare la scheda *Failover mapping* e selezionare l'icona della matita *Modifica*.
+. Selezionare la freccia *Datastore* per espanderla.
+. Prendere nota del valore del conteggio di conservazione nel piano di replica. Una volta completati questi passaggi, è necessario ripristinare il valore originale.
 . Ridurre il conteggio a 1.
-. Avvia uno snapshot su richiesta.  Per farlo, nella pagina Piano di replica, seleziona il piano, fai clic sull'icona Azioni e seleziona *Esegui snapshot ora*.
+. Avvia uno snapshot su richiesta. Per farlo, nella pagina Piano di replica, seleziona il piano, seleziona l'icona Azioni e seleziona *Esegui snapshot ora*.
 . Dopo aver completato correttamente il processo di snapshot, riportare il conteggio nel piano di replica al valore originale annotato nel primo passaggio.
 . Ripetere questi passaggi per tutti i piani di replicazione esistenti.
 
@@ -682,7 +682,7 @@ Questa versione di anteprima di NetApp Disaster Recovery include i seguenti aggi
 
 === Aggiornamenti della dashboard
 
-Ora puoi cliccare sulle opzioni nella Dashboard, così potrai rivedere le informazioni più facilmente e rapidamente. Inoltre, la Dashboard ora mostra lo stato dei failover e delle migrazioni.
+Ora puoi selezionare le opzioni nella Dashboard, rendendo più semplice e veloce la consultazione delle informazioni. Inoltre, la Dashboard ora mostra lo stato dei failover e delle migrazioni.
 
 Fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/dashboard-view.html["Visualizza lo stato di salute dei tuoi piani di disaster recovery nella Dashboard"] .
 
