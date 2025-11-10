@@ -16,6 +16,38 @@ Scopri le novità di NetApp Disaster Recovery.
 
 
 
+== 10 novembre 2025
+
+
+
+=== Supporto failover a cascata
+
+Ora è possibile configurare una relazione a cascata in ONTAP e utilizzare qualsiasi parte di tale relazione di replica per il ripristino di emergenza.
+
+
+
+=== Ridurre il supporto hardware VMware durante la registrazione
+
+Disaster Recovery ora supporta il downgrade dell'hardware VMware a una versione precedente di vSphere durante la registrazione. Questa funzionalità è utile quando l'host ESX di origine esegue una versione successiva a quella del sito di ripristino di emergenza.
+
+Per maggiori informazioni, vedere xref:drplan-create.html#map-resources-virtual-machines-section[Creare un piano di replica in NetApp Disaster Recovery].
+
+
+
+=== Arresto graduale
+
+Disaster Recovery ora arresta correttamente le VM anziché spegnerle. Se una determinata VM impiega più di dieci minuti per spegnersi, Disaster Recovery la spegne.
+
+
+
+=== Supporto per script pre-backup
+
+Ora è possibile inserire script personalizzati nel flusso di lavoro di failover da eseguire prima di creare un backup. Gli script di pre-backup consentono di controllare lo stato della VM prima che venga replicato uno snapshot e di preparare una VM per una transizione. Ad esempio, è possibile inserire uno script che smonta un mount NFS che verrà rimontato utilizzando uno script diverso dopo il failover.
+
+Per maggiori informazioni, vedere xref:drplan-create.html#map-resources-virtual-machines-section[Creare un piano di replica in NetApp Disaster Recovery].
+
+
+
 == 06 ottobre 2025
 
 

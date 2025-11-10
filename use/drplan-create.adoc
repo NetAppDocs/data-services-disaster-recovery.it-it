@@ -275,6 +275,7 @@ Per abilitare l'esecuzione degli script con il sistema operativo guest della VM,
 
 
 
+* *Esegui il downgrade della versione hardware della VM e registra*: seleziona questa opzione se la versione dell'host ESX di destinazione è precedente a quella di origine, in modo che corrispondano durante la registrazione.
 * *Prefisso e suffisso della VM di destinazione*: nei dettagli delle macchine virtuali, è possibile aggiungere facoltativamente un prefisso e un suffisso a ciascun nome di VM sottoposto a failover.  Ciò può essere utile per differenziare le VM sottoposte a failover dalle VM di produzione in esecuzione sullo stesso cluster vCenter.  Ad esempio, è possibile aggiungere il prefisso "DR-" e il suffisso "-failover" al nome della VM.  In caso di emergenza, alcune persone aggiungono un secondo vCenter di produzione per ospitare temporaneamente le VM in un sito diverso.  L'aggiunta di un prefisso o di un suffisso può aiutare a identificare rapidamente le VM sottoposte a failover.  È possibile utilizzare il prefisso o il suffisso anche negli script personalizzati.
 +
 È possibile utilizzare il metodo alternativo di impostazione della cartella VM di destinazione nella sezione Risorse di calcolo.
@@ -399,7 +400,8 @@ Per un controllo aggiuntivo sulla sicurezza dell'accesso ai dati NAS, il servizi
 
 
 
-*BEST PRACTICE*: consigliamo vivamente di creare una policy di esportazione dedicata che limiti l'accesso al volume solo agli host vCenter ESXi di origine e di destinazione che ospiteranno le VM protette.  Ciò aiuta a garantire che entità esterne non possano accedere all'esportazione NFS.
+
+TIP: Si consiglia di creare una policy di esportazione dedicata che limiti l'accesso al volume _solo_ agli host vCenter ESXi di origine e di destinazione che ospiteranno le VM protette. Ciò garantisce che entità esterne non possano accedere all'esportazione NFS.
 
 
 
