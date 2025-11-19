@@ -14,7 +14,7 @@ Ora è possibile configurare una relazione a cascata in ONTAP e utilizzare quals
 
 Disaster Recovery ora supporta il downgrade dell'hardware VMware a una versione precedente di vSphere durante la registrazione. Questa funzionalità è utile quando l'host ESX di origine esegue una versione successiva a quella del sito di ripristino di emergenza.
 
-Per maggiori informazioni, vedere xref:drplan-create.html#map-resources-virtual-machines-section[Creare un piano di replica in NetApp Disaster Recovery].
+Per maggiori informazioni, vedere link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#select-vcenter-servers["Creare un piano di replica in NetApp Disaster Recovery"].
 
 
 
@@ -28,4 +28,4 @@ Disaster Recovery ora arresta correttamente le VM anziché spegnerle. Se una det
 
 Ora è possibile inserire script personalizzati nel flusso di lavoro di failover da eseguire prima di creare un backup. Gli script di pre-backup consentono di controllare lo stato della VM prima che venga replicato uno snapshot e di preparare una VM per una transizione. Ad esempio, è possibile inserire uno script che smonta un mount NFS che verrà rimontato utilizzando uno script diverso dopo il failover.
 
-Per maggiori informazioni, vedere xref:drplan-create.html#map-resources-virtual-machines-section[Creare un piano di replica in NetApp Disaster Recovery].
+Per maggiori informazioni, vedere link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#select-vcenter-servers["Creare un piano di replica in NetApp Disaster Recovery"].

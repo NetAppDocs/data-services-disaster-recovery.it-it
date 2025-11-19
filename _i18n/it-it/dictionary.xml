@@ -1918,7 +1918,6 @@
   <block id="8115dd8449bd907d08f3347f6d04324a" category="paragraph">Ora è possibile configurare una relazione a cascata in ONTAP e utilizzare qualsiasi parte di tale relazione di replica per il ripristino di emergenza.</block>
   <block id="eb2fa9dcb8eaa46c82c070f8bbe8418a" category="section-title">Ridurre il supporto hardware VMware durante la registrazione</block>
   <block id="f83d7a6597b186db7483e2f478aeb8fa" category="paragraph">Disaster Recovery ora supporta il downgrade dell'hardware VMware a una versione precedente di vSphere durante la registrazione. Questa funzionalità è utile quando l'host ESX di origine esegue una versione successiva a quella del sito di ripristino di emergenza.</block>
-  <block id="a412b7de9758b999e39beb6a86f38803" category="paragraph">Per maggiori informazioni, vedere <block ref="3b88d2273f8f2a777f18a77cece1dbb2" category="inline-xref-macro-rx"></block>.</block>
   <block id="bcf697aa5ef7fc37fba63ce6d2bf0e43" category="section-title">Arresto graduale</block>
   <block id="9437b903cdafc2fdfce3c66af80b97f0" category="paragraph">Disaster Recovery ora arresta correttamente le VM anziché spegnerle. Se una determinata VM impiega più di dieci minuti per spegnersi, Disaster Recovery la spegne.</block>
   <block id="9b9e3165f7ecae3e2e3b2c795e562976" category="section-title">Supporto per script pre-backup</block>
@@ -1926,4 +1925,5 @@
   <block id="77750efa6f5ff153acdc42067058017f" category="section-title">10 novembre 2025</block>
   <block id="67d901d806b31ec45748075cf6b4b785" category="list-text">*Esegui il downgrade della versione hardware della VM e registra*: seleziona questa opzione se la versione dell'host ESX di destinazione è precedente a quella di origine, in modo che corrispondano durante la registrazione.</block>
   <block id="c41917a6c517c418de809b1e4f43f537" category="admonition">Si consiglia di creare una policy di esportazione dedicata che limiti l'accesso al volume _solo_ agli host vCenter ESXi di origine e di destinazione che ospiteranno le VM protette. Ciò garantisce che entità esterne non possano accedere all'esportazione NFS.</block>
+  <block id="11decf8e913c8fbeb5d947338d43e3b0" category="paragraph">Per maggiori informazioni, vedere <block ref="bf6dbdf786c7323ca961bfd2e12103c6" category="inline-link-macro-rx"></block>.</block>
 </blocks>
