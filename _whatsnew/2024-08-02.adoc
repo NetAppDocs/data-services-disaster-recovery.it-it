@@ -17,4 +17,4 @@ NOTE: NetApp non addebita alcun costo per la capacità di carico di lavoro visua
 
 Con questa versione, è ora possibile annullare un lavoro nell'interfaccia utente di Job Monitor.
 
-Fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["Monitorare i lavori"] .
+Fare riferimento a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/monitor-jobs.html["Monitorare i lavori"] .

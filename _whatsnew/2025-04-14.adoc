@@ -10,7 +10,7 @@ NetApp Disaster Recovery esegue la rilevazione una volta ogni 24 ore.  Con quest
 
 Se non si desidera pianificare l'individuazione, è possibile disattivare l'opzione di individuazione pianificata e aggiornare manualmente l'individuazione in qualsiasi momento.
 
-Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["Aggiungi siti server vCenter"] .
+Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html["Aggiungi siti server vCenter"] .
 
 
 
@@ -24,7 +24,7 @@ In precedenza, era possibile creare gruppi di risorse solo tramite VM.  Con ques
 * Quando si crea un piano di replicazione e si crea un gruppo di risorse all'interno del piano, è possibile visualizzare le VM nei datastore.
 
 
-Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"] .
+Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"] .
 
 
 

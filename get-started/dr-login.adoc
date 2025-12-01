@@ -16,7 +16,7 @@ Per accedere al servizio NetApp Disaster Recovery è possibile utilizzare la Net
 
 Per effettuare l'accesso, puoi utilizzare le credenziali del sito di supporto NetApp oppure puoi registrarti per un accesso cloud NetApp utilizzando il tuo indirizzo email e una password. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["Scopri di più sull'accesso"^] .
 
-Attività specifiche richiedono ruoli utente specifici. link:../reference/dr-reference-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+Attività specifiche richiedono ruoli utente specifici. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Apri un browser web e vai su https://console.netapp.com/["NetApp Console"^] .
@@ -35,7 +35,7 @@ image:draas-landing6-free-trial.png["Screenshot della landing page per NetApp Di
 In caso contrario, viene visualizzata la Dashboard NetApp Disaster Recovery .
 
 +
-** Se non hai ancora aggiunto un agente NetApp Console , dovrai aggiungerne uno.  Per aggiungere l'agente, fare riferimento a https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Scopri di più sugli agenti della console"^] .
+** Se non hai ancora aggiunto un agente NetApp Console , dovrai aggiungerne uno. Per aggiungere l'agente, fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Scopri di più sugli agenti della console"^] .
 ** Se sei un utente NetApp Console con un agente esistente, quando selezioni "Disaster recovery" viene visualizzato un messaggio relativo alla registrazione.
 ** Se stai già utilizzando il servizio, quando selezioni "Disaster recovery" viene visualizzata la Dashboard.
 
