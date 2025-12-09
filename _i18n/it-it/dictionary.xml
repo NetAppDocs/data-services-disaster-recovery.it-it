@@ -1927,11 +1927,9 @@
   <block id="b706122b5735a672dec906da7d14b15c" category="doc">Conservazione della gerarchia delle cartelle</block>
   <block id="c8d94434feabcd9486a228e1a7a02882" category="paragraph">Per impostazione predefinita, Disaster Recovery mantiene la gerarchia dell'inventario delle VM (struttura delle cartelle) durante il failover.  Se la destinazione di ripristino non dispone della cartella richiesta, Disaster Recovery la crea.</block>
   <block id="5a54761f5d99470c8137218395b65ca5" category="paragraph">Ora è possibile ignorare questa impostazione designando una nuova cartella VM padre o deselezionando l'opzione **Mantieni gerarchia cartelle originale**.</block>
-  <block id="4b4839446c123b0f7cbb37cc05973b41" category="paragraph">Per maggiori informazioni, vedere <block ref="8ed6b1ab912526d5ffcc717e1a39851e" category="inline-link-macro-rx"></block>.</block>
   <block id="c1bacabdbdc0d5e57b5ead85a617b4b0" category="section-title">Aggiornamento semplificato dell'agente della console</block>
   <block id="1220fc49240c9d2c58d7490c6c40ac65" category="paragraph">Disaster Recovery ora supporta un processo semplificato per l'utilizzo di più agenti Console in un ambiente di lavoro.  Per passare da un agente Console all'altro, è necessario modificare la configurazione di vCenter, riscoprire le credenziali e aggiornare i piani di replica per utilizzare il nuovo agente Console.</block>
   <block id="d6155caa68c59478855dfa8342f87d18" category="inline-link-macro">Agenti della console Switch</block>
-  <block id="8c3cfaa540744075b83a947ed57c6f60" category="paragraph">Per maggiori informazioni, vedere <block ref="0905281a07a8919c4c92242f0cf75d65" category="inline-link-macro-rx"></block>.</block>
   <block id="5fbf922c777310b5aadba9b1dab4f7b0" category="summary">Scopri i requisiti per l'utilizzo di più agenti Console con NetApp Disaster Recovery.</block>
   <block id="ac340102b6e26791143e3212d85bb1dd" category="doc">Cambiare gli agenti della console quando si utilizza NetApp Disaster Recovery</block>
   <block id="5784bc747a9795446f48f40111e7bf58" category="paragraph">NetApp Console supporta l'utilizzo di più agenti Console con un unico ambiente di lavoro.  L'utilizzo di più agenti Console può essere utile per mantenere l'accesso alle risorse durante l'esecuzione della manutenzione su un altro agente Console o in caso di errore di un agente Console.  Poiché ogni agente della console ha un identificatore univoco, la commutazione impropria degli agenti della console può compromettere la disponibilità delle risorse in un ambiente di lavoro.</block>
@@ -1965,4 +1963,6 @@
   <block id="ed5adefa93ed81ded190826eed4455dd" category="paragraph">Deselezionare questa casella per ignorare la gerarchia delle cartelle originale.</block>
   <block id="06596d9f3a6cac6c36599f4c1598f756" category="sidebar">Privilegi vCenter richiesti per il ripristino di emergenza</block>
   <block id="2b1806d17c0606f8caa4232aa6a3c113" category="sidebar">Agente Switch Console</block>
+  <block id="98ade846ffa73dc9c6bcd3e3e84c38b7" category="paragraph">Per maggiori informazioni, vedere <block ref="1762f821178ef43810c03e86465a946d" category="inline-link-macro-rx"></block>.</block>
+  <block id="1df351797bd2540f3ec41bc24e67bf1f" category="paragraph">Per maggiori informazioni, vedere <block ref="2631c62a2ac2ec2e6a0ebc0352319a2c" category="inline-link-macro-rx"></block>.</block>
 </blocks>
