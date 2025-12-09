@@ -1,0 +1,21 @@
+= Conservazione della gerarchia delle cartelle
+:allow-uri-read: 
+
+
+
+
+=== Conservazione della gerarchia delle cartelle
+
+Per impostazione predefinita, Disaster Recovery mantiene la gerarchia dell'inventario delle VM (struttura delle cartelle) durante il failover.  Se la destinazione di ripristino non dispone della cartella richiesta, Disaster Recovery la crea.
+
+Ora è possibile ignorare questa impostazione designando una nuova cartella VM padre o deselezionando l'opzione **Mantieni gerarchia cartelle originale**.
+
+Per maggiori informazioni, vedere link:../use/drplan-create.adoc["Creare un piano di replicazione"].
+
+
+
+=== Aggiornamento semplificato dell'agente della console
+
+Disaster Recovery ora supporta un processo semplificato per l'utilizzo di più agenti Console in un ambiente di lavoro.  Per passare da un agente Console all'altro, è necessario modificare la configurazione di vCenter, riscoprire le credenziali e aggiornare i piani di replica per utilizzare il nuovo agente Console.
+
+Per maggiori informazioni, vedere link:../reference/switch-console-agent.html["Agenti della console Switch"].

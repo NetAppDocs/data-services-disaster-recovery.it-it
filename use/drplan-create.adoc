@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/drplan-create.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
-summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su cloud che automatizza i flussi di lavoro di disaster recovery.  Dopo aver aggiunto i siti vCenter, sei pronto per creare un piano di disaster recovery o di replica. 
+summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su cloud che automatizza i flussi di lavoro di disaster recovery. Dopo aver aggiunto i siti vCenter, sei pronto per creare un piano di disaster recovery o di replicazione. 
 ---
 = Creare un piano di replica in NetApp Disaster Recovery
 :hardbreaks:
@@ -52,11 +52,12 @@ Il servizio esegue controlli di simmetria degli snapshot ogni 24 ore.
 
 *Prima di iniziare*
 
-Prima di creare una relazione SnapMirror , configurare il cluster e il peering SVM al di fuori del Disaster Recovery.
+* Prima di creare una relazione SnapMirror , configurare il cluster e il peering SVM al di fuori del Disaster Recovery.
+* Con Google Cloud, puoi aggiungere un solo volume o datastore a un piano di replica.
 
-*MIGLIOR PRATICITÀ*: Organizzare le VM prima di implementare NetApp Disaster Recovery per ridurre al minimo la "proliferazione degli archivi dati".  Posizionare le VM che necessitano di protezione su un sottoinsieme di datastore e posizionare le VM che non saranno protette su un sottoinsieme diverso di datastore.  Utilizzare la protezione basata su datastore per garantire che le VM su un dato datastore siano protette.
 
->[!IMPORTANTE] >Con Google Cloud, puoi aggiungere solo un volume o un datastore a un piano di replica.
+
+TIP: Organizza le tue VM prima di implementare NetApp Disaster Recovery per ridurre al minimo la "proliferazione incontrollata degli archivi dati". Posizionare le VM che necessitano di protezione su un sottoinsieme di datastore e posizionare le VM che non saranno protette su un sottoinsieme diverso di datastore. Utilizzare la protezione basata su datastore per garantire che le VM su un dato datastore siano protette.
 
 
 
@@ -121,7 +122,8 @@ Quando si creano gruppi di risorse, tenere presente i seguenti aspetti:
 * Per proteggere una VM, questa deve essere inclusa in un gruppo di risorse.
 
 
-*MIGLIOR PRASSI*: creare un set dedicato separato di mappature per i test di failover per impedire che le VMS vengano connesse alle reti di produzione utilizzando gli stessi indirizzi IP.
+
+TIP: Crea un set dedicato separato di mappature per i tuoi test di failover per impedire che VMS venga connesso alle reti di produzione utilizzando gli stessi indirizzi IP.
 
 .Passi
 . Selezionare *Macchine virtuali* o *Datastore*.
@@ -217,7 +219,7 @@ Selezionare la mappatura di rete sulla LAN virtuale appropriata.  Le LAN virtual
 
 
 
-=== Risorse della mappa > Sezione Macchine virtuali
+=== Risorse della mappa > sezione macchine virtuali
 
 È possibile configurare ciascuna VM nel gruppo di risorse protetto dal piano di replica in modo che si adatti all'ambiente virtuale vCenter di destinazione impostando una delle seguenti opzioni:
 
@@ -278,6 +280,10 @@ Per abilitare l'esecuzione degli script con il sistema operativo guest della VM,
 
 
 * *Esegui il downgrade della versione hardware della VM e registra*: seleziona questa opzione se la versione dell'host ESX di destinazione è precedente a quella di origine, in modo che corrispondano durante la registrazione.
+* *Mantieni gerarchia cartelle originale*: se selezionata, Disaster Recovery conserva la gerarchia dell'inventario delle VM (struttura delle cartelle) in caso di failover.  Se la destinazione di ripristino _non_ ha la gerarchia di cartelle originale, Disaster Recovery crea.
++
+Deselezionare questa casella per ignorare la gerarchia delle cartelle originale.
+
 * *Prefisso e suffisso della VM di destinazione*: nei dettagli delle macchine virtuali, è possibile aggiungere facoltativamente un prefisso e un suffisso a ciascun nome di VM sottoposto a failover.  Ciò può essere utile per differenziare le VM sottoposte a failover dalle VM di produzione in esecuzione sullo stesso cluster vCenter.  Ad esempio, è possibile aggiungere il prefisso "DR-" e il suffisso "-failover" al nome della VM.  In caso di emergenza, alcune persone aggiungono un secondo vCenter di produzione per ospitare temporaneamente le VM in un sito diverso.  L'aggiunta di un prefisso o di un suffisso può aiutare a identificare rapidamente le VM sottoposte a failover.  È possibile utilizzare il prefisso o il suffisso anche negli script personalizzati.
 +
 È possibile utilizzare il metodo alternativo di impostazione della cartella VM di destinazione nella sezione Risorse di calcolo.
