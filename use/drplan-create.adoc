@@ -280,10 +280,7 @@ Per abilitare l'esecuzione degli script con il sistema operativo guest della VM,
 
 
 * *Esegui il downgrade della versione hardware della VM e registra*: seleziona questa opzione se la versione dell'host ESX di destinazione è precedente a quella di origine, in modo che corrispondano durante la registrazione.
-* *Mantieni gerarchia cartelle originale*: se selezionata, Disaster Recovery conserva la gerarchia dell'inventario delle VM (struttura delle cartelle) in caso di failover.  Se la destinazione di ripristino _non_ ha la gerarchia di cartelle originale, Disaster Recovery crea.
-+
-Deselezionare questa casella per ignorare la gerarchia delle cartelle originale.
-
+* *Mantieni gerarchia cartelle originale*: se selezionata, Disaster Recovery conserva la gerarchia dell'inventario delle VM (struttura delle cartelle) in caso di failover. Se la destinazione di ripristino _non_ ha la gerarchia di cartelle originale, Disaster Recovery crea. Selezionare la casella per mantenere la gerarchia delle cartelle; deselezionarla per ignorare la gerarchia delle cartelle originale.
 * *Prefisso e suffisso della VM di destinazione*: nei dettagli delle macchine virtuali, è possibile aggiungere facoltativamente un prefisso e un suffisso a ciascun nome di VM sottoposto a failover.  Ciò può essere utile per differenziare le VM sottoposte a failover dalle VM di produzione in esecuzione sullo stesso cluster vCenter.  Ad esempio, è possibile aggiungere il prefisso "DR-" e il suffisso "-failover" al nome della VM.  In caso di emergenza, alcune persone aggiungono un secondo vCenter di produzione per ospitare temporaneamente le VM in un sito diverso.  L'aggiunta di un prefisso o di un suffisso può aiutare a identificare rapidamente le VM sottoposte a failover.  È possibile utilizzare il prefisso o il suffisso anche negli script personalizzati.
 +
 È possibile utilizzare il metodo alternativo di impostazione della cartella VM di destinazione nella sezione Risorse di calcolo.

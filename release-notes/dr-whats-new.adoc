@@ -28,7 +28,7 @@ Per impostazione predefinita, Disaster Recovery mantiene la gerarchia dell'inven
 
 Ora è possibile ignorare questa impostazione designando una nuova cartella VM padre o deselezionando l'opzione **Mantieni gerarchia cartelle originale**.
 
-Per maggiori informazioni, vedere link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.adoc["Creare un piano di replicazione"].
+Per maggiori informazioni, vedere link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"].
 
 
 
@@ -36,7 +36,7 @@ Per maggiori informazioni, vedere link:https://docs.netapp.com/us-en/data-servic
 
 Disaster Recovery ora supporta un processo semplificato per l'utilizzo di più agenti Console in un ambiente di lavoro.  Per passare da un agente Console all'altro, è necessario modificare la configurazione di vCenter, riscoprire le credenziali e aggiornare i piani di replica per utilizzare il nuovo agente Console.
 
-Per maggiori informazioni, vedere link:https://docs.netapp.com/us-en/data-services-disaster-recovery/reference/switch-console-agents.html["Agenti della console Switch"].
+Per maggiori informazioni, vedere link:https://docs.netapp.com/us-en/data-services-disaster-recovery/reference/switch-console-agent.html["Agenti della console Switch"].
 
 
 
