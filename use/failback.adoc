@@ -18,9 +18,11 @@ Dopo aver risolto un disastro, eseguire il failback dal sito di disaster recover
 
 link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
-*Informazioni su questo compito*
 
-In questo flusso di lavoro, NetApp Disaster Recovery replica (risincronizza) tutte le modifiche sulla macchina virtuale di origine prima di invertire la direzione della replica. Questo processo inizia da una relazione che ha completato il failover verso una destinazione e prevede i seguenti passaggi:
+
+== Informazioni sul failback
+
+In caso di failback, NetApp Disaster Recovery replica (risincronizza) tutte le modifiche sulla macchina virtuale di origine prima di invertire la direzione della replica. Questo processo inizia da una relazione che ha completato il failover verso una destinazione e prevede i seguenti passaggi:
 
 * Eseguire un controllo di conformità sul sito recuperato.
 * Aggiornare le informazioni vCenter per ogni cluster vCenter identificato come situato nel sito ripristinato.
@@ -30,13 +32,21 @@ In questo flusso di lavoro, NetApp Disaster Recovery replica (risincronizza) tut
 * Accendere e registrare le macchine virtuali di origine, quindi montare i volumi sull'origine.
 
 
-.Passi
-. Accedi al https://console.netapp.com/["NetApp Console"^] .
+
+
+== Prima di iniziare
+
+Se si utilizza la protezione basata su datastore, le VM aggiunte al datastore potrebbero essere aggiunte al datastore durante il processo di failover. In tal caso, assicurarsi di fornire informazioni di mappatura aggiuntive per queste VM prima di avviare il failback. Per modificare la mappatura delle risorse, vedere link:manage.html#manage-replication-plans["Gestire i piani di replicazione"].
+
+
+
+== Passi
+
 . Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
 . Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
 . Selezionare il piano di replicazione.
 . Sulla destra, seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] e seleziona *Fail back*.
-. Immettere il nome del piano di replica per confermare e avviare il failback.
-. Selezionare lo snapshot per il datastore da cui effettuare il ripristino.  L'impostazione predefinita è l'ultima.
-. Per controllare l'avanzamento, nel menu selezionare *Monitoraggio lavori*.
+. Immettere il nome del piano di replica per avviare il failback.
+. Selezionare lo snapshot per il datastore da cui effettuare il ripristino. L'impostazione predefinita è l'ultima.
+. Per monitorare l'avanzamento del processo, selezionare *Monitoraggio processo* nel menu Disaster Recovery.
 

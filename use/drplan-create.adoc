@@ -130,7 +130,7 @@ TIP: Crea un set dedicato separato di mappature per i tuoi test di failover per 
 . Facoltativamente, è possibile cercare una VM o un datastore specifico per nome.
 . Sul lato sinistro della pagina Applicazioni, seleziona le VM o i datastore che desideri proteggere e assegnali al gruppo selezionato.
 +
-Il vCenter di origine deve risiedere nel vCenter locale.  Il vCenter di destinazione può essere un secondo vCenter on-premise nello stesso sito o in un sito remoto, oppure un data center software-defined (SDDC) basato su cloud, come VMware Cloud su AWS.  Entrambi i vCenter dovrebbero essere già aggiunti all'ambiente di lavoro BlueXP disaster recovery .
+Il vCenter di origine deve risiedere nel vCenter locale. Il vCenter di destinazione può essere un secondo vCenter on-premise nello stesso sito o in un sito remoto, oppure un data center software-defined (SDDC) basato su cloud, come VMware Cloud su AWS. Entrambi i vCenter dovrebbero essere già aggiunti all'ambiente di lavoro di Disaster Recovery.
 
 +
 La risorsa selezionata viene automaticamente aggiunta al gruppo 1 e viene avviato un nuovo gruppo 2.  Ogni volta che si aggiunge una risorsa all'ultimo gruppo, viene aggiunto un altro gruppo.
@@ -170,7 +170,7 @@ Se si prevede di eseguire failover di prova come parte del piano di ripristino d
 Se si desidera creare una relazione SnapMirror in questo servizio, il cluster e il relativo peering SVM devono essere già stati configurati al di fuori di NetApp Disaster Recovery.
 
 .Passi
-. Nella pagina Mapping delle risorse, per utilizzare gli stessi mapping sia per le operazioni di failover che per quelle di test, selezionare la casella.
+. Nella pagina Mappatura risorse, seleziona la casella per utilizzare le stesse mappature sia per le operazioni di failover che per quelle di test.
 +
 image:dr-plan-resource-mapping2.png["Piano di replicazione, scheda Mappatura delle risorse"]
 
@@ -263,7 +263,7 @@ image:dr-plan-vm-subnet-option2.png["Screenshot che mostra Aggiungi piano di rep
 
 
 
-* *Script*: è possibile includere script personalizzati ospitati dal sistema operativo guest in formato .sh, .bat o .ps1 come processi post.  Grazie agli script personalizzati, il BlueXP disaster recovery può eseguire lo script dopo un failover, un failback e processi di migrazione.  Ad esempio, è possibile utilizzare uno script personalizzato per riprendere tutte le transazioni del database una volta completato il failover.  Il servizio può eseguire script all'interno di VM che eseguono Microsoft Windows o qualsiasi variante Linux supportata con parametri della riga di comando supportati.  È possibile assegnare uno script a singole VM o a tutte le VM nel piano di replica.
+* *Script*: è possibile includere script personalizzati ospitati dal sistema operativo guest in formato .sh, .bat o .ps1 come processi post. Grazie agli script personalizzati, Disaster Recovery può eseguire lo script dopo un failover, un failback e processi di migrazione. Ad esempio, è possibile utilizzare uno script personalizzato per riprendere tutte le transazioni del database una volta completato il failover. Il servizio può eseguire script all'interno di VM che eseguono Microsoft Windows o qualsiasi variante Linux supportata con parametri della riga di comando supportati. È possibile assegnare uno script a singole VM o a tutte le VM nel piano di replica.
 +
 Per abilitare l'esecuzione degli script con il sistema operativo guest della VM, devono essere soddisfatte le seguenti condizioni:
 
@@ -280,7 +280,10 @@ Per abilitare l'esecuzione degli script con il sistema operativo guest della VM,
 
 
 * *Esegui il downgrade della versione hardware della VM e registra*: seleziona questa opzione se la versione dell'host ESX di destinazione è precedente a quella di origine, in modo che corrispondano durante la registrazione.
-* *Mantieni gerarchia cartelle originale*: se selezionata, Disaster Recovery conserva la gerarchia dell'inventario delle VM (struttura delle cartelle) in caso di failover. Se la destinazione di ripristino _non_ ha la gerarchia di cartelle originale, Disaster Recovery crea. Selezionare la casella per mantenere la gerarchia delle cartelle; deselezionarla per ignorare la gerarchia delle cartelle originale.
+* *Mantieni la gerarchia delle cartelle originale*: per impostazione predefinita, Disaster Recovery conserva la gerarchia dell'inventario delle VM (struttura delle cartelle) in caso di failover. Se la destinazione di ripristino _non_ ha la gerarchia di cartelle originale, Disaster Recovery la crea.
++
+Deselezionare questa casella per ignorare la gerarchia delle cartelle originale.
+
 * *Prefisso e suffisso della VM di destinazione*: nei dettagli delle macchine virtuali, è possibile aggiungere facoltativamente un prefisso e un suffisso a ciascun nome di VM sottoposto a failover.  Ciò può essere utile per differenziare le VM sottoposte a failover dalle VM di produzione in esecuzione sullo stesso cluster vCenter.  Ad esempio, è possibile aggiungere il prefisso "DR-" e il suffisso "-failover" al nome della VM.  In caso di emergenza, alcune persone aggiungono un secondo vCenter di produzione per ospitare temporaneamente le VM in un sito diverso.  L'aggiunta di un prefisso o di un suffisso può aiutare a identificare rapidamente le VM sottoposte a failover.  È possibile utilizzare il prefisso o il suffisso anche negli script personalizzati.
 +
 È possibile utilizzare il metodo alternativo di impostazione della cartella VM di destinazione nella sezione Risorse di calcolo.
@@ -295,7 +298,7 @@ image:dr-plan-resource-mapping-vm-boot-order.png["Screenshot che mostra Aggiungi
 
 * *Ordine di avvio*: è possibile modificare l'ordine di avvio dopo un failover per tutte le macchine virtuali selezionate nei gruppi di risorse.  Per impostazione predefinita, tutte le VM vengono avviate insieme in parallelo; tuttavia, è possibile apportare modifiche in questa fase.  Ciò è utile per garantire che tutte le VM con priorità uno siano in esecuzione prima che vengano avviate le VM con priorità successiva.
 +
-Il BlueXP disaster recovery avvia in parallelo tutte le VM con lo stesso numero di ordine di avvio.
+Disaster Recovery avvia in parallelo tutte le VM con lo stesso numero di ordine di avvio.
 
 +
 ** Avvio sequenziale: assegna a ciascuna VM un numero univoco per avviarla nell'ordine assegnato, ad esempio 1, 2, 3, 4, 5.

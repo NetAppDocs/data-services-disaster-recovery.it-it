@@ -16,6 +16,62 @@ Scopri le novità di NetApp Disaster Recovery.
 
 
 
+== 12 gennaio 2026
+
+Versione 4.2.9
+
+
+
+=== Supporto per più agenti Console in ambienti on-premise
+
+Se utilizzi il Disaster Recovery in locale, ora puoi distribuire un agente Console per ogni istanza di vCenter, migliorando la resilienza.
+
+Ad esempio, se si dispone di due siti (siti A e B), il sito A può avere l'agente console A collegato a vCenter 1, distribuzione ONTAP 1 e distribuzione ONTAP 2. Il sito B può avere l'agente Console B collegato alle distribuzioni vCenter 2 e ONTAP 3 e 4.
+
+Per informazioni sull'agente Console in Disaster Recovery, vedere link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-prerequisites.html#netapp-console-prerequisites["Creare l'agente della console"^].
+
+
+
+=== Aggiungere VM dopo il failover per i piani di replicazione utilizzando la protezione basata su datastore
+
+Quando viene attivato il failover, qualsiasi piano di replica che utilizza la protezione basata su datastore include le VM aggiunte al datastore, a condizione che siano state rilevate. È necessario fornire i dettagli di mappatura per le VM aggiunte prima del completamento del failover.
+
+Per maggiori informazioni, vedere link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Failover delle applicazioni"^].
+
+
+
+=== Nuove notifiche e-mail
+
+Disaster Recovery ora fornisce notifiche e-mail per i seguenti eventi:
+
+* Avvicinamento al limite di utilizzo della capacità
+* Generazione del report completata
+* Fallimenti lavorativi
+* Scadenza o violazioni della licenza
+
+
+
+
+=== Miglioramenti di Swagger
+
+Ora è possibile accedere alla documentazione di Swagger dall'interno di Disaster Recovery. In Disaster Recovery, seleziona **Impostazioni**, quindi **Documentazione API** per collegarti a Swagger oppure visita questo URL nella modalità di navigazione in incognito/privata del tuo browser: link:https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas["https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas"^].
+
+
+
+=== Interfacce utente migliorate
+
+Disaster Recovery ora fornisce avvisi e risoluzioni degli errori migliorati. Questa versione corregge un errore che impediva la visualizzazione dei lavori annullati nell'interfaccia utente. Ora i lavori annullati sono visibili. È presente anche un nuovo avviso quando la stessa rete di destinazione viene mappata su più reti di origine diverse.
+
+
+
+=== Mantieni la struttura delle cartelle della VM aggiunta come predefinita nei piani di replica
+
+Quando si crea una replica, la nuova impostazione predefinita è quella di mantenere la struttura delle cartelle della VM. Se la destinazione di ripristino non dispone della gerarchia di cartelle originale, Disaster Recovery la crea. È possibile deselezionare questa opzione per ignorare la gerarchia delle cartelle originale.
+
+Per maggiori informazioni, vedere link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"^].
+
+
+
 == 09 dicembre 2025
 
 Versione 4.2.8P1

@@ -174,6 +174,9 @@ L'agente Console è un componente software che consente alla Console di comunica
 * Tipo di agente console necessario:
 +
 ** *Ripristino di emergenza da locale a locale*: installare l'agente locale della console nel sito di ripristino di emergenza. Utilizzando questo metodo, un errore del sito primario non impedisce al servizio di riavviare le risorse virtuali nel sito DR. Fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["Installa e configura l'agente Console in locale"^] .
++
+Disaster Recovery supporta anche l'utilizzo di più agenti Console con configurazioni on-premise. In questo scenario, gli agenti della console indirizzano le azioni ai cluster di array vCenter e ONTAP , mentre l'origine e la destinazione avrebbero ciascuna il proprio agente della console. Si consiglia di utilizzare più agenti della console per ridurre la latenza e migliorare i tempi di ripristino in caso di errore di un agente o di un sito della console.
+
 ** *Da locale ad AWS*: installa l'agente della console per AWS nella tua VPC AWS. Fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/concept-install-options-aws.html["Opzioni di installazione dell'agente console in AWS"^] .
 +
 

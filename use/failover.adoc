@@ -20,9 +20,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 *Informazioni su questo compito*
 
-Durante un failover, Disaster Recovery utilizza la copia snapshot SnapMirror più recente.  In alternativa, è possibile selezionare uno snapshot specifico da uno snapshot point-in-time (in base ai criteri di conservazione di SnapMirror).
-
-Utilizzare l'opzione point-in-time se le repliche più recenti sono compromesse, ad esempio durante un attacco ransomware.  Il BlueXP disaster recovery mostra tutti i punti disponibili nel tempo.
+Durante un failover, Disaster Recovery utilizza per impostazione predefinita la copia snapshot SnapMirror più recente, anche se è possibile selezionare uno snapshot specifico da uno snapshot point-in-time (in base ai criteri di conservazione di SnapMirror). Utilizzare l'opzione point-in-time se le repliche più recenti sono compromesse, ad esempio durante un attacco ransomware.
 
 Questo processo varia a seconda che il sito di produzione sia integro e che si stia eseguendo un failover sul sito di disaster recovery per motivi diversi da un guasto critico dell'infrastruttura:
 
@@ -38,9 +36,9 @@ Questa procedura interrompe la relazione di replica, mette offline le VM di orig
 
 Prima di avviare il failover, è possibile testare il processo.  Il test non mette offline le macchine virtuali.
 
-Durante un test di failover, il BlueXP disaster recovery crea temporaneamente macchine virtuali.  Il BlueXP disaster recovery mappa un datastore temporaneo che supporta il volume FlexClone sugli host ESXi.
+Durante un test di failover, Disaster Recovery crea temporaneamente macchine virtuali. Risaster Recovery mappa un datastore temporaneo che supporta il volume FlexClone sugli host ESXi.
 
-Questo processo non consuma ulteriore capacità fisica sullo storage ONTAP locale o sullo storage ONTAP FSx per NetApp in AWS.  Il volume di origine originale non viene modificato e i processi di replica possono continuare anche durante il ripristino di emergenza.
+Questo processo non consuma ulteriore capacità fisica sullo storage ONTAP locale o sullo storage ONTAP FSx per NetApp in AWS. Il volume di origine originale non viene modificato e i processi di replica possono continuare anche durante il ripristino di emergenza.
 
 Una volta terminato il test, dovresti reimpostare le macchine virtuali con l'opzione *Pulisci test*.  Sebbene questa operazione sia consigliata, non è obbligatoria.
 
@@ -76,8 +74,8 @@ Una volta terminato il test di failover, è necessario ripulire l'ambiente di te
 .Passi
 . Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
 . Selezionare il piano di replicazione.
-. Sulla destra, seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] e seleziona *Pulisci test di failover*.
-. Nella pagina Test failover, immettere "Pulisci failover" e selezionare *Pulisci test failover*.
+. Sulla destra, seleziona l'opzione *Azioni* image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] quindi *pulisci il test di failover*.
+. Nella pagina Test failover, immettere "Pulisci failover", quindi selezionare *Pulisci test failover*.
 
 
 
@@ -102,6 +100,9 @@ Il processo di failover prevede le seguenti operazioni:
 
 
 
+NOTE: Per i piani di replica basati su datastore, se hai aggiunto e individuato delle VM ma non hai fornito dettagli di mappatura, tali VM vengono incluse nel failover. Il failover fallirà e verrà visualizzata una notifica nei processi. Per completare correttamente il failover, è necessario fornire i dettagli di mappatura.
+
+
 TIP: Dopo l'avvio del failover, è possibile visualizzare le VM ripristinate nel vCenter del sito di disaster recovery (macchine virtuali, reti e datastore).  Per impostazione predefinita, le macchine virtuali vengono ripristinate nella cartella Workload.
 
 .Passi
@@ -111,7 +112,7 @@ TIP: Dopo l'avvio del failover, è possibile visualizzare le VM ripristinate nel
 +
 image:dr-plan-failover3.png["Failover pagina"]
 
-. Nella pagina Failover, avvia subito uno snapshot oppure scegli lo snapshot per il datastore da cui effettuare il ripristino.  L'impostazione predefinita è l'ultima.
+. Nella pagina Failover, crea subito un nuovo snapshot oppure scegli uno snapshot esistente che il datastore utilizzerà come base per il ripristino. L'impostazione predefinita è l'ultima.
 +
 Verrà eseguita un'istantanea della sorgente corrente e replicata sulla destinazione corrente prima che si verifichi il failover.
 
