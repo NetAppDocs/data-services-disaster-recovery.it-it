@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference/vcenter-privileges.html 
 keywords: disaster recovery, bluexp, vcenter, 
-summary: 'L"account vCenter deve disporre di un set minimo di privilegi vCenter per consentire a NetApp Disaster Recovery di eseguire i propri servizi, come la registrazione e l"annullamento della registrazione degli archivi dati, l"avvio e l"arresto delle VM e la riconfigurazione delle macchine virtuali (VM).  Nella tabella seguente sono elencati tutti i privilegi richiesti affinché NetApp Disaster Recovery possa interagire con un cluster vCenter.' 
+summary: 'L"account vCenter deve disporre di un set minimo di privilegi vCenter affinché NetApp Disaster Recovery funzioni correttamente.' 
 ---
-= Privilegi vCenter necessari per NetApp Disaster Recovery
+= Privilegi richiesti vCenter per NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,142 +12,134 @@ summary: 'L"account vCenter deve disporre di un set minimo di privilegi vCenter 
 
 
 [role="lead"]
-L'account vCenter deve disporre di un set minimo di privilegi vCenter per consentire a NetApp Disaster Recovery di eseguire i propri servizi, come la registrazione e l'annullamento della registrazione degli archivi dati, l'avvio e l'arresto delle VM e la riconfigurazione delle macchine virtuali (VM).  Nella tabella seguente sono elencati tutti i privilegi richiesti affinché NetApp Disaster Recovery possa interagire con un cluster vCenter.
+Affinché NetApp Disaster Recovery possa svolgere i suoi servizi, l'account vCenter deve disporre di un set minimo di privilegi vCenter. Questi privilegi includono la registrazione e la deregistrazione di datastore, l'avvio e l'arresto di macchine virtuali (VM) e la riconfigurazione delle VM.
 
-[cols="25,35a,40a"]
+La tabella seguente elenca tutti i privilegi richiesti affinché NetApp Disaster Recovery possa interfacciarsi con un vCenter cluster.
+
+[cols="1,2,2,3"]
 |===
-| Tipo | Nome del privilegio | Descrizione 
+| Tipo | Nome del privilegio (vSphere client) | Nome privilegio (API) | Descrizione 
 
 
-| *Archivio dati*  a| 
-Datastore.Configura datastore
- a| 
-Utilizzare per configurare un datastore.
+.3+| Datastore | Datastore.Config | Configura datastore | Consente di configurare un datastore. 
 
 
-
-|   a| 
-Datastore.Rimuovi datastore
- a| 
-Utilizzare per rimuovere un datastore.
+| Datastore.Elimina | Rimuovi datastore | Consente di rimuovere un datastore. 
 
 
-
-| *Macchina virtuale*  a| 
-Macchina virtuale.Configurazione.Modifica impostazioni
- a| 
-Utilizzare per modificare le impostazioni generali della VM.
+| Datastore.Rename | Rinomina datastore | Consente di rinominare un datastore. 
 
 
-
-|   a| 
-Macchina virtuale.Configurazione.Modifica le impostazioni del dispositivo
- a| 
-Utilizzare per modificare le proprietà di un dispositivo esistente.
+.3+| Cartella | Folder.Create | Crea cartella | Consente di creare una nuova cartella. 
 
 
-
-|   a| 
-Macchina virtuale.Configurazione.Ricarica dal percorso
- a| 
-Da utilizzare per modificare una patch di configurazione della VM preservandone l'identità.  Soluzioni come VMware vCenter Site Recovery Manager utilizzano questa operazione per mantenere l'identità della VM durante il failover e il failback.
+| Folder.Delete | Elimina cartella | Permette di eliminare una cartella. Richiede privilegi sia sull'oggetto che sul suo genitore. 
 
 
-
-|   a| 
-Macchina virtuale.Configurazione.Rinomina
- a| 
-Utilizzare per rinominare una VM o modificare i nodi associati a una VM.
+| Folder.Rename | Rinomina cartella | Consente di modificare il nome di una cartella. 
 
 
-
-|   a| 
-Macchina virtuale.Configurazione.Reimposta le informazioni dell'ospite
- a| 
-Utilizzare per modificare le informazioni del sistema operativo guest per una VM.
+.2+| Rete | Network.Assign | Assegna rete | Consente di assegnare una rete a una VM. 
 
 
-
-|   a| 
-Macchina virtuale.Configurazione.Modifica memoria
- a| 
-Utilizzare per modificare la quantità di memoria allocata alla VM.
+| Network.Config | Configurare | Consente di configurare una rete. 
 
 
-
-|   a| 
-Macchina virtuale.Configurazione.Modifica conteggio CPU
- a| 
-Utilizzare per modificare il numero di CPU virtuali.
+.9+| Configurazione della macchina virtuale | VirtualMachine.Config.AdvancedConfig | Configurazione avanzata | Consente di aggiungere o modificare parametri avanzati nel file di configurazione della VM. 
 
 
-
-| *Ospite della macchina virtuale*  a| 
-Macchina virtuale.Operazioni guest.Modifiche alle operazioni guest
- a| 
-Consente operazioni guest VM che comportano modifiche al sistema operativo guest in una VM, ad esempio il trasferimento di un file alla VM.
+| VirtualMachine.Config.Settings | Modifica impostazioni | Consente di modificare le impostazioni generali della VM. 
 
 
-
-| *Interazione con la macchina virtuale*  a| 
-Macchina virtuale.Interazione.Spegnimento
- a| 
-Utilizzare per spegnere una VM accesa.  Questa operazione spegne il sistema operativo guest.
+| VirtualMachine.Config.CPUCount | Modifica il conteggio della CPU | Consente di modificare il numero di CPU virtuali. 
 
 
-
-|   a| 
-Macchina virtuale.Interazione.Accensione
- a| 
-Utilizzare per accendere una VM spenta e riprendere una VM sospesa.
+| VirtualMachine.Config.Memory | Modifica memoria | Consente di modificare la quantità di memoria allocata alla VM. 
 
 
-
-|   a| 
-Macchina virtuale.Interazione.Installazione di VMware Tools
- a| 
-Utilizzare per montare e smontare il CD di installazione di VMware Tools come CD-ROM per il sistema operativo guest.
+| VirtualMachine.Config.Resource | Cambia risorsa | Consente di modificare la configurazione delle risorse dei nodi VM in un pool di risorse. 
 
 
-
-| *Inventario delle macchine virtuali*  a| 
-Macchina virtuale.Inventario.Crea nuovo
- a| 
-Utilizzato per creare una VM e allocare risorse per la sua esecuzione.
+| VirtualMachine.Config.Rename | Rinomina | Consente di rinominare una VM o modificarne le note. 
 
 
-
-|   a| 
-Macchina virtuale.Inventario.Registro
- a| 
-Utilizzare per aggiungere una VM esistente a un vCenter Server o a un inventario host.
+| VirtualMachine.Config.EditDevice | Modificare le impostazioni del dispositivo | Consente di modificare le proprietà di un dispositivo esistente. 
 
 
-
-|   a| 
-Macchina virtuale.Inventario.Annulla registrazione
- a| 
-Utilizzare per annullare la registrazione di una VM da un vCenter Server o dall'inventario host.
+| VirtualMachine.Config.ReloadFromPath | Ricarica dal percorso | Consente di modificare un percorso di configurazione di una VM preservandone l'identità. 
 
 
-
-| *Stato della macchina virtuale*  a| 
-Macchina virtuale. Gestione snapshot. Crea snapshot
- a| 
-Utilizzare per creare uno snapshot dello stato attuale della VM.
+| VirtualMachine.Config.ResetGuestInfo | Reimposta le informazioni guest | Consente di modificare le informazioni del sistema operativo guest per una VM. 
 
 
-
-|   a| 
-Macchina virtuale.Gestione snapshot.Rimuovi snapshot
- a| 
-Utilizzare per rimuovere uno snapshot dalla cronologia degli snapshot.
+.5+| Guest della macchina virtuale | VirtualMachine.GuestOperations.ModifyAliases | Modifica dell'alias dell'operazione guest | Consente di modificare l'alias per la VM. 
 
 
+| VirtualMachine.GuestOperations.QueryAliases | Query alias operazione guest | Consente di interrogare l'alias di una VM. 
 
-|   a| 
-Macchina virtuale. Gestione snapshot. Ripristina snapshot
- a| 
-Utilizzare per impostare la VM sullo stato in cui si trovava in un dato snapshot.
 
+| VirtualMachine.GuestOperations.Modifica | Modifiche alle operazioni guest | Consente operazioni di modifica, incluso il trasferimento di un file alla VM. 
+
+
+| VirtualMachine.GuestOperations.Execute | Esecuzione del programma guest | Consente l'esecuzione di un'applicazione all'interno della VM. 
+
+
+| VirtualMachine.GuestOperations.Query | Query sulle operazioni guest | Consente di interrogare il sistema operativo guest. Le operazioni includono l'elenco dei file. 
+
+
+.9+| Interazione macchina virtuale | VirtualMachine.Interact.AnswerQuestion | Rispondi alla domanda | Consente di risolvere i problemi durante le transizioni di stato della VM o gli errori di runtime. 
+
+
+| VirtualMachine.Interact.PowerOff | Spegni | Consente di spegnere una VM accesa. 
+
+
+| VirtualMachine.Interact.PowerOn | Accendi | Consente di accendere o riprendere una VM. 
+
+
+| VirtualMachine.Interact.ToolsInstall | Installazione di VMware Tools | Consente il montaggio/smontaggio del programma di installazione di VMware Tools. 
+
+
+| VirtualMachine.Inventory.CreateFromExisting | Crea da esistente | Consente la clonazione o la distribuzione di una VM da un template. 
+
+
+| VirtualMachine.Inventory.Create | Crea nuovo | Consente di creare una VM e allocare risorse. 
+
+
+| VirtualMachine.Inventory.Register | Registrati | Consente di aggiungere una VM esistente a un inventario. 
+
+
+| VirtualMachine.Inventory.Delete | Rimuovi | Consente di eliminare una VM e i suoi file. Richiede privilegi sia sull'oggetto che sul suo genitore. 
+
+
+| VirtualMachine.Inventory.Unregister | Annulla registrazione | Consente di annullare la registrazione di una VM. Questa autorizzazione richiede privilegi sia sull'oggetto che sul suo padre. 
+
+
+.4+| Provisioning di macchine virtuali | VirtualMachine.Provisioning.Clone | Clona macchina virtuale | Consente di clonare una VM e allocare risorse. 
+
+
+| VirtualMachine.Provisioning.Customize | Personalizza guest | Consente di personalizzare il sistema operativo guest della VM. 
+
+
+| VirtualMachine.Provisioning.ModifyCustSpecs | Modifica specifica di personalizzazione | Consente di creare, modificare o eliminare specifiche di personalizzazione. 
+
+
+| VirtualMachine.Provisioning.ReadCustSpecs | Leggi le specifiche di personalizzazione | Consente di leggere una specifica di personalizzazione per una VM. 
+
+
+.2+| Configurazione del servizio macchina virtuale | VirtualMachine.Namespace.Query | Configurazioni del servizio di query | Consente di recuperare un elenco di servizi VM. 
+
+
+| VirtualMachine.Namespace.ReadContent | Leggi la configurazione del servizio | Consente di recuperare la configurazione del servizio VM esistente. 
+
+
+.4+| Istantanea della macchina virtuale | VirtualMachine.State.CreateSnapshot | Crea snapshot | Consente di creare uno snapshot dallo stato corrente della VM. 
+
+
+| VirtualMachine.State.RemoveSnapshot | Rimuovi snapshot | Consente di rimuovere uno snapshot. 
+
+
+| VirtualMachine.State.RenameSnapshot | Rinomina snapshot | Consente di rinominare uno snapshot o di aggiornarne la descrizione. 
+
+
+| VirtualMachine.State.RevertToSnapshot | Ripristina allo snapshot | Consente di ripristinare la VM allo stato di un determinato snapshot. 
 |===
