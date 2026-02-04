@@ -67,7 +67,7 @@ Con Disaster Recovery su Google Cloud VMware Engine tramite Google Cloud NetApp 
 
 **Considerazioni sul failover**
 
-* Il failover è supportato solo utilizzando lo snapshot più recente.  Se necessario, è possibile creare un nuovo snapshot durante lo snapshot (ovvero, l'opzione snapshot selettiva deve essere disabilitata).
+* Il failover è supportato solo utilizzando lo snapshot più recente. Se necessario, puoi creare un nuovo snapshot durante il failover (ovvero, l'opzione di snapshot selettivo deve essere disabilitata).
 * Non è possibile creare un nuovo snapshot dopo il failover.
 * Non è possibile conservare e riconciliare gli snapshot dopo il failover.
 
@@ -170,10 +170,10 @@ L'agente Console è un componente software che consente alla Console di comunica
 È necessario configurare un agente Console nella NetApp Console.  Quando si utilizza l'agente, questo includerà le funzionalità appropriate per il servizio Disaster Recovery.
 
 * NetApp Disaster Recovery funziona solo con la distribuzione dell'agente in modalità standard. Vedere https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introduzione alla NetApp Console in modalità standard"^] .
-* Assicurarsi che sia il vCenter di origine che quello di destinazione utilizzino lo stesso agente Console.
+* Assicurarsi che sia il cluster di origine che quello di destinazione vCenter utilizzino lo stesso agente Console.
 * Tipo di agente console necessario:
 +
-** *Ripristino di emergenza da locale a locale*: installare l'agente locale della console nel sito di ripristino di emergenza. Utilizzando questo metodo, un errore del sito primario non impedisce al servizio di riavviare le risorse virtuali nel sito DR. Fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["Installa e configura l'agente Console in locale"^] .
+** *Disaster recovery da on-premises a on-premises*: installa l'agente Console on-premises nel sito di disaster recovery. Utilizzando questo metodo, un guasto del sito primario non impedisce al servizio di riavviare le risorse virtuali nel sito DR. Fare riferimento a  https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["Installa e configura l'agente Console in locale"^].
 +
 Disaster Recovery supporta anche l'utilizzo di più agenti Console con configurazioni on-premise. In questo scenario, gli agenti della console indirizzano le azioni ai cluster di array vCenter e ONTAP , mentre l'origine e la destinazione avrebbero ciascuna il proprio agente della console. Si consiglia di utilizzare più agenti della console per ridurre la latenza e migliorare i tempi di ripristino in caso di errore di un agente o di un sito della console.
 
@@ -201,4 +201,12 @@ Per garantire il successo dei processi di coerenza delle applicazioni, applicare
 * Assicurarsi che gli strumenti VMware (o gli strumenti Open VM) siano in esecuzione sulle VM che verranno protette.
 * Per le VM Windows che eseguono Microsoft SQL Server, Oracle Database o entrambi, i database devono avere i relativi VSS Writer abilitati.
 * I database Oracle in esecuzione su un sistema operativo Linux devono avere l'autenticazione utente del sistema operativo abilitata per il ruolo SYSDBA del database Oracle.
+
+
+
+
+== Ulteriori informazioni
+
+* xref:../reference/vcenter-privileges.html[Privilegi richiesti vCenter]
+* xref:../reference/evs-deploy-guide-config-prereqs.html[Prerequisiti per Amazon EVS con NetApp Disaster Recovery]
 

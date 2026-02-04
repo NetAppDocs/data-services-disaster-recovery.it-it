@@ -4,7 +4,7 @@ title: Riferimento
 entries:
 - title: Privilegi vCenter richiesti per il ripristino di emergenza
   url: "/reference/vcenter-privileges.html"
-- title: Agente Switch Console
+- title: Agenti della console Switch
   url: "/reference/switch-console-agent.html"
 - title: Utilizzare NetApp Disaster Recovery con Amazon EVS
   entries:
