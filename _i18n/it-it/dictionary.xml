@@ -2107,4 +2107,12 @@
   <block id="29526e6f5f21e46912fe5e749afaadeb" category="paragraph">I passaggi specifici di installazione dell'agente Console dipendono dal tipo di distribuzione. Vedere <block ref="60ce1b0a0c322e03a03b2c2641ba72c3" category="inline-link-macro-rx"></block> per ulteriori informazioni.</block>
   <block id="1515391ee07716093ddb994cd9906006" category="inline-link">Crea un agente della Console da AWS Marketplace</block>
   <block id="7f9f446a286afe8acb3ad25ae1a89a13" category="admonition">Il metodo più semplice per installare l'agente Console con Amazon AWS è utilizzare AWS Marketplace. Per dettagli sull'installazione dell'agente Console tramite AWS Marketplace, vedere <block ref="f267bc5cc8f7e48efa7f9b5434e2039f" category="inline-link-rx"></block>.</block>
+  <block id="83babe62c403f56e76ef6809d4508f91" category="doc">Interfaccia utente migliorata</block>
+  <block id="438ce765c897095715b03fca4b860a61" category="paragraph">L'interfaccia utente di Disaster Recovery è stata aggiornata per migliorare le prestazioni e l'esperienza utente in base al feedback.</block>
+  <block id="c99f25325f86d3f0c79c43f7e35c908e" category="section-title">Documentazione Swagger API</block>
+  <block id="4dc69d78f0442e6b664baa4e0d9bd594" category="inline-image-macro">Icona azione</block>
+  <block id="c75d11eee9117155e14ba1fe4d4e9609" category="inline-link-macro">aggiungi l'URL ai preferiti</block>
+  <block id="1ed2e3ee9da6a94c882b1fde4a104444" category="paragraph">La documentazione dell'API Swagger per il Disaster Recovery è ora accessibile tramite un normale browser; la modalità di navigazione in incognito non è più necessaria. Per accedere alla documentazione dell'API, accedi alla dashboard di Disaster Recovery, seleziona il menu contestuale in alto a destra <block ref="9bb01c837d73cae62964f6b5d76c3c64" category="inline-image-macro-rx" type="image"></block> quindi **API Documentation** per aprire la documentazione Swagger. Puoi anche <block ref="1a92440ed6b8c60f65d4cdda7009f427" category="inline-link-macro-rx"></block>.</block>
+  <block id="fb042b7b99959e391eeb7c417511098a" category="section-title">16 febbraio 2026</block>
+  <block id="699554d8d02429739cd0995ec1ec3ab8" category="paragraph">Version 4.3.0</block>
 </blocks>
