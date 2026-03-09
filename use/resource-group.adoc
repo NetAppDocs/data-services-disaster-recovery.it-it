@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su 
 
 
 [role="lead"]
-Dopo aver aggiunto i siti vCenter, è possibile creare gruppi di risorse per proteggere le VM per VM o datastore come un'unica unità.  I gruppi di risorse consentono di organizzare un set di VM dipendenti in gruppi logici che soddisfano i requisiti.  Ad esempio, è possibile raggruppare le VM associate a un'applicazione oppure le applicazioni che hanno livelli simili.  Come altro esempio, i gruppi potrebbero contenere ordini di avvio ritardati che possono essere eseguiti al momento del ripristino.
+Dopo aver aggiunto i siti vCenter, puoi creare gruppi di risorse per raggruppare VM o datastore come un'unica unità. I gruppi di risorse consentono di organizzare un insieme di VM dipendenti in gruppi logici che soddisfano i tuoi requisiti. Ad esempio, potresti raggruppare le VM associate a un'applicazione oppure potresti raggruppare applicazioni che hanno livelli simili. Un altro esempio è che i gruppi potrebbero contenere ordini di avvio ritardati che possono essere eseguiti al momento del ripristino.
 
 *Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
 
@@ -32,7 +32,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 TIP: Ogni gruppo di risorse può includere una o più VM o datastore.  Le VM si accenderanno in base alla sequenza in cui le includi nel piano di replica.  È possibile modificare l'ordine trascinando le VM o i datastore verso l'alto o verso il basso nell'elenco dei gruppi di risorse.
 
 .Informazioni sui gruppi di risorse
-I gruppi di risorse consentono di combinare VM o datastore come se fossero un'unica unità.
+I gruppi di risorse consentono di combinare VM o datastore in un'unica unità.
 
 Ad esempio, un'applicazione POS potrebbe utilizzare diverse VM per database, logica aziendale e vetrine.  È possibile gestire tutte queste VM con un unico gruppo di risorse.  Impostare gruppi di risorse per applicare le regole del piano di replica per l'ordine di avvio delle VM, la connessione di rete e il ripristino di tutte le VM necessarie per l'applicazione.
 

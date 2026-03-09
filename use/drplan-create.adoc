@@ -208,7 +208,7 @@ TIP: Se un vCenter dispone di un Distributed Resource Scheduler (DRS) configurat
 
 === Risorse della mappa > Sezione Reti virtuali
 
-Le VM utilizzano NIC virtuali connesse a reti virtuali.  Nel processo di failover, il servizio connette queste NIC virtuali alle reti virtuali definite nell'ambiente VMware di destinazione.  Per ogni rete virtuale di origine utilizzata dalle VM nel gruppo di risorse, il servizio richiede un'assegnazione di rete virtuale di destinazione.
+Le VM utilizzano schede di rete virtuali connesse a reti virtuali. Nel processo di failover, il servizio collega queste schede di rete virtuali alle reti virtuali definite nell'ambiente VMware di destinazione. Per ogni rete virtuale di origine utilizzata dalle VM nel gruppo di risorse, il servizio richiede l'assegnazione di una rete virtuale di destinazione.
 
 
 NOTE: È possibile assegnare più reti virtuali di origine alla stessa rete virtuale di destinazione.  Ciò potrebbe tuttavia creare conflitti nella configurazione della rete IP.  È possibile mappare più reti di origine su una singola rete di destinazione per garantire che tutte le reti di origine abbiano la stessa configurazione.
@@ -446,9 +446,9 @@ Il piano viene aggiunto all'elenco dei piani.
 
 
 
-== Modificare le pianificazioni per testare la conformità e garantire il funzionamento dei test di failover
+== Modificare un piano di replicazione
 
-Potrebbe essere opportuno impostare delle pianificazioni per testare la conformità e i test di failover, in modo da garantire che funzionino correttamente quando necessario.
+È possibile modificare una pianificazione del piano di replica per testare la conformità e garantire che i test di failover vengano completati correttamente.
 
 * *Impatto sui tempi di conformità*: quando viene creato un piano di replica, il servizio crea per impostazione predefinita una pianificazione di conformità.  Il tempo di conformità predefinito è di 30 minuti.  Per modificare questo orario, è possibile modificare la pianificazione nel piano di replica.
 * *Impatto del failover di prova*: è possibile testare un processo di failover su richiesta o in base a una pianificazione.  Ciò consente di testare il failover delle macchine virtuali su una destinazione specificata in un piano di replica.

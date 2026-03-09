@@ -95,7 +95,7 @@ image:../use/dr-plan-list.png["Elenco dei piani di replicazione"]
 
 
 . Per tornare all'elenco dei piani, seleziona "Piani di replica" nel percorso di navigazione a sinistra.
-. Per eseguire azioni con il piano, dall'elenco dei piani di replica, selezionare l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] a destra del piano e seleziona una delle opzioni, ad esempio *Modifica pianificazioni*, *Failover di prova*, *Fail over*, *Fail back*, *Migra*, *Acquisisci snapshot ora*, *Pulisci vecchi snapshot*, *Disabilita*, *Abilita* o *Elimina*.
+. Per eseguire azioni con il piano, dall'elenco dei piani di replica, seleziona l'opzione *Azioni* image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] a destra del piano, quindi scegli un'azione: *Modifica pianificazioni*, *Test failover*, *Fail over*, *Fail back*, *Migra*, *Acquisisci snapshot ora*, *Pulisci vecchi snapshot*, *Disabilita*, *Abilita* o *Elimina*.
 . Per impostare o modificare una pianificazione del failover di prova o impostare la frequenza di controllo della conformità, selezionare l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] a destra del piano e seleziona *Modifica pianificazioni*.
 +
 .. Nella pagina Modifica pianificazioni, inserisci la frequenza in minuti con cui desideri che venga eseguito il controllo di conformità del failover.
