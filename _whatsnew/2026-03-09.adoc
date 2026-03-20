@@ -8,7 +8,7 @@
 
 Quando si crea un piano di replica in Disaster, è ora possibile escludere specifici datastore dalla replica. Per le situazioni in cui una VM è configurata per utilizzare più datastore, questo consente di limitare quali vengono replicati.
 
-Per i dettagli, vedere link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.adoc["Creare un piano di replicazione"^].
+Per dettagli, vedere link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"^].
 
 
 
