@@ -2,7 +2,9 @@
 section: reference
 title: Riferimento
 entries:
-- title: Privilegi vCenter richiesti per il ripristino di emergenza
+- title: Autorizzazioni ONTAP richieste
+  url: "/reference/ontap-permissions.html"
+- title: Privilegi richiesti vCenter
   url: "/reference/vcenter-privileges.html"
 - title: Agenti della console Switch
   url: "/reference/switch-console-agent.html"

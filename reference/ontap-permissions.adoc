@@ -1,0 +1,212 @@
+---
+sidebar: sidebar 
+permalink: reference/ontap-permissions.html 
+keywords: disaster recovery, ontap, requirements, configure permissions, roles, IAM 
+summary: Quando si utilizza NetApp Disaster Recovery, assicurarsi di aver configurato le autorizzazioni corrette in ONTAP per garantirne il corretto funzionamento. 
+---
+= Configurare le autorizzazioni ONTAP per NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Quando si utilizza NetApp Disaster Recovery, assicurarsi di aver configurato le autorizzazioni corrette in ONTAP per garantirne il corretto funzionamento.
+
+
+
+== Autorizzazioni minime ONTAP
+
+Per NetApp Disaster Recovery sono necessarie le seguenti autorizzazioni ONTAP:
+
+[cols="3,1"]
+|===
+| API | Livello di accesso 
+
+
+| /api | Sola lettura 
+
+
+| /api/application/applications | Lettura/scrittura 
+
+
+| /api/application/consistency-groups | Lettura/scrittura 
+
+
+| /api/cluster | Sola lettura 
+
+
+| /api/cluster/jobs | Sola lettura 
+
+
+| /api/cluster/peers | Leggere/creare/modificare 
+
+
+| /api/cluster/schedules | Leggere/creare 
+
+
+| /api/network/ip/interfaces | Sola lettura 
+
+
+| /api/network/ipspaces | Sola lettura 
+
+
+| /api/protocols/cifs/services | Lettura/scrittura 
+
+
+| /api/protocols/nfs/export-policies | Lettura/scrittura 
+
+
+| /api/protocols/nfs/services | Sola lettura 
+
+
+| /api/protocols/san/igroups | Lettura/scrittura 
+
+
+| /api/protocols/san/iscsi/sessions | Sola lettura 
+
+
+| /api/protocols/san/lun-maps | Lettura/scrittura 
+
+
+| /api/security/certificates | Sola lettura 
+
+
+| /api/snapmirror/policies | Leggere/creare/modificare 
+
+
+| /api/snapmirror/relationships | Lettura/scrittura 
+
+
+| /api/storage/aggregates | Sola lettura 
+
+
+| /api/storage/file/clone | Leggere/creare 
+
+
+| /api/storage/flexcache/flexcaches | Leggere/creare 
+
+
+| /api/storage/luns | Lettura/scrittura 
+
+
+| /api/storage/qtrees | Leggere/modificare 
+
+
+| /api/storage/snapshot-policies | Sola lettura 
+
+
+| /api/storage/volumes | Lettura/scrittura 
+
+
+| /api/svm/peers | Leggere/creare/modificare 
+
+
+| /api/svm/svms | Sola lettura 
+|===
+
+
+== Aggiungere autorizzazioni in ONTAP
+
+L'aggiunta di autorizzazioni in ONTAP richiede la creazione di un ruolo con le autorizzazioni richieste e l'assegnazione di tale ruolo a un utente. È possibile eseguire questa operazione in ONTAP utilizzando System Manager o la ONTAP CLI.
+
+[role="tabbed-block"]
+====
+.System Manager
+--
+È necessario eseguire questa procedura separatamente per i cluster di origine e di destinazione.
+
+.Crea il ruolo
+. Accedi al cluster ONTAP con le credenziali dell'amministratore.
+. Accedere a *Cluster* > *Impostazioni*.
+. Nella sezione *Sicurezza*, selezionare *Utenti e ruoli*.
+. Seleziona *+ Aggiungi* per creare un nuovo ruolo.
+. Inserisci il *nome del ruolo*. Assegna il *percorso API REST*, il *percorso secondario* e il *livello di accesso* secondo link:#minimum-ontap-permissions["tabella"].
+. Dopo aver aggiunto tutte le autorizzazioni richieste, selezionare *Aggiungi*.
+
+
+.Assegna il ruolo a un utente
+. Torna alla sezione *Utenti e ruoli* del menu della sezione.
+. In *Utenti*, seleziona *Aggiungi*.
+. Inserisci un *nome utente* e poi seleziona il *ruolo* che hai creato in precedenza.
+. Nella sezione Metodi di accesso utente, fai clic su Aggiungi finché non saranno configurati tutti i metodi di accesso richiesti.
+. Crea una *password* per l'utente e poi conferma la password.
+. Seleziona *Salva*.
+
+
+--
+.CLI
+--
+Per creare un ruolo e un utente in ONTAP, è necessario autenticarsi nella CLI per il cluster ONTAP appropriato utilizzando le credenziali di amministratore. Questa procedura deve essere eseguita separatamente per i cluster di origine e di destinazione.
+
+.Creare il ruolo con i privilegi richiesti
+. Esegui il comando `security login rest-role create -role <rolename> -api <api> -access <access>` per creare un ruolo con le autorizzazioni richieste. Puoi copiare l'intero set di comandi da utilizzare in uno script che creerà il ruolo `dr_privileges`.
++
+[listing]
+----
+security login rest-role create -role dr_privileges -api /api -access readonly
+security login rest-role create -role dr_privileges -api /api/application/applications -access all
+security login rest-role create -role dr_privileges -api /api/application/consistency-groups -access all
+security login rest-role create -role dr_privileges -api /api/cluster -access readonly
+security login rest-role create -role dr_privileges -api /api/cluster/jobs -access readonly
+security login rest-role create -role dr_privileges -api /api/cluster/peers -access read_create_modify
+security login rest-role create -role dr_privileges -api /api/cluster/schedules -access read_create
+security login rest-role create -role dr_privileges -api /api/network/ip/interfaces -access readonly
+security login rest-role create -role dr_privileges -api /api/network/ipspaces -access readonly
+security login rest-role create -role dr_privileges -api /api/protocols/cifs/services -access all
+security login rest-role create -role dr_privileges -api /api/protocols/nfs/export-policies -access all
+security login rest-role create -role dr_privileges -api /api/protocols/nfs/services -access readonly
+security login rest-role create -role dr_privileges -api /api/protocols/san/igroups -access all
+security login rest-role create -role dr_privileges -api /api/protocols/san/iscsi/sessions -access readonly
+security login rest-role create -role dr_privileges -api /api/protocols/san/lun-maps -access all
+security login rest-role create -role dr_privileges -api /api/security/certificates -access readonly
+security login rest-role create -role dr_privileges -api /api/snapmirror/policies -access read_create_modify
+security login rest-role create -role dr_privileges -api /api/snapmirror/relationships -access all
+security login rest-role create -role dr_privileges -api /api/storage/aggregates -access readonly
+security login rest-role create -role dr_privileges -api /api/storage/file/clone -access read_create
+security login rest-role create -role dr_privileges -api /api/storage/flexcache/flexcaches -access read_create
+security login rest-role create -role dr_privileges -api /api/storage/luns -access all
+security login rest-role create -role dr_privileges -api /api/storage/qtrees -access read_modify
+security login rest-role create -role dr_privileges -api /api/storage/snapshot-policies -access readonly
+security login rest-role create -role dr_privileges -api /api/storage/volumes -access all
+security login rest-role create -role dr_privileges -api /api/svm/peers -access read_create_modify
+security login rest-role create -role dr_privileges -api /api/svm/svms -access readonly
+----
+
+
+.Crea l'utente
+. Eseguire il seguente comando per creare l'utente:
++
+`security login create -vserver <SVM> -user-or-group-name <user-name> -application amqp -authentication-method password -role <role-name>`
+
++
+Quando richiesto, inserisci una password per l'utente.
+
+. Eseguire i seguenti comandi per aggiungere tutti i metodi di autenticazione richiesti:
++
+[listing]
+----
+security login create -vserver <SVM> -user-or-group-name <user-name> -application amqp -authentication-method password -role <role-name>
+
+security login create -vserver <SVM> -user-or-group-name <user-name> -application console -authentication-method password -role <role-name>
+
+security login create -vserver <SVM> -user-or-group-name <user-name> -application http -authentication-method password -role <role-name>
+
+security login create -vserver <SVM> -user-or-group-name <user-name> -application ontapi -authentication-method password -role <role-name>
+
+security login create -vserver <SVM> -user-or-group-name <user-name> -application rsh -authentication-method password -role <role-name>
+
+security login create -vserver <SVM> -user-or-group-name <user-name> -application ssh -authentication-method password -role <role-name>
+
+security login create -vserver <SVM> -user-or-group-name <user-name> -application telnet -authentication-method password -role <role-name>
+----
+
+
+--
+====
+
+
+== Configurare il ripristino di emergenza
+
+Dopo aver creato i ruoli ONTAP, è necessario link:https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html#step-3-discover-a-cluster["Scopri il cluster ONTAP nella Console"^]. Durante la fase di individuazione del cluster, sono necessari l'indirizzo IP del cluster ONTAP, il nome dell'utente creato e la password per questo passaggio. Per NetApp Disaster Recovery, è necessario eseguire l'individuazione sia sul cluster di origine che sul cluster di destinazione.
