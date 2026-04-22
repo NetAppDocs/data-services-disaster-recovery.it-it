@@ -108,7 +108,7 @@ TIP: Dopo l'avvio del failover, è possibile visualizzare le VM ripristinate nel
 .Passi
 . Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
 . Selezionare il piano di replicazione.
-. Sulla destra, seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] e seleziona *Fail over*.
+. Sulla destra, seleziona l'opzione *Azioni* image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"], posiziona il cursore su *Ripristina* e quindi seleziona *Fail over*.
 +
 image:dr-plan-failover3.png["Failover pagina"]
 
