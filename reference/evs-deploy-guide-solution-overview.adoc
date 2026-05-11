@@ -11,7 +11,7 @@ summary: Panoramica della soluzione NetApp Disaster Recovery tramite Amazon EVS 
 [role="lead"]
 NetApp Disaster Recovery è un servizio a valore aggiunto ospitato nell'ambiente software-as-a-service NetApp Console , che dipende dall'architettura principale NetApp Console .  Diversi componenti principali costituiscono il servizio DR per la protezione VMware all'interno della Console.
 
-Per una panoramica completa della soluzione NetApp Disaster Recovery , vederelink:../get-started/dr-intro.html["Scopri di più su NetApp Disaster Recovery per VMware"] .
+Per una panoramica completa della soluzione NetApp Disaster Recovery, vedere link:../get-started/dr-intro.html["Scopri di più su NetApp Disaster Recovery"].
 
 Se desideri proteggere le tue macchine virtuali VMware ospitate in locale su Amazon AWS, utilizza il servizio per eseguire il backup su Amazon EVS con Amazon FSx for NetApp ONTAP .
 

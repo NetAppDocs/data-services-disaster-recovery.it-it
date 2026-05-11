@@ -42,11 +42,40 @@ Se si utilizza la protezione basata su datastore, le VM aggiunte al datastore po
 
 == Passi
 
-. Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
+[role="tabbed-block"]
+====
+.vCenter
+--
+.Passi
 . Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
-. Selezionare il piano di replicazione.
-. Sulla destra, seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] e seleziona *Fail back*.
-. Immettere il nome del piano di replica per avviare il failback.
-. Selezionare lo snapshot per il datastore da cui effettuare il ripristino. L'impostazione predefinita è l'ultima.
-. Per monitorare l'avanzamento del processo, selezionare *Monitoraggio processo* nel menu Disaster Recovery.
+. Nel menu a tendina, imposta il filtro su *vCenter* piani di replica.
++
+image::site-type-toggle.png[Screenshot dell'interruttore del tipo di sito]
 
+. Identifica il piano di replica di cui desideri eseguire il failback. Seleziona l'opzione *Azioni* image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"], posiziona il cursore su *Ripristina* e quindi seleziona *Failback*.
+. Scegli lo snapshot del datastore da cui eseguire il ripristino. Seleziona *Crea snapshot ora* per avviare un nuovo snapshot oppure *Seleziona* per scegliere tra gli snapshot disponibili.
++
+image:failback.png["Screenshot della finestra di dialogo di failback"]
+
+. Immettere "Failback" per confermare l'operazione, quindi selezionare *Failback*.
+
+
+Per monitorare l'avanzamento del processo, selezionare *Monitoraggio processo* nel menu Disaster Recovery.
+
+--
+.Kubernetes
+--
+. Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
+. Nel menu a tendina, filtra per piani di replica *Kubernetes*.
++
+image::site-type-toggle.png[Screenshot dell'interruttore del tipo di sito]
+
+. Identifica il piano di replica di cui desideri eseguire il failback. Seleziona l'opzione *Azioni* image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"], posiziona il cursore su *Ripristina* e quindi seleziona *Failback*.
+. Scegli lo snapshot del datastore da cui eseguire il ripristino. Seleziona *Crea snapshot ora* per avviare un nuovo snapshot oppure *Usa lo snapshot più recente* per utilizzare lo snapshot più recente e riuscito.
+. Immettere "Failback" per confermare l'operazione, quindi selezionare *Failback*.
+
+
+Per monitorare l'avanzamento del processo, selezionare *Monitoraggio processo* nel menu Disaster Recovery.
+
+--
+====

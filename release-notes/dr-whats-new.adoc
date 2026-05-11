@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: release-notes/dr-whats-new.html 
 keywords: disaster recovery, bluexp, disaster recovery, vmware, vcenter, draas, disaster 
-summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su cloud che automatizza i flussi di lavoro di disaster recovery.  Con NetApp Disaster Recovery per VMware, puoi replicare i carichi di lavoro VMware on-premise che eseguono lo storage ONTAP su un data center software-defined VMware nei cloud pubblici come sito di disaster recovery utilizzando lo storage cloud NetApp . 
+summary: NetApp Disaster Recovery è un servizio di disaster recovery basato sul cloud che automatizza i flussi di lavoro di disaster recovery. Con NetApp Disaster Recovery, puoi replicare i carichi di lavoro VMware on-premises che utilizzano storage ONTAP in un data center VMware software-defined nei cloud pubblici come sito di disaster recovery utilizzando NetApp cloud storage. 
 ---
 = Novità di NetApp Disaster Recovery
 :hardbreaks:
@@ -13,6 +13,27 @@ summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su 
 
 [role="lead"]
 Scopri le novità di NetApp Disaster Recovery.
+
+
+
+== 15 maggio 2026
+
+Version 4.3.3
+
+
+
+=== Supporto per carichi di lavoro basati su Kubernetes (anteprima)
+
+NetApp Disaster Recovery ora include il supporto per i carichi di lavoro basati su Kubernetes. Con il supporto per Kubernetes, puoi proteggere le applicazioni in esecuzione su cluster Kubernetes, inclusi gli ambienti di virtualizzazione OpenShift. Disaster Recovery supporta link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["qualsiasi versione di Kubernetes attualmente supportata da Trident Protect"^], garantendo un'integrazione perfetta e solide funzionalità di disaster recovery per le applicazioni containerizzate.
+
+Caratteristiche principali del supporto per i carichi di lavoro basati su Kubernetes:
+
+* **Ampia compatibilità**: Disaster Recovery supporta tutte le versioni di Kubernetes compatibili con Trident Protect, inclusa Red Hat OpenShift Virtualization.
+* **Protezione incentrata sull'applicazione**: ora è possibile proteggere i carichi di lavoro Kubernetes a livello di applicazione, garantendo il ripristino dei servizi critici durante gli eventi di failover.
+* **Orchestrazione semplificata**: Disaster Recovery offre flussi di lavoro intuitivi per automatizzare il backup e la replica dei carichi di lavoro Kubernetes, sfruttando la stessa efficiente tecnologia SnapMirror utilizzata per gli ambienti VMware.
+
+
+Il supporto per i carichi di lavoro basati su Kubernetes è attualmente in anteprima. Per iniziare a proteggere i carichi di lavoro basati su Kubernetes, consultare link:https://docs.netapp.com/us-en/data-services-disaster-recovery/task-kubernetes-requirements.html["Requisiti di Kubernetes per NetApp Disaster Recovery"^].
 
 
 

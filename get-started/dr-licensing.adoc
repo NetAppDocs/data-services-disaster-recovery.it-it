@@ -64,9 +64,9 @@ image:draas-landing6-free-trial.png["Screenshot della landing page per NetApp Di
 Per aggiungere un agente Console, fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Scopri di più sugli agenti della console"^] .
 
 . Dopo aver configurato l'agente, nella landing page NetApp Disaster Recovery , il pulsante per aggiungere l'agente si trasforma in un pulsante per avviare una prova gratuita.  Seleziona *Inizia la prova gratuita*.
-. Iniziamo aggiungendo vCenter.
+. Inizia aggiungendo i siti primari e di disaster recovery.
 +
-Per maggiori dettagli, vedere link:../use/sites-add.html["Aggiungi siti vCenter"] .
+Per ulteriori dettagli, vedere link:../use/sites-add.html["Aggiungi siti"].
 
 
 
@@ -129,7 +129,7 @@ image:draas-trial-end3.png["Pagina di fine prova gratuita"]
 
 . Se desideri eliminare tutti i dati, seleziona *Elimina i dati subito dopo aver terminato la prova gratuita*.
 +
-In questo modo vengono eliminate tutte le pianificazioni, i piani di replica, i gruppi di risorse, i vCenter e i siti.  I dati di audit, i registri delle operazioni e la cronologia dei lavori vengono conservati fino alla fine del ciclo di vita del prodotto.
+Questa operazione elimina tutte le pianificazioni, i piani di replica, i gruppi di risorse, vCenters, i cluster Kubernetes e i siti. I dati di audit, i log operativi e la cronologia dei job vengono conservati fino alla fine del ciclo di vita del prodotto.
 
 +
 

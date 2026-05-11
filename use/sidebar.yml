@@ -6,7 +6,7 @@ entries:
   url: "/use/use-overview.html"
 - title: Visualizza lo stato di salute dei tuoi piani di disaster recovery nella Dashboard
   url: "/use/dashboard-view.html"
-- title: Aggiungere vCenter a un sito
+- title: Aggiungere risorse a un sito
   url: "/use/sites-add.html"
 - title: Crea un gruppo di risorse
   url: "/use/resource-group.html"
