@@ -15,4 +15,4 @@ Caratteristiche principali del supporto per i carichi di lavoro basati su Kubern
 * **Orchestrazione semplificata**: Disaster Recovery offre flussi di lavoro intuitivi per automatizzare il backup e la replica dei carichi di lavoro Kubernetes, sfruttando la stessa efficiente tecnologia SnapMirror utilizzata per gli ambienti VMware.
 
 
-Il supporto per i carichi di lavoro basati su Kubernetes è attualmente in anteprima. Per iniziare a proteggere i carichi di lavoro basati su Kubernetes, consultare link:https://docs.netapp.com/us-en/data-services-disaster-recovery/task-kubernetes-requirements.html["Requisiti di Kubernetes per NetApp Disaster Recovery"^].
+Il supporto per i carichi di lavoro basati su Kubernetes è attualmente in anteprima. Per iniziare a proteggere i carichi di lavoro basati su Kubernetes, consultare link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/task-kubernetes-requirements.html["Requisiti di Kubernetes per NetApp Disaster Recovery"^].
