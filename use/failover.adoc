@@ -145,6 +145,7 @@ image::site-type-toggle.png[Screenshot dell'interruttore del tipo di sito]
 . Selezionare il piano di replicazione.
 . Sulla destra, seleziona l'opzione *Azioni* image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"], posiziona il cursore su *Ripristina* e quindi seleziona *Fail over*.
 . Scegli la copia snapshot che desideri utilizzare per il failover. Puoi *Crea snapshot ora* per creare una nuova snapshot che verrà copiata nel cluster di destinazione oppure *Usa l'ultima snapshot* per utilizzare la snapshot più recente disponibile nel cluster di destinazione.
+. Seleziona *Ignora protezione* se non desideri che il servizio crei automaticamente una relazione di protezione inversa SnapMirror dopo un failover del piano di replica. Questa opzione è utile se desideri eseguire operazioni aggiuntive sul sito ripristinato prima di rimetterlo online all'interno di NetApp Disaster Recovery.
 . Digita "Failover" per confermare l'azione, quindi seleziona *Failover*.
 
 

@@ -48,7 +48,7 @@ Se si utilizza la protezione basata su datastore, le VM aggiunte al datastore po
 --
 .Passi
 . Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
-. Nel menu a tendina, imposta il filtro su *vCenter* piani di replica.
+. Nel menu a tendina, impostare il filtro su *VMware*.
 +
 image::site-type-toggle.png[Screenshot dell'interruttore del tipo di sito]
 
@@ -71,7 +71,7 @@ Per monitorare l'avanzamento del processo, selezionare *Monitoraggio processo* n
 image::site-type-toggle.png[Screenshot dell'interruttore del tipo di sito]
 
 . Identifica il piano di replica di cui desideri eseguire il failback. Seleziona l'opzione *Azioni* image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"], posiziona il cursore su *Ripristina* e quindi seleziona *Failback*.
-. Scegli lo snapshot del datastore da cui eseguire il ripristino. Seleziona *Crea snapshot ora* per avviare un nuovo snapshot oppure *Usa lo snapshot più recente* per utilizzare lo snapshot più recente e riuscito.
+. Scegli lo snapshot del cluster da cui eseguire il ripristino. Seleziona *Crea snapshot ora* per avviare un nuovo snapshot oppure *Usa lo snapshot più recente* per utilizzare lo snapshot più recente e riuscito.
 . Immettere "Failback" per confermare l'operazione, quindi selezionare *Failback*.
 
 

@@ -12,9 +12,7 @@ summary: Il disaster recovery nel cloud è un modo resiliente e conveniente per 
 
 
 [role="lead"]
-Il disaster recovery nel cloud è un modo resiliente e conveniente per proteggere i carichi di lavoro da interruzioni del sito e da eventi di corruzione dei dati. Con NetApp Disaster Recovery, puoi replicare i carichi di lavoro delle VM VMware o dei datastore on-premises che utilizzano storage ONTAP verso un data center VMware software-defined in un cloud pubblico utilizzando NetApp cloud storage oppure verso un altro ambiente VMware on-premises con storage ONTAP come sito di disaster recovery. Puoi utilizzare Disaster Recovery anche per migrare i carichi di lavoro delle VM da un sito a un altro.
-
-NetApp Disaster Recovery è un servizio di disaster recovery basato sul cloud che automatizza i flussi di lavoro di ripristino d'emergenza. Con NetApp Disaster Recovery, puoi proteggere i tuoi cluster Kubernetes on-premises, i carichi di lavoro basati su NFS e i datastore del file system della macchina virtuale VMware vSphere (VMFS) per iSCSI e FC che utilizzano lo storage NetApp verso una delle seguenti destinazioni:
+Il disaster recovery nel cloud è un modo resiliente e conveniente per proteggere i carichi di lavoro da interruzioni del sito e da eventi di corruzione dei dati. NetApp Disaster Recovery è un servizio di disaster recovery basato sul cloud che automatizza i flussi di lavoro di disaster recovery. Con NetApp Disaster Recovery, puoi proteggere i tuoi cluster Kubernetes on-premises, i carichi di lavoro basati su NFS e i datastore del file system della macchina virtuale VMware vSphere (VMFS) per iSCSI e FC che utilizzano lo storage NetApp verso una delle seguenti destinazioni:
 
 * Amazon Elastic VMware Service (EVS) con Amazon FSx for NetApp ONTAP Per i dettagli, fare riferimento alink:../reference/evs-deploy-guide-introduction.html["Introduzione di NetApp Disaster Recovery tramite Amazon Elastic VMware Service e Amazon FSx for NetApp ONTAP"] .
 * VMware Cloud (VMC) su AWS con Amazon FSx for NetApp ONTAP
@@ -134,7 +132,7 @@ In caso di emergenza, questo servizio consente di ripristinare le macchine virtu
 
 *Componenti del Disaster Recovery*
 
-Il Disaster Recovery utilizza i seguenti componenti per gestire i carichi di lavoro di Disaster Recovery:
+NetApp Disaster Recovery utilizza i seguenti componenti:
 
 * * NetApp Console*: l'interfaccia utente per la gestione dei piani di disaster recovery.  Puoi utilizzare la NetApp Console per creare e gestire piani di replica, gruppi di risorse e operazioni di failover nei tuoi ambienti on-premise e cloud.
 * *Agente console*: un componente software leggero che viene eseguito nella rete ospitata nel cloud o nell'ambiente VMware locale.  Comunica con la NetApp Console e gestisce la replica dei dati tra l'ambiente locale e il sito di disaster recovery.  L'agente Console è installato su una macchina virtuale nel tuo ambiente VMware.

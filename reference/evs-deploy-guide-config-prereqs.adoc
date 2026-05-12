@@ -12,7 +12,7 @@ summary: Prima di continuare a configurare Amazon EVS con NetApp Disaster Recove
 Assicurati di esaminare e soddisfare i requisiti per configurare Amazon EVS con NetApp Disaster Recovery.
 
 .Prerequisiti
-* Rivedi il link:../get-started/dr-prerequisites["prerequisiti generali per il Disaster Recovery"].
+* Rivedi il link:../get-started/dr-prerequisites.html["prerequisiti generali per il Disaster Recovery"].
 * Creare un account utente vCenter con i privilegi VMware specifici richiesti affinché NetApp Disaster Recovery esegua le operazioni necessarie.
 +
 

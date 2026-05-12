@@ -17,8 +17,6 @@ Prima di poter creare un piano di recovery, è necessario aggiungere siti a Disa
 
 TIP: Assicurarsi che sia la sorgente che la destinazione utilizzino lo stesso agente NetApp Console.
 
-Dopo aver aggiunto i vCenter, NetApp Disaster Recovery esegue un'analisi approfondita degli ambienti vCenter, inclusi cluster vCenter, host ESXi, datastore, spazio di archiviazione, dettagli delle macchine virtuali, repliche SnapMirror e reti di macchine virtuali.
-
 *Ruolo richiesto NetApp Console * Amministratore dell'organizzazione, Amministratore di cartelle o progetti o Amministratore del ripristino di emergenza.
 
 link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
@@ -31,7 +29,7 @@ Quando si aggiunge un sito al Disaster Recovery, è necessario distinguere in ba
 
 .Passi
 . In Ripristino di emergenza, seleziona **Siti** nella barra laterale.
-. Nel menu a tendina, seleziona il tipo di sito: **vCenter** o **Kubernetes**.
+. Nel menu a tendina, seleziona il tipo di sito: **VMware** o **Kubernetes**.
 +
 image::site-type-toggle.png[Screenshot dell'interruttore del tipo di sito]
 
@@ -84,7 +82,7 @@ NOTE: Il servizio supporta certificati di sicurezza autofirmati o certificati pr
 
 .Passi
 . In Ripristino di emergenza, seleziona **Siti** nella barra laterale.
-. Nel menu a tendina, imposta il filtro su *Kubernetes*.
+. Nel menu a tendina, impostare il filtro su *VMware*.
 +
 image::site-type-toggle.png[Screenshot dell'interruttore del tipo di sito]
 
@@ -126,6 +124,8 @@ image:sites-list2.png["Schermata della pagina dei siti"]
 
 
 
+
+Dopo aver aggiunto i vCenter, NetApp Disaster Recovery esegue un'analisi approfondita degli ambienti vCenter, inclusi cluster vCenter, host ESXi, datastore, spazio di archiviazione, dettagli delle macchine virtuali, repliche SnapMirror e reti di macchine virtuali.
 
 --
 .Kubernetes

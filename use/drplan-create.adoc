@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su 
 
 
 [role="lead"]
-Dopo aver aggiunto risorse e siti, sei pronto per creare un . I piani di replica gestiscono la protezione dei dati. La creazione della replica prevede la designazione dei siti di origine e di destinazione, la selezione dei gruppi di risorse e la scelta di come le applicazioni devono essere ripristinate e avviate. Ad esempio, potresti raggruppare le macchine virtuali (VM) associate a un'applicazione oppure potresti raggruppare applicazioni che hanno livelli simili.
+Dopo aver aggiunto risorse e siti, sei pronto per creare un . I piani di replica gestiscono la protezione dei dati. La creazione della replica prevede la designazione dei siti di origine e di destinazione, la selezione dei gruppi di risorse e la scelta delle modalità di ripristino e accensione delle applicazioni. Ad esempio, potresti raggruppare macchine virtuali (VM) associate a un'applicazione oppure potresti raggruppare applicazioni che hanno livelli simili.
 
 *Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
 
@@ -94,7 +94,7 @@ image::site-type-toggle.png[Screenshot dell'interruttore del tipo di sito]
 
 . Selezionare *Aggiungi*.
 . Inserisci un nome per il piano di replica.
-. Per *Origine*, selezionare il vCenter o cluster Kubernetes da designare come origine.
+. Per *Origine*, selezionare il vCenter o il cluster Kubernetes da designare come origine.
 . In *Origine vCenter*, seleziona il vCenter in cui si trovano i dati dal menu a tendina. In *Destinazione*, seleziona il vCenter o il cluster Kubernetes da utilizzare come destinazione per il disaster recovery.
 +
 image:dr-plan-create-name2.png["Screenshot che mostra la pagina del server vCenter"]
@@ -106,10 +106,7 @@ image:dr-plan-create-name2.png["Screenshot che mostra la pagina del server vCent
 
 === Selezionare le applicazioni da replicare e assegnare gruppi di risorse
 
-Il passaggio successivo consiste nel raggruppare le VM o gli archivi dati richiesti in gruppi di risorse funzionali.  I gruppi di risorse consentono di proteggere un set di VM o datastore con uno snapshot comune.
-
-
-TIP: Ogni gruppo di risorse può includere una o più VM o datastore.
+Il passo successivo consiste nel raggruppare le VM, i datastore o i cluster Kubernetes necessari in gruppi di risorse funzionali. I gruppi di risorse consentono di proteggere un insieme di risorse, come un cluster Kubernetes o una VM, con uno snapshot comune.
 
 Quando si creano gruppi di risorse, tenere presente i seguenti aspetti:
 
@@ -119,7 +116,7 @@ Quando si creano gruppi di risorse, tenere presente i seguenti aspetti:
 * Non ospitare risorse protette e non protette sullo stesso datastore. Se risorse protette e non protette sono ospitate sullo stesso datastore, potrebbero verificarsi i seguenti problemi:
 +
 ** La capacità utilizzata di quel volume può contribuire al calcolo della licenza perché il Disaster Recovery utilizza SnapMirror, il che significa che il sistema replica interi volumi ONTAP. In questo caso, lo spazio del volume occupato sia dalle risorse protette che da quelle non protette verrebbe incluso in questo calcolo.
-** Se il gruppo di risorse e le risorse associate devono essere trasferite al sito di disaster recovery, tutte le risorse non protette non saranno più presenti nel sito di origine a seguito del processo di failover, con conseguente arresto anomalo delle VM non protette nel sito di origine. Inoltre, NetApp Disaster Recovery non avvierà tali VM non protette nel sito di failover vCenter.
+** Se il gruppo di risorse e le risorse associate devono essere trasferite al sito di ripristino di emergenza, tutte le risorse non protette non saranno più presenti nel sito di origine a seguito del processo di failover, con conseguente interruzione del servizio per tali risorse non protette nel sito di origine. Inoltre, NetApp Disaster Recovery non avvierà tali risorse non protette nel sito di failover.
 
 
 
@@ -224,6 +221,9 @@ Quando si imposta la frequenza degli snapshot, il minimo consentito è di cinque
 .. Seleziona il cloud *Provider* per l'hosting del *AppVault*.
 .. In base alla selezione del provider, Disaster Recovery popola gli abbonamenti cloud configurati in precedenza. Scegli *Subscription*, *Resource group* e *Storage account* per il cloud provider.
 .. Seleziona **Aggiungi**.
++
+image:kubernetes-mapping.png["Screenshot della mappatura della Storage class per Kubernetes"]
+
 
 
 . Seleziona **Avanti**.
