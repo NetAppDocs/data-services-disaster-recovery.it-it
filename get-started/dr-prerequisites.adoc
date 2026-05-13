@@ -140,6 +140,9 @@ Per un elenco dei privilegi vCenter necessari, fare riferimento alink:../referen
 
 
 
+TIP: Per utilizzare il ripristino di emergenza con Amazon Elastic VMware Service (EVS), vedere la link:../reference/evs-deploy-guide-config-prereqs.html["Prerequisiti aggiuntivi e indicazioni di configurazione"^].
+
+
 
 === Creare l'agente NetApp Console
 
