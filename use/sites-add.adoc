@@ -17,9 +17,7 @@ Prima di poter creare un piano di recovery, è necessario aggiungere siti a Disa
 
 TIP: Assicurarsi che sia la sorgente che la destinazione utilizzino lo stesso agente NetApp Console.
 
-*Ruolo richiesto NetApp Console * Amministratore dell'organizzazione, Amministratore di cartelle o progetti o Amministratore del ripristino di emergenza.
-
-link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo richiesto nella NetApp Console* Per svolgere questa attività è necessario il ruolo di Super admin o Disaster recovery admin. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 

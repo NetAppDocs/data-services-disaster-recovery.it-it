@@ -14,9 +14,7 @@ summary: Con NetApp Disaster Recovery puoi utilizzare diversi piani di licenza, 
 [role="lead"]
 Con NetApp Disaster Recovery puoi utilizzare diversi piani di licenza, tra cui una prova gratuita, un abbonamento a consumo o la possibilità di utilizzare la tua licenza.
 
-*Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
-
-link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso per tutti i servizi"^].
+*Ruolo richiesto NetApp Console* Per eseguire questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 *Opzioni di licenza* È possibile utilizzare le seguenti opzioni di licenza:
 

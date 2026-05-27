@@ -14,9 +14,7 @@ summary: I gruppi di risorse consentono di organizzare un insieme di risorse dip
 [role="lead"]
 Dopo aver aggiunto le risorse ai siti, è possibile creare gruppi di risorse per organizzare macchine virtuali, datastore o cluster Kubernetes come un'unica unità. I gruppi di risorse consentono di organizzare un insieme di risorse dipendenti in gruppi logici che soddisfano i requisiti. Ad esempio, è possibile raggruppare le macchine virtuali associate a un'applicazione oppure raggruppare applicazioni che hanno livelli simili. Un altro esempio è rappresentato dai gruppi, che potrebbero contenere ordini di avvio ritardati da eseguire al momento del ripristino.
 
-*Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
-
-link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo richiesto NetApp Console* Per eseguire questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 *Informazioni su questo compito*
 

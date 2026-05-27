@@ -45,7 +45,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 È possibile creare gruppi di risorse tramite VM o datastore.  Possono essere aggiunti quando si crea il piano di replicazione o in seguito.
 
-*Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
+*Ruolo NetApp Console richiesto* Per svolgere questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza.
 
 È possibile creare un gruppo di risorse tramite datastore nei seguenti modi:
 
@@ -75,7 +75,7 @@ Per i dettagli sulla creazione di un gruppo di risorse, fare riferimento alink:r
 
 È possibile disattivare, attivare ed eliminare i piani di replica.  È possibile modificare gli orari.
 
-*Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
+*Ruolo richiesto NetApp Console* Super amministratore, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
 
 * Se si desidera sospendere temporaneamente un piano di replica, è possibile disattivarlo e riattivarlo in seguito.
 * Se non hai più bisogno del piano, puoi eliminarlo.
@@ -112,7 +112,7 @@ image:../use/dr-plan-list.png["Elenco dei piani di replicazione"]
 
 Disaster Recovery elimina automaticamente gli snapshot sulla sorgente ogni 24 ore.  Se si scopre che gli snapshot non sono sincronizzati tra l'origine e la destinazione, è necessario risolvere la discrepanza tra gli snapshot per garantire la coerenza tra i siti.
 
-*Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
+*Ruolo richiesto NetApp Console* Super amministratore, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
 
 .Passi
 . Dal menu, seleziona *Piani di replicazione*.
@@ -130,7 +130,7 @@ image:../use/dr-plan-list.png["Elenco dei piani di replicazione"]
 
 Se si elimina un piano di replica, è possibile eliminare anche gli snapshot primari e secondari creati dal piano.
 
-*Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
+*Ruolo richiesto NetApp Console* Super amministratore, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
 
 .Passi
 . Dal menu, seleziona *Piani di replicazione*.
@@ -146,7 +146,7 @@ Se si elimina un piano di replica, è possibile eliminare anche gli snapshot pri
 
 La modifica del conteggio di conservazione consente di aumentare o diminuire il numero di datastore salvati.
 
-*Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
+*Ruolo della console NetApp richiesto* Per eseguire questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza, Amministratore del failover del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza.
 
 .Passi
 . Dal menu, seleziona *Piani di replicazione*.
@@ -165,7 +165,7 @@ image:../use/dr-plan-failover-edit.png["Modifica pagina mapping failover"]
 
 È possibile visualizzare informazioni sul numero di datastore presenti nell'origine e nella destinazione.
 
-*Ruolo di NetApp Console obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza, amministratore dell'applicazione di ripristino di emergenza o visualizzatore del ripristino di emergenza.
+*Ruolo NetApp Console richiesto* Super amministratore, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza, amministratore dell'applicazione di ripristino di emergenza o visualizzatore del ripristino di emergenza.
 
 .Passi
 . Dal menu, seleziona *Dashboard*.
@@ -180,7 +180,7 @@ image:../use/dr-plan-failover-edit.png["Modifica pagina mapping failover"]
 
 È possibile visualizzare informazioni sul numero di macchine virtuali presenti sull'origine e sulla destinazione, nonché sulla CPU, sulla memoria e sulla capacità disponibile.
 
-*Ruolo di NetApp Console obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza, amministratore dell'applicazione di ripristino di emergenza o visualizzatore del ripristino di emergenza.
+*Ruolo NetApp Console richiesto* Super amministratore, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza, amministratore dell'applicazione di ripristino di emergenza o visualizzatore del ripristino di emergenza.
 
 .Passi
 . Dal menu, seleziona *Dashboard*.
