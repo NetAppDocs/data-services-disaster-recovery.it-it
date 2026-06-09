@@ -1,0 +1,5 @@
+= 
+:allow-uri-read: 
+
+
+*Ruolo della console NetApp richiesto* Per eseguire questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza, Amministratore del failover del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].

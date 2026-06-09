@@ -30,6 +30,15 @@ La tabella seguente elenca tutti i privilegi richiesti affinché NetApp Disaster
 | Datastore.Rename | Rinomina datastore | Consente di rinominare un datastore. 
 
 
+.2+| Host | Host.Config.AdvancedConfig | Impostazioni avanzate | Consente di impostare opzioni di configurazione host avanzate. 
+
+
+| Host.Config.Storage | configurazione della partizione di archiviazione | Consente la scansione di nuovi dispositivi di archiviazione e la gestione di iSCSI. 
+
+
+| Risorsa | Risorsa.AssignVMToPool | Pool di risorse | Consente l'assegnazione di una macchina virtuale a un pool di risorse 
+
+
 .3+| Cartella | Folder.Create | Crea cartella | Consente di creare una nuova cartella. 
 
 
@@ -45,7 +54,16 @@ La tabella seguente elenca tutti i privilegi richiesti affinché NetApp Disaster
 | Network.Config | Configurare | Consente di configurare una rete. 
 
 
-.9+| Configurazione della macchina virtuale | VirtualMachine.Config.AdvancedConfig | Configurazione avanzata | Consente di aggiungere o modificare parametri avanzati nel file di configurazione della VM. 
+.12+| Configurazione della macchina virtuale | VirtualMachine.Config.AdvancedConfig | Configurazione avanzata | Consente di aggiungere o modificare parametri avanzati nel file di configurazione della VM. 
+
+
+| VirtualMachine.Config.AddExistingDisk | Aggiungi disco esistente | Consente di aggiungere un disco virtuale esistente a una macchina virtuale. 
+
+
+| VirtualMachine.Config.AddNewDisk | Aggiungi nuovo disco | Consente di creare un nuovo disco virtuale da aggiungere a una macchina virtuale. 
+
+
+| VirtualMachine.Config.RemoveDisk | Rimuovere il disco | Consente la rimozione di un dispositivo disco virtuale. 
 
 
 | VirtualMachine.Config.Settings | Modifica impostazioni | Consente di modificare le impostazioni generali della VM. 

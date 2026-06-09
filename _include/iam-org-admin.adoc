@@ -1,0 +1,5 @@
+= 
+:allow-uri-read: 
+
+
+*Ruolo richiesto NetApp Console* Per eseguire questa attività è necessario il ruolo di amministratore dell'organizzazione, amministratore di cartella o progetto, o amministratore del disaster recovery. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].

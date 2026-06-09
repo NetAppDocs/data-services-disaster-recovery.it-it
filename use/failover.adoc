@@ -32,7 +32,7 @@ Questa procedura interrompe la relazione di replica, mette offline le VM di orig
 
 == Testare il processo di failover
 
-Prima di avviare il failover, è possibile testare il processo. Il test non mette le VM offline.
+Prima di eseguire un failover reale, è possibile effettuare un test per verificarne la predisposizione. I carichi di lavoro rimangono online durante il processo di test.
 
 Durante un test di failover, Disaster Recovery crea temporaneamente delle macchine virtuali. Disaster Recovery mappa un datastore temporaneo a supporto del FlexClone volume sugli host ESXi.
 
@@ -59,7 +59,10 @@ Per un failover di prova, Disaster Recovery esegue le seguenti operazioni:
 . Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
 . Selezionare il piano di replicazione.
 . Sulla destra, seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] e seleziona *Test failover*.
-. Nella pagina Test failover, immettere "Test failover" e selezionare *Test failover*.
+. Nella pagina Test failover, scegli lo snapshot per il test failover: seleziona **Crea snapshot ora** oppure **Seleziona** per scegliere uno snapshot esistente. Se scegli **Seleziona**, scegli lo snapshot esistente.
++
+Quindi immettere “Test failover” e selezionare *Test fail over*.
+
 . Una volta completato il test, pulire l'ambiente di prova.
 
 
@@ -105,6 +108,9 @@ TIP: Dopo l'avvio del failover, è possibile visualizzare le VM ripristinate nel
 .vCenter
 --
 Per i piani di replica basati su datastore, se hai aggiunto e individuato delle VM ma non hai fornito dettagli di mappatura, tali VM vengono incluse nel failover. Il failover fallirà e verrà visualizzata una notifica nei processi. Per completare correttamente il failover, è necessario fornire i dettagli di mappatura.
+
+
+IMPORTANT: Se il piano di replica include un datastore vuoto, è necessario prima rimuovere il datastore vuoto dal piano oppure utilizzare l'opzione **Force failover**, che ignora i datastore vuoti.
 
 .Passi
 . Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.

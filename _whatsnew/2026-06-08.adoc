@@ -1,0 +1,61 @@
+= Aggiornamenti di Kubernetes
+:allow-uri-read: 
+
+
+
+
+=== Aggiornamenti di Kubernetes
+
+Disaster Recovery ha introdotto le seguenti modifiche per i carichi di lavoro basati su Kubernetes:
+
+
+
+==== Test del supporto di failover per i carichi di lavoro Kubernetes
+
+La funzionalità di ripristino di emergenza ora supporta il test del processo di failover per i carichi di lavoro Kubernetes. Il test del failover consente di convalidare i piani di ripristino di emergenza. Al termine del test, è possibile ripulire il failover di prova, in modo che il sistema elimini automaticamente le risorse di test per ridurre il sovraccarico e garantire la coerenza dell'ambiente.
+
+Per ulteriori informazioni, consultare link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html#test-the-failover-process["Testare il processo di failover"^].
+
+
+
+==== Failover di test programmati
+
+Ora è possibile automatizzare i test di ripristino di emergenza pianificando i failover di prova. È possibile impostare pianificazioni per failover di prova ricorrenti per convalidare continuamente i piani di ripristino senza intervento manuale, contribuendo a mantenere la fiducia negli obiettivi di ripristino e a soddisfare i requisiti di conformità.
+
+Per ulteriori informazioni, consultare link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html#manage-replication-plans["Gestire i piani di replicazione"^].
+
+
+
+==== Rilevamento programmato dei carichi di lavoro Kubernetes
+
+Con la rilevazione programmata, puoi controllare la frequenza con cui Disaster Recovery esegue la scansione per individuare nuovi carichi di lavoro Kubernetes. Puoi configurare gli intervalli di rilevazione in base alla tua cadenza operativa, riducendo il sovraccarico di sistema non necessario e garantendo al contempo che i nuovi carichi di lavoro vengano rilevati e protetti tempestivamente.
+
+Per ulteriori informazioni, consultare link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html#edit-the-site-and-customize-the-discovery-schedule["Personalizza la pianificazione della discovery"^].
+
+
+
+=== Aggiornamenti VMware
+
+
+
+==== Protezione per datastore vuoti
+
+Disaster Recovery ora consente di configurare la protezione per i datastore che non contengono macchine virtuali (VM). Le VM aggiunte successivamente al datastore vengono rilevate automaticamente da Disaster Recovery, a quel punto è necessario fornire link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html#add-subnet-mapping-for-a-vcenter-site["informazioni di mapping"^].
+
+Quando si aggiunge un datastore vuoto a un piano di protezione, è necessario rimuovere il datastore dal piano di protezione prima di eseguire un failover oppure eseguire un failover forzato. Per ulteriori informazioni, vedere link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Failover verso un sito remoto"^].
+
+
+
+==== Ripristina i datastore precedentemente esclusi da un piano di protezione
+
+I datastore precedentemente esclusi dalla protezione possono ora essere riaggiunti. Questo miglioramento offre maggiore flessibilità nella gestione e nell'aggiornamento delle configurazioni di ripristino di emergenza nel tempo.
+
+Per ulteriori informazioni, consultare link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["Gestisci siti, gruppi di risorse e piani di replicazione"^].
+
+
+
+==== Failover più rapido per i datastore basati su VMFS
+
+La funzionalità di Disaster Recovery ha migliorato le prestazioni di failover per i datastore basati su VMFS. Le operazioni di ri-scansione dell'Host Bus Adapter (HBA) e di montaggio del datastore vengono ora eseguite in parallelo, riducendo i tempi complessivi di failover e minimizzando i tempi di inattività durante gli eventi di ripristino.
+
+Per ulteriori informazioni sui failover, vedere link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Esegui il failover con il ripristino di emergenza"^].

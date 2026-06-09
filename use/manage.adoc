@@ -31,7 +31,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 È possibile modificare il nome del sito vCenter e il tipo di sito (in locale o AWS).
 
-*Ruolo obbligatorio NetApp Console * Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti o amministratore del ripristino di emergenza.
+*Ruolo richiesto NetApp Console* Per eseguire questa attività è necessario il ruolo di amministratore dell'organizzazione, amministratore di cartella o progetto, o amministratore del disaster recovery. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu, seleziona *Siti*.
@@ -45,7 +45,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 È possibile creare gruppi di risorse tramite VM o datastore.  Possono essere aggiunti quando si crea il piano di replicazione o in seguito.
 
-*Ruolo NetApp Console richiesto* Per svolgere questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza.
+*Ruolo richiesto NetApp Console* Per eseguire questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 È possibile creare un gruppo di risorse tramite datastore nei seguenti modi:
 
@@ -75,7 +75,7 @@ Per i dettagli sulla creazione di un gruppo di risorse, fare riferimento alink:r
 
 È possibile disattivare, attivare ed eliminare i piani di replica.  È possibile modificare gli orari.
 
-*Ruolo richiesto NetApp Console* Super amministratore, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
+*Ruolo della console NetApp richiesto* Per eseguire questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza, Amministratore del failover del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 * Se si desidera sospendere temporaneamente un piano di replica, è possibile disattivarlo e riattivarlo in seguito.
 * Se non hai più bisogno del piano, puoi eliminarlo.
@@ -112,7 +112,7 @@ image:../use/dr-plan-list.png["Elenco dei piani di replicazione"]
 
 Disaster Recovery elimina automaticamente gli snapshot sulla sorgente ogni 24 ore.  Se si scopre che gli snapshot non sono sincronizzati tra l'origine e la destinazione, è necessario risolvere la discrepanza tra gli snapshot per garantire la coerenza tra i siti.
 
-*Ruolo richiesto NetApp Console* Super amministratore, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
+*Ruolo della console NetApp richiesto* Per eseguire questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza, Amministratore del failover del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu, seleziona *Piani di replicazione*.
@@ -130,7 +130,7 @@ image:../use/dr-plan-list.png["Elenco dei piani di replicazione"]
 
 Se si elimina un piano di replica, è possibile eliminare anche gli snapshot primari e secondari creati dal piano.
 
-*Ruolo richiesto NetApp Console* Super amministratore, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
+*Ruolo della console NetApp richiesto* Per eseguire questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza, Amministratore del failover del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu, seleziona *Piani di replicazione*.
@@ -144,9 +144,9 @@ Se si elimina un piano di replica, è possibile eliminare anche gli snapshot pri
 
 === Modifica il conteggio di conservazione per le pianificazioni di failover
 
-La modifica del conteggio di conservazione consente di aumentare o diminuire il numero di datastore salvati.
+Modificando il conteggio di conservazione è possibile aumentare o diminuire il numero di snapshot salvate.
 
-*Ruolo della console NetApp richiesto* Per eseguire questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza, Amministratore del failover del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza.
+*Ruolo della console NetApp richiesto* Per eseguire questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza, Amministratore del failover del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu, seleziona *Piani di replicazione*.
@@ -165,7 +165,7 @@ image:../use/dr-plan-failover-edit.png["Modifica pagina mapping failover"]
 
 È possibile visualizzare informazioni sul numero di datastore presenti nell'origine e nella destinazione.
 
-*Ruolo NetApp Console richiesto* Super amministratore, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza, amministratore dell'applicazione di ripristino di emergenza o visualizzatore del ripristino di emergenza.
+*Ruolo NetApp Console richiesto* Per eseguire questa attività è necessario il ruolo di Super admin, Disaster recovery admin, Disaster recovery failover admin, Disaster recovery application admin o Disaster recovery viewer. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu, seleziona *Dashboard*.
@@ -180,7 +180,7 @@ image:../use/dr-plan-failover-edit.png["Modifica pagina mapping failover"]
 
 È possibile visualizzare informazioni sul numero di macchine virtuali presenti sull'origine e sulla destinazione, nonché sulla CPU, sulla memoria e sulla capacità disponibile.
 
-*Ruolo NetApp Console richiesto* Super amministratore, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza, amministratore dell'applicazione di ripristino di emergenza o visualizzatore del ripristino di emergenza.
+*Ruolo NetApp Console richiesto* Per eseguire questa attività è necessario il ruolo di Super admin, Disaster recovery admin, Disaster recovery failover admin, Disaster recovery application admin o Disaster recovery viewer. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu, seleziona *Dashboard*.

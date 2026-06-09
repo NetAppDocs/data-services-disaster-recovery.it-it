@@ -14,9 +14,7 @@ summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su 
 [role="lead"]
 Dopo aver aggiunto risorse e siti, sei pronto per creare un . I piani di replica gestiscono la protezione dei dati. La creazione della replica prevede la designazione dei siti di origine e di destinazione, la selezione dei gruppi di risorse e la scelta delle modalità di ripristino e accensione delle applicazioni. Ad esempio, potresti raggruppare macchine virtuali (VM) associate a un'applicazione oppure potresti raggruppare applicazioni che hanno livelli simili.
 
-*Ruolo richiesto NetApp Console* Super amministratore, amministratore del ripristino di emergenza, amministratore del failover del ripristino di emergenza o amministratore dell'applicazione di ripristino di emergenza.
-
-link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo della console NetApp richiesto* Per eseguire questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza, Amministratore del failover del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 *Informazioni su questo compito*
 

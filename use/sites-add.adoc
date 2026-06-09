@@ -17,7 +17,7 @@ Prima di poter creare un piano di recovery, è necessario aggiungere siti a Disa
 
 TIP: Assicurarsi che sia la sorgente che la destinazione utilizzino lo stesso agente NetApp Console.
 
-*Ruolo richiesto nella NetApp Console* Per svolgere questa attività è necessario il ruolo di Super admin o Disaster recovery admin. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo richiesto NetApp Console* Per eseguire questa attività è necessario il ruolo di Super admin o Disaster recovery admin. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 
@@ -129,7 +129,7 @@ Dopo aver aggiunto i vCenter, NetApp Disaster Recovery esegue un'analisi approfo
 .Kubernetes
 --
 . In Ripristino di emergenza, seleziona **Siti** nella barra laterale.
-. Nel menu a tendina, imposta il filtro su *Kubernetes*.
+. Nel menu a tendina del carico di lavoro, imposta il filtro su *Kubernetes*.
 +
 image::site-type-toggle.png[Screenshot dell'interruttore del tipo di sito]
 
@@ -245,6 +245,8 @@ Se non si desidera pianificare l'individuazione, è possibile disattivare l'opzi
 . Dal menu NetApp Disaster Recovery , selezionare *Siti*.
 . Seleziona il sito che vuoi modificare.
 . Seleziona le azioniimage:icon-vertical-dots.png["Icona Azioni"] icona sulla destra e seleziona *Modifica*.
+. Nella finestra Impostazioni, modifica i campi secondo necessità.
+. Per personalizzare la pianificazione del rilevamento, seleziona la casella *Abilita rilevamento pianificato*. Seleziona la data di inizio del rilevamento e l'intervallo di rilevamento in ore e minuti.
 . Nella pagina Modifica server vCenter, modificare i campi secondo necessità.
 . Per personalizzare la pianificazione dell'individuazione, seleziona la casella *Abilita individuazione pianificata* e seleziona l'intervallo di data e ora desiderato.
 +
