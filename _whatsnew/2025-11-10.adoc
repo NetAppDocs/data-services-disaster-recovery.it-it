@@ -4,12 +4,14 @@
 
 
 
+[[cascading-failover-support]]
 === Supporto failover a cascata
 
 Ora è possibile configurare una relazione a cascata in ONTAP e utilizzare qualsiasi parte di tale relazione di replica per il ripristino di emergenza.
 
 
 
+[[downgrade-vmware-hardware-support-during-registration]]
 === Ridurre il supporto hardware VMware durante la registrazione
 
 Disaster Recovery ora supporta il downgrade dell'hardware VMware a una versione precedente di vSphere durante la registrazione. Questa funzionalità è utile quando l'host ESX di origine esegue una versione successiva a quella del sito di ripristino di emergenza.
@@ -18,12 +20,14 @@ Per maggiori informazioni, vedere link:https://docs.netapp.com/us-en/data-servic
 
 
 
+[[graceful-shutdown]]
 === Arresto graduale
 
 Disaster Recovery ora arresta correttamente le VM anziché spegnerle. Se una determinata VM impiega più di dieci minuti per spegnersi, Disaster Recovery la spegne.
 
 
 
+[[pre-backup-scripting-support]]
 === Supporto per script pre-backup
 
 Ora è possibile inserire script personalizzati nel flusso di lavoro di failover da eseguire prima di creare un backup. Gli script di pre-backup consentono di controllare lo stato della VM prima che venga replicato uno snapshot e di preparare una VM per una transizione. Ad esempio, è possibile inserire uno script che smonta un mount NFS che verrà rimontato utilizzando uno script diverso dopo il failover.

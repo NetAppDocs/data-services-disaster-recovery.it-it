@@ -4,6 +4,7 @@
 
 
 
+[[discovery-improvements]]
 === Miglioramenti della scoperta
 
 Questo aggiornamento migliora il processo di individuazione, riducendone il tempo necessario.

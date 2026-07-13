@@ -16,6 +16,7 @@ Prima di configurare NetApp Disaster Recovery per i cluster Kubernetes, è neces
 
 
 
+[[prerequisites]]
 == Prerequisiti
 
 Prima di configurare i requisiti del cluster Kubernetes, assicurati di aver configurato il tuo cluster Kubernetes e i cluster ONTAP.
@@ -24,6 +25,7 @@ Disaster Recovery supporta link:https://docs.netapp.com/us-en/trident/trident-pr
 
 
 
+[[kubernetes-clusters]]
 === cluster Kubernetes
 
 Per ogni cluster Kubernetes, assicurarsi che:
@@ -34,6 +36,7 @@ Per ogni cluster Kubernetes, assicurarsi che:
 
 
 
+[[ontap-requirements]]
 === Requisiti ONTAP
 
 Per ogni cluster ONTAP, assicurarsi di aver configurato le seguenti risorse:
@@ -48,6 +51,7 @@ Per ogni cluster ONTAP, assicurarsi di aver configurato le seguenti risorse:
 
 
 
+[[install-netapp-trident-csi]]
 == Installare NetApp Trident CSI
 
 link:https://docs.netapp.com/us-en/trident/trident-install/kubernetes-deploy-helm.html#deploy-the-trident-operator-and-install-trident-using-helm["Installa l'operatore Trident su _ogni_ cluster^."]
@@ -57,10 +61,12 @@ Se hai già installato Trident, verifica l'installazione con il comando
 
 
 
+[[configure-ontap-backend-and-trident-storageclass]]
 == Configura il backend ONTAP e Trident StorageClass
 
 
 
+[[create-a-kubernetes-secret]]
 === Crea un segreto di Kubernetes
 
 Crea un secret di Kubernetes nel namespace:
@@ -77,6 +83,7 @@ Per ulteriori informazioni, vedere link:https://docs.netapp.com/us-en/trident/tr
 
 
 
+[[create-the-tridentbackendconfig]]
 === Crea il TridentBackendConfig
 
 Puoi
@@ -105,6 +112,7 @@ spec:
 
 
 
+[[configure-the-storage-class]]
 === Configura la classe di archiviazione
 
 link:https://docs.netapp.com/us-en/trident/trident-use/create-stor-class.html["Crea l'oggetto della classe di archiviazione"^]. Utilizzare il provisioner `csi.trident.netapp.io`. Ad esempio:
@@ -136,6 +144,7 @@ Affinché Trident Protect possa replicare i dati delle applicazioni, queste devo
 
 
 
+[[configure-volume-group-snapshot-custom-resource-definitions-crd]]
 == Configurare le definizioni personalizzate delle risorse snapshot (CRD) dei gruppi di volumi
 
 link:https://docs.netapp.com/us-en/trident/trident-use/vol-group-snapshots.html#deploy-a-volume-snapshot-controller["Installare la CRD snapshot e il controller snapshot."^]. Queste installazioni sono necessarie per gli snapshot di volume in Trident Protect.
@@ -150,6 +159,7 @@ kubectl get crd volumesnapshotclasses.snapshot.storage.k8s.io
 ----
 
 
+[[configure-volume-group-snapshots]]
 === Configura gli snapshot dei gruppi di volumi
 
 link:https://docs.netapp.com/us-en/trident/trident-use/vol-group-snapshots.html#create-volume-group-snapshots["Configura la VolumeSnapshotClass per Trident."^]
@@ -164,6 +174,7 @@ kubectl patch volumesnapshotclasses.snapshot.storage.k8s.io trident-snapshotclas
 
 
 
+[[verification-summary]]
 == Riepilogo della verifica
 
 |===
@@ -206,6 +217,7 @@ Dopo aver verificato lo stato di tutte le risorse, distribuisci o link:https://d
 ====
 
 
+[[more-information]]
 == Ulteriori informazioni
 
 * link:https://docs.netapp.com/us-en/trident/trident-protect/learn-about-trident-protect.html["Scopri Trident Protect"^]

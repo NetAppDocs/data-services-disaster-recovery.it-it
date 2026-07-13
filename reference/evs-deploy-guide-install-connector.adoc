@@ -15,6 +15,7 @@ Per NetApp Disaster Recovery, le azioni eseguite orchestrano i cluster VMware vC
 
 
 
+[[installation]]
 == Installazione
 
 * Per utilizzare il Disaster Recovery, installare l'agente Console in modalità standard. Per ulteriori informazioni sui tipi di installazione dell'agente Console, visitare https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Scopri le modalità di distribuzione della NetApp Console"^].

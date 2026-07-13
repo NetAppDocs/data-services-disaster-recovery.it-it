@@ -15,6 +15,7 @@ Per ulteriori informazioni sulle licenze NetApp Disaster Recovery , vederelink:.
 
 
 
+[[license-types]]
 == Tipi di licenza
 
 Esistono due tipi principali di licenza:
@@ -25,6 +26,7 @@ Esistono due tipi principali di licenza:
 
 
 
+[[size-your-disaster-recovery-capacity-needs]]
 == Dimensiona le tue esigenze di capacità di disaster recovery
 
 Prima di acquistare la licenza, è necessario comprendere quanta capacità di archiviazione ONTAP è necessario proteggere.  Uno dei vantaggi dell'utilizzo dello storage NetApp ONTAP è l'elevata efficienza con cui NetApp archivia i dati.  Tutti i dati memorizzati in un volume ONTAP , come ad esempio un datastore VMware che ospita VM, sono archiviati in modo altamente efficiente.  ONTAP utilizza di default tre tipi di efficienza di archiviazione durante la scrittura dei dati su un archivio fisico: compattazione, deduplicazione e compressione.  Il risultato netto è un'efficienza di archiviazione compresa tra 1,5:1 e 4:1, a seconda del tipo di dati archiviati.  Infatti, NetApp offre un https://www.netapp.com/media/79014-ng-937-Efficiency-Guarantee-Customer-Flyer.pdf["garanzia di efficienza di archiviazione"^] per determinati carichi di lavoro.

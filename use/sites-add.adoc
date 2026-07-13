@@ -21,6 +21,7 @@ TIP: Assicurarsi che sia la sorgente che la destinazione utilizzino lo stesso ag
 
 
 
+[[add-a-site]]
 == Aggiungi un sito
 
 Quando si aggiunge un sito al Disaster Recovery, è necessario distinguere in base al tipo di risorse presenti nel sito. È possibile aggiungere vCenters o cluster Kubernetes.
@@ -40,6 +41,7 @@ Dopo aver aggiunto un sito a Disaster Recovery, è necessario associare risorse 
 
 
 
+[[add-resources-to-a-site]]
 == Aggiungere risorse a un sito
 
 Se hai aggiunto vCenter nelle versioni precedenti e desideri personalizzare la pianificazione dell'individuazione, devi modificare il sito del server vCenter e impostare la pianificazione.
@@ -153,6 +155,7 @@ Dopo aver aggiunto le risorse, seleziona *Job Monitoring* per tenere traccia del
 
 
 
+[[add-subnet-mapping-for-a-vcenter-site]]
 == Aggiungere la mappatura della subnet per un sito vCenter
 
 È possibile gestire gli indirizzi IP nelle operazioni di failover utilizzando la mappatura delle subnet, che consente di aggiungere subnet per ciascun vCenter.  In questo modo si definiscono il CIDR IPv4, il gateway predefinito e il DNS per ogni rete virtuale.
@@ -205,6 +208,7 @@ TIP: La notazione CIDR è un metodo per specificare gli indirizzi IP e le relati
 
 
 
+[[select-subnet-mapping-for-a-replication-plan]]
 === Selezionare la mappatura della subnet per un piano di replicazione
 
 Quando si crea un piano di replicazione, è possibile selezionare il mapping della subnet per il piano di replicazione.
@@ -233,6 +237,7 @@ NOTE: Se sono presenti due VM (ad esempio, una è Linux e l'altra è Windows), l
 
 
 
+[[edit-the-vcenter-server-site-and-customize-the-discovery-schedule]]
 == Modifica il sito del server vCenter e personalizza la pianificazione dell'individuazione
 
 È possibile modificare il sito del server vCenter per personalizzare la pianificazione dell'individuazione.  Ad esempio, se si dispone di un numero elevato di VM, è possibile impostare la pianificazione dell'individuazione in modo che venga eseguita ogni 23 ore e 59 minuti.  Se si dispone di un numero limitato di VM, è possibile impostare la pianificazione dell'individuazione in modo che venga eseguita ogni 12 ore.
@@ -257,6 +262,7 @@ image:sites-edit-schedule.png["Modifica schermata pianificazione scoperta"]
 
 
 
+[[refresh-discovery-manually]]
 == Aggiorna manualmente la scoperta
 
 È possibile aggiornare manualmente la scoperta in qualsiasi momento.  Questa operazione è utile se hai aggiunto o rimosso VM e vuoi aggiornare le informazioni in NetApp Disaster Recovery.

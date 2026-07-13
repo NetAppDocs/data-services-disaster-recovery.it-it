@@ -16,12 +16,14 @@ Le limitazioni note identificano piattaforme, dispositivi o funzioni che non son
 
 
 
+[[wait-until-failback-completes-before-running-discovery]]
 == Attendi il completamento del failback prima di eseguire l'individuazione
 
 Una volta completato un failover, non avviare manualmente l'individuazione sul vCenter di origine.  Attendere il completamento del failback, quindi avviare l'individuazione sul vCenter di origine.
 
 
 
+[[netapp-console-might-not-discover-amazon-fsx-for-netapp-ontap]]
 == La NetApp Console potrebbe non rilevare Amazon FSx for NetApp ONTAP
 
 A volte, la NetApp Console non rileva i cluster Amazon FSx for NetApp ONTAP .  Ciò potrebbe essere dovuto al fatto che le credenziali FSx non erano corrette.
@@ -47,6 +49,7 @@ In questo modo si riscopre l'archivio dati, le sue macchine virtuali e la sua re
 
 
 
+[[limitations-with-google-cloud-netapp-volumes]]
 == Limitazioni con Google Cloud NetApp Volumes
 
 * Dopo aver eseguito un test di failover, è necessario attendere almeno 52 ore per eliminare il volume clone.  È necessario eliminare il volume manualmente.  Dopo 52 ore, è possibile testare nuovamente il failover.

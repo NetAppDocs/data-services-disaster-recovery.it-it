@@ -27,6 +27,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 
 
+[[manage-vcenter-sites]]
 == Gestisci i siti vCenter
 
 È possibile modificare il nome del sito vCenter e il tipo di sito (in locale o AWS).
@@ -41,6 +42,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 
 
+[[manage-resource-groups]]
 == Gestire gruppi di risorse
 
 È possibile creare gruppi di risorse tramite VM o datastore.  Possono essere aggiunti quando si crea il piano di replicazione o in seguito.
@@ -71,6 +73,7 @@ Per i dettagli sulla creazione di un gruppo di risorse, fare riferimento alink:r
 
 
 
+[[manage-replication-plans]]
 == Gestire i piani di replicazione
 
 È possibile disattivare, attivare ed eliminare i piani di replica.  È possibile modificare gli orari.
@@ -108,6 +111,7 @@ image:../use/dr-plan-list.png["Elenco dei piani di replicazione"]
 
 
 
+[[reconcile-snapshots-on-demand]]
 === Riconcilia gli snapshot su richiesta
 
 Disaster Recovery elimina automaticamente gli snapshot sulla sorgente ogni 24 ore.  Se si scopre che gli snapshot non sono sincronizzati tra l'origine e la destinazione, è necessario risolvere la discrepanza tra gli snapshot per garantire la coerenza tra i siti.
@@ -126,6 +130,7 @@ image:../use/dr-plan-list.png["Elenco dei piani di replicazione"]
 
 
 
+[[delete-a-replication-plan]]
 === Elimina un piano di replicazione
 
 Se si elimina un piano di replica, è possibile eliminare anche gli snapshot primari e secondari creati dal piano.
@@ -142,6 +147,7 @@ Se si elimina un piano di replica, è possibile eliminare anche gli snapshot pri
 
 
 
+[[change-retention-count-for-failover-schedules]]
 === Modifica il conteggio di conservazione per le pianificazioni di failover
 
 Modificando il conteggio di conservazione è possibile aumentare o diminuire il numero di snapshot salvate.
@@ -161,7 +167,38 @@ image:../use/dr-plan-failover-edit.png["Modifica pagina mapping failover"]
 
 
 
-== Visualizza le informazioni sui datastore
+[[manage-trident-protect]]
+== Gestisci Trident Protect
+
+Dall'interfaccia utente di ripristino di emergenza, puoi aggiornare o rimuovere Trident Protect.
+
+.Aggiorna Trident Protect
+. In Ripristino di emergenza, seleziona **Siti** dalla barra laterale.
+. Seleziona **Kubernetes** nel menu a tendina.
+. Nel menu delle azioni per il cluster che vuoi modificare, seleziona **Aggiorna cluster**.
+. Nel menu a tendina **Seleziona versione di destinazione**, scegli la versione di Trident Protect a cui vuoi eseguire l'aggiornamento. Dovresti consultare la link:https://docs.netapp.com/us-en/trident/trident-rn.html["Note di rilascio di Trident"^] prima di procedere con l'aggiornamento, per capire le differenze tra le varie versioni e il loro impatto sul tuo cluster.
+. Seleziona **Aggiorna** per avviare l'upgrade.
+
+
+.Rimuovi Trident Protect
+. In Ripristino di emergenza, seleziona **Siti** dalla barra laterale.
+. Seleziona **Kubernetes** nel menu a tendina.
+. Nel menu delle azioni del sito che vuoi modificare, seleziona **Rimuovi cluster**.
+. Esamina la finestra di dialogo, poi esegui il comando di disinstallazione sul cluster da cui vuoi rimuovere Trident Protect: `helm uninstall trident-protect -n trident-protect`.
+. Per completare la rimozione di Trident Protect, torna all'interfaccia utente di ripristino di emergenza e seleziona **Rimuovi sito**.
+
+
+.Rimuovi un cluster da un sito
+. In Ripristino di emergenza, seleziona **Siti** dalla barra laterale.
+. Seleziona **Kubernetes** nel menu a tendina.
+. Nel menu delle azioni del sito che vuoi modificare, seleziona **Rimuovi cluster**.
+. Esamina il menu di dialogo e seleziona **Rimuovi dal sito**. Assicurati di scegliere l'opzione corretta per continuare l'operazione di Trident Protect.
+
+
+
+
+[[view-datastore-information]]
+== Visualizza le informazioni del datastore
 
 È possibile visualizzare informazioni sul numero di datastore presenti nell'origine e nella destinazione.
 
@@ -176,6 +213,7 @@ image:../use/dr-plan-failover-edit.png["Modifica pagina mapping failover"]
 
 
 
+[[view-virtual-machines-information]]
 == Visualizza le informazioni sulle macchine virtuali
 
 È possibile visualizzare informazioni sul numero di macchine virtuali presenti sull'origine e sulla destinazione, nonché sulla CPU, sulla memoria e sulla capacità disponibile.

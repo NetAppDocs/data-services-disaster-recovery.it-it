@@ -4,6 +4,7 @@
 
 
 
+[[folder-hierarchy-retention]]
 === Conservazione della gerarchia delle cartelle
 
 Per impostazione predefinita, Disaster Recovery mantiene la gerarchia dell'inventario delle VM (struttura delle cartelle) durante il failover.  Se la destinazione di ripristino non dispone della cartella richiesta, Disaster Recovery la crea.
@@ -14,6 +15,7 @@ Per maggiori informazioni, vedere link:https://docs.netapp.com/us-en/data-servic
 
 
 
+[[streamlined-console-agent-updating]]
 === Aggiornamento semplificato dell'agente della console
 
 Disaster Recovery ora supporta un processo semplificato per l'utilizzo di più agenti Console in un ambiente di lavoro.  Per passare da un agente Console all'altro, è necessario modificare la configurazione di vCenter, riscoprire le credenziali e aggiornare i piani di replica per utilizzare il nuovo agente Console.

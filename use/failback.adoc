@@ -18,6 +18,7 @@ Dopo aver risolto un disastro, eseguire il failback dal sito di disaster recover
 
 
 
+[[about-failback]]
 == Informazioni sul failback
 
 In caso di failback, NetApp Disaster Recovery replica (risincronizza) tutte le modifiche sulla macchina virtuale di origine prima di invertire la direzione della replica. Questo processo inizia da una relazione che ha completato il failover verso una destinazione e prevede i seguenti passaggi:
@@ -32,12 +33,14 @@ In caso di failback, NetApp Disaster Recovery replica (risincronizza) tutte le m
 
 
 
+[[before-you-begin]]
 == Prima di iniziare
 
 Se si utilizza la protezione basata su datastore, le VM aggiunte al datastore potrebbero essere aggiunte al datastore durante il processo di failover. In tal caso, assicurarsi di fornire informazioni di mappatura aggiuntive per queste VM prima di avviare il failback. Per modificare la mappatura delle risorse, vedere link:manage.html#manage-replication-plans["Gestire i piani di replicazione"].
 
 
 
+[[steps]]
 == Passi
 
 [role="tabbed-block"]

@@ -1082,12 +1082,10 @@
   <block id="d26cf1f0512a50b32d5a10b931f5fbe0" category="list-text">Esaminare tutte le operazioni nel riquadro Attività.  Per visualizzare tutte le operazioni sul Job Monitor, selezionare *Visualizza tutti i lavori*.</block>
   <block id="d15994bcf2411bb66762cdf4c58704b3" category="doc">Creare un piano di replica in NetApp Disaster Recovery</block>
   <block id="78166ce4ccceeedfbf6aeb8682851072" category="paragraph">*Informazioni su questo compito*</block>
-  <block id="978c7c7ea4c54312c02456ee28acd332" category="paragraph">È possibile creare un piano di replicazione e anche modificare le pianificazioni per la conformità e i test.  Eseguire failover di prova delle VM senza influire sui carichi di lavoro di produzione.</block>
   <block id="fba54b7da5e3ceabe7362e860f7df87d" category="paragraph">È possibile proteggere più VM su più datastore.  NetApp Disaster Recovery crea gruppi di coerenza ONTAP per tutti i volumi ONTAP che ospitano datastore VM protetti.</block>
   <block id="e7d31fc0602fb2ede144d18cdffd816b" category="list-text">Pronto</block>
   <block id="eca4b06cc957b067c25916bf563bfcb1" category="list-text">Failback eseguito</block>
   <block id="55af57d923ed95c2495c25a0e4762077" category="list-text">Test failover eseguito</block>
-  <block id="2cd55dfb5ccc1ffae31967c7321620ec" category="paragraph">*Snapshot del piano di replicazione*</block>
   <block id="65dd859759570a8a07801053fcf54421" category="paragraph">Disaster Recovery mantiene lo stesso numero di snapshot sui cluster di origine e di destinazione.  Per impostazione predefinita, il servizio esegue un processo di riconciliazione degli snapshot ogni 24 ore per garantire che il numero di snapshot sui cluster di origine e di destinazione sia lo stesso.</block>
   <block id="4e5a9a818385822100abb8be4a2ef9c3" category="paragraph">Le seguenti situazioni possono causare una differenza nel numero di snapshot tra i cluster di origine e di destinazione:</block>
   <block id="44dfcfef8dbab15db411756f3ccc6b01" category="list-text">In alcune situazioni, le operazioni ONTAP esterne al Disaster Recovery possono aggiungere o rimuovere snapshot dal volume:</block>
@@ -1096,10 +1094,7 @@
   <block id="4a72656aa601ed9d31033e4be368a919" category="list-text">Una riduzione del numero di snapshot conservati nel piano di replica può far sì che il servizio elimini gli snapshot più vecchi sia sul sito di origine che su quello di destinazione per soddisfare il numero di snapshot di conservazione appena ridotto.</block>
   <block id="49ff95b6dcd137f59a6acecf04a4c3b1" category="inline-image-macro">Punti orizzontali Menu azioni</block>
   <block id="7639ea3b77d367f127d70d668027673c" category="paragraph">In questi casi, Disaster Recovery rimuove gli snapshot più vecchi dai cluster di origine e di destinazione al successivo controllo di coerenza.  In alternativa, l'amministratore può eseguire una pulizia immediata dello snapshot selezionando *Azioni*<block ref="6b4b871445179eda383c81faf6cf5a92" category="inline-image-macro-rx" type="image"></block> sull'icona del piano di replica e selezionando *Pulisci snapshot*.</block>
-  <block id="3f1d340403a26ed0ad46982a91385d32" category="paragraph">Il servizio esegue controlli di simmetria degli snapshot ogni 24 ore.</block>
-  <block id="17e2d63e3b45ecbfe13bcc32fec929d0" category="paragraph">*Prima di iniziare*</block>
   <block id="1059d7b16ffe2236c36ae0e8c15872ca" category="paragraph">Prima di creare una relazione SnapMirror , configurare il cluster e il peering SVM al di fuori del Disaster Recovery.</block>
-  <block id="89dd75b1f79276c7e30e794e1c739f04" category="section-title">Crea il piano</block>
   <block id="4f27ef77939e5393adc6b44aec83a6b7" category="paragraph">Una procedura guidata ti guiderà attraverso questi passaggi:</block>
   <block id="3baff38a392d31950fc8d4d62ea2adc0" category="list-text">Selezionare i server vCenter.</block>
   <block id="d813bc25d25a7f816dde51c17f6c6ba0" category="list-text">Illustra il modo in cui le risorse dall'ambiente di origine vengono mappate alla destinazione.</block>
@@ -1319,7 +1314,6 @@
   <block id="ee9e0fb0a09a468f33fa6f2dabc4ff49" category="inline-image-macro">Modifica pagina mapping failover</block>
   <block id="2aef38b97efb9369d3e496e8d062d8fd" category="paragraph"><block ref="2aef38b97efb9369d3e496e8d062d8fd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e3a15d734e1eafd89e04f5eb526ec5cc" category="list-text">Dopo aver selezionato il piano di replica, seleziona il menu Azioni, quindi seleziona *Pulisci vecchi snapshot* per rimuovere i vecchi snapshot sulla destinazione in modo che corrispondano al nuovo conteggio di conservazione.</block>
-  <block id="a6dcfee4cd10f2ad60c3d81bc2a3b8ad" category="section-title">Visualizza le informazioni sui datastore</block>
   <block id="432624070ae1b8a0b19fd42c048a224c" category="paragraph">È possibile visualizzare informazioni sul numero di datastore presenti nell'origine e nella destinazione.</block>
   <block id="7e551addf2432bb9127be36e3a23db1c" category="list-text">Dal menu, seleziona *Dashboard*.</block>
   <block id="5e141a758f792ce4ad7e1b2107b1f7a4" category="list-text">Selezionare vCenter nella riga del sito.</block>
@@ -2319,7 +2313,6 @@
   <block id="fd41d6f681fcde1d5668de60a04c0563" category="paragraph"><block ref="fa5ae6d9db1798cb96b18ea5809b60d9" prefix="" category="inline-code"></block></block>
   <block id="83e1151ac17b113708a4a8f22a39063c" category="list-text"><block ref="83e1151ac17b113708a4a8f22a39063c" category="inline-link-macro-rx"></block></block>
   <block id="d1078d331fc762f6c1e11445777639f1" category="list-text">Rivedi il <block ref="e169d85ddc666c008a7e023ca382e5b3" category="inline-link-macro-rx"></block>.</block>
-  <block id="3e2600f2f1048cf9d96b25b85a3b12b5" category="paragraph">Dopo aver aggiunto risorse e siti, sei pronto per creare un . I piani di replica gestiscono la protezione dei dati. La creazione della replica prevede la designazione dei siti di origine e di destinazione, la selezione dei gruppi di risorse e la scelta delle modalità di ripristino e accensione delle applicazioni. Ad esempio, potresti raggruppare macchine virtuali (VM) associate a un'applicazione oppure potresti raggruppare applicazioni che hanno livelli simili.</block>
   <block id="fd0863d0dc188b339645e359055610e4" category="admonition">Organizza le tue VM o i cluster Kubernetes prima di implementare NetApp Disaster Recovery per ridurre al minimo la proliferazione. Posiziona le risorse che necessitano di protezione su un sottoinsieme di datastore e le risorse che non devono essere protette su un sottoinsieme diverso di datastore. Per organizzare i gruppi di risorse prima di creare il piano di replica, consulta <block ref="2e9e1519a300bb9dc6a403652e82bcd7" category="inline-link-macro-rx"></block>.</block>
   <block id="65dea983a95654f072023e3fd251790f" category="list-text">Per *Origine*, selezionare il vCenter o il cluster Kubernetes da designare come origine.</block>
   <block id="56da8dc4cd41826eefa46f92a1310a8b" category="paragraph">Il passo successivo consiste nel raggruppare le VM, i datastore o i cluster Kubernetes necessari in gruppi di risorse funzionali. I gruppi di risorse consentono di proteggere un insieme di risorse, come un cluster Kubernetes o una VM, con uno snapshot comune.</block>
@@ -2404,10 +2397,48 @@
   <block id="7aa7ac5ef00e37e99f8bb57b253d37ed" category="paragraph">Prima di eseguire un failover reale, è possibile effettuare un test per verificarne la predisposizione. I carichi di lavoro rimangono online durante il processo di test.</block>
   <block id="f5fa15f6901bb980064f0a1e081fbfb7" category="list-text">Nella pagina Test failover, scegli lo snapshot per il test failover: seleziona **Crea snapshot ora** oppure **Seleziona** per scegliere uno snapshot esistente. Se scegli **Seleziona**, scegli lo snapshot esistente.</block>
   <block id="0a07084d59200e5f62afd96db98a68b5" category="paragraph">Quindi immettere “Test failover” e selezionare *Test fail over*.</block>
-  <block id="962e92831673929912f04cd68819059b" category="admonition">Se il piano di replica include un datastore vuoto, è necessario prima rimuovere il datastore vuoto dal piano oppure utilizzare l'opzione **Force failover**, che ignora i datastore vuoti.</block>
   <block id="919dfe02d5a57784fd83bb645e8f8b8e" category="paragraph">Modificando il conteggio di conservazione è possibile aumentare o diminuire il numero di snapshot salvate.</block>
   <block id="e363882b79ccd237ac1f4dd679c679c2" category="paragraph">È possibile annullare un'attività in corso o in coda se è bloccata o per dare priorità a un'operazione in sospeso.</block>
   <block id="caf5841d5a0afa8a150bf6da9c22fc2f" category="list-text">Nel menu a tendina del carico di lavoro, imposta il filtro su *Kubernetes*.</block>
   <block id="86839797735bfc02dea42929601e887a" category="list-text">Nella finestra Impostazioni, modifica i campi secondo necessità.</block>
   <block id="83cfc8bb47b46515d41842fa32fa608b" category="list-text">Per personalizzare la pianificazione del rilevamento, seleziona la casella *Abilita rilevamento pianificato*. Seleziona la data di inizio del rilevamento e l'intervallo di rilevamento in ore e minuti.</block>
+  <block id="a3385cf694f169469155cf608126cc13" category="section-title">Gestisci Trident Protect dal menu Siti</block>
+  <block id="d108f39d7ac8db7fc5eab434cd7df7fc" category="paragraph">Ora Disaster Recovery supporta la gestione di Trident Protect direttamente dal menu Siti nell'interfaccia utente di Disaster Recovery. Puoi aggiornare Trident Protect o rimuoverlo da Disaster Recovery, semplificando la gestione delle tue risorse Kubernetes.</block>
+  <block id="ceb6da856e73533ddb08cf15abe120b7" category="inline-link-macro">Gestisci i siti</block>
+  <block id="cee9739236651212176e7c87838bb2d3" category="paragraph">Per ulteriori informazioni, vedi <block ref="b4c4c365d924dbf2ff79378d36f70a71" category="inline-link-macro-rx"></block>.</block>
+  <block id="cc6fa95b1e18a1fb7c53cf32734ead26" category="paragraph">Disaster Recovery ha introdotto le seguenti modifiche per i workload basati su VMware:</block>
+  <block id="7f2d139bc27153ad07daea80fab0a433" category="section-title">Esegui il failover su datastore vuoti</block>
+  <block id="bfea9e3d533bac76e79429a83d38837c" category="paragraph">Ora puoi eseguire correttamente il failover dei piani di replica che includono datastore vuoti senza escluderli dal piano o forzare il failover. Durante il failover, Disaster Recovery monta automaticamente il datastore vuoto nel sito di disaster recovery, permettendoti di aggiungere e proteggere le VM per le operazioni di failback.</block>
+  <block id="d3835be5f3c2a797d5fc948f95289e0c" category="paragraph">Per ulteriori informazioni, vedi <block ref="a16180f75826879573c72d14ccfccc18" category="inline-link-macro-rx"></block>.</block>
+  <block id="0fddd8fb8cd772934e1e5021d105b7fb" category="section-title">automapping di rete vCenter</block>
+  <block id="07efa6bd1ca4b90d1c4eb002786f661b" category="paragraph">Ora puoi configurare le relazioni di mappatura di rete a livello di vCenter (cioè, al di fuori della finestra di dialogo del piano di replica). Una volta configurate, Disaster Recovery applica automaticamente queste mappature di rete quando aggiungi o modifichi un piano di replica, semplificando la gestione dei piani di replica.</block>
+  <block id="1eee5c19633b811fc646be143dcd283f" category="paragraph">Il disaster recovery continua a supportare le sovrascritture per singolo piano. Le mappature di rete esistenti definite all'interno di un piano di replica possono ancora essere modificate per singola rete; queste mappature hanno la precedenza sulle definizioni a livello di vCenter.</block>
+  <block id="d315df6836105d6791cc83a6539ee7e9" category="section-title">Restrizioni al ruolo viewer nel disaster recovery</block>
+  <block id="266377e44a916fdf2cc18bfbb23cf6bf" category="paragraph">La possibilità di visualizzare la scheda "Upgrade System" è stata rimossa dal ruolo di viewer per il Disaster Recovery. Questa modifica allinea il ruolo a un'esperienza più appropriata per gli utenti in sola lettura. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>.</block>
+  <block id="3ddd9403dd985627a83f357af005a768" category="section-title">Miglioramenti delle prestazioni del sistema</block>
+  <block id="baa35064269b3904d8b57c0745ca18f8" category="paragraph">La funzionalità di disaster recovery ha introdotto modifiche per ridurre il consumo di risorse di sistema e migliorare le prestazioni in tutte le operazioni.</block>
+  <block id="de2e4685966d24481dfab35c95ad44dc" category="section-title">13 luglio 2026</block>
+  <block id="17d61647c38ceaeec784c2ea23dd1f02" category="paragraph">Version 4.3.5</block>
+  <block id="460dfd853a44f41cd7e36e73abb3183d" category="paragraph">Dopo aver aggiunto risorse e siti, crea un _piano di replica_ per gestire la protezione dei dati. La creazione del piano di replica comporta la designazione dei siti di origine e di destinazione, la selezione dei gruppi di risorse e la scelta di come ripristinare e accendere le applicazioni. Ad esempio, potresti raggruppare le macchine virtuali (VM) associate a un'applicazione o raggruppare le applicazioni che hanno tier simili.</block>
+  <block id="64a6f997b6cbcf26c538dbf71179cfe3" category="paragraph">Quando crei un piano di replica, puoi anche modificare le pianificazioni per la conformità e i test, eseguendo failover di prova senza influire sui dati di produzione.</block>
+  <block id="aa0c550dfb503c90e6b173a0a07f63e0" category="section-title">Informazioni sui piani di replica</block>
+  <block id="70e9daad0ce38ec31033633e81624571" category="section-title">Snapshot del piano di replica</block>
+  <block id="f4cbef5ca3f18eff6d1ab043a838c42d" category="paragraph">Disaster Recovery esegue controlli di simmetria degli snapshot ogni 24 ore.</block>
+  <block id="0199f8e45e93965175d2ac0013366462" category="list-text">Se configuri le mappature di rete a livello di vCenter, Disaster Recovery riconosce queste mappature quando crei il piano di replica. Se modifichi o aggiungi la mappatura di rete a livello di vCenter dopo aver creato il piano di replica, Disaster Recovery riconosce queste mappature quando modifichi manualmente il piano di replica.</block>
+  <block id="8545a0d7cdafff8da2dece1a851630dc" category="section-title">Gestisci Trident Protect</block>
+  <block id="3609f175bfca3663a769d710b6693940" category="paragraph">Dall'interfaccia utente di ripristino di emergenza, puoi aggiornare o rimuovere Trident Protect.</block>
+  <block id="516ee22feede3bac94e552d7d7d47c7a" category="list-title">Aggiorna Trident Protect</block>
+  <block id="852fd4e3ec5d4c29fa8a8cefa3c21471" category="list-text">In Ripristino di emergenza, seleziona **Siti** dalla barra laterale.</block>
+  <block id="8cfefefc34bbe900b668594477ef4ad5" category="list-text">Seleziona **Kubernetes** nel menu a tendina.</block>
+  <block id="78804847b12a6563801a02b538c145df" category="list-text">Nel menu delle azioni per il cluster che vuoi modificare, seleziona **Aggiorna cluster**.</block>
+  <block id="d67cab9a5414e00a7ccf215f2d7dbd33" category="inline-link-macro">Note di rilascio di Trident</block>
+  <block id="2a5efaa429a3a54de621dd8d0ad21ea4" category="list-text">Nel menu a tendina **Seleziona versione di destinazione**, scegli la versione di Trident Protect a cui vuoi eseguire l'aggiornamento. Dovresti consultare la <block ref="135c4f4ed1782a7c491e834c1b93041f" category="inline-link-macro-rx"></block> prima di procedere con l'aggiornamento, per capire le differenze tra le varie versioni e il loro impatto sul tuo cluster.</block>
+  <block id="38f32ced896e30548fa0f6bcfbba01a5" category="list-text">Seleziona **Aggiorna** per avviare l'upgrade.</block>
+  <block id="b402cd35b5fb9a57addd459fc4b1882a" category="list-title">Rimuovi Trident Protect</block>
+  <block id="b97f5202b0568bf1ab06be0a84b05837" category="list-text">Nel menu delle azioni del sito che vuoi modificare, seleziona **Rimuovi cluster**.</block>
+  <block id="f4721b43df8877d17946e2b9dd373ced" category="list-text">Esamina la finestra di dialogo, poi esegui il comando di disinstallazione sul cluster da cui vuoi rimuovere Trident Protect:<block ref="e32e94385e578bc57593f18c76552bb7" prefix=" " category="inline-code"></block>.</block>
+  <block id="d7d19228040ec612e692641319a73229" category="list-text">Per completare la rimozione di Trident Protect, torna all'interfaccia utente di ripristino di emergenza e seleziona **Rimuovi sito**.</block>
+  <block id="8527638a378e1869ef948cf228cb1967" category="list-title">Rimuovi un cluster da un sito</block>
+  <block id="2e6e87ad0d5bb097a11e43a094522ce3" category="list-text">Esamina il menu di dialogo e seleziona **Rimuovi dal sito**. Assicurati di scegliere l'opzione corretta per continuare l'operazione di Trident Protect.</block>
+  <block id="4c6f2ecfa631674b204ee705d90449fe" category="section-title">Visualizza le informazioni del datastore</block>
 </blocks>

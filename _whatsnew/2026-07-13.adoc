@@ -1,0 +1,55 @@
+= Aggiornamenti di Kubernetes
+:allow-uri-read: 
+
+
+
+
+[[kubernetes-updates]]
+=== Aggiornamenti di Kubernetes
+
+Disaster Recovery ha introdotto le seguenti modifiche per i carichi di lavoro basati su Kubernetes:
+
+
+
+==== Gestisci Trident Protect dal menu Siti
+
+Ora Disaster Recovery supporta la gestione di Trident Protect direttamente dal menu Siti nell'interfaccia utente di Disaster Recovery. Puoi aggiornare Trident Protect o rimuoverlo da Disaster Recovery, semplificando la gestione delle tue risorse Kubernetes.
+
+Per ulteriori informazioni, vedi link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["Gestisci i siti"^].
+
+
+
+[[vmware-updates]]
+=== Aggiornamenti VMware
+
+Disaster Recovery ha introdotto le seguenti modifiche per i workload basati su VMware:
+
+
+
+==== Esegui il failover su datastore vuoti
+
+Ora puoi eseguire correttamente il failover dei piani di replica che includono datastore vuoti senza escluderli dal piano o forzare il failover. Durante il failover, Disaster Recovery monta automaticamente il datastore vuoto nel sito di disaster recovery, permettendoti di aggiungere e proteggere le VM per le operazioni di failback.
+
+Per ulteriori informazioni, vedi link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Failover verso un sito remoto"^].
+
+
+
+==== automapping di rete vCenter
+
+Ora puoi configurare le relazioni di mappatura di rete a livello di vCenter (cioè, al di fuori della finestra di dialogo del piano di replica). Una volta configurate, Disaster Recovery applica automaticamente queste mappature di rete quando aggiungi o modifichi un piano di replica, semplificando la gestione dei piani di replica.
+
+Il disaster recovery continua a supportare le sovrascritture per singolo piano. Le mappature di rete esistenti definite all'interno di un piano di replica possono ancora essere modificate per singola rete; queste mappature hanno la precedenza sulle definizioni a livello di vCenter.
+
+
+
+[[disaster-recovery-viewer-role-tightening]]
+=== Restrizioni al ruolo viewer nel disaster recovery
+
+La possibilità di visualizzare la scheda "Upgrade System" è stata rimossa dal ruolo di viewer per il Disaster Recovery. Questa modifica allinea il ruolo a un'esperienza più appropriata per gli utenti in sola lettura. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^].
+
+
+
+[[system-performance-enhancements]]
+=== Miglioramenti delle prestazioni del sistema
+
+La funzionalità di disaster recovery ha introdotto modifiche per ridurre il consumo di risorse di sistema e migliorare le prestazioni in tutte le operazioni.

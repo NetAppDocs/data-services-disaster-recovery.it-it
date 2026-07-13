@@ -16,6 +16,7 @@ Quando si utilizza NetApp Disaster Recovery, assicurarsi di aver configurato le 
 
 
 
+[[minimum-ontap-permissions]]
 == Autorizzazioni minime ONTAP
 
 Per NetApp Disaster Recovery sono necessarie le seguenti autorizzazioni ONTAP:
@@ -107,6 +108,7 @@ Per NetApp Disaster Recovery sono necessarie le seguenti autorizzazioni ONTAP:
 |===
 
 
+[[add-permissions-in-ontap]]
 == Aggiungere autorizzazioni in ONTAP
 
 L'aggiunta di autorizzazioni in ONTAP richiede la creazione di un ruolo con le autorizzazioni richieste e l'assegnazione di tale ruolo a un utente. È possibile eseguire questa operazione in ONTAP utilizzando System Manager o la ONTAP CLI.
@@ -207,6 +209,7 @@ security login create -vserver <SVM> -user-or-group-name <user-name> -applicatio
 ====
 
 
+[[configure-disaster-recovery]]
 == Configurare il ripristino di emergenza
 
 Dopo aver creato i ruoli ONTAP, è necessario link:https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html#step-3-discover-a-cluster["Scopri il cluster ONTAP nella Console"^]. Durante la fase di individuazione del cluster, sono necessari l'indirizzo IP del cluster ONTAP, il nome dell'utente creato e la password per questo passaggio. Per NetApp Disaster Recovery, è necessario eseguire l'individuazione sia sul cluster di origine che sul cluster di destinazione.

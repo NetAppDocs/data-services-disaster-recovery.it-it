@@ -19,6 +19,7 @@ Devi creare quanto segue:
 
 
 
+[[create-on-premises-sites]]
 == Crea siti on-premise
 
 Creare un sito vCenter di produzione.
@@ -45,6 +46,7 @@ Se disponi di altri siti di produzione vCenter, puoi aggiungerli seguendo gli st
 
 
 
+[[create-amazon-cloud-sites]]
 == Crea siti cloud Amazon
 
 Creare un sito DR per Amazon EVS utilizzando Amazon FSx for NetApp ONTAP .

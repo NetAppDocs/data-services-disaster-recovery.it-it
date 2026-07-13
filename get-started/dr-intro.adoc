@@ -27,6 +27,7 @@ image:../use/evs-console-architecture.png["Diagramma che mostra i componenti del
 
 
 
+[[netapp-console]]
 == NetApp Console
 
 È possibile accedere a NetApp Disaster Recovery tramite la NetApp Console.
@@ -39,6 +40,7 @@ Scopri di più su https://docs.netapp.com/us-en/console-setup-admin/concept-over
 
 
 
+[[benefits-of-using-netapp-disaster-recovery]]
 == Vantaggi dell'utilizzo di NetApp Disaster Recovery
 
 NetApp Disaster Recovery offre i seguenti vantaggi:
@@ -53,6 +55,7 @@ NetApp Disaster Recovery offre i seguenti vantaggi:
 
 
 
+[[capabilities-of-netapp-disaster-recovery]]
 == Capacità di NetApp Disaster Recovery
 
 NetApp Disaster Recovery ti consente di sfruttare appieno diverse tecnologie NetApp per raggiungere i seguenti obiettivi:
@@ -72,6 +75,7 @@ NOTE: È necessario configurare il server vSphere al di fuori di NetApp Disaster
 
 
 
+[[cost]]
 == Costo
 
 NetApp non addebita alcun costo per l'utilizzo della versione di prova di NetApp Disaster Recovery.
@@ -83,6 +87,7 @@ IMPORTANT: Alcune versioni includono un'anteprima tecnologica.  NetApp non addeb
 
 
 
+[[licensing]]
 == Licenza
 
 È possibile utilizzare i seguenti tipi di licenza:
@@ -105,6 +110,7 @@ Per i dettagli sulla configurazione delle licenze per NetApp Disaster Recovery, 
 
 
 
+[[30-day-free-trial]]
 == Prova gratuita di 30 giorni
 
 Puoi provare NetApp Disaster Recovery con una prova gratuita di 30 giorni.
@@ -115,6 +121,7 @@ Puoi acquistare una licenza in qualsiasi momento e non ti verrà addebitato alcu
 
 
 
+[[how-netapp-disaster-recovery-works]]
 == Come funziona NetApp Disaster Recovery
 
 NetApp Disaster Recovery è un servizio ospitato nell'ambiente SaaS (Software as a Service) NetApp Console .  Disaster Recovery può ripristinare carichi di lavoro replicati da un sito locale ad Amazon FSx for ONTAP o a un altro sito locale.  Questo servizio automatizza il ripristino dal livello SnapMirror , tramite la registrazione della macchina virtuale su VMware Cloud su AWS e la mappatura di rete direttamente sulla piattaforma di virtualizzazione e sicurezza di rete VMware, NSX-T. Questa funzionalità è inclusa in tutti gli ambienti Virtual Machine Cloud.
@@ -166,6 +173,7 @@ Dopo che Disaster Recovery ha creato e inizializzato tutte le relazioni, a ogni 
 
 
 
+[[supported-protection-targets-and-datastore-types]]
 == Destinazioni di protezione supportate e tipi di datastore
 
 *Tipi di datastore supportati* NetApp Disaster Recovery supporta i seguenti tipi di datastore:
@@ -185,6 +193,7 @@ Dopo che Disaster Recovery ha creato e inizializzato tutte le relazioni, a ogni 
 
 
 
+[[terms-that-might-help-you-with-netapp-disaster-recovery]]
 == Termini che potrebbero aiutarti con NetApp Disaster Recovery
 
 Potrebbe essere utile comprendere la terminologia relativa al disaster recovery.

@@ -4,6 +4,7 @@
 
 
 
+[[intelligent-proxy-support]]
 === Supporto proxy intelligente
 
 L'agente NetApp Console supporta il proxy intelligente.  Il proxy intelligente è un modo leggero, sicuro ed efficiente per connettere il tuo sistema locale a NetApp Disaster Recovery.  Fornisce una connessione sicura tra il tuo sistema e NetApp Disaster Recovery senza richiedere una VPN o un accesso diretto a Internet.  Questa implementazione proxy ottimizzata scarica il traffico API all'interno della rete locale.
@@ -18,6 +19,7 @@ Per ulteriori informazioni sulla configurazione generale del proxy nella NetApp 
 
 
 
+[[end-the-free-trial-any-time]]
 === Interrompi la prova gratuita in qualsiasi momento
 
 Puoi interrompere la prova gratuita in qualsiasi momento oppure attendere la sua scadenza.
