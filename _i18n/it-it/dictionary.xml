@@ -1062,24 +1062,11 @@
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">Utilizzando questa opzione ti verrà richiesto di effettuare nuovamente l'accesso. Si noti che il token per questi account scade dopo 90 giorni. Verrà pubblicata una notifica per avvisarti di ciò.</block>
   <block id="c3533d0746cb1de0d34486c00ae36990" category="summary">NetApp Disaster Recovery è un servizio di disaster recovery basato su cloud che automatizza i flussi di lavoro di disaster recovery.</block>
   <block id="d1a664c22b47275444c9a34501c2aac2" category="doc">Visualizza lo stato dei tuoi piani NetApp Disaster Recovery sulla Dashboard</block>
-  <block id="f236d43ec0e67c4b89d0afe52b6b6a75" category="paragraph">Utilizzando la dashboard di NetApp Disaster Recovery , puoi determinare lo stato di salute dei tuoi siti di disaster recovery e dei piani di replica.  È possibile verificare rapidamente quali siti e piani sono integri, disconnessi o degradati.</block>
   <block id="f23e4fbac73cf601cee1add8b6e11922" category="list-text">Dal menu NetApp Disaster Recovery , selezionare *Dashboard*.</block>
-  <block id="04edaa59dc99bd9193a5ad37083cc900" category="list-text">Esaminare le seguenti informazioni sulla Dashboard:</block>
   <block id="b845a02ab309809100805f1256a064e8" category="list-text">*Siti*: visualizza lo stato di salute dei tuoi siti.  Un sito può avere uno dei seguenti stati:</block>
-  <block id="0e17ce70dd39a8a056cb5ca0081d4526" category="list-text">*In esecuzione*: vCenter è connesso, funzionante e funzionante.</block>
-  <block id="ed4bdaafb191f860f256d0b1e88eb50e" category="list-text">*Giù*: vCenter non è raggiungibile o presenta problemi di connettività.</block>
-  <block id="45fa526b7f7589c94a8a5911f187838f" category="list-text">*Problema*: vCenter non è raggiungibile o presenta problemi di connettività.</block>
-  <block id="e2438a3d730fa8490b06524ee1d8b0ed" category="paragraph">Per visualizzare i dettagli del sito, seleziona *Visualizza tutto* per uno stato oppure *Visualizza siti* per visualizzarli tutti.</block>
   <block id="18c8e34abace1973ab5a4468dba74870" category="list-text">*Piani di replicazione*: visualizza lo stato di avanzamento dei tuoi piani.  Un piano può avere uno dei seguenti stati:</block>
   <block id="ddc1e4c30a24a09d9ea40b7e332147a4" category="list-text">*Pronto*</block>
   <block id="f44027b669999f97854e8ef8c8215f16" category="list-text">*Fallito*</block>
-  <block id="71fa181482da7d95240895b60c1654ee" category="paragraph">Per rivedere i dettagli del piano di replicazione, selezionare *Visualizza tutto* per uno stato oppure *Visualizza piani di replicazione* per visualizzarli tutti.</block>
-  <block id="42ad006ef72ab8b86610109a75d3073b" category="list-text">*Gruppi di risorse*: visualizza lo stato di integrità dei tuoi gruppi di risorse.  Un gruppo di risorse può avere uno dei seguenti stati:</block>
-  <block id="44cd3c457f12a5322db95c67eb00d629" category="list-text">*VM protette*: le VM fanno parte di un gruppo di risorse.</block>
-  <block id="8a5ac28d6ec264c5863fb5328c2943db" category="list-text">*VM non protette*: le VM non fanno parte di un gruppo di risorse.</block>
-  <block id="348a99edae23b1f4e21c5ce75d209a50" category="paragraph">Per rivedere i dettagli, seleziona il link *Visualizza* sotto ciascuno.</block>
-  <block id="2ce874f5717134aa8a63e219f05d39f9" category="list-text">Numero di failover, failover di test e migrazioni.  Ad esempio, se hai creato due piani e hai effettuato la migrazione alle destinazioni, il conteggio delle migrazioni verrà visualizzato come "2".</block>
-  <block id="d26cf1f0512a50b32d5a10b931f5fbe0" category="list-text">Esaminare tutte le operazioni nel riquadro Attività.  Per visualizzare tutte le operazioni sul Job Monitor, selezionare *Visualizza tutti i lavori*.</block>
   <block id="d15994bcf2411bb66762cdf4c58704b3" category="doc">Creare un piano di replica in NetApp Disaster Recovery</block>
   <block id="78166ce4ccceeedfbf6aeb8682851072" category="paragraph">*Informazioni su questo compito*</block>
   <block id="fba54b7da5e3ceabe7362e860f7df87d" category="paragraph">È possibile proteggere più VM su più datastore.  NetApp Disaster Recovery crea gruppi di coerenza ONTAP per tutti i volumi ONTAP che ospitano datastore VM protetti.</block>
@@ -1331,13 +1318,11 @@
   <block id="d112f103569329954b57e42717e32021" category="paragraph">È possibile monitorare tutti i processi NetApp Disaster Recovery e determinarne l'avanzamento.</block>
   <block id="b2885babde6f690716af50f947f38fa4" category="list-text">Dal menu, seleziona *Monitoraggio lavori*.</block>
   <block id="a658e38fe05c1b71ade8529d73e083db" category="list-text">Esplora tutti i lavori correlati alle operazioni e controlla i relativi timestamp e stato.</block>
-  <block id="a2628e207373ba02728e8a48a677eca6" category="list-text">Per visualizzare i dettagli di un lavoro specifico, seleziona la riga corrispondente.</block>
   <block id="19a2cef623f0e702dd97e37e1bddd114" category="list-text">Per aggiornare le informazioni, seleziona *Aggiorna*.</block>
   <block id="24391a0c4e58147fa07febdb32887a1a" category="section-title">Annullare un lavoro</block>
   <block id="860b70267867fe6caf0f4adfd247b3e2" category="list-text">Dalla barra di navigazione sinistra NetApp Console , selezionare *Protezione* &gt; *Disaster recovery*.</block>
   <block id="26abc41be60bda806b144bd6ecedad10" category="list-text">Nella pagina Monitoraggio lavori, annota l'ID del lavoro che desideri annullare.</block>
   <block id="49e474835558193a9bed54c7dadf777e" category="paragraph">Il lavoro deve essere nello stato "In corso" o "In coda".</block>
-  <block id="fa463eaf10ea5f2243e402c5c574ce96" category="list-text">Nella colonna Azioni, seleziona *Annulla processo*.</block>
   <block id="73f285b2a2d2e36caf8a2b3dceba3bff" category="summary">Utilizzando NetApp Disaster Recovery, puoi replicare le app VMware dal tuo sito di origine a un sito remoto di disaster recovery nel cloud utilizzando la replica SnapMirror .</block>
   <block id="5542a31575b0db973ecf1e27638145e5" category="doc">Replica le applicazioni su un altro sito con NetApp Disaster Recovery</block>
   <block id="f198c3ed2ffa46dda182aca950d079a7" category="admonition">Dopo aver creato il piano di disaster recovery, identificato la ricorrenza nella procedura guidata e avviato una replica su un sito di disaster recovery, ogni 30 minuti NetApp Disaster Recovery verifica che la replica stia effettivamente avvenendo secondo il piano. È possibile monitorare l'avanzamento nella pagina Job Monitor.</block>
@@ -1345,15 +1330,9 @@
   <block id="860a7c0767c6d5a81c5c68c072b88c23" category="list-text">Sulla destra, seleziona l'opzione *Azioni*<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block> e seleziona *Replica*.</block>
   <block id="4fcb591c27b70823ff71112c0db6af4f" category="summary">Esaminare i report sul disaster recovery può aiutarti ad analizzare la tua preparazione al disaster recovery.  I report predefiniti includono un riepilogo dei failover e dei failback, dettagli sulla replica su tutti i siti e dettagli sui lavori dell'anno precedente.</block>
   <block id="a82244df08ebf8974422f7646e0239a4" category="doc">Creare report NetApp Disaster Recovery</block>
-  <block id="840e9ba54a3eb4b6ca1ba64036216f73" category="paragraph">Esaminare i report di NetApp Disaster Recovery può aiutarti ad analizzare la tua preparazione al disaster recovery.  I report predefiniti includono un riepilogo dei failover dei test, dettagli del piano di replica e dettagli dei lavori su tutti i siti all'interno di un account negli ultimi sette giorni.</block>
   <block id="8c0063a0e5fb937e4b6c45cefbf9765b" category="paragraph">È possibile scaricare i report in formato PDF, HTML o JSON.</block>
-  <block id="cd463f7ca5dbc8268a82ea8d8f5e4281" category="paragraph">Il link per il download è valido per sei ore.</block>
   <block id="d034750cd0fb1d447a3cf19d364332e1" category="list-text">Dalla barra di navigazione sinistra NetApp Console , selezionare *Piani di replica*.</block>
   <block id="3b0a91a5ea7b77db2fb83f740b7d1303" category="list-text">Seleziona *Crea report*.</block>
-  <block id="32e3f74f58555c69fe922de2e2c5a1fb" category="list-text">Selezionare il tipo di formato del file e il periodo di tempo compreso negli ultimi 7 giorni.</block>
-  <block id="bf18811faac9b8e4fcaebab51afd1113" category="list-text">Seleziona *Crea*.</block>
-  <block id="5da6bcdd6ceb1c5910fb17277177402d" category="admonition">La visualizzazione del report potrebbe richiedere alcuni minuti.</block>
-  <block id="ab6b0c72784c216662673e59f1357cc1" category="list-text">Per scaricare un report, seleziona *Scarica report* e selezionalo nella cartella Download dell'amministratore.</block>
   <block id="c52bb35ab590385850c5a43aeeb51966" category="doc">Crea un gruppo di risorse per organizzare insieme le VM in NetApp Disaster Recovery</block>
   <block id="68924c47e2eb51445ff8e93c1ce1bbc2" category="paragraph">È possibile raggruppare le VM stesse o le VM nei datastore.</block>
   <block id="142aa3cf2c56c4cee9658fbb7fa95634" category="paragraph">È possibile creare gruppi di risorse utilizzando i seguenti metodi:</block>
@@ -2441,4 +2420,45 @@
   <block id="8527638a378e1869ef948cf228cb1967" category="list-title">Rimuovi un cluster da un sito</block>
   <block id="2e6e87ad0d5bb097a11e43a094522ce3" category="list-text">Esamina il menu di dialogo e seleziona **Rimuovi dal sito**. Assicurati di scegliere l'opzione corretta per continuare l'operazione di Trident Protect.</block>
   <block id="4c6f2ecfa631674b204ee705d90449fe" category="section-title">Visualizza le informazioni del datastore</block>
+  <block id="63459ccd5f56d025aab8953dda2cac89" category="doc">Dashboard migliorata</block>
+  <block id="f682318aec1bd156e47f27a6821a89a5" category="paragraph">La dashboard di Disaster Recovery è stata rinnovata con un'esperienza migliorata che offre una panoramica completa e immediata dell'intero ambiente di Disaster Recovery. La nuova dashboard include:</block>
+  <block id="9823d8b117c3e7a42545ab50cbf51e42" category="list-text">*Visibilità unificata dei carichi di lavoro* — Monitora sia i carichi di lavoro VMware che quelli Kubernetes insieme allo stato di salute dell'infrastruttura sottostante da un'unica interfaccia.</block>
+  <block id="cb6d28fda9538aed2308a2a41da8fef6" category="list-text">*Segnalazione proattiva dei problemi* — La dashboard ora evidenzia automaticamente i problemi ambientali, consentendo una diagnosi più rapida e tempi di risoluzione ridotti.</block>
+  <block id="4682c01fd7e04d919efdbb898660b551" category="list-text">*Utilizzo della capacità* — Le metriche di capacità sono ora visualizzate direttamente nella dashboard, consentendo una più facile comprensione del consumo delle risorse.</block>
+  <block id="83ffc188b91ae4a820fc973dcb4f2932" category="paragraph">Per ulteriori informazioni, vedi <block ref="8f765f2bdeedf185243a86837c41ce64" category="inline-link-macro-rx"></block>.</block>
+  <block id="1b89eeafa349152b4736736033fd9afa" category="section-title">Rapporti migliorati</block>
+  <block id="0dc7dafa2af4e7002cfea0adec9f9574" category="paragraph">Le funzionalità di reporting sono state ampliate per fornire una visione più approfondita delle attività di NetApp Disaster Recovery nel tuo ambiente:</block>
+  <block id="7f09e48950606d1acab05c889751f513" category="list-text">Genera report specifici per i carichi di lavoro VMware, per i carichi di lavoro Kubernetes o per entrambi, offrendoti la flessibilità di personalizzare i report in base al tuo pubblico.</block>
+  <block id="7a778b01d59bf3ae1ff3f2feb2d289b6" category="list-text">Ogni report fornisce un riepilogo completo delle attività per un periodo di tempo specificato, garantendo la massima visibilità sugli eventi nel tuo ambiente di Disaster Recovery.</block>
+  <block id="fd5ba3d3711dc4d9c0e25f25fe06d680" category="paragraph">Per ulteriori informazioni, vedi <block ref="39a309d4a05fe8ce442631f7b813f522" category="inline-link-macro-rx"></block>.</block>
+  <block id="2c06591fa7a638998ecf07caf020e711" category="section-title">Registrazione delle attività utente</block>
+  <block id="c021095f262d283ec8653a39f95e447d" category="paragraph">NetApp Disaster Recovery ha migliorato la tracciabilità e la verificabilità dei job grazie alla registrazione dei job a livello utente. Ogni job eseguito ora registra l'utente che lo ha avviato, fornendo una chiara traccia di audit per la conformità e la risoluzione dei problemi. I job attivati automaticamente da NetApp Disaster Recovery sono identificati come "system", rendendo facile distinguere tra attività avviate dall'utente e attività avviate dal servizio.</block>
+  <block id="42ed5c1343751a7af21890f24cd3c64e" category="paragraph">Per ulteriori informazioni, vedi <block ref="40b7771ffeffc9237f3cc63a2ebdb5c0" category="inline-link-macro-rx"></block>.</block>
+  <block id="00d2a24b32e6b20b963007b68cdb131f" category="section-title">Ottimizzazione delle prestazioni e delle risorse</block>
+  <block id="30f4219e3688914aa51c7df386e1780b" category="paragraph">Sono stati apportati diversi miglioramenti "sotto il cofano" per ridurre il consumo complessivo di risorse di sistema e aumentare le prestazioni nelle operazioni di NetApp Disaster Recovery.</block>
+  <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">10 agosto 2026</block>
+  <block id="2c613e5d46b6a88da4ef71969949f8ed" category="paragraph">Version 4.3.6</block>
+  <block id="64d5f2a483005a7cc6303c4015d43a5c" category="paragraph">Utilizzando la NetApp Disaster Recovery Dashboard, puoi determinare lo stato di salute dei tuoi siti di disaster recovery e dei piani di replica. Puoi facilmente valutare quali siti e piani sono integri, disconnessi o degradati. Puoi anche esaminare gli avvisi recenti e i job non riusciti, vedere quali workload sono protetti e quali no, e visualizzare una panoramica della capacità.</block>
+  <block id="bd068902af2ce39e706eebf1c24b4d76" category="list-text">Esamina le informazioni sullo stato di salute nella dashboard:</block>
+  <block id="a42ca2864206a93e33039e6598055690" category="list-text">*In esecuzione*: Il sito è connesso, integro e in esecuzione.</block>
+  <block id="36cd7041f6cbfd714bd608ae3d78d535" category="list-text">*Non disponibile*: Il sito non è raggiungibile o ha problemi di connettività.</block>
+  <block id="9b2a75730600af9907e95659422ba650" category="list-text">*Problema*: Il sito presenta problemi di connettività.</block>
+  <block id="a34ac24ac668b7073f201165e855f7fa" category="paragraph">Per visualizzare i dettagli, seleziona **Visualizza tutti i siti**.</block>
+  <block id="205be22566e424b4c8a81c6d8e8864e6" category="list-text">*Avvertimento*</block>
+  <block id="f45e2c030a4c208e00f685932255a3ca" category="paragraph">Per visualizzare i dettagli del piano di replica, seleziona *Visualizza tutti i piani di replica*.</block>
+  <block id="c829e7823834805c5cfdbad004224956" category="list-text">Consulta *Avvisi e attività recenti* per vedere le attività e gli avvisi eseguiti più di recente e i relativi stati. Seleziona *Visualizza tutte le attività* per vedere tutte le attività.</block>
+  <block id="cb616e9285bb30b93344966fddafd029" category="list-text">Esamina lo *Stato di rilevamento e protezione* per vedere il numero di carichi di lavoro rilevati e una ripartizione numerica tra carichi di lavoro protetti e non protetti, suddivisi per tipologia. Puoi anche vedere la capacità totale rilevata di tutti i carichi di lavoro e dei carichi di lavoro per tipologia.</block>
+  <block id="c1f56983411f9326a2cf92b7e410cdf2" category="list-text">Per visualizzare i dettagli di un determinato job, seleziona quella riga. Puoi scaricare i dettagli del job per una revisione offline selezionando il menu delle azioni e poi **Scarica dettagli job**.</block>
+  <block id="7e8d3582ff1a097fae78e430ac2242b4" category="admonition">Quando esamini i dettagli di un'attività, Disaster Recovery segnala l'utente che l'ha avviata. Se il responsabile è indicato come "system", significa che Disaster Recovery ha avviato l'attività.</block>
+  <block id="69ebf4461fc9429dbfcd7813c2832c6a" category="list-text">Seleziona il menu Azioni, quindi **Annulla job**.</block>
+  <block id="c6f5d2645082be603586c7fcecedd01e" category="doc">Crea report in NetApp Disaster Recovery</block>
+  <block id="458bdb93da448c5d3e7bece387f1c4d2" category="paragraph">I report di NetApp Disaster Recovery possono aiutarti ad analizzare la tua preparazione al disaster recovery. I report forniscono informazioni dettagliate sui piani di replica, inclusi il numero di gruppi di risorse, VM o cluster Kubernetes e datastore coperti dal piano. Mostrano inoltre lo stato di conformità, un riepilogo dei processi e le impostazioni di backup, inclusi recovery point objective (RPO) e conteggio di conservazione.</block>
+  <block id="466b68043567b88303b6c00217b4aeb5" category="paragraph">Il link per scaricare il report è valido per sei ore dopo che lo generi.</block>
+  <block id="c5cbff21ca879b1c12f07a2c7ced7d25" category="list-text">Accedi al <block ref="3127a7e60ca42a30e72a85e6e4e87658" category="inline-link-macro-rx"></block>.</block>
+  <block id="86179d32bfddb5ed25033adf646f60d7" category="list-text">Scegli a quale *Workload* applicare il report: Kubernetes, VMware o tutti.</block>
+  <block id="a4b18ba0532b0bf268eb0e3e25dcb79c" category="list-text">Scegli il *tipo di file* (PDF, HTML o JSON) e il *periodo di tempo* (tra uno e sette giorni precedenti) che il report deve coprire.</block>
+  <block id="a5a7078aa40bb08318bf73843094da19" category="image-alt">Screenshot della creazione del report</block>
+  <block id="3d5401fc3d8a7a798c226379efd0e54a" category="list-text">Seleziona *Crea* per generare il report.</block>
+  <block id="c7752461db4ae72d9cab16a4731fae88" category="admonition">Il report potrebbe richiedere alcuni minuti per essere generato.</block>
+  <block id="570cb7369470f1ec54ee8b421baca86e" category="list-text">Nella dashboard dei piani di replica, seleziona *Scarica report*.</block>
 </blocks>

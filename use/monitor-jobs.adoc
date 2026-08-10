@@ -26,7 +26,11 @@ summary: 'NetApp Disaster Recovery è un servizio di disaster recovery basato su
 . Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
 . Dal menu, seleziona *Monitoraggio lavori*.
 . Esplora tutti i lavori correlati alle operazioni e controlla i relativi timestamp e stato.
-. Per visualizzare i dettagli di un lavoro specifico, seleziona la riga corrispondente.
+. Per visualizzare i dettagli di un determinato job, seleziona quella riga. Puoi scaricare i dettagli del job per una revisione offline selezionando il menu delle azioni e poi **Scarica dettagli job**.
++
+
+TIP: Quando esamini i dettagli di un'attività, Disaster Recovery segnala l'utente che l'ha avviata. Se il responsabile è indicato come "system", significa che Disaster Recovery ha avviato l'attività.
+
 . Per aggiornare le informazioni, seleziona *Aggiorna*.
 
 
@@ -46,5 +50,5 @@ summary: 'NetApp Disaster Recovery è un servizio di disaster recovery basato su
 +
 Il lavoro deve essere nello stato "In corso" o "In coda".
 
-. Nella colonna Azioni, seleziona *Annulla processo*.
+. Seleziona il menu Azioni, quindi **Annulla job**.
 

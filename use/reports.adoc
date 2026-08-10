@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: use/reports.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp, protection, reports 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp, protection, reports, kubernetes 
 summary: 'Esaminare i report sul disaster recovery può aiutarti ad analizzare la tua preparazione al disaster recovery.  I report predefiniti includono un riepilogo dei failover e dei failback, dettagli sulla replica su tutti i siti e dettagli sui lavori dell"anno precedente.' 
 ---
-= Creare report NetApp Disaster Recovery
+= Crea report in NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,22 +12,26 @@ summary: 'Esaminare i report sul disaster recovery può aiutarti ad analizzare l
 
 
 [role="lead"]
-Esaminare i report di NetApp Disaster Recovery può aiutarti ad analizzare la tua preparazione al disaster recovery.  I report predefiniti includono un riepilogo dei failover dei test, dettagli del piano di replica e dettagli dei lavori su tutti i siti all'interno di un account negli ultimi sette giorni.
+I report di NetApp Disaster Recovery possono aiutarti ad analizzare la tua preparazione al disaster recovery. I report forniscono informazioni dettagliate sui piani di replica, inclusi il numero di gruppi di risorse, VM o cluster Kubernetes e datastore coperti dal piano. Mostrano inoltre lo stato di conformità, un riepilogo dei processi e le impostazioni di backup, inclusi recovery point objective (RPO) e conteggio di conservazione.
 
 È possibile scaricare i report in formato PDF, HTML o JSON.
 
-Il link per il download è valido per sei ore.
+Il link per scaricare il report è valido per sei ore dopo che lo generi.
 
 .Passi
-. Accedi al https://console.netapp.com/["NetApp Console"^] .
+. Accedi al link:https://console.netapp.com/["NetApp Console"^].
 . Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
 . Dalla barra di navigazione sinistra NetApp Console , selezionare *Piani di replica*.
 . Seleziona *Crea report*.
-. Selezionare il tipo di formato del file e il periodo di tempo compreso negli ultimi 7 giorni.
-. Seleziona *Crea*.
+. Scegli a quale *Workload* applicare il report: Kubernetes, VMware o tutti.
+. Scegli il *tipo di file* (PDF, HTML o JSON) e il *periodo di tempo* (tra uno e sette giorni precedenti) che il report deve coprire.
++
+image::report.png[Screenshot della creazione del report]
+
+. Seleziona *Crea* per generare il report.
 +
 
-NOTE: La visualizzazione del report potrebbe richiedere alcuni minuti.
+NOTE: Il report potrebbe richiedere alcuni minuti per essere generato.
 
-. Per scaricare un report, seleziona *Scarica report* e selezionalo nella cartella Download dell'amministratore.
+. Nella dashboard dei piani di replica, seleziona *Scarica report*.
 
