@@ -4,7 +4,7 @@ permalink: release-notes/dr-limitations.html
 keywords: disaster recovery, bluexp 
 summary: Le limitazioni note identificano piattaforme, dispositivi o funzioni che non sono supportati da questa versione del servizio o che non interagiscono correttamente con esso. 
 ---
-= Limitazioni nel NetApp Disaster Recovery
+= Limitazioni note in NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

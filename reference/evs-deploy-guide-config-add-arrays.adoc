@@ -4,7 +4,7 @@ permalink: reference/evs-deploy-guide-config-add-arrays.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
 summary: Prima di utilizzare NetApp Disaster Recovery, è necessario aggiungere istanze di storage locali e ospitate sul cloud al sistema NetApp Console . 
 ---
-= Aggiungi array locali al sistema NetApp Console per Amazon EVS con NetApp Disaster Recovery
+= Aggiungi array locali alla NetApp Console per Amazon EVS con NetApp Disaster Recovery
 :allow-uri-read: 
 
 

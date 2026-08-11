@@ -18,8 +18,6 @@ entries:
     url: "/reference/evs-deploy-guide-install-connector.html"
   - title: Configurare NetApp Disaster Recovery per Amazon EVS
     entries:
-    - title: Panoramica sulla configurazione NetApp Disaster Recovery per Amazon EVS
-      url: "/reference/evs-deploy-guide-config-draas.html"
     - title: Prerequisiti per Amazon EVS
       url: "/reference/evs-deploy-guide-config-prereqs.html"
     - title: Aggiungi array di storage ONTAP per Amazon EVS
@@ -30,18 +28,10 @@ entries:
       url: "/reference/evs-deploy-guide-add-sites.html"
     - title: Aggiungi cluster vCenter per Amazon EVS
       url: "/reference/evs-deploy-guide-add-vcenters.html"
-  - title: Creare piani di replicazione per Amazon EVS
+  - title: Configura i piani di replica per Amazon EVS
     entries:
-    - title: Panoramica sulla creazione di piani di replica per Amazon EVS
+    - title: Creare piani di replicazione per Amazon EVS
       url: "/reference/evs-deploy-guide-creating-replication-plans.html"
-    - title: Creare un piano di replicazione Fase 1 per Amazon EVS
-      url: "/reference/evs-deploy-guide-create-rp-wiz-01.html"
-    - title: Creare un piano di replicazione Fase 2 per Amazon EVS
-      url: "/reference/evs-deploy-guide-create-rp-wiz-02.html"
-    - title: Creare un piano di replicazione Fase 3 per Amazon EVS
-      url: "/reference/evs-deploy-guide-create-rp-wiz-03.html"
-    - title: Creare un piano di replicazione Fase 4 per Amazon EVS
-      url: "/reference/evs-deploy-guide-create-rp-wiz-04.html"
     - title: Verificare il piano di replica per Amazon EVS
       url: "/reference/evs-deploy-guide-verify-rp.html"
   - title: Eseguire le operazioni del piano di replicazione
