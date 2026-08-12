@@ -2418,7 +2418,6 @@
   <block id="f2489988adcc83c8328b64c01b5308d6" category="cell">Non utilizzare gli snapshot di trasferimento SnapMirror per operazioni di failover o failback.</block>
   <block id="8635bfe3dfd0446a5bc45f3c73546984" category="cell">*MirrorVault*</block>
   <block id="40cfffad2f3d0e318535cd9e00394b01" category="cell">Raccomandazione alternativa</block>
-  <block id="1c03e501e1cc5d812343e62be1c30caf" category="cell">Assicurati che gli snapshot selezionati durante il failover o il failback siano presenti sia sul volume di origine che su quello di destinazione. Se non lo fai, verrà visualizzato l'errore: "Transizione allo stato 'snapmirrored' non riuscita. Motivo: nessuno snapshot comune trovato."</block>
   <block id="bca192e71c231d6ab9a907fd44cc17f3" category="cell">*Asincrono*</block>
   <block id="e03f6f41d6ba74d93a81feb52f770dea" category="cell">*MirrorLatest*</block>
   <block id="3ccbb106bb4a2ad8ae674a099a17e670" category="cell">NON consigliato</block>
@@ -2431,4 +2430,5 @@
   <block id="05823e82f50bb96f9783ed51efa47a1c" category="list-text">*Utilizza backup e pianificazioni di conservazione gestiti dalla piattaforma*: se usi una soluzione esterna per la gestione degli snapshot, seleziona questa casella. Il Disaster Recovery supporta l'utilizzo di soluzioni esterne per la gestione degli snapshot, come il policy scheduler nativo di ONTAP SnapMirror o integrazioni di terze parti. Se ogni datastore (volume) nel piano di replica ha già una relazione di SnapMirror gestita altrove, puoi usare quegli snapshot come punti di ripristino in NetApp Disaster Recovery.</block>
   <block id="18dcf9b091544785104de7fe70a61388" category="doc">Gestisci siti, gruppi di risorse e piani di replica con NetApp Disaster Recovery</block>
   <block id="8f2bfb22b13c9aac8af0825753fd1e67" category="sidebar">Configura i piani di replica per Amazon EVS</block>
+  <block id="139e8f63e4cf3154556b863a379b708f" category="cell">Assicurati che gli snapshot selezionati durante il failover o il failback siano presenti sia sul volume di origine che su quello di destinazione. Se non lo fai, verrà visualizzato l'errore: "Transizione allo stato 'snapmirrored' non riuscita. Motivo: nessuno snapshot comune trovato." Non utilizzare gli snapshot di trasferimento SnapMirror per operazioni di failover o failback.</block>
 </blocks>

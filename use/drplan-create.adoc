@@ -71,7 +71,7 @@ Se prevedi di utilizzare backup gestiti dalla piattaforma (cioè snapshot gestit
 | *MirrorAll* | Consigliato | Non utilizzare gli snapshot di trasferimento SnapMirror per operazioni di failover o failback. 
 
 
-| *MirrorVault* .2+| Raccomandazione alternativa .2+| Assicurati che gli snapshot selezionati durante il failover o il failback siano presenti sia sul volume di origine che su quello di destinazione. Se non lo fai, verrà visualizzato l'errore: "Transizione allo stato 'snapmirrored' non riuscita. Motivo: nessuno snapshot comune trovato." 
+| *MirrorVault* .2+| Raccomandazione alternativa .2+| Assicurati che gli snapshot selezionati durante il failover o il failback siano presenti sia sul volume di origine che su quello di destinazione. Se non lo fai, verrà visualizzato l'errore: "Transizione allo stato 'snapmirrored' non riuscita. Motivo: nessuno snapshot comune trovato." Non utilizzare gli snapshot di trasferimento SnapMirror per operazioni di failover o failback. 
 
 
 | *Asincrono* 
