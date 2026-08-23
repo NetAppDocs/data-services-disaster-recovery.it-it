@@ -12,7 +12,7 @@ summary: 'Esaminare i report sul disaster recovery può aiutarti ad analizzare l
 
 
 [role="lead"]
-I report di NetApp Disaster Recovery possono aiutarti ad analizzare la tua preparazione al disaster recovery. I report forniscono informazioni dettagliate sui piani di replica, inclusi il numero di gruppi di risorse, VM o cluster Kubernetes e datastore coperti dal piano. Mostrano inoltre lo stato di conformità, un riepilogo dei processi e le impostazioni di backup, inclusi recovery point objective (RPO) e conteggio di conservazione.
+Usa i report di NetApp Disaster Recovery per valutare la preparazione al disaster recovery. I report forniscono dettagli sui piani di replica, incluso il numero di gruppi di risorse, VM, cluster Kubernetes e datastore che ciascun piano copre. I report mostrano anche lo stato di conformità, i riepiloghi dei job e le impostazioni di backup come recovery point objective (RPO) e retention count.
 
 È possibile scaricare i report in formato PDF, HTML o JSON.
 
@@ -23,8 +23,8 @@ Il link per scaricare il report è valido per sei ore dopo che lo generi.
 . Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
 . Dalla barra di navigazione sinistra NetApp Console , selezionare *Piani di replica*.
 . Seleziona *Crea report*.
-. Scegli a quale *Workload* applicare il report: Kubernetes, VMware o tutti.
-. Scegli il *tipo di file* (PDF, HTML o JSON) e il *periodo di tempo* (tra uno e sette giorni precedenti) che il report deve coprire.
+. Scegli a quale *Workload* applicare il report: Kubernetes, VMware o Tutti.
+. Seleziona il *tipo di file* (PDF, HTML o JSON) e il *periodo di tempo* (da uno a sette giorni fa) per il report.
 +
 image::report.png[Screenshot della creazione del report]
 

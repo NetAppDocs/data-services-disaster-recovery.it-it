@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/replicate.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: Utilizzando NetApp Disaster Recovery, puoi replicare le app VMware dal tuo sito di origine a un sito remoto di disaster recovery nel cloud utilizzando la replica SnapMirror . 
+summary: Utilizzando NetApp Disaster Recovery, puoi replicare le applicazioni VMware dal sito di origine a un sito di disaster recovery remoto nel cloud usando la replica SnapMirror. 
 ---
 = Replica le applicazioni su un altro sito con NetApp Disaster Recovery
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: Utilizzando NetApp Disaster Recovery, puoi replicare le app VMware dal 
 
 
 [role="lead"]
-Utilizzando NetApp Disaster Recovery, puoi replicare le app VMware dal tuo sito di origine a un sito remoto di disaster recovery nel cloud utilizzando la replica SnapMirror .
+Utilizzando NetApp Disaster Recovery, puoi replicare le applicazioni VMware dal sito di origine a un sito di disaster recovery remoto nel cloud usando la replica SnapMirror.
 
 
 TIP: Dopo aver creato il piano di disaster recovery, identificato la ricorrenza nella procedura guidata e avviato una replica su un sito di disaster recovery, ogni 30 minuti NetApp Disaster Recovery verifica che la replica stia effettivamente avvenendo secondo il piano. È possibile monitorare l'avanzamento nella pagina Job Monitor.
@@ -20,12 +20,12 @@ TIP: Dopo aver creato il piano di disaster recovery, identificato la ricorrenza 
 *Ruolo NetApp Console richiesto* Per eseguire questa attività è necessario il ruolo di Super admin, Disaster recovery admin o Disaster recovery failover admin. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Prima di iniziare
-Prima di avviare la replica, è necessario creare un piano di replica e scegliere di replicare le app.  Quindi, nel menu Azioni viene visualizzata l'opzione *Replica*.
+Prima di avviare la replica, crea un piano di replica e configuralo per la replica. Poi, l'opzione *Replicate* appare nel menu Azioni.
 
 .Passi
 . Accedi al https://console.netapp.com/["NetApp Console"^] .
 . Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
 . Dal menu, seleziona *Piani di replicazione*.
 . Selezionare il piano di replicazione.
-. Sulla destra, seleziona l'opzione *Azioni*image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"] e seleziona *Replica*.
+. Sulla destra, seleziona il menu *Azioni* image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"], e poi seleziona *Replica*.
 

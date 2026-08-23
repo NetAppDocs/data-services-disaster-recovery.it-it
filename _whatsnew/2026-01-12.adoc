@@ -54,6 +54,6 @@ Disaster Recovery ora fornisce avvisi e risoluzioni degli errori migliorati. Que
 [[retain-vm-folder-structure-added-as-default-in-replication-plans]]
 === Mantieni la struttura delle cartelle della VM aggiunta come predefinita nei piani di replica
 
-Quando si crea una replica, la nuova impostazione predefinita è quella di mantenere la struttura delle cartelle della VM. Se la destinazione di ripristino non dispone della gerarchia di cartelle originale, Disaster Recovery la crea. È possibile deselezionare questa opzione per ignorare la gerarchia delle cartelle originale.
+Quando crei un piano di replica, la nuova impostazione predefinita è mantenere la struttura delle cartelle della VM. Se la destinazione di recovery non ha la gerarchia di cartelle originale, Disaster Recovery la crea. Puoi deselezionare questa opzione per ignorare la gerarchia di cartelle originale.
 
 Per maggiori informazioni, vedere link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"^].

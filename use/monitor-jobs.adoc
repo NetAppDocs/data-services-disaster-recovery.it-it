@@ -12,7 +12,7 @@ summary: 'NetApp Disaster Recovery è un servizio di disaster recovery basato su
 
 
 [role="lead"]
-È possibile monitorare tutti i processi NetApp Disaster Recovery e determinarne l'avanzamento.
+Monitora i job di NetApp Disaster Recovery per seguirne stato e avanzamento.
 
 
 
@@ -25,11 +25,11 @@ summary: 'NetApp Disaster Recovery è un servizio di disaster recovery basato su
 . Accedi al https://console.netapp.com/["NetApp Console"^] .
 . Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
 . Dal menu, seleziona *Monitoraggio lavori*.
-. Esplora tutti i lavori correlati alle operazioni e controlla i relativi timestamp e stato.
-. Per visualizzare i dettagli di un determinato job, seleziona quella riga. Puoi scaricare i dettagli del job per una revisione offline selezionando il menu delle azioni e poi **Scarica dettagli job**.
+. Esamina i job, inclusi i relativi timestamp e lo stato.
+. Per visualizzare i dettagli di un job, seleziona la sua riga. Per scaricare i dettagli del job per una revisione offline, seleziona il menu delle azioni e poi seleziona **Scarica dettagli job**.
 +
 
-TIP: Quando esamini i dettagli di un'attività, Disaster Recovery segnala l'utente che l'ha avviata. Se il responsabile è indicato come "system", significa che Disaster Recovery ha avviato l'attività.
+TIP: Quando rivedi i dettagli di un'attività, Disaster Recovery mostra l'utente che ha avviato l'attività. Se il responsabile è indicato come "system", Disaster Recovery ha avviato l'attività.
 
 . Per aggiornare le informazioni, seleziona *Aggiorna*.
 
@@ -46,7 +46,7 @@ TIP: Quando esamini i dettagli di un'attività, Disaster Recovery segnala l'uten
 .Passi
 . Dalla barra di navigazione sinistra NetApp Console , selezionare *Protezione* > *Disaster recovery*.
 . Dal menu, seleziona *Monitoraggio lavori*.
-. Nella pagina Monitoraggio lavori, annota l'ID del lavoro che desideri annullare.
+. Nella pagina di monitoraggio dei job, annota l'ID del job che vuoi annullare.
 +
 Il lavoro deve essere nello stato "In corso" o "In coda".
 

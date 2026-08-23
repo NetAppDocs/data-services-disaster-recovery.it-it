@@ -4,7 +4,7 @@ permalink: use/dashboard-view.html
 keywords: disaster recovery remediate, disaster recovery, failover, failback, replication, bluexp, netapp 
 summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su cloud che automatizza i flussi di lavoro di disaster recovery. 
 ---
-= Visualizza lo stato di salute dei tuoi piani di disaster recovery in NetApp Disaster Recovery
+= Visualizza lo stato di salute del piano di recovery in NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su 
 
 
 [role="lead"]
-Utilizzando la NetApp Disaster Recovery Dashboard, puoi determinare lo stato di salute dei tuoi siti di disaster recovery e dei piani di replica. Puoi facilmente valutare quali siti e piani sono integri, disconnessi o degradati. Puoi anche esaminare gli avvisi recenti e i job non riusciti, vedere quali workload sono protetti e quali no, e visualizzare una panoramica della capacità.
+Usa la NetApp Disaster Recovery Dashboard per controllare lo stato di salute dei tuoi siti di disaster recovery e dei piani di replica. Puoi vedere se siti e piani sono integri, disconnessi o degradati, esaminare gli avvisi recenti e i job non riusciti, identificare i workload protetti e non protetti e visualizzare la capacità a colpo d'occhio.
 
 *Ruolo richiesto della NetApp Console* Per eseguire questa attività è necessario il ruolo di Super admin, Disaster recovery admin, Disaster recovery application admin o Disaster recovery viewer. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
@@ -28,7 +28,7 @@ image:dr-dashboard.png["Dashboard NetApp Disaster Recovery"]
 ** *Siti*: visualizza lo stato di salute dei tuoi siti.  Un sito può avere uno dei seguenti stati:
 +
 *** *In esecuzione*: Il sito è connesso, integro e in esecuzione.
-*** *Non disponibile*: Il sito non è raggiungibile o ha problemi di connettività.
+*** *Non disponibile*: Il sito non è raggiungibile o presenta problemi di connettività.
 *** *Problema*: Il sito presenta problemi di connettività.
 +
 Per visualizzare i dettagli, seleziona **Visualizza tutti i siti**.

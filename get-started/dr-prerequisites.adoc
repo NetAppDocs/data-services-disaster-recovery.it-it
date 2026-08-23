@@ -53,9 +53,9 @@ Ultima versione disponibile
 [[google-cloud-prerequisites-and-considerations]]
 == Prerequisiti e considerazioni di Google Cloud
 
-Con Disaster Recovery su Google Cloud VMware Engine tramite Google Cloud NetApp Volumes, assicurati di configurare le autorizzazioni corrette e di rispettare le considerazioni indicate.
+Quando usi NetApp Disaster Recovery con Google Cloud VMware Engine e Google Cloud NetApp Volumes, assicurati di configurare le autorizzazioni corrette e di considerare i seguenti aspetti.
 
-* Contatta il team Google SRE per consentire l'inserimento nell'elenco di:
+* Contatta il team SRE di Google per allow-listare quanto segue:
 +
 ** API di sincronizzazione per trasferire snapshot dall'archiviazione locale a Google Cloud NetApp Volumes.
 ** il progetto Google con il motore VMware per la creazione, il montaggio e lo smontaggio di datastore.
@@ -110,7 +110,7 @@ L'utente NetApp Console deve avere i seguenti ruoli:
 [[ontap-storage-prerequisites]]
 == Prerequisiti di archiviazione ONTAP
 
-Questi prerequisiti si applicano alle istanze ONTAP e Amazon FSX per NetApp ONTAP.
+Questi prerequisiti si applicano alle istanze ONTAP e Amazon FSx for NetApp ONTAP.
 
 * I cluster di origine e di destinazione devono avere una relazione peer.
 * L'SVM che ospita i volumi di disaster recovery deve essere presente nel cluster di destinazione.
@@ -133,7 +133,7 @@ Questi prerequisiti si applicano alle istanze ONTAP e Amazon FSX per NetApp ONTA
 [[get-started-with-the-netapp-console]]
 === Inizia con la NetApp Console
 
-Se non l'hai ancora fatto, https://docs.netapp.com/us-en/console-setup-admin/task-sign-up-saas.html["iscriviti alla NetApp Console e crea un'organizzazione"^] .
+Se non l'hai ancora fatto, https://docs.netapp.com/us-en/console-setup-admin/task-sign-up-saas.html["registrati alla NetApp Console e crea un'organizzazione"^].
 
 
 

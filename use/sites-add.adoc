@@ -12,7 +12,7 @@ summary: Prima di poter creare un piano di disaster recovery, è necessario aggi
 
 
 [role="lead"]
-Prima di poter creare un piano di recovery, è necessario aggiungere siti a Disaster Recovery. Un sito è una raccolta di vCenter server o cluster Kubernetes (on-premises o nel cloud). È necessario aggiungere il sito primario o di produzione e il sito di disaster recovery.
+Prima di creare un piano di recovery, aggiungi i siti che vuoi proteggere in NetApp Disaster Recovery. Un sito è un insieme di server vCenter o cluster Kubernetes, sia on-premises che nel cloud. Aggiungi sia il sito di produzione che il sito di disaster recovery.
 
 
 TIP: Assicurarsi che sia la sorgente che la destinazione utilizzino lo stesso agente NetApp Console.

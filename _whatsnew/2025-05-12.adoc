@@ -19,7 +19,7 @@ Per esempio:
 
 VM1 ha una vNIC (10.1.1.50) connessa alla ReteA.  Nelle impostazioni del piano di replica, la rete A è mappata sulla rete B.
 
-In caso di failover, NetApp Disaster Recovery sostituisce la parte di rete dell'indirizzo IP originale (10.1.1) e mantiene l'indirizzo host (.50) dell'indirizzo IP originale (10.1.1.50).  Per VM1, NetApp Disaster Recovery esamina le impostazioni CIDR per NetworkB e utilizza la porzione di rete NetworkB 192.168.1, mantenendo la porzione host (.50) per creare il nuovo indirizzo IP per VM1.  Il nuovo IP diventa 192.168.1.50.
+In caso di failover, NetApp Disaster Recovery sostituisce la parte di rete dell'indirizzo IP originale (10.1.1) e mantiene l'indirizzo host (.50) dell'indirizzo IP originale (10.1.1.50). Per VM1, NetApp Disaster Recovery esamina le impostazioni CIDR per NetworkB e utilizza la parte di rete di NetworkB, 192.168.1, mantenendo la parte host (.50) per creare il nuovo indirizzo IP per VM1. Il nuovo IP diventa 192.168.1.50.
 
 In sintesi, l'indirizzo host rimane lo stesso, mentre l'indirizzo di rete viene sostituito con quello configurato nella mappatura della subnet del sito.  Ciò consente di gestire più facilmente la riassegnazione degli indirizzi IP in caso di failover, soprattutto se si hanno centinaia di reti e migliaia di VM da gestire.
 
@@ -38,7 +38,7 @@ Quando si avvia un failover, ora è possibile scegliere l'opzione *Salta protezi
 
 Dopo che il sito di origine originale è di nuovo online, è possibile stabilire la protezione inversa selezionando *Proteggi risorse* dal menu Azioni del piano di replica.  In questo modo si tenta di creare una relazione di replicazione inversa per ogni volume nel piano.  È possibile eseguire questo processo più volte finché la protezione non viene ripristinata.  Una volta ripristinata la protezione, è possibile avviare un failback nel modo consueto.
 
-Per i dettagli sulla protezione da salto, fare riferimento a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Eseguire il failover delle applicazioni su un sito remoto"] .
+Per dettagli sullo skipping della protezione, consulta  https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Eseguire il failover delle applicazioni su un sito remoto"].
 
 
 
