@@ -1,23 +1,245 @@
 ---
 sidebar: sidebar 
 permalink: get-started/dr-faq.html 
-keywords: disaster recovery faq, disaster recovery frequently asked questions 
-summary: Questa sezione FAQ può aiutarti se stai cercando una risposta rapida a una domanda. 
+keywords: disaster recovery faq, disaster recovery frequently asked questions, faq, frequently asked questions about disaster recovery, vmware, vcenter, kubernetes, trident protect, snapmirror, failover, failback, migration, replication, ontap, fsxn, fsx for ontap, console agent, resource groups, replication plans, rpo, rto 
+summary: Domande frequenti su NetApp Disaster Recovery per carichi di lavoro VMware e Kubernetes. 
 ---
 = Domande frequenti su NetApp Disaster Recovery
+:toc: macro
 :hardbreaks:
+:toclevels: 1
 :allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
 :icons: font
+:linkattrs: 
 :imagesdir: ../media/
+:toc-position: content
 
 
 [role="lead"]
-Questa sezione FAQ può aiutarti se stai cercando una risposta rapida a una domanda.
+Questa FAQ risponde alle domande più comuni su NetApp Disaster Recovery per i carichi di lavoro VMware e Kubernetes. Si concentra su concetti, terminologia, comportamento del sistema e vincoli utili quando implementi configurazioni di disaster recovery e gestisci operazioni di replica, migrazione, failover e failback.
 
-*Qual è l'URL NetApp Disaster Recovery ?*  Per l'URL, in un browser, inserisci: https://console.netapp.com/["https://console.netapp.com/"^] per accedere alla console NetApp .
 
-*È necessaria una licenza per utilizzare NetApp Disaster Recovery?*  Per un accesso completo è necessaria una licenza NetApp Disaster Recovery .  Tuttavia, puoi provarlo con la versione di prova gratuita.
+toc::[]
 
-Per i dettagli sulla configurazione delle licenze per NetApp Disaster Recovery, fare riferimento alink:../get-started/dr-licensing.html["Impostare la licenza NetApp Disaster Recovery"] .
 
-*Come si accede a NetApp Disaster Recovery?* NetApp Disaster Recovery non richiede alcuna attivazione. Disaster Recovery viene visualizzato automaticamente nella navigazione a sinistra della NetApp Console.
+[[getting-started]]
+== Introduzione
+
+.Che cos'è NetApp Disaster Recovery?
+NetApp Disaster Recovery è un servizio di disaster recovery basato sul cloud, accessibile tramite la NetApp Console, che automatizza i flussi di lavoro di disaster recovery per ambienti VMware e Kubernetes. Replica i carichi di lavoro VMware on-premises che utilizzano storage ONTAP, o i carichi di lavoro Kubernetes che utilizzano storage ONTAP gestito da Trident, verso un altro sito come destinazione per il disaster recovery. Il servizio utilizza la tecnologia ONTAP SnapMirror, con orchestrazione nativa VMware o orchestrazione Trident Protect, per proteggere i carichi di lavoro preservando le efficienze dello storage ONTAP come compressione e deduplicazione.
+
+.Come accedi a NetApp Disaster Recovery?
+Il Disaster Recovery non richiede alcuna attivazione separata. Appare automaticamente nella barra di navigazione a sinistra della NetApp Console, sotto *Protection* > *Disaster recovery*. Per accedere alla NetApp Console, in un browser, inserisci:  https://console.netapp.com/["https://console.netapp.com/"^].
+
+.Hai bisogno di una licenza per usare Disaster Recovery?
+Per l'accesso completo e continuativo è necessaria una licenza Disaster Recovery. Puoi provare il servizio con una prova gratuita di 30 giorni prima di acquistare una licenza o un abbonamento. Per dettagli, consulta link:dr-licensing.html["Configura la licenza per il Disaster Recovery"].
+
+.Quali sono i target di protezione supportati per il Disaster Recovery?
+Disaster Recovery supporta i seguenti obiettivi di protezione:
+
+* Amazon Elastic VMware Service (EVS) con Amazon FSx for NetApp ONTAP
+* Azure VMware Solution (AVS) con NetApp Cloud Volumes ONTAP (iSCSI) (Anteprima privata)
+* Google Cloud VMware Engine (GCVE) con Google Cloud NetApp Volumes
+* Cluster Kubernetes che eseguono storage ONTAP gestito da Trident (protetto tramite Trident Protect)
+* Ambiente VMware on-premises basato su NFS con storage ONTAP, oppure un ambiente VMFS FC/iSCSI on-premises
+* VMware Cloud (VMC) su AWS con Amazon FSx for NetApp ONTAP
+
+
+.Quali tipi di datastore sono supportati da Disaster Recovery?
+Per i carichi di lavoro VMware, Disaster Recovery supporta i seguenti tipi di datastore:
+
+* Archivi dati NFS ospitati su volumi FlexVol ONTAP residenti su cluster ONTAP
+* Datastore del file system della macchina virtuale VMware vSphere (VMFS) che utilizzano il protocollo iSCSI o FC
+
+
+Per i carichi di lavoro Kubernetes, Disaster Recovery protegge i volumi persistenti forniti tramite NetApp Trident su storage ONTAP.
+
+
+
+[[licensing-and-cost]]
+== Licenze e costi
+
+.Quali opzioni di licenza sono disponibili per il Disaster Recovery?
+Disaster Recovery offre le seguenti opzioni di licenza:
+
+* Prova gratuita di 30 giorni (durante la prova non sono previsti limiti di capacità)
+* Un abbonamento pay-as-you-go (PAYGO) con Amazon Web Services (AWS) Marketplace, Azure Marketplace o Google Cloud Marketplace
+* Porta la tua licenza (BYOL), che è un NetApp License File (NLF) che ottieni dal tuo NetApp sales representative e attivi utilizzando il numero di serie della licenza nella NetApp Console
+
+
+I costi per il disaster recovery si basano sulla capacità utilizzata dei datastore nel sito di origine quando è presente almeno una VM o una risorsa Kubernetes con un piano di replica.
+
+.Cosa succede se viene superata la capacità?
+Per un BYOL, se i dati superano la capacità consentita, le operazioni nel servizio sono limitate finché non ottieni una licenza di capacità aggiuntiva o non aggiorni la licenza nella NetApp Console.
+
+.Cosa succede dopo la fine del periodo di prova gratuito di 30 giorni?
+Al termine del periodo di prova gratuito, puoi comunque visualizzare ed eliminare risorse come carichi di lavoro e piani di replica, e eseguire tutte le operazioni pianificate create durante il periodo di prova. Per continuare a usare il servizio con tutte le funzionalità, devi ottenere un abbonamento PAYGO dal tuo cloud provider oppure acquistare una licenza BYOL da NetApp.
+
+Puoi acquistare una licenza o abbonarti in qualsiasi momento e non ti verrà addebitato nulla fino al termine del periodo di prova di 30 giorni.
+
+
+
+[[supported-environments-and-infrastructure]]
+== Ambienti e infrastrutture supportati
+
+.Quali topologie di infrastruttura supporta il Disaster Recovery?
+Disaster Recovery supporta le seguenti topologie:
+
+* Disaster recovery ibrido basato su cloud che replica un datacenter VMware più ONTAP on-premises su un'infrastruttura di disaster recovery AWS basata su VMware Cloud on AWS o Amazon Elastic VMware Service (EVS) e Amazon FSx for NetApp ONTAP
+* Disaster recovery in cloud privato che replica un'infrastruttura VMware più ONTAP vCenter su un'altra infrastruttura VMware più ONTAP vCenter
+* Cloud DR che replica un'infrastruttura di disaster recovery AWS basata su VMware Cloud on AWS o EVS su un'altra infrastruttura di disaster recovery basata su AWS utilizzando FSx for NetApp ONTAP
+* Disaster recovery ibrido che replica un datacenter VMware più ONTAP on-premises in un'infrastruttura di disaster recovery di Google Cloud basata su Google Cloud VMware Engine e Google Cloud NetApp Volumes
+* Disaster recovery da Kubernetes a Kubernetes tra cluster utilizzando lo storage ONTAP gestito da Trident
+
+
+
+
+[[prerequisites-and-setup]]
+== Prerequisiti e configurazione
+
+.Quali sono i prerequisiti necessari prima di utilizzare NetApp Disaster Recovery?
+* I cluster di origine e di destinazione devono avere una relazione peer.
+* L'SVM che ospita i volumi di disaster recovery deve essere presente nel cluster di destinazione.
+* L'SVM di origine e l'SVM di destinazione devono avere una relazione peer.
+* Tutti i cluster VMware che vuoi gestire con Disaster Recovery devono utilizzare volumi ONTAP per ospitare le VM che vuoi proteggere.
+* VMware Tools (o Open VM Tools) devono essere in esecuzione sulle macchine virtuali che vuoi proteggere.
+* Per le macchine virtuali Windows che eseguono Microsoft SQL Server o database Oracle, i database devono avere i relativi VSS Writers abilitati.
+* Per i database Oracle in esecuzione su Linux, l'autenticazione dell'utente del sistema operativo deve essere abilitata per il ruolo SYSDBA del database Oracle.
+* Per Kubernetes, consulta i requisiti aggiuntivi in link:task-kubernetes-requirements.html["Requisiti del cluster Kubernetes per il Disaster Recovery"].
+
+
+Per l'elenco completo, vedi link:dr-prerequisites.html["Prerequisiti per il disaster recovery"].
+
+.Cos'è un agente Console e perché è necessario?
+Un agente Console è un componente software che permette alla NetApp Console di comunicare con i tuoi storage ONTAP e i cluster VMware vCenter. È necessario perché NetApp Disaster Recovery funzioni correttamente. L'agente risiede nella tua rete privata (in un data center on-premises o in una VPC cloud) e comunica con le tue istanze di storage ONTAP e i cluster vCenter.
+
+Per il disaster recovery da on-premises a on-premises, installa l'agente Console on-premises nel sito di disaster recovery. Per il disaster recovery da on-premises ad AWS, installa l'agente Console per AWS nella tua AWS VPC. Sia il cluster vCenter di origine che quello di destinazione devono usare lo stesso agente Console. Il disaster recovery funziona solo con la distribuzione dell'agente in modalità standard.
+
+.Di cosa ha bisogno un cluster Kubernetes prima di poter essere protetto?
+Ogni cluster Kubernetes deve avere NetApp Trident installato, un backend ONTAP e una classe di storage configurati, e i CRD e il controller per gli snapshot di volume installati. Le applicazioni devono usare volumi persistenti forniti tramite la classe di storage Trident. Quando aggiungi un cluster Kubernetes come sito, Disaster Recovery ti guida nell’installazione e nella registrazione di Trident Protect su quel cluster. Vedi link:task-kubernetes-requirements.html["Requisiti del cluster Kubernetes per il Disaster Recovery"] per i comandi passo-passo e i controlli di verifica.
+
+
+
+[[core-concepts]]
+== Concetti fondamentali
+
+.Che cos'è un sito in NetApp Disaster Recovery?
+Un sito è un container logico, in genere associato a un data center fisico o a una posizione cloud, che ospita uno o più cluster vCenter o cluster Kubernetes. Devi aggiungere sia un sito di origine (produzione) sia un sito di destinazione (disaster recovery) prima di creare un piano di replica.
+
+.Che cos'è un gruppo di risorse e come si usa?
+Un gruppo di risorse è un container logico che ti permette di gestire più macchine virtuali, datastore o namespace e risorse Kubernetes come un'unica unità, così puoi proteggerli con uno snapshot comune. Una macchina virtuale può appartenere a un solo gruppo di risorse alla volta. Puoi creare un gruppo di risorse per ogni applicazione o carico di lavoro che vuoi proteggere, e le macchine virtuali si accendono in base all'ordine di avvio che configuri all'interno del gruppo.
+
+.Che cos'è un piano di replica nel Disaster Recovery?
+Un piano di replica è un insieme di regole su quanto spesso vengono eseguiti i backup e su come gestire gli eventi di failover. Seleziona i siti di origine e di destinazione, assegna i gruppi di risorse, definisce le mappature di recovery e configura il comportamento all'accensione. I piani definiscono il recovery point objective (RPO) tramite la frequenza della replica dei dati.
+
+.Qual è la differenza tra RPO e RTO?
+L'obiettivo del punto di ripristino (RPO) è la quantità massima di perdita di dati accettabile in caso di disastro; è definito dalla frequenza o dalla pianificazione di replica del piano di replica. L'obiettivo del tempo di ripristino (RTO) è il tempo massimo accettabile per il ripristino da un disastro; è determinato da quanto tempo ci vuole per eseguire il failover al sito di DR e riavviare tutte le VM o applicazioni.
+
+
+
+[[sites-discovery-and-resource-groups]]
+== Siti, scoperta e gruppi di risorse
+
+.Quali informazioni sono necessarie per aggiungere un vCenter a un sito?
+* L'indirizzo IP di gestione vCenter o FQDN
+* Credenziali per un account vCenter con i privilegi richiesti (vedi link:../reference/vcenter-privileges.html["privilegi vCenter richiesti"])
+* Per i siti VMware ospitati nel cloud, le chiavi di accesso al cloud richieste
+* Un certificato di sicurezza per accedere al tuo vCenter (sono supportati sia i certificati autofirmati che quelli emessi da una CA)
+
+
+Per i passaggi, vedi link:../use/sites-add.html["Aggiungi siti in Disaster Recovery"].
+
+.Con quale frequenza Disaster Recovery rileva vCenter o gli ambienti Kubernetes?
+Il rilevamento viene eseguito ogni 24 ore per impostazione predefinita; puoi personalizzare la pianificazione in base al tuo ambiente. L'intervallo minimo è di 30 minuti e il massimo è di 24 ore. NetApp consiglia di eseguire prima alcuni rilevamenti manuali per ottenere informazioni aggiornate, poi di impostare la pianificazione per l'esecuzione automatica. Le risorse appena aggiunte o eliminate vengono riconosciute al successivo rilevamento pianificato o manuale.
+
+.È possibile ospitare risorse protette e non protette sullo stesso datastore?
+No. Ospitare macchine virtuali protette e non protette sullo stesso datastore può causare problemi. In particolare, se il datastore viene sottoposto a failover, le macchine virtuali non protette presenti su di esso non esisteranno più nell'origine dopo il failover e Disaster Recovery non le avvierà nel sito di failover.
+
+Dovresti organizzare le risorse prima di implementare il Disaster Recovery, così che i carichi di lavoro protetti e non protetti utilizzino sottoinsiemi separati di datastore, e assicurarti che un singolo datastore non sia protetto da più di un piano di replica.
+
+
+
+[[replication-and-protection]]
+== Replicazione e protezione
+
+.Quale politica di replica SnapMirror devo utilizzare?
+Se prevedi di utilizzare backup gestiti dalla piattaforma (gestiti da ONTAP), usa la policy *MirrorAll*. *MirrorVault* e *Asynchronous* sono alternative accettabili, ma devi assicurarti che lo snapshot selezionato durante il failover o il failback esista sia sul volume di origine che su quello di destinazione, altrimenti l'operazione fallisce con un errore "no common snapshot found". *MirrorLatest* non è consigliato perché lascia solo uno snapshot comune per il failover. Per le relazioni di SnapMirror gestite da Disaster Recovery, non pianificare aggiornamenti al di fuori del servizio, perché Disaster Recovery gestisce la tempistica della replica.
+
+.Posso usare una relazione di SnapMirror esistente con NetApp Disaster Recovery?
+Sì. Se una relazione di SnapMirror esiste già tra i volumi di origine e di destinazione per un datastore protetto, Disaster Recovery utilizza quella relazione per tutte le operazioni di replica invece di crearne una nuova.
+
+
+
+[[migration]]
+== Migrazione
+
+.Il Disaster Recovery supporta anche la migrazione oltre al ripristino di emergenza?
+Sì. Puoi migrare le applicazioni VMware da un sito di origine a un altro sito utilizzando un piano di replica configurato per la migrazione. Dopo che avvii la migrazione, il servizio verifica ogni 30 minuti che la migrazione proceda secondo il piano; puoi monitorare l'avanzamento in Monitoraggio processi. La migrazione non è attualmente supportata per i carichi di lavoro basati su Kubernetes. Vedi link:../use/migrate.html["Migra le applicazioni su un altro sito"].
+
+
+
+[[failover-and-testing]]
+== Failover e test
+
+.Posso testare il mio piano di recovery senza influire sui carichi di lavoro di produzione?
+Sì. Durante un test di failover, Disaster Recovery crea VM temporanee da un nuovo volume FlexClone dello snapshot selezionato e mappa un datastore temporaneo basato su FlexClone agli host ESXi. Questo non consuma capacità fisica aggiuntiva, non modifica il volume di origine originale e non interrompe la relazione di SnapMirror o i carichi di lavoro di produzione, che continuano a replicarsi normalmente. Dopo il test, pulisci l'ambiente di test usando l'azione *Clean up failover test*. Vedi link:../use/failover.html["Eseguire il failover delle applicazioni su un sito remoto"].
+
+.Cosa succede durante un'operazione di failover?
+. Disaster Recovery esegue controlli preliminari sul cluster di destinazione e sulla relazione SnapMirror .
+. Se hai selezionato l'istantanea più recente, viene eseguito un aggiornamento SnapMirror per replicare le modifiche più recenti.
+. Le macchine virtuali di origine sono spente.
+. La relazione di SnapMirror è interrotta e il volume di destinazione è impostato su lettura/scrittura.
+. In base alla selezione dello snapshot, il file system attivo viene ripristinato allo snapshot specificato.
+. I datastore vengono creati e montati sul cluster o host VMware o VMC (i datastore VMFS ricevono anche un iGroup mappato a ciascuna LUN).
+. Le macchine virtuali di destinazione vengono registrate all'interno di vCenter come nuovi datastore.
+. Le macchine virtuali di destinazione si avviano in base all'ordine di avvio nel gruppo di risorse.
+. Se la sorgente vCenter è ancora attiva, le VM lato sorgente su cui viene eseguito il failover vengono spente.
+. Tutte le VM coerenti con l'applicazione vengono riattivate.
+. Se i cluster vCenter e ONTAP di origine sono ancora attivi, viene creata una relazione inversa di SnapMirror per replicare le modifiche al sito di origine originale (a meno che tu non abbia selezionato *Skip protection*).
+
+
+.Posso personalizzare l'ordine di avvio delle macchine virtuali durante il failover?
+Sì. Per impostazione predefinita, tutte le macchine virtuali si avviano insieme in parallelo, ma puoi assegnare a ciascuna VM un numero sequenziale (ad esempio, 1, 2, 3) per controllare l'ordine di avvio, oppure assegnare lo stesso numero a più VM per avviarle simultaneamente. Puoi anche impostare un ritardo di avvio (0–10 minuti) per ogni VM per scaglionare l'avvio, utile per assicurarti che le VM prioritarie siano in esecuzione prima che partano quelle con priorità inferiore.
+
+
+
+[[failback]]
+== Failback
+
+.Cos'è il processo di failback e quando dovresti usarlo?
+Il failback riporta le operazioni al sito di origine originale dopo che il disastro è stato risolto. Partendo da una relazione che ha effettuato il failover verso la destinazione, NetApp Disaster Recovery risincronizza tutte le modifiche con la VM di origine o il cluster Kubernetes originale prima di invertire la direzione della replica. Il processo:
+
+. Esegui un controllo di conformità sul sito recuperato.
+. Aggiorna le informazioni di vCenter per ciascun cluster vCenter nel sito ripristinato.
+. Nel sito di destinazione, spegne e annulla la registrazione delle VM e smonta i volumi.
+. Interrompe la relazione di SnapMirror sulla sorgente originale per renderla di lettura/scrittura.
+. Risincronizza la relazione di SnapMirror per invertire la direzione di replica.
+. Avvia e registra le macchine virtuali di origine e monta i volumi sull'origine.
+
+
+Vedi link:../use/failback.html["Esegui il failback delle applicazioni alla sorgente originale"].
+
+
+
+[[monitoring-reporting-and-management]]
+== Monitoraggio, reporting e gestione
+
+.Come posso verificare lo stato di salute dei miei siti e dei piani di replica?
+Usa la *Dashboard* di Disaster Recovery per vedere se i siti e i piani sono integri, disconnessi o degradati; controlla gli avvisi recenti e i job non riusciti; identifica i workload protetti e non protetti; e visualizza la capacità a colpo d'occhio. Vedi link:../use/dashboard-view.html["Visualizza lo stato di salute del piano di recovery"].
+
+.Come faccio a monitorare o annullare un job?
+Usa *Monitoraggio processi* per controllare i timestamp, lo stato e l'initiator (o "system" se è stato avviato da Disaster Recovery). Puoi annullare un processo "In corso" o "In coda" dal menu Azioni, utile se un processo è bloccato o se devi dare priorità a un'altra operazione. Vedi link:../use/monitor-jobs.html["Monitora i job di Disaster Recovery"].
+
+.Quali report sono disponibili e in quali formati?
+Puoi generare report specifici per VMware, Kubernetes o tutti i workload, che includono dettagli sui piani di replica, stato di compliance e riepiloghi dei job. I report possono essere scaricati come file PDF, HTML o JSON. Coprono un periodo da uno a sette giorni. Per ulteriori informazioni, vedi link:../use/reports.html["Crea report in Disaster Recovery"].
+
+
+
+[[kubernetes-specific-questions]]
+== Domande specifiche su Kubernetes
+
+.Che cos'è un AppVault?
+Un AppVault è il cloud storage di destinazione in cui Trident Protect salva i dati di protezione di Kubernetes. Crei un AppVault durante la configurazione di un piano di replica di Kubernetes.
