@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+
+NOTE: Quando selezioni una baseline di snapshot specifica, gli snapshot di trasferimento SnapMirror sono nascosti per impostazione predefinita perché possono essere eliminati durante un failover. Questa eliminazione porta all'impossibilità di riproteggere il carico di lavoro dopo il failover a causa di un errore "no common snapshot found". Puoi comunque usare gli snapshot di trasferimento SnapMirror, ma dovrai completare una conferma aggiuntiva per riconoscere il rischio.

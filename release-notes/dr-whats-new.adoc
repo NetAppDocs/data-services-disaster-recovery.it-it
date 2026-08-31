@@ -16,6 +16,33 @@ Scopri le novità di NetApp Disaster Recovery.
 
 
 
+[[31-august-2026]]
+== 31 agosto 2026
+
+Versione 4.3.6P1
+
+
+
+[[improved-snapmirror-snapshot-management]]
+=== Gestione migliorata delle istantanee SnapMirror
+
+Ora puoi attivare il failover utilizzando l'istantanea più recente, che è il metodo preferito quando non stai creando una nuova istantanea.
+
+Quando selezioni una baseline di snapshot specifica, gli snapshot di trasferimento SnapMirror sono nascosti per impostazione predefinita. Questo perché possono essere eliminati durante un failover, impedendo la riprotezione del carico di lavoro dopo il failover a causa di un errore "nessuno snapshot comune trovato". Puoi comunque utilizzare questi snapshot, ma dovrai completare una richiesta di conferma aggiuntiva per accettare il rischio.
+
+Per ulteriori informazioni, vedi link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Failover su un sito remoto"^].
+
+
+
+[[other-improvements]]
+=== Altri miglioramenti
+
+* Sono stati apportati piccoli miglioramenti per aumentare la resilienza del workflow di test failover.
+* È stato corretto un errore di convalida durante l'aggiunta di uno script.
+
+
+
+
 [[10-august-2026]]
 == 10 agosto 2026
 
