@@ -12,7 +12,7 @@ summary: 'NetApp Disaster Recovery è un servizio di disaster recovery basato su
 
 
 [role="lead"]
-Monitora i job di NetApp Disaster Recovery per seguirne stato e avanzamento.
+Monitora i job di NetApp Disaster Recovery per visualizzarne la cronologia, lo stato e i dettagli. Monitorare lo stato e l'avanzamento dei job ti permette di individuare operazioni fallite o bloccate prima che compromettano la prontezza al ripristino.
 
 
 

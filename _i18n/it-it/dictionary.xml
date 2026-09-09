@@ -2406,7 +2406,6 @@
   <block id="57428a711cfa3bd5fc08ccca3ebd74d1" category="admonition">Dopo che hai creato il piano di replica, impostato la ricorrenza nella procedura guidata e avviato la migrazione, Disaster Recovery esegue una verifica ogni 30 minuti per assicurarsi che la migrazione stia procedendo secondo il piano. Puoi monitorare l'avanzamento nella pagina Job Monitor.</block>
   <block id="0e00059b7ae89bb2943107122795d39b" category="paragraph">Prima di avviare la migrazione, crea un piano di replica e configuralo per la migrazione. Poi, l'opzione *Migra* appare nel menu Azioni.</block>
   <block id="c3ddf9c129ec78b8669259e50ef2b80b" category="list-text">Inserisci "Migrate" nella casella di testo per confermare l'operazione, quindi seleziona *Migrate*.</block>
-  <block id="f1f2884d80fd0cf77d91665857fb19fd" category="paragraph">Monitora i job di NetApp Disaster Recovery per seguirne stato e avanzamento.</block>
   <block id="119ecc97f4025cf7e813b10479d31164" category="list-text">Esamina i job, inclusi i relativi timestamp e lo stato.</block>
   <block id="3fe84e5e3b6ca68b66ef1e1ff0d7b114" category="list-text">Per visualizzare i dettagli di un job, seleziona la sua riga. Per scaricare i dettagli del job per una revisione offline, seleziona il menu delle azioni e poi seleziona **Scarica dettagli job**.</block>
   <block id="f917d3f114d10bd11fbc835ef9241353" category="admonition">Quando rivedi i dettagli di un'attività, Disaster Recovery mostra l'utente che ha avviato l'attività. Se il responsabile è indicato come "system", Disaster Recovery ha avviato l'attività.</block>
@@ -2567,4 +2566,5 @@
   <block id="3402d8d43abf71995137392eb9b660bc" category="list-text">Scegli *Seleziona* per visualizzare un elenco di snapshot ordinate per data più recente.</block>
   <block id="2c9e00774620c5f83c48800d39a8e3a1" category="list-text">Scegli *Crea snapshot ora* per creare un nuovo snapshot che verrà copiato nel cluster di destinazione.</block>
   <block id="15816348d7ed6eb8ac7c5354e5a1aa49" category="list-text">Seleziona *Ignora protezione* se non vuoi che NetApp Disaster Recovery crei automaticamente una relazione di protezione inversa di SnapMirror dopo un failover del piano di replica. Questa opzione è utile se vuoi eseguire ulteriori operazioni sul sito ripristinato prima di rimetterlo online all'interno di NetApp Disaster Recovery.</block>
+  <block id="d4fd90d5c03a49a34d58a0210e1f6a1b" category="paragraph">Monitora i job di NetApp Disaster Recovery per visualizzarne la cronologia, lo stato e i dettagli. Monitorare lo stato e l'avanzamento dei job ti permette di individuare operazioni fallite o bloccate prima che compromettano la prontezza al ripristino.</block>
 </blocks>
