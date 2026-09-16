@@ -1,0 +1,55 @@
+= Il supporto per Kubernetes in NetApp Disaster Recovery è ora disponibile a livello generale (GA)
+:allow-uri-read: 
+
+
+
+
+[[kubernetes-support-in-netapp-disaster-recovery-is-now-generally-available-ga]]
+=== Il supporto per Kubernetes in NetApp Disaster Recovery è ora disponibile a livello generale (GA)
+
+Il supporto per i carichi di lavoro basati su Kubernetes in NetApp Disaster Recovery è ora disponibile a livello generale (GA). Con il supporto per i carichi di lavoro basati su Kubernetes, puoi proteggere le applicazioni in esecuzione su cluster Kubernetes, inclusi gli ambienti di virtualizzazione OpenShift. Disaster Recovery supporta qualsiasi versione di Kubernetes attualmente supportata da Trident Protect, garantendo un'integrazione perfetta e solide funzionalità di disaster recovery per le applicazioni containerizzate.
+
+Per iniziare a proteggere i carichi di lavoro basati su Kubernetes, consultare link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/task-kubernetes-requirements.html["Requisiti di Kubernetes per NetApp Disaster Recovery"^].
+
+
+
+[[resource-transformations]]
+=== Trasformazioni delle risorse
+
+La funzionalità di Disaster Recovery ora supporta le trasformazioni delle risorse, permettendoti di modificare qualsiasi aspetto di un carico di lavoro durante il failover. Questa funzionalità offre flessibilità per adattare i carichi di lavoro a diversi ambienti e configurazioni durante un evento di Disaster Recovery.
+
+Le trasformazioni delle risorse vengono applicate quando crei un piano di replica. Puoi creare, modificare ed eliminare le trasformazioni delle risorse nella nuova pagina Impostazioni. Per ulteriori informazioni, vedi link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-resource-transformation.html["Gestisci le trasformazioni delle risorse"^].
+
+
+
+[[script-execution]]
+=== Esecuzione dello script
+
+Ora puoi inserire script personalizzati nel flusso di lavoro di failover per coordinare la sospensione e la ripresa delle applicazioni. Questa funzionalità ti aiuta a garantire che le applicazioni siano preparate correttamente prima che uno snapshot venga replicato e ripristinato in modo appropriato, così le operazioni possono riprendere senza interruzioni dopo il failover.
+
+Per sapere come iniettare uno script personalizzato, vedi link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"^].
+
+
+
+[[new-workloads-page]]
+=== Nuova pagina dei carichi di lavoro
+
+Disaster Recovery ha aggiunto una pagina Carichi di lavoro all'interfaccia utente, che fornisce una panoramica completa di tutti i carichi di lavoro rilevati e del loro stato di protezione. La pagina Carichi di lavoro ti permette di monitorare e gestire i carichi di lavoro in modo più efficace.
+
+Per ulteriori informazioni, vedi link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/dashboard-view.html["Controlla lo stato di salute e protezione in NetApp Disaster Recovery"^].
+
+
+
+[[settings-page]]
+=== Pagina delle impostazioni
+
+Disaster Recovery ora offre una pagina Impostazioni per gestire centralmente i modelli di trasformazione delle risorse e AppVaults. Questa pagina fornisce un'unica interfaccia per configurare e gestire questi componenti critici dei tuoi piani di disaster recovery. Per saperne di più sulle opzioni nella pagina Impostazioni, vedi link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-resource-transformation.html["Gestisci le trasformazioni delle risorse"^] e link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-appvault.html["Gestisci AppVaults"^].
+
+
+
+[[general-improvements]]
+=== Miglioramenti generali
+
+NetApp Disaster Recovery ha introdotto convalide avanzate nella pagina di creazione del piano di replica per garantire un'esperienza utente più fluida e senza errori.
+
+La funzionalità di Disaster Recovery ha inoltre aumentato la resilienza del servizio, consentendogli di tollerare timeout intermittenti delle richieste e migliorando così le prestazioni e l'affidabilità complessive dell'interfaccia utente.

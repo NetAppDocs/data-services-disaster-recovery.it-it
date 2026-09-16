@@ -12,9 +12,9 @@ summary: 'L"account vCenter deve disporre di un set minimo di privilegi vCenter 
 
 
 [role="lead"]
-Affinché NetApp Disaster Recovery possa svolgere i suoi servizi, l'account vCenter deve disporre di un set minimo di privilegi vCenter. Questi privilegi includono la registrazione e la deregistrazione di datastore, l'avvio e l'arresto di macchine virtuali (VM) e la riconfigurazione delle VM.
+L'account vCenter per NetApp Disaster Recovery deve disporre di un set minimo di privilegi per registrare e annullare la registrazione dei datastore, avviare e arrestare le macchine virtuali (VM) e riconfigurare le VM.
 
-La tabella seguente elenca tutti i privilegi richiesti affinché NetApp Disaster Recovery possa interfacciarsi con un vCenter cluster.
+La tabella seguente elenca i privilegi richiesti da Disaster Recovery per funzionare con un vCenter cluster.
 
 [cols="1,2,2,3"]
 |===

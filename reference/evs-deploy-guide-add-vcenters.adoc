@@ -9,7 +9,7 @@ summary: Introduzione di NetApp Disaster Recovery tramite Amazon EVS e Amazon FS
 
 
 [role="lead"]
-Dopo aver creato i siti, puoi aggiungere i cluster vCenter a ciascun sito in NetApp Disaster Recovery.  Quando abbiamo creato ogni sito, abbiamo indicato ogni tipologia di sito.  In questo modo viene indicato a NetApp Disaster Recovery quale tipo di accesso è richiesto per i vCenter ospitati in ciascun tipo di sito.  Uno dei vantaggi di Amazon EVS è che non esiste una vera e propria distinzione tra un vCenter Amazon EVS e un vCenter locale.  Entrambi richiedono le stesse informazioni di connessione e autenticazione.
+Dopo aver creato i siti, aggiungi i vCenter cluster per ciascun sito in NetApp Disaster Recovery. Il tipo di sito determina l'accesso che NetApp Disaster Recovery richiede per i vCenters in quel sito. Amazon EVS vCenters e i vCenters on-premises utilizzano le stesse informazioni di connessione e autenticazione.
 
 .Passaggi per aggiungere un vCenter a ciascun sito
 . Dall'opzione *Siti*, seleziona *Aggiungi vCenter* per il sito desiderato.
@@ -20,13 +20,13 @@ image:evs-add-vcenter-1.png["Aggiungi l'opzione vCenter"]
 +
 .. L'agente NetApp Console ospitato nel tuo AWS VPC.
 .. L'indirizzo IP o FQDN per il vCenter da aggiungere.
-.. Se diverso, modificare il valore della porta impostandolo sulla porta TCP utilizzata dal gestore cluster vCenter.
+.. Se necessario, cambia la porta con la porta TCP utilizzata dal tuo vCenter server.
 .. Il nome utente vCenter per l'account creato in precedenza che verrà utilizzato da NetApp Disaster Recovery per gestire vCenter.
 
 
 
 
-. Se la tua azienda utilizza un'autorità di certificazione (CA) esterna o vCenter Endpoint Certificate Store per accedere ai tuoi vCenter, deseleziona la casella di controllo *Usa certificati autofirmati*.  Altrimenti, lasciare la casella selezionata.
+. Se la tua organizzazione utilizza un'autorità di certificazione (CA) esterna o il vCenter Endpoint Certificate Store, deseleziona *Usa certificati autofirmati*. Altrimenti, lascia la casella selezionata.
 +
 .. Selezionare *Aggiungi*.
 +

@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: use/task-resource-transformation.html 
+keywords: disaster recovery, resource transformation, kubernetes, templates 
+summary: La trasformazione delle risorse ti permette di modificare qualsiasi aspetto di un carico di lavoro durante il failover. Questa funzionalità offre flessibilità per adattare i carichi di lavoro a diversi ambienti e configurazioni durante un evento di NetApp Disaster Recovery. 
+---
+= Gestisci le trasformazioni delle risorse in NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Per i carichi di lavoro Kubernetes in NetApp Disaster Recovery, puoi creare trasformazioni di risorse. Una trasformazione di risorse ti permette di modificare qualsiasi aspetto di un carico di lavoro durante il failover. Le trasformazioni di risorse offrono flessibilità per adattare i carichi di lavoro a diversi ambienti e configurazioni durante un evento di disaster recovery.
+
+Le trasformazioni delle risorse vengono aggiunte quando crei un piano di replica per Kubernetes.
+
+*Ruolo richiesto NetApp Console* Per eseguire questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+
+
+
+[[create-a-resource-transformation-template]]
+== Crea un modello di trasformazione delle risorse
+
+.Passi
+. In Ripristino di emergenza, seleziona *Impostazioni* dalla barra laterale.
+. Nella scheda Trasformazione risorse, seleziona *+ Aggiungi modello*.
+. Inserisci un *Nome* per la trasformazione della risorsa.
+. Seleziona l'operazione: aggiungi, copia, sposta, rimuovi, sostituisci o testa.
+. Inserisci il *percorso JSON* e il *nome della variabile*. Facoltativamente, aggiungi il *valore predefinito*.
++
+image::resource-transformation-template.png[Screenshot del modello di trasformazione delle risorse]
+
+. Per aggiungere altre operazioni al template, seleziona *+ Add operation*. Ripeti i due passaggi precedenti, poi ordina le operazioni nell'ordine in cui devono essere eseguite.
+. Seleziona *Aggiungi* per creare il modello.
+
+
+
+
+[[edit-a-resource-transformation]]
+== Modifica una trasformazione di risorsa
+
+. In Ripristino di emergenza, seleziona *Impostazioni* dalla barra laterale.
+. Nella scheda Trasformazioni risorse, seleziona *Gestisci trasformazioni risorse*.
+. Individua la trasformazione di risorsa che desideri modificare. Dal menu delle azioni in fondo alla riga, seleziona *Modifica*.
+. Puoi modificare qualsiasi campo del modello. Modifica il *Nome*, l'*Operazione* (aggiungi, copia, sposta, rimuovi, sostituisci o testa) e i relativi valori: il *Percorso JSON* e il *Nome variabile*, oppure il *Valore predefinito*. Puoi anche aggiungere operazioni o modificare l'ordine in cui vengono eseguite.
+. Seleziona *Salva*.
+
+
+
+
+[[clone-a-resource-transformation]]
+== Clona una trasformazione di risorse
+
+Puoi clonare una trasformazione di risorse per usarla come base per un nuovo modello di trasformazione di risorse. I modelli clonati usano il nome del modello di origine e sono contrassegnati con "-v1". Ad esempio, se cloni il modello "scale up deployment", il clone si chiamerà "scale up deployment-v1".
+
+.Passi
+. In Ripristino di emergenza, seleziona *Impostazioni* dalla barra laterale.
+. Nella scheda Trasformazioni risorse, seleziona *Gestisci trasformazioni risorse*.
+. Individua la trasformazione delle risorse che desideri clonare. Dal menu delle azioni in fondo alla riga, seleziona *Clona*.
+. Quando l'operazione ha esito positivo, Disaster Recovery visualizza una finestra di dialogo di conferma nell'interfaccia utente.
++
+Puoi visualizzare il modello clonato nell'elenco delle trasformazioni delle risorse.
+
+
+
+
+
+[[delete-a-resource-transformation]]
+== Elimina una trasformazione di risorse
+
+Se non hai più bisogno di una trasformazione di risorse, puoi eliminarla.
+
+.Passi
+. In Ripristino di emergenza, seleziona *Impostazioni* dalla barra laterale.
+. Nella scheda Trasformazioni risorse, seleziona *Gestisci trasformazioni risorse*.
+. Individua la trasformazione di risorsa che desideri eliminare. Dal menu delle azioni in fondo alla riga, seleziona *Elimina*.
+. Nella finestra di dialogo, seleziona *Cancella* per confermare l'operazione.
+
+
+
+
+[[next-steps]]
+== Prossimi passi
+
+* link:drplan-create.html["Creare un piano di replicazione"]
+

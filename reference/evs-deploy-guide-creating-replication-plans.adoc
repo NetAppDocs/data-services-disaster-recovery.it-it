@@ -9,7 +9,7 @@ summary: 'Introduzione di NetApp Disaster Recovery tramite Amazon EVS e Amazon F
 
 
 [role="lead"]
-Dopo aver protetto i vCenter sul sito locale e aver configurato un sito Amazon EVS per utilizzare Amazon FSx for NetApp ONTAP come destinazione DR, è possibile creare un piano di replica (RP) per proteggere qualsiasi set di VM ospitate sul cluster vCenter all'interno del sito locale.
+Dopo aver identificato i vCenters on-premise da proteggere e configurato un sito Amazon EVS che utilizza Amazon FSx for NetApp ONTAP come destinazione di disaster recovery, crea un piano di replica per proteggere le VM sul tuo cluster vCenter on-premise.
 
 
 
@@ -51,11 +51,11 @@ image:evs-create-rp-wiz-a-1-4.png["Crea un piano di replica, seleziona vCenter"]
 [[select-vm-resources-for-protection]]
 == Seleziona le risorse VM da proteggere
 
-Esistono diversi modi per selezionare le macchine virtuali da proteggere. I passaggi successivi mostrano come proteggere gli interi datastore di vCenter, ma dovresti scegliere il metodo che meglio si adatta alle tue esigenze.
+Esistono diversi modi per selezionare le macchine virtuali da proteggere. I seguenti passaggi mostrano come proteggere gli interi datastore vCenter, ma dovresti scegliere il metodo che meglio si adatta alle tue esigenze.
 
 * *Seleziona singole VM*: Selezionando il pulsante *Macchine virtuali* puoi selezionare singole VM da proteggere. Quando selezioni una VM, il servizio la aggiunge a un gruppo di risorse predefinito situato sul lato destro dello schermo.
-* *Seleziona i gruppi di risorse creati in precedenza*: puoi creare gruppi di risorse personalizzati in anticipo utilizzando l'opzione Gruppo di risorse dal menu Disaster Recovery. Non è un requisito, perché puoi usare gli altri due metodi per creare un gruppo di risorse come parte del processo del piano di replica. Per dettagli, vedi link:../use/drplan-create.html["Creare un piano di replicazione"].
-* *Seleziona interi vCenter datastores*: se hai molte VM da proteggere con questo piano di replica, potrebbe non essere efficiente selezionare singole VM. Poiché Disaster Recovery utilizza la replica SnapMirror basata sui volumi per proteggere le VM, tutte le VM residenti su un datastore verranno replicate come parte del volume. Nella maggior parte dei casi, dovresti fare in modo che Disaster Recovery protegga e riavvii tutte le VM presenti sul datastore. Usa questa opzione per dire al servizio di aggiungere all'elenco delle VM protette tutte le VM ospitate su un datastore selezionato.
+* *Seleziona i gruppi di risorse creati in precedenza*: puoi creare gruppi di risorse personalizzati in anticipo utilizzando l'opzione Gruppo di risorse dal menu Disaster Recovery. Questa operazione è facoltativa perché puoi usare gli altri due metodi per creare un gruppo di risorse durante la creazione del piano di replica. Per dettagli, vedi link:../use/drplan-create.html["Creare un piano di replicazione"].
+* *Seleziona interi vCenter datastores*: con questa opzione, tutte le VM residenti su un datastore verranno replicate come parte del volume. Usa questa opzione se hai più VM da proteggere con il piano di replica, così eviti di selezionare le singole VM. Nella maggior parte dei casi, dovresti fare in modo che Disaster Recovery protegga e riavvii tutte le VM presenti sul datastore. Usa questa opzione per dire al servizio di aggiungere all'elenco delle VM protette tutte le VM ospitate su un datastore selezionato.
 
 
 .Passaggi per accedere a questa pagina
@@ -86,7 +86,7 @@ Dopo aver selezionato le macchine virtuali da proteggere, devi eseguire la mappa
 Ogni VM richiede i primi tre tipi di informazioni.  La mappatura del datastore è necessaria per ogni datastore che ospita le VM da proteggere.
 
 * Le sezioni contrassegnate dall'icona di avviso (image:evs-caution-icon.png["20,20"]) richiedono che tu fornisca informazioni di mapping.
-* Le sezioni contrassegnate dall'icona di spunta (image:evs-check-icon.png["20,20"]) sono state mappate o hanno mappature predefinite. Esaminale per assicurarti che la configurazione attuale soddisfi le tue esigenze.
+* Le sezioni contrassegnate dall'icona di spunta (image:evs-check-icon.png["20,20"]) utilizzano mappature predefinite oppure sono già state mappate. Esamina le mappature per assicurarti che la configurazione corrente soddisfi i tuoi requisiti.
 
 
 .Mappatura delle risorse di accesso
@@ -103,14 +103,14 @@ image:evs-create-rp-wiz-c0.png["Crea un piano di replicazione, pagina di mappatu
 [[compute-resources-mapping]]
 === Mappatura delle risorse di calcolo
 
-Poiché un sito potrebbe ospitare più data center virtuali e più cluster vCenter, è necessario identificare su quale cluster vCenter ripristinare le VM in caso di failover.
+Poiché un sito può ospitare più data center virtuali e più vCenter cluster, devi identificare quale vCenter cluster utilizzare per ripristinare le VM in caso di failover.
 
 .Passi
 . Selezionare il data center virtuale dall'elenco dei data center presenti nel sito DR.
 . Selezionare il cluster che ospiterà i datastore e le VM dall'elenco dei cluster all'interno del data center virtuale selezionato.
 . Facoltativamente, seleziona un host di destinazione nel cluster di destinazione.
 +
-Questo passaggio non è necessario perché Disaster Recovery seleziona il primo host aggiunto al cluster in vCenter. A quel punto, le VM continuano a essere eseguite su quell'host ESXi oppure VMware DRS sposta la VM su un host ESXi diverso, se necessario, in base alle regole DRS configurate.
+Questo passaggio non è necessario perché Disaster Recovery seleziona il primo host aggiunto al cluster in vCenter. Le VM continuano a essere eseguite su quell'host ESXi oppure VMware DRS le sposta su un altro host ESXi in base alle regole DRS configurate.
 
 . Facoltativamente, puoi specificare il nome di una cartella di primo livello di vCenter in cui inserire le registrazioni delle VM. Questo passaggio può soddisfare esigenze organizzative, ma non è obbligatorio.
 +
@@ -123,7 +123,7 @@ image:evs-create-rp-wiz-c-compute-resources-1-4.png["Crea un piano di replicazio
 [[map-virtual-network-resources]]
 === Mappare le risorse di rete virtuale
 
-Ogni VM può avere una o più schede di rete virtuali connesse a reti virtuali all'interno dell'infrastruttura di rete vCenter.  Per garantire che ogni VM sia correttamente connessa alle reti desiderate al riavvio nel sito DR, identificare a quali reti virtuali del sito DR connettere queste VM.  Per fare ciò, mappare ogni rete virtuale nel sito locale a una rete associata nel sito DR.
+Ogni macchina virtuale può avere una o più schede di rete virtuali connesse a reti virtuali all'interno dell'infrastruttura di rete vCenter. Per assicurarti che ogni macchina virtuale sia correttamente connessa alle reti desiderate quando si riavviano nel sito di disaster recovery, identifica a quali reti virtuali del sito di disaster recovery collegare queste macchine virtuali. Fallo mappando ciascuna rete virtuale del sito on-premises a una rete associata nel sito di disaster recovery.
 
 . Selezionare il segmento Target dall'elenco a discesa.
 . Ripetere il passaggio precedente per ogni rete virtuale di origine elencata.
@@ -153,9 +153,9 @@ I tipi di indirizzo IP supportati sono statico e DHCP.  Per gli indirizzi IP sta
 * *Mappatura subnet*: questa opzione riconfigura l'indirizzo IP di ogni VM in base alla configurazione CIDR della rete virtuale di destinazione.  Per utilizzare questa funzionalità, assicurarsi che ogni rete virtuale di vCenter disponga di un'impostazione CIDR definita all'interno del servizio, come modificato nelle informazioni di vCenter nella pagina Siti.
 
 
-Dopo aver configurato le subnet, il mapping delle subnet utilizza lo stesso componente unità dell'indirizzo IP sia per la configurazione della VM di origine che di destinazione, ma sostituisce il componente subnet dell'indirizzo IP in base alle informazioni CIDR fornite.  Questa funzionalità richiede inoltre che sia la rete virtuale di origine che quella di destinazione abbiano la stessa classe di indirizzo IP (la `/xx` componente del CIDR).  Ciò garantisce che nel sito di destinazione siano disponibili indirizzi IP sufficienti per ospitare tutte le VM protette.
+Dopo aver configurato le subnet, la mappatura delle subnet utilizza la stessa parte host dell'indirizzo IP sia per la configurazione della VM di origine che di destinazione, ma sostituisce la componente subnet dell'indirizzo IP in base alle informazioni CIDR fornite. Questa funzionalità richiede anche che sia la rete virtuale di origine che quella di destinazione abbiano la stessa classe di indirizzi IP (la  `/xx` componente della CIDR). Questo garantisce che siano disponibili abbastanza indirizzi IP nel sito di destinazione per ospitare tutte le VM protette.
 
-Per questa configurazione EVS, presumiamo che le configurazioni IP di origine e di destinazione siano le stesse e non richiedano alcuna riconfigurazione aggiuntiva.
+Per questa configurazione di Amazon EVS, presumiamo che le configurazioni IP di origine e di destinazione siano identiche e non richiedano alcuna riconfigurazione aggiuntiva.
 
 .Modifica della riconfigurazione delle impostazioni di rete
 . Selezionare il tipo di indirizzamento IP da utilizzare per le VM sottoposte a failover.
@@ -209,7 +209,7 @@ image:evs-create-rp-wiz-c-vm-resources-boot-delay-1-2.png["Crea piano di replica
 Disaster Recovery supporta l'esecuzione di alcune operazioni del sistema operativo guest per ciascuna VM:
 
 * NetApp Disaster Recovery può eseguire backup coerenti con l'applicazione delle VM che eseguono database Oracle e database Microsoft SQL Server.
-* Disaster Recovery può eseguire script personalizzati adatti al sistema operativo guest per ciascuna VM. Eseguire tali script richiede credenziali utente accettate dal sistema operativo guest con privilegi sufficienti per eseguire le operazioni elencate nello script.
+* Disaster Recovery può eseguire script personalizzati per il sistema operativo guest di ciascuna VM. L'esecuzione di tali script richiede credenziali utente accettabili dal sistema operativo guest con privilegi sufficienti per eseguire le operazioni elencate nello script.
 
 
 .Modificare le operazioni personalizzate del sistema operativo guest di ogni VM
@@ -231,7 +231,7 @@ image:evs-create-rp-wiz-c-vm-resources-ac-scripts-creds-1-2.png["Crea un piano d
 [[map-datastores]]
 === Archivi dati cartografici
 
-L'ultimo passaggio nella creazione di un piano di replica consiste nell'identificare come ONTAP deve proteggere i datastore. Queste impostazioni definiscono l'RPO (Recovery Point Objective) del piano di replica, quanti backup devono essere mantenuti e dove replicare ciascun volume ONTAP che ospita i datastore di vCenter.
+L'ultimo passaggio nella creazione di un piano di replica consiste nell'identificare come ONTAP deve proteggere i datastore. Queste impostazioni definiscono l'obiettivo del punto di ripristino (RPO) del piano di replica, quanti backup devono essere mantenuti e dove replicare ciascun volume ONTAP che ospita il datastore di vCenter.
 
 Per impostazione predefinita, Disaster Recovery gestisce autonomamente la pianificazione della replica degli snapshot; tuttavia, facoltativamente, puoi specificare che vuoi utilizzare la pianificazione dei criteri di replica SnapMirror esistente per la protezione del datastore.
 

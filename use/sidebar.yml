@@ -2,7 +2,7 @@
 section: use
 title: Utilizzare NetApp Disaster Recovery
 entries:
-- title: Visualizza lo stato di salute dei tuoi piani di disaster recovery nella Dashboard
+- title: Visualizza lo stato di salute e protezione del piano
   url: "/use/dashboard-view.html"
 - title: Aggiungere risorse a un sito
   url: "/use/sites-add.html"
@@ -18,6 +18,10 @@ entries:
   url: "/use/failover.html"
 - title: Eseguire il failback delle applicazioni sul sito di origine originale
   url: "/use/failback.html"
+- title: Gestisci AppVaults
+  url: "/use/task-appvault.html"
+- title: Gestisci i modelli di trasformazione delle risorse
+  url: "/use/task-resource-transformation.html"
 - title: Gestisci le informazioni sui siti, sui piani, sugli archivi dati e sulle
     macchine virtuali
   url: "/use/manage.html"
