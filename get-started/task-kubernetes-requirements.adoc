@@ -19,9 +19,10 @@ Prima di configurare NetApp Disaster Recovery per Kubernetes, prepara ciascun cl
 [[prerequisites]]
 == Prerequisiti
 
-Prima di iniziare, assicurati che il tuo cluster Kubernetes e i cluster ONTAP siano configurati.
+* Prima di configurare i requisiti del cluster Kubernetes, assicurati di aver configurato il tuo cluster Kubernetes e i cluster ONTAP.
+* Assicurati di utilizzare una versione di Kubernetes supportata. NetApp Disaster Recovery supporta link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["qualsiasi versione di Kubernetes attualmente supportata da Trident Protect"^].
+* Configura l'opportuno link:../reference/trident-permissions.html["autorizzazioni per Trident Protect"].
 
-Disaster Recovery supporta link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["qualsiasi versione di Kubernetes attualmente supportata da Trident Protect"^].
 
 
 
@@ -61,13 +62,8 @@ Se hai già installato Trident, verifica l'installazione con il comando
 
 
 
-[[configure-ontap-backend-and-trident-storageclass]]
-== Configura il backend ONTAP e Trident StorageClass
-
-
-
 [[create-a-kubernetes-secret]]
-=== Crea un segreto di Kubernetes
+== Crea un segreto di Kubernetes
 
 Crea un secret di Kubernetes nel namespace:
 
@@ -113,7 +109,7 @@ spec:
 
 
 [[configure-the-storage-class]]
-=== Configura la classe di archiviazione
+== Configura la classe di archiviazione
 
 link:https://docs.netapp.com/us-en/trident/trident-use/create-stor-class.html["Crea l'oggetto della classe di archiviazione"^]. Utilizzare il provisioner `csi.trident.netapp.io`. Ad esempio:
 
@@ -215,6 +211,13 @@ Dopo aver verificato lo stato di tutte le risorse, distribuisci o link:https://d
 
 
 ====
+
+
+[[netapp-console-roles]]
+== NetApp Console ruoli
+
+Dopo aver eseguito le configurazioni di Trident Protect e Kubernetes, link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Assicurati di avere i ruoli Console corretti per il Disaster Recovery per eseguire discovery, failover e altre attività."^]
+
 
 
 [[more-information]]

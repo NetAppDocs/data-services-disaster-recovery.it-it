@@ -14,6 +14,16 @@ summary: 'Esaminare i report sul disaster recovery può aiutarti ad analizzare l
 [role="lead"]
 Usa i report di NetApp Disaster Recovery per valutare la preparazione al disaster recovery. I report forniscono dettagli sui piani di replica, incluso il numero di gruppi di risorse, VM, cluster Kubernetes e datastore che ciascun piano copre. I report mostrano anche lo stato di conformità, i riepiloghi dei job e le impostazioni di backup come recovery point objective (RPO) e retention count.
 
+Utilizza i report per valutare la conformità della replica e la cronologia del recovery prima di un incidente, così puoi identificare le lacune nella protezione.
+
+
+TIP: link:dashboard-view.html["Puoi visualizzare gli stati di protezione a livello generale nella Dashboard oppure per singolo carico di lavoro nella pagina Carichi di lavoro."]
+
+
+
+[[about-disaster-recovery-reports]]
+== Informazioni sui report di Disaster Recovery
+
 È possibile scaricare i report in formato PDF, HTML o JSON.
 
 Il link per scaricare il report è valido per sei ore dopo che lo generi.

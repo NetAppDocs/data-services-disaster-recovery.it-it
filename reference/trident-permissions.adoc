@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: reference/trident-permissions.html 
+keywords: disaster recovery, IAM, permissions, Trident Protect, S3, StorageGrid, AppVault, cluster registration, cluster discover 
+summary: Quando usi NetApp Disaster Recovery, assicurati di avere le configurazioni corrette di Trident Protect per scoprire e registrare i tuoi cluster Kubernetes. 
+---
+= Configura le autorizzazioni di Trident Protect per NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Quando usi NetApp Disaster Recovery, assicurati di avere le configurazioni corrette di Trident Protect per scoprire e registrare i tuoi cluster Kubernetes.
+
+
+
+[[trident-protect-cluster-permissions]]
+== Autorizzazioni del cluster Trident Protect
+
+Per il Disaster Recovery sono necessarie le seguenti autorizzazioni del cluster:
+
+[cols="3,1"]
+|===
+| Permesso | Funzione 
+
+
+| dr:trident_cluster-view | Visualizza i cluster Kubernetes registrati e l'inventario dei cluster utilizzati da Disaster Recovery 
+
+
+| dr:trident_cluster-create | Registra un cluster Kubernetes e genera i comandi di configurazione. 
+
+
+| dr:trident_cluster-update | Modifica un cluster Kubernetes registrato. 
+
+
+| dr:trident_cluster-delete | Elimina un cluster Kubernetes registrato. 
+
+
+| dr:trident_cluster-refresh | Esegui la scoperta del cluster Trident. 
+|===
+
+
+[[trident-protect-appvault-permissions]]
+== Autorizzazioni di Trident Protect AppVault
+
+Le seguenti autorizzazioni AppVault sono necessarie con Disaster Recovery:
+
+[cols="3,1"]
+|===
+| Permesso | Funzione 
+
+
+| dr:trident_appvault-view | Visualizza Trident AppVaults e i dati di rilevamento del cloud/object-store necessari per la configurazione di AppVault. 
+
+
+| dr:trident_appvault-create | Crea una risorsa personalizzata Trident AppVault tramite NetApp Disaster Recovery. 
+|===
+
+
+[[trident-protect-credential-permissions]]
+== Autorizzazioni delle credenziali di Trident Protect
+
+Per NetApp Disaster Recovery sono necessarie le seguenti autorizzazioni delle credenziali:
+
+[cols="3,1"]
+|===
+| Permesso | Funzione 
+
+
+| dr:credential-view | Visualizza i metadati delle credenziali ed elenca i bucket ONTAP S3/StorageGRID per la configurazione di AppVault. 
+
+
+| dr:credential-create | Registra le credenziali, incluse ONTAP S3 e StorageGRID. 
+
+
+| dr:credential-update | Aggiorna le credenziali, incluse quelle ONTAP S3 e StorageGRID. 
+
+
+| dr:credential-delete | Elimina le credenziali, incluse ONTAP S3 e StorageGRID. 
+|===
