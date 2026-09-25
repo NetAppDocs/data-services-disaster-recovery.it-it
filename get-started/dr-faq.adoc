@@ -22,8 +22,6 @@ summary: Domande frequenti su NetApp Disaster Recovery per carichi di lavoro VMw
 Questa FAQ risponde alle domande più comuni su NetApp Disaster Recovery per i carichi di lavoro VMware e Kubernetes. Si concentra su concetti, terminologia, comportamento del sistema e vincoli utili quando implementi configurazioni di disaster recovery e gestisci operazioni di replica, migrazione, failover e failback.
 
 
-toc::[]
-
 
 [[getting-started]]
 == Introduzione
