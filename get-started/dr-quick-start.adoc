@@ -58,7 +58,7 @@ Queste attività richiedono il ruolo di _Disaster recovery admin_.
 [role="quick-margin-para"]
 Queste attività richiedono il ruolo di _Disaster Recovery admin_ o _Disaster Recovery failover admin role_.
 
-[role="quick-margin-para"]
+[role="quick-margin-list"]
 * link:../use/failover.html["Eseguire il failover delle applicazioni su un sito remoto"]
 * link:../use/failback.html["Eseguire il failback delle applicazioni sul sito di origine originale"]
 
