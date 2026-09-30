@@ -22,8 +22,7 @@ entries:
   url: "/use/task-appvault.html"
 - title: Gestisci i modelli di trasformazione delle risorse
   url: "/use/task-resource-transformation.html"
-- title: Gestisci le informazioni sui siti, sui piani, sugli archivi dati e sulle
-    macchine virtuali
+- title: Gestisci siti, piani, datastore e informazioni sulle VM
   url: "/use/manage.html"
 - title: Monitorare i lavori di ripristino di emergenza
   url: "/use/monitor-jobs.html"
