@@ -56,6 +56,10 @@ image::site-type-toggle.png[Screenshot dell'interruttore del tipo di sito]
 . Identifica il piano di replica che vuoi ripristinare con il failback. Seleziona l'opzione *Azioni* image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"], passa il mouse su *Ripristina* e poi seleziona *Failback*.
 . Scegli lo snapshot del datastore da cui eseguire il ripristino. Seleziona *Crea snapshot ora* per avviare un nuovo snapshot oppure *Seleziona* per scegliere tra gli snapshot disponibili.
 +
+
+NOTE: Se usi snapshot SnapLock a prova di manomissione, devi usare l'opzione *Take snapshot now*. Altrimenti l'operazione non andrà a buon fine.
+
++
 image:failback.png["Screenshot della finestra di dialogo di failback"]
 
 . Immettere "Failback" per confermare l'operazione, quindi selezionare *Failback*.

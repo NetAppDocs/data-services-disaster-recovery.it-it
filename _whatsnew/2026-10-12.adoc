@@ -1,0 +1,35 @@
+= Ordine di avvio facoltativo per i gruppi di risorse Kubernetes
+:allow-uri-read: 
+
+
+
+
+[[optional-boot-order-for-kubernetes-resource-groups]]
+=== Ordine di avvio facoltativo per i gruppi di risorse Kubernetes
+
+NetApp Disaster Recovery ora supporta l'impostazione di un ordine di avvio facoltativo per i gruppi di risorse in un piano di replica Kubernetes, specificando un ordine di priorità e un tempo di ritardo facoltativo per le risorse. Questa opzione ti consente di avviare le risorse contemporaneamente quando necessario e di ritardare l'avvio delle risorse che dipendono da altre, aiutando le tue applicazioni a tornare online in modo corretto.
+
+Per ulteriori informazioni, vedi link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["creare un piano di replica"^].
+
+
+
+[[snaplock-volume-support]]
+=== SnapLock supporto del volume
+
+Disaster Recovery ora supporta i volumi SnapLock, consentendoti di eseguire il failover di snapshot a prova di manomissione.. Quando esegui il failback con i volumi SnapLock, devi usare l'opzione *Take snapshot now* per assicurarti che il failback venga completato correttamente.
+
+Per ulteriori informazioni, consulta le istruzioni per link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["failover"^] e link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failback.html["failback"^].
+
+
+
+[[simplified-refresh-and-compliance-runs]]
+=== Procedure semplificate di aggiornamento e conformità
+
+Le esecuzioni di aggiornamento per vCenter, i piani di replica e la conformità sono state semplificate in un unico processo per consentire un'esecuzione più rapida. Per visualizzare questa modifica, scopri come fare link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/monitor-jobs.html["monitora i job"^].
+
+
+
+[[kubernetes-compliance-checks]]
+=== Controlli di conformità di Kubernetes
+
+Disaster Recovery ha aggiunto controlli di conformità per identificare gli ambienti di lavoro mancanti per i carichi di lavoro Kubernetes. Questi controlli di conformità contribuiscono a garantire lo stato di salute dei carichi di lavoro per l'integrità dei tuoi piani di replica.

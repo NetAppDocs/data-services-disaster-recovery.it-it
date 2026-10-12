@@ -2280,7 +2280,6 @@
   <block id="bc5f6fc21f6a94d180764bb6c6a4cd7d" category="paragraph">Installa il <block ref="eec6190e0599877ad03e04b40eef0c58" category="inline-link-macro-rx"></block>. Queste installazioni sono richieste per gli snapshot di volume in Trident Protect.</block>
   <block id="918fa72b18f488b31c1a63283c4f2148" category="paragraph"><block ref="4569567eb3ca20d8c53676753a511f69" prefix="" category="inline-code"></block></block>
   <block id="d601ac6a8739700584fe1f4c446d9754" category="list-text">*Non disponibile*: Il sito non è raggiungibile o presenta problemi di connettività.</block>
-  <block id="6026e48cd116a5cbacecfc8da06638ea" category="paragraph">Dopo aver aggiunto risorse e siti, crea un piano di replica per proteggere i tuoi dati. Il piano definisce i siti di origine e di destinazione, i gruppi di risorse, le mappature di recovery e il comportamento all'avvio per le tue applicazioni. Puoi anche configurare la conformità e le pianificazioni dei test ed eseguire failover di prova senza influire sui dati di produzione.</block>
   <block id="1c4de46c0cd1d0a73f4e3432ea708002" category="paragraph">Puoi proteggere più VM su più datastore. NetApp Disaster Recovery crea gruppi di coerenza ONTAP per tutti i volumi ONTAP che ospitano i datastore delle VM protette.</block>
   <block id="46224a4824d70ef03f0888359b806a9e" category="list-text">Se mancano degli snapshot sul sito di destinazione, il servizio potrebbe eliminare gli snapshot corrispondenti sul sito di origine durante il successivo processo di riconciliazione degli snapshot programmato, a seconda della policy SnapMirror predefinita per la relazione.</block>
   <block id="7e0f1183c0ae5c291e2245966bd03d67" category="paragraph">La procedura guidata ti guida attraverso questi passaggi:</block>
@@ -2568,7 +2567,6 @@
   <block id="8d57596f9b796b61e90df9540d12cc03" category="paragraph">Per Azure, scegli *Sottoscrizione*, *Gruppo di risorse* e *Account di storage* per il cloud provider.</block>
   <block id="d575618a014f5e9564ca37f19e47ce57" category="paragraph">Per AWS, ONTAP S3 e StorageGRID, scegli *Acount*, *Credentials* e *Bucket*.</block>
   <block id="5a5927bde0ac7465b00ff420f8ccdb8c" category="list-text">Se hai selezionato ONTAP S3 o StorageGRID, puoi facoltativamente aggiungere le credenziali. Seleziona *Aggiungi credenziali* per espandere le opzioni, quindi aggiungi il *Nome credenziali*, il *FQDN del nodo gateway*, il numero di *Port*, la *Access key* e la *Secret key*.</block>
-  <block id="796c589626154baa50e1f1b1c6b6ff97" category="section-title">Trasformazioni delle risorse ed esecuzioni di script</block>
   <block id="bb9e542c041adb6fce43a5550a447aee" category="paragraph">Per i piani di replica di Kubernetes, puoi applicare trasformazioni delle risorse ed esecuzioni di script. Questi passaggi sono facoltativi.</block>
   <block id="89fd45000e9691421f0cd2d2422f2098" category="paragraph-title">Aggiungi una trasformazione di risorse</block>
   <block id="daac935d0f9259f469bdeb6216a7bedd" category="inline-link-macro">Scopri come creare e gestire le trasformazioni delle risorse.</block>
@@ -2749,4 +2747,28 @@
   <block id="524f5a32773e3e832b74877ecf58916f" category="list-text"><block ref="524f5a32773e3e832b74877ecf58916f" category="inline-link-macro-rx"></block></block>
   <block id="6fbeff9687fcc9f06bd89057c3ed5a34" category="list-text"><block ref="6fbeff9687fcc9f06bd89057c3ed5a34" category="inline-link-macro-rx"></block></block>
   <block id="57574b91a736e91f1b6149f9abdf3330" category="sidebar">Gestisci siti, piani, datastore e informazioni sulle VM</block>
+  <block id="02062d06535ce7696876b02309ed3f5e" category="admonition">Se usi snapshot SnapLock a prova di manomissione, devi usare l'opzione *Take snapshot now*. Altrimenti l'operazione non andrà a buon fine.</block>
+  <block id="1c335a9c5603264a97d8d84cb6c6faf0" category="doc">Ordine di avvio facoltativo per i gruppi di risorse Kubernetes</block>
+  <block id="84af32d37767e36e149339ec37e513b1" category="paragraph">NetApp Disaster Recovery ora supporta l'impostazione di un ordine di avvio facoltativo per i gruppi di risorse in un piano di replica Kubernetes, specificando un ordine di priorità e un tempo di ritardo facoltativo per le risorse. Questa opzione ti consente di avviare le risorse contemporaneamente quando necessario e di ritardare l'avvio delle risorse che dipendono da altre, aiutando le tue applicazioni a tornare online in modo corretto.</block>
+  <block id="f2497ae428eba83b3f39732433d3cb44" category="inline-link-macro">creare un piano di replica</block>
+  <block id="9e29609c3bbaf3dd61657f73add99007" category="paragraph">Per ulteriori informazioni, vedi <block ref="b368f0a73ce8108f9547ecd0643b331f" category="inline-link-macro-rx"></block>.</block>
+  <block id="05316212411905c51cdd49deaf78a58e" category="section-title">SnapLock supporto del volume</block>
+  <block id="a547512ac8a0a093f138ab19fb5f9c67" category="paragraph">Disaster Recovery ora supporta i volumi SnapLock, consentendoti di eseguire il failover di snapshot a prova di manomissione.. Quando esegui il failback con i volumi SnapLock, devi usare l'opzione *Take snapshot now* per assicurarti che il failback venga completato correttamente.</block>
+  <block id="3ad6e9988864aeae2ef386345946dc6d" category="inline-link-macro">failover</block>
+  <block id="a571d3783c8d552371d5e8b486416b18" category="inline-link-macro">failback</block>
+  <block id="374fdd2efa0670899dec57115b7ed99b" category="paragraph">Per ulteriori informazioni, consulta le istruzioni per <block ref="8fc81de61ce6b6f345351934ad55bc91" category="inline-link-macro-rx"></block> e <block ref="54d34f2cfe03dcbe402071f8f9beccd0" category="inline-link-macro-rx"></block>.</block>
+  <block id="eec8280b12e61e71ed9a9f31e25a4cb6" category="section-title">Procedure semplificate di aggiornamento e conformità</block>
+  <block id="196ba426ef1a0d15830e58f8ea71c405" category="inline-link-macro">monitora i job</block>
+  <block id="844a671e46adc508ee852b03a616e916" category="paragraph">Le esecuzioni di aggiornamento per vCenter, i piani di replica e la conformità sono state semplificate in un unico processo per consentire un'esecuzione più rapida. Per visualizzare questa modifica, scopri come fare <block ref="c4c673075f72fe052d440b509fb5db2d" category="inline-link-macro-rx"></block>.</block>
+  <block id="838e15ad2606430b761fae47ebb38dee" category="section-title">Controlli di conformità di Kubernetes</block>
+  <block id="07de08b6dc69bbb77fbf2faa073882f2" category="paragraph">Disaster Recovery ha aggiunto controlli di conformità per identificare gli ambienti di lavoro mancanti per i carichi di lavoro Kubernetes. Questi controlli di conformità contribuiscono a garantire lo stato di salute dei carichi di lavoro per l'integrità dei tuoi piani di replica.</block>
+  <block id="e019cb225a4644922cdd06575b099710" category="section-title">12 ottobre 2026</block>
+  <block id="644654fd24758e69ba70d0af50f707b2" category="paragraph">Version 4.3.8</block>
+  <block id="86ad5929405f6e7a459f3adf67f298e6" category="paragraph">Dopo aver aggiunto risorse e siti, crea un _piano di replica_ per proteggere i tuoi dati con NetApp Disaster Recovery. Il piano definisce i siti di origine e di destinazione, i gruppi di risorse, le mappature di ripristino e il comportamento all'avvio per le tue applicazioni. Puoi anche configurare la conformità e le pianificazioni dei test ed eseguire failover di prova senza influire sui dati di produzione.</block>
+  <block id="e65bfba01c1dd06a7952b0d1a116ad70" category="section-title">Trasformazioni delle risorse, esecuzione degli script e ordine di avvio</block>
+  <block id="5753c0f11c80b803bc47552e63a898cb" category="paragraph-title">Imposta l'ordine di avvio</block>
+  <block id="b5c34ed8fbc17ece1ce6b8ca13f9d672" category="paragraph">Per i piani di replica che includono più gruppi di risorse, puoi facoltativamente impostare un ordine di avvio per assicurarti che le risorse che devono andare online insieme lo facciano, mentre i gruppi di risorse che dipendono da altri non andranno online finché non lo faranno anche le risorse da cui dipendono.</block>
+  <block id="b2784505a08cc196fdf2c01fb8722bbc" category="list-text">Seleziona la sezione *Ordine di avvio e ritardo*.</block>
+  <block id="7b49064e2ebb0dab724dfae418ebec8e" category="list-text">Assegna un valore di *Ordine* di avvio a ciascuna risorsa nel piano di replica iniziando con uno. Assegna lo stesso numero a tutte le risorse che devono avviarsi contemporaneamente.</block>
+  <block id="9aae48d2077953d7be448b6a399f3b3c" category="list-text">Imposta il tempo di *ritardo* in minuti. Se alcune risorse devono essere ritardate, specifica la durata del ritardo in minuti.</block>
 </blocks>

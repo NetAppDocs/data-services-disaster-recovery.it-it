@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+
+NOTE: Se usi snapshot SnapLock a prova di manomissione, devi usare l'opzione *Take snapshot now*. Altrimenti l'operazione non andrà a buon fine.

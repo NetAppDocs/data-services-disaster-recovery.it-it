@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su 
 
 
 [role="lead"]
-Dopo aver aggiunto risorse e siti, crea un piano di replica per proteggere i tuoi dati. Il piano definisce i siti di origine e di destinazione, i gruppi di risorse, le mappature di recovery e il comportamento all'avvio per le tue applicazioni. Puoi anche configurare la conformità e le pianificazioni dei test ed eseguire failover di prova senza influire sui dati di produzione.
+Dopo aver aggiunto risorse e siti, crea un _piano di replica_ per proteggere i tuoi dati con NetApp Disaster Recovery. Il piano definisce i siti di origine e di destinazione, i gruppi di risorse, le mappature di ripristino e il comportamento all'avvio per le tue applicazioni. Puoi anche configurare la conformità e le pianificazioni dei test ed eseguire failover di prova senza influire sui dati di produzione.
 
 *Ruolo della console NetApp richiesto* Per eseguire questa attività è necessario il ruolo di Super amministratore, Amministratore del ripristino di emergenza, Amministratore del failover del ripristino di emergenza o Amministratore dell'applicazione di ripristino di emergenza. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Scopri di più sui ruoli utente e sulle autorizzazioni in NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
@@ -290,7 +290,7 @@ Dopo aver selezionato Aggiungi, è possibile monitorare i diversi job in **Job m
 ====
 
 
-==== Trasformazioni delle risorse ed esecuzioni di script
+==== Trasformazioni delle risorse, esecuzione degli script e ordine di avvio
 
 Per i piani di replica di Kubernetes, puoi applicare trasformazioni delle risorse ed esecuzioni di script. Questi passaggi sono facoltativi.
 
@@ -311,6 +311,14 @@ Disaster Recovery può eseguire uno script prima o dopo la creazione di uno snap
 . Seleziona *Carica* per scegliere il file dello script.
 . Scegli la *fase di esecuzione*: *Pre-snapshot* per eseguire prima della creazione dello snapshot oppure *Post-snapshot* per eseguire dopo.
 . Seleziona *Salva*.
+
+
+.Imposta l'ordine di avvio
+Per i piani di replica che includono più gruppi di risorse, puoi facoltativamente impostare un ordine di avvio per assicurarti che le risorse che devono andare online insieme lo facciano, mentre i gruppi di risorse che dipendono da altri non andranno online finché non lo faranno anche le risorse da cui dipendono.
+
+. Seleziona la sezione *Ordine di avvio e ritardo*.
+. Assegna un valore di *Ordine* di avvio a ciascuna risorsa nel piano di replica iniziando con uno. Assegna lo stesso numero a tutte le risorse che devono avviarsi contemporaneamente.
+. Imposta il tempo di *ritardo* in minuti. Se alcune risorse devono essere ritardate, specifica la durata del ritardo in minuti.
 
 
 
