@@ -165,7 +165,7 @@ Se questo controllo ha esito positivo, Disaster Recovery esegue i seguenti passa
 
 Dopo che Disaster Recovery ha creato e inizializzato tutte le relazioni, a ogni backup pianificato il servizio esegue i seguenti passaggi di protezione dei dati:
 
-. Per ogni VM contrassegnata come "coerente con l'applicazione", utilizzare VMtools per impostare l'applicazione supportata su uno stato di backup.
+. Per ogni VM contrassegnata come "coerente con l'applicazione", usa VMware Tools per portare l'applicazione supportata in uno stato di backup.
 . Crea un nuovo snapshot di tutti i volumi ONTAP che ospitano datastore VMware protetti.
 . Eseguire un'operazione di aggiornamento SnapMirror per replicare tali snapshot nel cluster ONTAP di destinazione.
 . Determinare se il numero di snapshot conservati ha superato la conservazione massima degli snapshot definita nel piano di replica ed eliminare eventuali snapshot estranei sia dal volume di origine che da quello di destinazione.

@@ -27,7 +27,7 @@ Le trasformazioni delle risorse vengono applicate quando crei un piano di replic
 
 Ora puoi inserire script personalizzati nel flusso di lavoro di failover per coordinare la sospensione e la ripresa delle applicazioni. Questa funzionalità ti aiuta a garantire che le applicazioni siano preparate correttamente prima che uno snapshot venga replicato e ripristinato in modo appropriato, così le operazioni possono riprendere senza interruzioni dopo il failover.
 
-Per sapere come iniettare uno script personalizzato, vedi link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"^].
+Per sapere come iniettare uno script personalizzato, vedi link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-kubernetes.html["Creare un piano di replicazione"^].
 
 
 

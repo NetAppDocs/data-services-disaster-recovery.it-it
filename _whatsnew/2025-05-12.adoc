@@ -53,4 +53,4 @@ Quando l'opzione è selezionata, NetApp Disaster Recovery non configura una pian
 
 Dopo aver configurato questa funzionalità, il servizio non esegue snapshot programmati regolarmente, ma si affida all'entità esterna per l'esecuzione e l'aggiornamento di tali snapshot.
 
-Per i dettagli sull'utilizzo di soluzioni snapshot esterne nel piano di replica, fare riferimento a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"] .
+Per maggiori dettagli sull'utilizzo di soluzioni Snapshot esterne nel piano di replica, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Creare un piano di replicazione"].

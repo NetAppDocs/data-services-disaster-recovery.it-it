@@ -1,0 +1,5 @@
+= 
+:allow-uri-read: 
+
+
+Se prevedi di eseguire failover di prova come parte del tuo piano di replica, devi fornire un set di mappature di failover di prova per garantire che le VM avviate durante il test di failover non interferiscano con le VM di produzione. Puoi farlo fornendo alle VM di prova indirizzi IP diversi oppure mappando le NIC virtuali delle VM di prova a una rete diversa, isolata dalla produzione ma con la stessa configurazione IP (definita _bubble_ o _test network_).

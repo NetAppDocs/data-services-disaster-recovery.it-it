@@ -11,4 +11,4 @@ Windows Local Administrator Password Solution (Windows LAPS) è una funzionalit�
 
 Ora è possibile selezionare le opzioni di mappatura della subnet e selezionare l'opzione LAPS fornendo i dettagli del controller di dominio.  Utilizzando questa opzione non è necessario fornire una password per ciascuna delle macchine virtuali.
 
-Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"] .
+Per maggiori dettagli, consulta  https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Creare un piano di replicazione"].

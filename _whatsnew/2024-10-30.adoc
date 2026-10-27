@@ -42,7 +42,7 @@ Ecco come fare:
 
 Quando si crea un piano di replica e si mappano le risorse di elaborazione, è ora possibile mappare le cartelle in modo che le VM vengano ripristinate in una cartella specificata per data center, cluster e host.
 
-Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"] .
+Per maggiori dettagli, consulta  https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Creare un piano di replicazione"].
 
 
 
@@ -60,7 +60,7 @@ Fare riferimento a https://docs.netapp.com/us-en/data-services-disaster-recovery
 
 Quando si crea un piano di replica, è ora possibile impostare un ritardo di avvio per ogni macchina virtuale nel piano.  Ciò consente di impostare una sequenza di avvio delle VM per garantire che tutte le VM con priorità uno siano in esecuzione prima dell'avvio delle VM con priorità successiva.
 
-Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"] .
+Per maggiori dettagli, consulta  https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Creare un piano di replicazione"].
 
 
 
@@ -69,7 +69,7 @@ Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/data-services-d
 
 Quando si crea un piano di replicazione, è ora possibile visualizzare il sistema operativo per ogni macchina virtuale nel piano.  Ciò è utile per decidere come raggruppare le VM in un gruppo di risorse.
 
-Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"] .
+Per maggiori dettagli, consulta  https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Creare un piano di replicazione"].
 
 
 
@@ -78,7 +78,7 @@ Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/data-services-d
 
 Quando crei un piano di replica, ora puoi aggiungere un prefisso e un suffisso ai nomi delle VM nel sito di disaster recovery. Questo ti permette di usare un nome più descrittivo per le VM nel piano.
 
-Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Creare un piano di replicazione"] .
+Per maggiori dettagli, consulta  https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Creare un piano di replicazione"].
 
 
 

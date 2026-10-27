@@ -1,0 +1,19 @@
+= 
+:allow-uri-read: 
+
+
+Quando crei gruppi di risorse, tieni in considerazione i seguenti scenari:
+
+* Prima di aggiungere datastore o namespace ai gruppi di risorse, avvia un rilevamento manuale o attendi l'esecuzione di un rilevamento pianificato. Questo assicura che le VM vengano rilevate ed elencate nel gruppo di risorse. Se non avvii un rilevamento manuale, le risorse potrebbero non essere elencate nel gruppo di risorse.
+* Assicurati che nel datastore sia presente almeno una risorsa (VM o namespace). Se non sono presenti risorse nel datastore, Disaster Recovery non rileva il datastore.
+* Un singolo datastore non dovrebbe ospitare VM protette da più di un piano di replica.
+* Non ospitare risorse protette e non protette sullo stesso datastore. Se risorse protette e non protette sono ospitate sullo stesso datastore, potrebbero verificarsi i seguenti problemi:
++
+** Poiché Disaster Recovery utilizza SnapMirror e il sistema replica interi volumi ONTAP, la capacità utilizzata di quel volume viene considerata ai fini della licenza. In questo caso, lo spazio del volume occupato sia dalle VM protette sia da quelle non protette viene incluso in questo calcolo.
+** Se il gruppo di risorse e le entità associate devono essere portati in failover al sito di disaster recovery, tutte le risorse non protette (VM o namespace che non fanno parte del gruppo di risorse, ma sono ospitati sul volume ONTAP) non esisteranno più nel sito di origine a causa del processo di failover, con conseguente errore delle VM non protette nel sito di origine. Inoltre, Disaster Recovery non avvierà queste risorse non protette nel sito di failover.
+
+
+* Per proteggere una risorsa, devi includerla in un gruppo di risorse.
+
+
+*PRATICA CONSIGLIATA*: Organizza le tue macchine virtuali prima di implementare NetApp Disaster Recovery per ridurre al minimo la proliferazione dei datastore. Posiziona le macchine virtuali che necessitano di protezione su un sottoinsieme di datastore e quelle che non necessitano di protezione su un altro sottoinsieme di datastore. Assicurati che le macchine virtuali su un determinato datastore non siano protette da piani di replica diversi.

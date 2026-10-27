@@ -9,7 +9,7 @@
 
 NetApp Disaster Recovery ora supporta l'impostazione di un ordine di avvio facoltativo per i gruppi di risorse in un piano di replica Kubernetes, specificando un ordine di priorità e un tempo di ritardo facoltativo per le risorse. Questa opzione ti consente di avviare le risorse contemporaneamente quando necessario e di ritardare l'avvio delle risorse che dipendono da altre, aiutando le tue applicazioni a tornare online in modo corretto.
 
-Per ulteriori informazioni, vedi link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["creare un piano di replica"^].
+Per ulteriori informazioni, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-kubernetes.html["creare un piano di replica"^].
 
 
 

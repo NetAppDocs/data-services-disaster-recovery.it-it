@@ -36,7 +36,7 @@ Si apre la procedura guidata Crea piano di replica.
 .Passi
 . Immettere un nome univoco per il piano di replicazione.
 +
-Per i nomi dei piani di replicazione sono consentiti solo caratteri alfanumerici e caratteri di sottolineatura (_).
+Per i nomi dei piani di replica sono ammessi solo caratteri alfanumerici e underscore (_).
 
 . Selezionare un cluster vCenter di origine.
 . Selezionare un cluster vCenter di destinazione.
@@ -54,7 +54,7 @@ image:evs-create-rp-wiz-a-1-4.png["Crea un piano di replica, seleziona vCenter"]
 Esistono diversi modi per selezionare le macchine virtuali da proteggere. I seguenti passaggi mostrano come proteggere gli interi datastore vCenter, ma dovresti scegliere il metodo che meglio si adatta alle tue esigenze.
 
 * *Seleziona singole VM*: Selezionando il pulsante *Macchine virtuali* puoi selezionare singole VM da proteggere. Quando selezioni una VM, il servizio la aggiunge a un gruppo di risorse predefinito situato sul lato destro dello schermo.
-* *Seleziona i gruppi di risorse creati in precedenza*: puoi creare gruppi di risorse personalizzati in anticipo utilizzando l'opzione Gruppo di risorse dal menu Disaster Recovery. Questa operazione è facoltativa perché puoi usare gli altri due metodi per creare un gruppo di risorse durante la creazione del piano di replica. Per dettagli, vedi link:../use/drplan-create.html["Creare un piano di replicazione"].
+* *Seleziona i gruppi di risorse creati in precedenza*: puoi creare gruppi di risorse personalizzati in anticipo utilizzando l'opzione Gruppo di risorse dal menu Disaster Recovery. Questa operazione è facoltativa perché puoi usare gli altri due metodi per creare un gruppo di risorse durante la creazione del piano di replica. Per i dettagli, vedi link:../use/task-replication-plan-vmware.html["Creare un piano di replicazione"].
 * *Seleziona interi vCenter datastores*: con questa opzione, tutte le VM residenti su un datastore verranno replicate come parte del volume. Usa questa opzione se hai più VM da proteggere con il piano di replica, così eviti di selezionare le singole VM. Nella maggior parte dei casi, dovresti fare in modo che Disaster Recovery protegga e riavvii tutte le VM presenti sul datastore. Usa questa opzione per dire al servizio di aggiungere all'elenco delle VM protette tutte le VM ospitate su un datastore selezionato.
 
 

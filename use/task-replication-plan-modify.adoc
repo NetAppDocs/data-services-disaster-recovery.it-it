@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: use/task-replication-plan-modify.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, replication plan, modify, compliance time, test failover 
+summary: Modifica un piano di replica per regolare il tempo di conformità o le impostazioni di failover. 
+---
+= Modifica un piano di replica in NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+In NetApp Disaster Recovery, puoi modificare l'impatto sui tempi di conformità di un piano di replica e assicurarti che i test di failover vengano completati correttamente.
+
+Puoi modificare il tempo di conformità e testare l'impatto del failover. Per modificare la ricorrenza del piano, le mappature di failover o le VM, elimina il piano di replica e creane uno nuovo.
+
+
+
+[[modifiable-fields]]
+== Campi modificabili
+
+* *Impatto sui tempi di conformità*: quando viene creato un piano di replica, il servizio crea per impostazione predefinita una pianificazione di conformità.  Il tempo di conformità predefinito è di 30 minuti.  Per modificare questo orario, è possibile modificare la pianificazione nel piano di replica.
+* *Impatto del failover di test*: puoi testare un processo di failover su richiesta o in base a una pianificazione. Questo ti consente di testare il failover di una macchina virtuale verso una destinazione specificata in un piano di replica.
++
+Un failover di test crea un volume FlexClone , monta il datastore e sposta il carico di lavoro su tale datastore.  Un'operazione di failover di prova _non_ ha alcun impatto sui carichi di lavoro di produzione, sulla relazione SnapMirror utilizzata sul sito di prova e sui carichi di lavoro protetti che devono continuare a funzionare normalmente.
+
+
+
+In base alla pianificazione, viene eseguito il test di failover, che garantisce che i carichi di lavoro vengano spostati verso la destinazione specificata dal piano di replica.
+
+
+
+[[modify-a-replication-plan]]
+== Modificare un piano di replicazione
+
+. Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
++
+image:dr-plan-list.png["Screenshot che mostra l'elenco dei piani di replicazione"]
+
+. Seleziona *Azioni*image:icon-horizontal-dots.png["Punti orizzontali Menu azioni"] icona e seleziona *Modifica pianificazioni*.
+. Inserisci la frequenza in minuti con cui desideri che NetApp Disaster Recovery verifichi la conformità dei test.
+. Per verificare che i test di failover siano integri, seleziona *Esegui failover con una pianificazione mensile*.
++
+.. Seleziona il giorno del mese e l'ora in cui desideri che vengano eseguiti i test.
+.. Inserisci la data in formato aaaa-mm-gg in cui desideri che inizi il test.
++
+image:dr-plan-schedule-edit2.png["Screenshot che mostra dove puoi modificare le pianificazioni"]
+
+
+
+. *Utilizza snapshot su richiesta per il failover di test pianificato*: per acquisire un nuovo snapshot prima di avviare il failover di test automatico, seleziona questa casella.
+. Per ripulire l'ambiente di test al termine del test di failover, selezionare *Pulizia automatica dopo il failover del test* e immettere il numero di minuti che si desidera attendere prima che venga avviata la pulizia.
++
+
+NOTE: Questo processo annulla la registrazione delle VM temporanee dalla posizione di test, elimina il volume FlexClone creato e smonta i datastore temporanei.
+
+. Seleziona *Salva*.
+
