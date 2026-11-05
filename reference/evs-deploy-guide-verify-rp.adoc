@@ -4,7 +4,7 @@ permalink: reference/evs-deploy-guide-verify-rp.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
 summary: Introduzione di NetApp Disaster Recovery tramite Amazon EVS e Amazon FSx for NetApp ONTAP. 
 ---
-= Verificare che tutto funzioni in NetApp Disaster Recovery
+= Verifica l'integrità del piano di replica in NetApp Disaster Recovery per Amazon EVS
 :allow-uri-read: 
 
 
@@ -13,7 +13,7 @@ Dopo aver aggiunto un piano di replica in NetApp Disaster Recovery, verifica che
 
 Figura: Pagina dei piani di replicazioneimage:evs-replication-plan-post-create.png["Pagina dei piani di replicazione"]
 
-NetApp Disaster Recovery esegue una serie di test per verificare che tutti i componenti, inclusi il cluster ONTAP, i cluster vCenter e le VM, siano accessibili e pronti per la protezione. Questa operazione si chiama verifica di conformità e viene eseguita regolarmente.
+Disaster Recovery esegue una serie di test per verificare che tutti i componenti, inclusi il cluster ONTAP, i cluster vCenter e le VM, siano accessibili e pronti per la protezione. Si tratta di una verifica di conformità, eseguita regolarmente.
 
 La pagina dei piani di replica mostra le seguenti informazioni:
 

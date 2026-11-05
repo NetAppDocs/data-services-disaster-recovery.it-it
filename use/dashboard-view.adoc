@@ -4,7 +4,7 @@ permalink: use/dashboard-view.html
 keywords: disaster recovery remediate, disaster recovery, failover, failback, replication, bluexp, netapp 
 summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su cloud che automatizza i flussi di lavoro di disaster recovery. 
 ---
-= Visualizza lo stato di salute del piano e la protezione del carico di lavoro in NetApp Disaster Recovery
+= Visualizza lo stato di integrità e protezione del piano in NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -26,9 +26,9 @@ La pagina *Carichi di lavoro* fornisce un elenco dettagliato di ciascun carico d
 == Visualizza lo stato di salute e protezione nella dashboard
 
 .Passi
-. Dal menu NetApp Disaster Recovery , selezionare *Dashboard*.
+. Dal menu Ripristino di emergenza, seleziona *Dashboard*.
 +
-image:dr-dashboard.png["Dashboard NetApp Disaster Recovery"]
+image:dr-dashboard.png["Dashboard di Disaster Recovery"]
 
 . Esamina le informazioni sullo stato di salute nella dashboard:
 +
@@ -91,7 +91,7 @@ Utilizza la pagina Carichi di lavoro per verificare lo stato di protezione dei s
 
 |===
 .Passi
-. Dal menu NetApp Disaster Recovery, seleziona *Carichi di lavoro*.
+. Dal menu Disaster Recovery, seleziona *Workloads*.
 . Nel menu a tendina, seleziona il filtro per visualizzare i carichi di lavoro *vCenter* o *Kubernetes*.
 +
 image::site-type-toggle.png[Screenshot dell'interruttore del tipo di sito]

@@ -30,7 +30,7 @@ NOTE: Per creare un piano di replica per i carichi di lavoro VMware, vedi link:t
 
 
 
-TIP: Organizza i cluster Kubernetes e i namespace prima di implementare NetApp Disaster Recovery per ridurre al minimo la proliferazione. Per organizzare i gruppi di risorse prima di creare il piano di replica, consulta link:resource-group.html["Crea un gruppo di risorse"].
+TIP: Organizza i cluster Kubernetes e i namespace prima di implementare Disaster Recovery per ridurre al minimo la proliferazione. Per organizzare i gruppi di risorse prima di creare il piano di replica, consulta link:resource-group.html["Crea un gruppo di risorse"].
 
 
 
@@ -52,7 +52,7 @@ Quando create il piano, seguite queste linee guida:
 Innanzitutto, seleziona i cluster di origine e di destinazione per il piano di replica.
 
 .Passi
-. Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
+. Dal menu Disaster Recovery, seleziona *Piani di replica*.
 . Nel menu a tendina, seleziona *Kubernetes*.
 +
 image::site-type-toggle.png[Screenshot dell'interruttore del tipo di sito]

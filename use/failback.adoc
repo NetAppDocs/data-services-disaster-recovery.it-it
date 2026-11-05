@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: use/failback.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, kubernetes, trident protect, openshift 
 summary: NetApp Disaster Recovery è un servizio di disaster recovery basato su cloud che automatizza i flussi di lavoro di disaster recovery. 
 ---
-= Ripristina le applicazioni alla fonte originale con NetApp Disaster Recovery
+= Esegui il failback al sito di origine con NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -21,14 +21,14 @@ Dopo che il disastro è stato risolto, esegui il failback dal sito di disaster r
 [[about-failback]]
 == Informazioni sul failback
 
-In modalità failback, NetApp Disaster Recovery replica (risincronizza) tutte le modifiche apportate alla macchina virtuale di origine prima di invertire la direzione della replica. Questo processo inizia dopo che una relazione è passata alla destinazione tramite failover e prevede i seguenti passaggi:
+In modalità failback, NetApp Disaster Recovery replica (risincronizza) tutte le modifiche apportate ai carichi di lavoro di origine prima di invertire la direzione della replica. Questo processo inizia dopo che una relazione ha eseguito il failover alla destinazione e prevede i seguenti passaggi. I carichi di lavoro Kubernetes seguono la stessa sequenza dei carichi di lavoro VMware; i dettagli specifici di VMware sono indicati tra parentesi.
 
 * Eseguire un controllo di conformità sul sito recuperato.
-* Aggiornare le informazioni vCenter per ogni cluster vCenter identificato come situato nel sito ripristinato.
-* Nel sito di destinazione, spegnere e annullare la registrazione delle macchine virtuali e smontare i volumi.
+* Aggiorna le informazioni di rilevamento per ogni cluster vCenter o cluster Kubernetes identificato come situato nel sito ripristinato.
+* Nel sito di destinazione, arresta i carichi di lavoro protetti (per VMware, spegni e annulla la registrazione delle macchine virtuali) e smonta i volumi.
 * Interrompere la relazione SnapMirror sulla sorgente originale per renderla di lettura/scrittura.
 * Risincronizzare la relazione SnapMirror per invertire la replica.
-* Accendere e registrare le macchine virtuali di origine, quindi montare i volumi sull'origine.
+* Avvia i carichi di lavoro protetti sull'origine (per VMware, accendi e registra le macchine virtuali di origine) e monta i volumi sull'origine.
 
 
 
@@ -36,7 +36,7 @@ In modalità failback, NetApp Disaster Recovery replica (risincronizza) tutte le
 [[before-you-begin]]
 == Prima di iniziare
 
-Se usi la protezione basata su datastore, le VM potrebbero essere aggiunte al datastore durante il failover. Se questo è successo, assicurati di fornire le informazioni di mappatura aggiuntive per queste VM prima di avviare il failback. Per modificare la mappatura delle risorse, vedi link:manage.html#manage-replication-plans["Gestire i piani di replicazione"].
+Per i carichi di lavoro VMware, se utilizzi la protezione basata su datastore, le VM potrebbero essere aggiunte al datastore durante il failover. In tal caso, assicurati di fornire le informazioni di mappatura aggiuntive per queste VM prima di avviare il failback. Per modificare la mappatura delle risorse, vedi link:manage.html#manage-replication-plans["Gestire i piani di replicazione"].
 
 
 
@@ -48,12 +48,12 @@ Se usi la protezione basata su datastore, le VM potrebbero essere aggiunte al da
 .vCenter
 --
 .Passi
-. Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
+. Dal menu Disaster Recovery, seleziona *Piani di replica*.
 . Nel menu a tendina, impostare il filtro su *VMware*.
 +
 image::site-type-toggle.png[Screenshot dell'interruttore del tipo di sito]
 
-. Identifica il piano di replica che vuoi ripristinare con il failback. Seleziona l'opzione *Azioni* image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"], passa il mouse su *Ripristina* e poi seleziona *Failback*.
+. Identifica il piano di replica che vuoi ripristinare con il failback. Seleziona l'opzione *Azioni* image:../use/icon-horizontal-dots.png["Icona del menu Azioni in Disaster Recovery service"], passa il mouse su *Ripristina* e poi seleziona *Failback*.
 . Scegli lo snapshot del datastore da cui eseguire il ripristino. Seleziona *Crea snapshot ora* per avviare un nuovo snapshot oppure *Seleziona* per scegliere tra gli snapshot disponibili.
 +
 
@@ -70,12 +70,12 @@ Per monitorare l'avanzamento del processo, selezionare *Monitoraggio processo* n
 --
 .Kubernetes
 --
-. Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
+. Dal menu Disaster Recovery, seleziona *Piani di replica*.
 . Nel menu a tendina, filtra per piani di replica *Kubernetes*.
 +
 image::site-type-toggle.png[Screenshot dell'interruttore del tipo di sito]
 
-. Identifica il piano di replica che vuoi ripristinare con il failback. Seleziona l'opzione *Azioni* image:../use/icon-horizontal-dots.png["Icona del menu Azioni nel servizio NetApp Disaster Recovery"], passa il mouse su *Ripristina* e poi seleziona *Failback*.
+. Identifica il piano di replica che vuoi ripristinare con il failback. Seleziona l'opzione *Azioni* image:../use/icon-horizontal-dots.png["Icona del menu Azioni in Disaster Recovery service"], passa il mouse su *Ripristina* e poi seleziona *Failback*.
 . Scegli lo snapshot del cluster da cui eseguire il ripristino. Seleziona *Crea snapshot ora* per avviare un nuovo snapshot oppure *Usa lo snapshot più recente* per utilizzare lo snapshot più recente e riuscito.
 . Immettere "Failback" per confermare l'operazione, quindi selezionare *Failback*.
 

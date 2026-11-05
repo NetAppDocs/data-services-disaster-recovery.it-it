@@ -21,7 +21,7 @@ Per accedere a NetApp Disaster Recovery, utilizza le credenziali del tuo NetApp 
 
 In NetApp Disaster Recovery, attività specifiche richiedono ruoli utente specifici. Assicurati di aver assegnato agli utenti i ruoli corretti.
 
-Per ulteriori informazioni, vedi: * link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["ruoli utente e autorizzazioni in NetApp Disaster Recovery"] * link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["NetApp Console access ruoli per tutti i servizi"^]
+Per ulteriori informazioni, vedi: * link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["ruoli utente e autorizzazioni in Disaster Recovery"] * link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["NetApp Console access ruoli per tutti i servizi"^]
 
 
 

@@ -28,7 +28,7 @@ La NetApp Console supporta l'utilizzo di più agenti Console con un singolo ambi
 [[steps]]
 == Passi
 
-. In Disaster Recovery, seleziona **Siti**.
+. In NetApp Disaster Recovery, seleziona **Sites**.
 . È necessario modificare l'agente della console sia per il vCenter di origine che per quello di destinazione.  Identifica i vCenter che desideri modificare.  Selezionare il menu azioni per vCenter, quindi **Modifica**.
 +
 image:dr-sites-subnet-menu.png["Screenshot della dashboard dei siti"]

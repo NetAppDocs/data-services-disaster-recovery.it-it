@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: use/sites-add.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: Prima di poter creare un piano di disaster recovery, è necessario aggiungere un sito vCenter primario e un sito di disaster recovery vCenter di destinazione in NetApp Disaster Recovery. 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, kubernetes, trident protect, openshift 
+summary: Prima di poter creare un piano di recovery, devi aggiungere un sito primario e un sito di destinazione per il disaster recovery, che possono essere siti vCenter o siti Kubernetes, in NetApp Disaster Recovery. 
 ---
 = Aggiungi siti in NetApp Disaster Recovery
 :hardbreaks:
@@ -47,7 +47,7 @@ Dopo aver aggiunto un sito a Disaster Recovery, è necessario associare risorse 
 Se hai aggiunto vCenter nelle versioni precedenti e desideri personalizzare la pianificazione dell'individuazione, devi modificare il sito del server vCenter e impostare la pianificazione.
 
 
-TIP: NetApp Disaster Recovery esegue il rilevamento ogni 24 ore. Dopo aver configurato un sito, è possibile modificare il vCenter o il cluster Kubernetes per personalizzare la pianificazione del rilevamento in base alle proprie esigenze. Ad esempio, se si dispone di un numero elevato di VM, è possibile impostare la pianificazione del rilevamento ogni 23 ore e 59 minuti. Se si dispone di un numero ridotto di VM, è possibile impostare la pianificazione del rilevamento ogni 12 ore. L'intervallo minimo è di 30 minuti e il massimo è di 24 ore.
+TIP: Disaster Recovery esegue il rilevamento una volta ogni 24 ore. Dopo aver configurato un sito, puoi modificare in seguito il vCenter o il cluster Kubernetes per personalizzare la pianificazione del rilevamento in base alle tue esigenze. Ad esempio, se hai un numero elevato di VM, puoi impostare la pianificazione del rilevamento in modo che venga eseguita ogni 23 ore e 59 minuti. Se hai un numero ridotto di VM, puoi impostare la pianificazione del rilevamento in modo che venga eseguita ogni 12 ore. L'intervallo minimo è di 30 minuti e il massimo è di 24 ore.
 
 Per ottenere le informazioni più aggiornate sul tuo ambiente, dovresti prima eseguire alcune rilevazioni manuali.  Dopodiché puoi impostare la pianificazione in modo che venga eseguita automaticamente.
 
@@ -125,7 +125,7 @@ image:sites-list2.png["Schermata della pagina dei siti"]
 
 
 
-Dopo aver aggiunto i vCenter, NetApp Disaster Recovery esegue un'analisi approfondita degli ambienti vCenter, inclusi cluster vCenter, host ESXi, datastore, spazio di archiviazione, dettagli delle macchine virtuali, repliche SnapMirror e reti di macchine virtuali.
+Dopo aver aggiunto vCenters, Disaster Recovery esegue un'analisi approfondita degli ambienti vCenter, inclusi i cluster vCenter, gli host ESXi, i datastore, l'impronta dello storage, i dettagli delle macchine virtuali, le repliche SnapMirror e le reti delle macchine virtuali.
 
 --
 .Kubernetes
@@ -160,7 +160,7 @@ Dopo aver aggiunto le risorse, seleziona *Job Monitoring* per tenere traccia del
 
 È possibile gestire gli indirizzi IP nelle operazioni di failover utilizzando la mappatura delle subnet, che consente di aggiungere subnet per ciascun vCenter.  In questo modo si definiscono il CIDR IPv4, il gateway predefinito e il DNS per ogni rete virtuale.
 
-In caso di failover, NetApp Disaster Recovery utilizza il CIDR della rete mappata per assegnare a ciascuna vNIC un nuovo indirizzo IP.
+In caso di failover, Disaster Recovery utilizza il CIDR della rete mappata per assegnare a ciascuna vNIC un nuovo indirizzo IP.
 
 Per esempio:
 
@@ -170,7 +170,7 @@ Per esempio:
 
 VM1 ha una vNIC (10.1.1.50) connessa alla ReteA.  Nelle impostazioni del piano di replica, la rete A è mappata sulla rete B.
 
-In caso di failover, NetApp Disaster Recovery sostituisce la parte di rete dell'indirizzo IP originale (10.1.1) e mantiene l'indirizzo host (.50) dell'indirizzo IP originale (10.1.1.50).  Per VM1, NetApp Disaster Recovery esamina le impostazioni CIDR per NetworkB e utilizza la porzione di rete NetworkB 192.168.1, mantenendo la porzione host (.50) per creare il nuovo indirizzo IP per VM1.  Il nuovo IP diventa 192.168.1.50.
+In caso di failover, Disaster Recovery sostituisce la parte di rete dell'indirizzo IP originale (10.1.1) e mantiene l'indirizzo host (.50) dell'indirizzo IP originale (10.1.1.50). Per VM1, Disaster Recovery esamina le impostazioni CIDR per NetworkB e utilizza la parte di rete di NetworkB (192.168.1), mantenendo la parte host (.50) per creare il nuovo indirizzo IP per VM1. Il nuovo IP diventa 192.168.1.50.
 
 In sintesi, l'indirizzo host rimane lo stesso, mentre l'indirizzo di rete viene sostituito con quello configurato nella mappatura della subnet del sito.  Ciò consente di gestire più facilmente la riassegnazione degli indirizzi IP in caso di failover, soprattutto se si hanno centinaia di reti e migliaia di VM da gestire.
 
@@ -181,7 +181,7 @@ L'utilizzo della mappatura delle subnet è un processo facoltativo in due fasi:
 
 
 .Passi
-. Dal menu NetApp Disaster Recovery , selezionare *Siti*.
+. Dal menu Disaster Recovery, seleziona *Sites*.
 . Dalle azioniimage:icon-vertical-dots.png["Icona Azioni"] icona a destra, seleziona *Aggiungi subnet*.
 +
 image:dr-sites-subnet-menu.png["Aggiungi schermata del menu della sottorete"]
@@ -220,7 +220,7 @@ L'utilizzo della mappatura delle subnet è un processo facoltativo in due fasi:
 
 
 .Passi
-. Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
+. Dal menu Disaster Recovery, seleziona *Piani di replica*.
 . Selezionare *Aggiungi* per aggiungere un piano di replicazione.
 . Completare i campi come di consueto, aggiungendo i server vCenter, selezionando i gruppi di risorse o le applicazioni e completando i mapping.
 . Nella pagina Piano di replicazione > Mappatura delle risorse, selezionare la sezione *Macchine virtuali*.
@@ -247,7 +247,7 @@ Se si dispone di vCenter di versioni precedenti e si desidera modificare il mome
 Se non si desidera pianificare l'individuazione, è possibile disattivare l'opzione di individuazione pianificata e aggiornare manualmente l'individuazione in qualsiasi momento.
 
 .Passi
-. Dal menu NetApp Disaster Recovery , selezionare *Siti*.
+. Dal menu Disaster Recovery, seleziona *Sites*.
 . Seleziona il sito che vuoi modificare.
 . Seleziona le azioniimage:icon-vertical-dots.png["Icona Azioni"] icona sulla destra e seleziona *Modifica*.
 . Nella finestra Impostazioni, modifica i campi secondo necessità.
@@ -265,10 +265,10 @@ image:sites-edit-schedule.png["Modifica schermata pianificazione scoperta"]
 [[refresh-discovery-manually]]
 == Aggiorna manualmente la scoperta
 
-È possibile aggiornare manualmente la scoperta in qualsiasi momento.  Questa operazione è utile se hai aggiunto o rimosso VM e vuoi aggiornare le informazioni in NetApp Disaster Recovery.
+Puoi aggiornare manualmente il rilevamento in qualsiasi momento. Questo è utile se hai aggiunto o rimosso VM e vuoi aggiornare le informazioni in Disaster Recovery.
 
 .Passi
-. Dal menu NetApp Disaster Recovery , selezionare *Siti*.
+. Dal menu Disaster Recovery, seleziona *Sites*.
 . Seleziona il sito che vuoi aggiornare.
 . Seleziona le azioniimage:icon-vertical-dots.png["Icona Azioni"] icona sulla destra e seleziona *Aggiorna*.
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/task-replication-plan-modify.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, replication plan, modify, compliance time, test failover 
+keywords: disaster recovery, bluexp disaster recovery, failover, replication plan, modify, compliance time, test failover, vmware, kubernetes 
 summary: Modifica un piano di replica per regolare il tempo di conformità o le impostazioni di failover. 
 ---
 = Modifica un piano di replica in NetApp Disaster Recovery
@@ -14,7 +14,7 @@ summary: Modifica un piano di replica per regolare il tempo di conformità o le 
 [role="lead"]
 In NetApp Disaster Recovery, puoi modificare l'impatto sui tempi di conformità di un piano di replica e assicurarti che i test di failover vengano completati correttamente.
 
-Puoi modificare il tempo di conformità e testare l'impatto del failover. Per modificare la ricorrenza del piano, le mappature di failover o le VM, elimina il piano di replica e creane uno nuovo.
+Puoi modificare il tempo di conformità e testare l'impatto del failover. Per modificare la ricorrenza del piano, le mappature di failover o le risorse associate, elimina il piano di replica e creane uno nuovo.
 
 
 
@@ -22,9 +22,9 @@ Puoi modificare il tempo di conformità e testare l'impatto del failover. Per mo
 == Campi modificabili
 
 * *Impatto sui tempi di conformità*: quando viene creato un piano di replica, il servizio crea per impostazione predefinita una pianificazione di conformità.  Il tempo di conformità predefinito è di 30 minuti.  Per modificare questo orario, è possibile modificare la pianificazione nel piano di replica.
-* *Impatto del failover di test*: puoi testare un processo di failover su richiesta o in base a una pianificazione. Questo ti consente di testare il failover di una macchina virtuale verso una destinazione specificata in un piano di replica.
+* *Impatto del failover di test*: Puoi testare un processo di failover su richiesta o in base a una pianificazione. Questo ti consente di testare il failover di macchine virtuali o applicazioni Kubernetes verso una destinazione specificata in un piano di replica.
 +
-Un failover di test crea un volume FlexClone , monta il datastore e sposta il carico di lavoro su tale datastore.  Un'operazione di failover di prova _non_ ha alcun impatto sui carichi di lavoro di produzione, sulla relazione SnapMirror utilizzata sul sito di prova e sui carichi di lavoro protetti che devono continuare a funzionare normalmente.
+Un failover di prova crea un volume FlexClone e, per i carichi di lavoro VMware, monta il datastore e sposta il carico di lavoro su quel datastore. Un'operazione di failover di prova _non_ ha alcun impatto sui carichi di lavoro di produzione, sulla relazione di SnapMirror utilizzata nel sito di test e sui carichi di lavoro protetti che devono continuare a funzionare normalmente.
 
 
 
@@ -35,12 +35,12 @@ In base alla pianificazione, viene eseguito il test di failover, che garantisce 
 [[modify-a-replication-plan]]
 == Modificare un piano di replicazione
 
-. Dal menu NetApp Disaster Recovery , selezionare *Piani di replica*.
+. Dal menu Disaster Recovery, seleziona *Piani di replica*.
 +
 image:dr-plan-list.png["Screenshot che mostra l'elenco dei piani di replicazione"]
 
-. Seleziona *Azioni*image:icon-horizontal-dots.png["Punti orizzontali Menu azioni"] icona e seleziona *Modifica pianificazioni*.
-. Inserisci la frequenza in minuti con cui desideri che NetApp Disaster Recovery verifichi la conformità dei test.
+. Seleziona il menu *Azioni* image:icon-horizontal-dots.png["Punti orizzontali Menu azioni"] quindi seleziona *Modifica pianificazioni*.
+. Inserisci la frequenza in minuti con cui vuoi che Disaster Recovery verifichi la conformità ai test.
 . Per verificare che i test di failover siano integri, seleziona *Esegui failover con una pianificazione mensile*.
 +
 .. Seleziona il giorno del mese e l'ora in cui desideri che vengano eseguiti i test.
@@ -54,7 +54,29 @@ image:dr-plan-schedule-edit2.png["Screenshot che mostra dove puoi modificare le 
 . Per ripulire l'ambiente di test al termine del test di failover, selezionare *Pulizia automatica dopo il failover del test* e immettere il numero di minuti che si desidera attendere prima che venga avviata la pulizia.
 +
 
-NOTE: Questo processo annulla la registrazione delle VM temporanee dalla posizione di test, elimina il volume FlexClone creato e smonta i datastore temporanei.
+NOTE: Questo processo elimina il volume FlexClone creato e rimuove le risorse di test temporanee dalla posizione di test. Per i carichi di lavoro VMware, annulla anche la registrazione delle VM temporanee e smonta i datastore temporanei.
 
 . Seleziona *Salva*.
+
+
+
+
+[[delete-or-disable-a-replication-plan]]
+== Eliminare o disabilitare un piano di replica
+
+Puoi disabilitare temporaneamente un piano di replica se, ad esempio, devi applicare aggiornamenti o eseguire manutenzione che potrebbero compromettere l'integrità del piano di replica e delle relative operazioni.
+
+Puoi anche eliminare un piano di replica se non ti serve più o se devi apportare modifiche significative che vanno oltre l'ambito della modifica.
+
+.Passi
+. Dal menu Disaster Recovery, seleziona *Piani di replica*.
++
+image:dr-plan-list.png["Screenshot che mostra l'elenco dei piani di replicazione"]
+
+. Seleziona il menu *Azioni* image:icon-horizontal-dots.png["Punti orizzontali Menu azioni"] per il piano di replica che desideri disabilitare o eliminare.
+. Seleziona *Elimina* o *Disabilita*.
+. Rivedi le istruzioni nella finestra pop-up. Per disabilitare, seleziona *Disabilita*.
++
+Se scegli *Elimina*, seleziona gli snapshot o i metadati associati da eliminare insieme al piano di replica: *Elimina snapshot primari*, *Elimina snapshot secondari* oppure *Elimina metadati degli snapshot*. Nella casella di testo, immetti "delete" per confermare l'operazione, quindi seleziona *Elimina*.
+
 

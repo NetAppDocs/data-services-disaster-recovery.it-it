@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: get-started/dr-prerequisites.html 
-keywords: what are disaster recovery requirements, disaster recovery prerequisites, bluexp, disaster recovery 
-summary: Prima di utilizzare NetApp Disaster Recovery, assicurati che il tuo ambiente soddisfi i requisiti di storage ONTAP , cluster VMware vCenter e NetApp Console . 
+keywords: what are disaster recovery requirements, disaster recovery prerequisites, bluexp, disaster recovery, vmware, kubernetes, trident protect 
+summary: Prima di utilizzare NetApp Disaster Recovery, assicurati che il tuo ambiente soddisfi i requisiti di storage ONTAP, del cluster VMware vCenter o del cluster Kubernetes e di NetApp Console. 
 ---
 = Prerequisiti NetApp Disaster Recovery
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: Prima di utilizzare NetApp Disaster Recovery, assicurati che il tuo amb
 
 
 [role="lead"]
-Prima della configurazione, convalida i prerequisiti di storage, vCenter e della Console in modo che i carichi di lavoro siano pronti per la replica e il ripristino.
+Convalida i prerequisiti di storage, di vCenter o del cluster Kubernetes e di Console prima della configurazione, in modo che i carichi di lavoro siano pronti per la replica e il ripristino.
 
 
 
@@ -140,11 +140,12 @@ Se non l'hai ancora fatto, https://docs.netapp.com/us-en/console-setup-admin/tas
 [[gather-credentials-for-ontap-and-vmware]]
 === Raccogli le credenziali per ONTAP e VMware
 
-* Le credenziali Amazon FSx for ONTAP e AWS devono essere aggiunte al sistema all'interno del progetto NetApp Console che gestisce NetApp Disaster Recovery.
-* NetApp Disaster Recovery richiede le credenziali vCenter.  Quando si aggiunge un sito in NetApp Disaster Recovery, è necessario immettere le credenziali vCenter.
+* Le credenziali di Amazon FSx for ONTAP e di AWS devono essere aggiunte al sistema all'interno del progetto NetApp Console che gestisce Disaster Recovery.
+* Disaster Recovery richiede le credenziali di vCenter. Inserisci le credenziali di vCenter quando aggiungi un sito in Disaster Recovery.
 +
-Per un elenco dei privilegi vCenter necessari, fare riferimento alink:../reference/vcenter-privileges.html["Privilegi vCenter necessari per NetApp Disaster Recovery"] .  Per istruzioni su come aggiungere un sito, fare riferimento alink:../use/sites-add.html["Aggiungi un sito"] .
+Per un elenco dei privilegi di vCenter necessari, consulta link:../reference/vcenter-privileges.html["vCenter privilegi necessari per Disaster Recovery"]. Per istruzioni su come aggiungere un sito, consulta link:../use/sites-add.html["Aggiungi un sito"].
 
+* Per i cluster Kubernetes, consulta link:task-kubernetes-requirements.html["Requisiti del cluster Kubernetes"] prima di aggiungere un sito Kubernetes.
 
 
 
@@ -155,12 +156,12 @@ TIP: Per utilizzare il ripristino di emergenza con Amazon Elastic VMware Service
 [[create-the-netapp-console-agent]]
 === Creare l'agente NetApp Console
 
-L'agente Console è un componente software che consente alla Console di comunicare con lo storage ONTAP e i cluster VMware vCenter. È necessario affinché Disaster Recovery funzioni correttamente. L'agente risiede nella tua rete privata (un data center locale o un VPC cloud) e comunica con le tue istanze di archiviazione ONTAP e con qualsiasi componente aggiuntivo di server e applicazioni. Per il Disaster Recovery, si tratta dell'accesso ai cluster vCenter gestiti.
+L'agente di Console è un componente software che consente a Console di comunicare con il tuo storage ONTAP e con i cluster VMware vCenter o i cluster Kubernetes. È necessario perché Disaster Recovery funzioni correttamente. L'agente risiede nella tua rete privata (in un data center on-premises o in una VPC cloud) e comunica con le tue istanze di storage ONTAP e con eventuali componenti aggiuntivi di server e applicazioni. Per Disaster Recovery, si tratta dell'accesso ai tuoi cluster vCenter gestiti o ai cluster Kubernetes.
 
 È necessario configurare un agente Console nella NetApp Console.  Quando si utilizza l'agente, questo includerà le funzionalità appropriate per il servizio Disaster Recovery.
 
-* NetApp Disaster Recovery funziona solo con la distribuzione dell'agente in modalità standard. Vedere https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introduzione alla NetApp Console in modalità standard"^] .
-* Assicurarsi che sia il cluster di origine che quello di destinazione vCenter utilizzino lo stesso agente Console.
+* Il disaster recovery funziona solo con la distribuzione dell'agente in modalità standard. Vedi  https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introduzione alla NetApp Console in modalità standard"^].
+* Assicurati che i cluster vCenter di origine e di destinazione, oppure i cluster Kubernetes, utilizzino lo stesso agente Console.
 * Tipo di agente console necessario:
 +
 ** *Disaster recovery da on-premises a on-premises*: installa l'agente Console on-premises nel sito di disaster recovery. Utilizzando questo metodo, un guasto del sito primario non impedisce al servizio di riavviare le risorse virtuali nel sito DR. Fare riferimento a  https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["Installa e configura l'agente Console in locale"^].
@@ -172,14 +173,14 @@ Disaster Recovery supporta anche l'utilizzo di più agenti Console con configura
 
 TIP: Per le connessioni da locale a locale, utilizzare l'agente Console locale.  Per gli ambienti on-premise su AWS, utilizzare l'agente AWS Console, che ha accesso al vCenter on-premise di origine e al vCenter on-premise di destinazione.
 
-** L'agente Console installato deve essere in grado di accedere a tutte le istanze del cluster VMware vCenter e agli host ESXi gestiti dai cluster vCenter che Disaster Recovery gestirà.
+** L'agente Console installato deve essere in grado di accedere a tutti i cluster Kubernetes che Disaster Recovery gestirà. Deve inoltre essere in grado di accedere a tutte le istanze di cluster VMware vCenter e agli host ESXi gestiti da tali cluster vCenter che Disaster Recovery gestirà.
 
 
-* Tutti gli array ONTAP da gestire tramite NetApp Disaster Recovery devono essere aggiunti a qualsiasi sistema all'interno del progetto NetApp Console che verrà utilizzato per gestire NetApp Disaster Recovery.
+* Tutti gli array ONTAP da gestire con Disaster Recovery devono essere aggiunti a qualsiasi sistema all'interno del progetto NetApp Console che verrà utilizzato per gestire Disaster Recovery.
 +
 Vedere https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Scopri i cluster ONTAP on-premise"^] .
 
-* Per informazioni sulla configurazione di un proxy intelligente per NetApp Disaster Recovery, vederelink:../get-started/dr-setup.html["Configura la tua infrastruttura per NetApp Disaster Recovery"] .
+* Per informazioni sulla configurazione di un proxy intelligente per Disaster Recovery, consulta link:../get-started/dr-setup.html["Configura la tua infrastruttura per il ripristino di emergenza"].
 
 
 
@@ -187,7 +188,7 @@ Vedere https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discov
 [[workload-prerequisites]]
 == Prerequisiti del carico di lavoro
 
-Per garantire il successo dei processi di coerenza delle applicazioni, applicare i seguenti prerequisiti:
+Per garantire il successo dei processi coerenti con l'applicazione per i carichi di lavoro VMware, applica i seguenti prerequisiti:
 
 * Assicurarsi che gli strumenti VMware (o gli strumenti Open VM) siano in esecuzione sulle VM che verranno protette.
 * Per le VM Windows che eseguono Microsoft SQL Server, Oracle Database o entrambi, i database devono avere i relativi VSS Writer abilitati.
@@ -203,5 +204,5 @@ IMPORTANT: A seconda del tipo di implementazione, rivedere link:reference-vmware
 == Ulteriori informazioni
 
 * xref:../reference/vcenter-privileges.html[Privilegi richiesti vCenter]
-* xref:../reference/evs-deploy-guide-config-prereqs.html[Prerequisiti per Amazon EVS con NetApp Disaster Recovery]
+* xref:../reference/evs-deploy-guide-config-prereqs.html[Prerequisiti per Amazon EVS con Disaster Recovery]
 
